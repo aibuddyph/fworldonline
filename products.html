@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FWORLD PRODUCTS | Beauty & Personal Care</title>
+
+  <meta name="description" content="FWORLD PRODUCTS — beauty and personal care products, including Sophia Cosmetics.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f6f3;
+      color: #171717;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid #e5e5e5;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.55;
+    }
+
+    .hero {
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 7%;
+      background: #111;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 12px;
+      margin-bottom: 25px;
+      opacity: 0.7;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 90px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      margin-bottom: 30px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 19px;
+      color: #d5d5d5;
+    }
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: clamp(35px, 5vw, 58px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      max-width: 680px;
+      color: #666;
+      font-size: 17px;
+      margin-bottom: 50px;
+    }
+
+    .products {
+      background: white;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      background: #f7f6f3;
+      padding: 42px;
+      min-height: 260px;
+      border: 1px solid #e1e1e1;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.09);
+    }
+
+    .product-number {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #999;
+      margin-bottom: 25px;
+    }
+
+    .product-card h3 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .product-card p {
+      color: #666;
+    }
+
+    .back {
+      margin-top: 45px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 28px;
+      background: #111;
+      color: white;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .button:hover {
+      background: #333;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 45px 7%;
+    }
+
+    .footer-logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    footer p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    .copyright {
+      border-top: 1px solid #333;
+      margin-top: 35px;
+      padding-top: 25px;
+      color: #777;
+      font-size: 12px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 16px 5%;
+      }
+
+      .nav-links {
+        gap: 14px;
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 60vh;
+        padding: 65px 6%;
+      }
+
+      h1 {
+        font-size: 58px;
+        letter-spacing: -2px;
+      }
+
+      section {
+        padding: 70px 6%;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card {
+        padding: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">FWORLD</div>
+
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#projects">PROJECTS</a>
+      <a href="index.html#contact">CONTACT</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Fworld Products
+      </div>
+
+      <h1>
+        Beauty.<br>
+        <span>Simply.</span>
+      </h1>
+
+      <p>
+        Discover beauty and personal care products created
+        to bring simplicity, confidence, and everyday care
+        into your life.
+      </p>
+
+    </div>
+  </header>
+
+  <section class="products">
+
+    <div class="section-label">
+      Our Products
+    </div>
+
+    <h2 class="section-title">
+      Beauty with purpose.
+    </h2>
+
+    <p class="intro">
+      Fworld Products brings together Sophia Cosmetics
+      and other carefully selected beauty and personal
+      care products.
+    </p>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-number">
+          01 / SOPHIA COSMETICS
+        </div>
+
+        <h3>
+          Sophia Cosmetics
+        </h3>
+
+        <p>
+          Beauty products inspired by simplicity,
+          confidence, and natural everyday beauty.
+        </p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-number">
+          02 / BEAUTY
+        </div>
+
+        <h3>
+          Beauty & Care
+        </h3>
+
+        <p>
+          A growing collection of beauty and personal
+          care products selected for the Fworld community.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="back">
+      <a href="index.html#projects" class="button">
+        ← BACK TO PROJECTS
+      </a>
+    </div>
+
+  </section>
+
+  <footer>
+
+    <div class="footer-logo">
+      FWORLD ONLINE
+    </div>
+
+    <p>
+      Business • Beauty • Digital • Women • Travel
+    </p>
+
+    <div class="copyright">
+      © 2026 Fworld Online. All rights reserved.
+    </div>
+
+  </footer>
+
+</body>
+  </html>
