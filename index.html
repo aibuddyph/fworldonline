@@ -1,11 +1,10 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>FWORLD ONLINE | Business • Beauty • Digital • Travel</title>
@@ -15,513 +14,337 @@
   <style>
 
     * {
-
       margin: 0;
-
       padding: 0;
-
       box-sizing: border-box;
-
     }
 
     html {
-
       scroll-behavior: smooth;
-
     }
 
     body {
-
       font-family: Arial, Helvetica, sans-serif;
-
       background: #f7f6f3;
-
       color: #171717;
-
       line-height: 1.6;
-
     }
 
     a {
-
       text-decoration: none;
-
       color: inherit;
-
     }
 
     /* NAVIGATION */
 
     nav {
-
       position: sticky;
-
       top: 0;
-
       z-index: 1000;
-
       background: rgba(255,255,255,0.96);
-
       border-bottom: 1px solid #e5e5e5;
-
       padding: 18px 7%;
-
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
-
     }
 
     .logo {
-
       font-size: 24px;
-
       font-weight: 800;
-
       letter-spacing: 3px;
-
     }
 
     .nav-links {
-
       display: flex;
-
       gap: 25px;
-
       font-size: 14px;
-
       font-weight: 600;
-
     }
 
     .nav-links a:hover {
-
       opacity: 0.55;
-
     }
 
     /* HERO */
 
     .hero {
-
       min-height: 88vh;
-
       display: flex;
-
       align-items: center;
-
       padding: 80px 7%;
-
       background: #111;
-
       color: white;
-
     }
 
     .hero-content {
-
       max-width: 850px;
-
     }
 
     .eyebrow {
-
       text-transform: uppercase;
-
       letter-spacing: 5px;
-
       font-size: 12px;
-
       margin-bottom: 25px;
-
       opacity: 0.7;
-
     }
 
     .hero h1 {
-
       font-size: clamp(48px, 9vw, 105px);
-
       line-height: 0.95;
-
       letter-spacing: -4px;
-
       margin-bottom: 30px;
-
     }
 
     .hero h1 span {
-
       font-weight: 300;
-
     }
 
     .hero p {
-
       max-width: 650px;
-
       font-size: 19px;
-
       color: #d5d5d5;
-
       margin-bottom: 38px;
-
     }
 
     .button {
-
       display: inline-block;
-
       padding: 15px 28px;
-
       background: white;
-
       color: #111;
-
       font-weight: 700;
-
       font-size: 13px;
-
       letter-spacing: 1px;
-
       border: 1px solid white;
-
       transition: 0.3s;
-
     }
 
     .button:hover {
-
       background: transparent;
-
       color: white;
-
     }
 
     .button.dark {
-
       background: #111;
-
       color: white;
-
       border-color: #111;
-
     }
 
     .button.dark:hover {
-
       background: white;
-
       color: #111;
-
     }
 
     /* GENERAL */
 
     section {
-
       padding: 95px 7%;
-
     }
 
     .section-label {
-
       font-size: 12px;
-
       text-transform: uppercase;
-
       letter-spacing: 4px;
-
       color: #777;
-
       margin-bottom: 15px;
-
     }
 
     .section-title {
-
       font-size: clamp(35px, 5vw, 58px);
-
       line-height: 1.05;
-
       margin-bottom: 20px;
-
     }
 
     .section-intro {
-
       max-width: 680px;
-
       color: #666;
-
       font-size: 17px;
-
       margin-bottom: 55px;
-
     }
 
     /* ABOUT */
 
     .about {
-
       background: white;
-
     }
 
     .about-grid {
-
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
       gap: 70px;
-
       align-items: center;
-
     }
 
     .about-text {
-
       font-size: 19px;
-
       color: #444;
-
     }
 
     .about-box {
-
       background: #eeeae3;
-
       padding: 55px;
-
       min-height: 300px;
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       text-align: center;
-
     }
 
     .about-box h3 {
-
       font-size: 35px;
-
       line-height: 1.15;
-
     }
 
-    <!-- PROJECTS -->
+    /* PROJECTS */
 
-<section id="projects" class="projects">
+    .projects {
+      background: #f7f6f3;
+    }
 
-  <div class="section-label">
-    The Fworld Ecosystem
-  </div>
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
 
-  <h2 class="section-title">
-    Explore our world.
-  </h2>
+    .card {
+      background: white;
+      min-height: 300px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #e5e5e5;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-  <p class="section-intro">
-    Discover the different businesses, communities,
-    services, and digital products connected to Fworld.
-  </p>
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
 
-  <div class="cards">
+    .card-number {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #888;
+      margin-bottom: 22px;
+    }
 
-    <div class="card">
-      <div>
-        <div class="card-number">01 / BEAUTY</div>
-        <h3>Fworld Products</h3>
-        <p>
-          Discover beauty and personal care products,
-          including Sophia Cosmetics and other carefully
-          selected products.
-        </p>
-      </div>
-      <a href="/products.html" class="card-link">EXPLORE PRODUCTS →</a>
-    </div>
+    .card h3 {
+      font-size: 26px;
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
 
-    <div class="card">
-      <div>
-        <div class="card-number">02 / DIGITAL</div>
-        <h3>Digital Products</h3>
-        <p>
-          Books, eBooks, guides, workbooks, and digital
-          resources created to inspire learning, growth,
-          and better living.
-        </p>
-      </div>
-      <a href="#" class="card-link">VIEW DIGITAL PRODUCTS →</a>
-    </div>
+    .card p {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.7;
+    }
 
-    <div class="card">
-      <div>
-        <div class="card-number">03 / COMMUNITY</div>
-        <h3>The You Matter Academy</h3>
-        <p>
-          A women-centered community focused on self-worth,
-          confidence, clarity, purpose, technology,
-          mentorship, and possibilities.
-        </p>
-      </div>
-      <a href="#" class="card-link">DISCOVER TYMA →</a>
-    </div>
+    .card-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ddd;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
 
-    <div class="card">
-      <div>
-        <div class="card-number">04 / RELOCATION</div>
-        <h3>Azure Pearl PH</h3>
-        <p>
-          Your gateway to experiencing the Philippines —
-          from travel and accommodation to relocation,
-          investment, retirement, and second-home
-          possibilities.
-        </p>
-      </div>
-      <a href="#" class="card-link">EXPLORE AZURE PEARL →</a>
-    </div>
+    .card-link:hover {
+      opacity: 0.55;
+    }
 
-    <div class="card">
-      <div>
-        <div class="card-number">05 / TRAVEL</div>
-        <h3>FMSI Travel & Tours</h3>
-        <p>
-          Local and international travel services,
-          airfare, accommodation, tours, transportation,
-          visa assistance, and customized travel solutions.
-        </p>
-      </div>
-      <a href="#" class="card-link">PLAN YOUR JOURNEY →</a>
-    </div>
+    /* FEATURE */
 
-    <div class="card">
-      <div>
-        <div class="card-number">06 / FUTURE</div>
-        <h3>More to Come</h3>
-        <p>
-          Fworld continues to grow through new ideas,
-          partnerships, digital ventures, and opportunities
-          designed to create meaningful value.
-        </p>
-      </div>
-      <a href="#contact" class="card-link">CONNECT WITH US →</a>
-    </div>
+    .feature {
+      background: #111;
+      color: white;
+    }
 
-  </div>
+    .feature .section-label {
+      color: #aaa;
+    }
 
-</section>
+    .feature h2 {
+      max-width: 850px;
+      font-size: clamp(35px, 6vw, 65px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .feature p {
+      max-width: 650px;
+      color: #bbb;
+      font-size: 17px;
+      margin-bottom: 35px;
+    }
 
     /* CONTACT */
 
     .contact {
-
       background: white;
-
     }
 
     .contact-grid {
-
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
       gap: 70px;
-
     }
 
     .contact-info p {
-
       margin-bottom: 15px;
-
       color: #555;
-
     }
 
     .contact-info strong {
-
       color: #111;
-
     }
 
     .contact-links {
-
       display: flex;
-
       flex-direction: column;
-
       gap: 15px;
-
     }
 
     .contact-links a {
-
       border-bottom: 1px solid #ddd;
-
       padding-bottom: 15px;
-
       font-weight: 600;
-
     }
 
     /* FOOTER */
 
     footer {
-
       background: #111;
-
       color: white;
-
       padding: 45px 7%;
-
     }
 
     .footer-top {
-
       display: flex;
-
       justify-content: space-between;
-
       gap: 30px;
-
       margin-bottom: 45px;
-
     }
 
     .footer-logo {
-
       font-size: 25px;
-
       font-weight: 800;
-
       letter-spacing: 3px;
-
     }
 
     footer p {
-
       color: #999;
-
       font-size: 14px;
-
     }
 
     .copyright {
-
       border-top: 1px solid #333;
-
       padding-top: 25px;
-
       color: #777;
-
       font-size: 12px;
-
     }
 
     /* MOBILE */
@@ -529,73 +352,48 @@
     @media (max-width: 768px) {
 
       nav {
-
         padding: 16px 5%;
-
       }
 
       .nav-links {
-
         display: none;
-
       }
 
       .hero {
-
         min-height: 80vh;
-
         padding: 65px 6%;
-
       }
 
       .hero h1 {
-
         font-size: 58px;
-
         letter-spacing: -2px;
-
       }
 
       .hero p {
-
         font-size: 17px;
-
       }
 
       section {
-
         padding: 70px 6%;
-
       }
 
       .about-grid,
-
       .contact-grid,
-
       .cards {
-
         grid-template-columns: 1fr;
-
       }
 
       .about-box {
-
         padding: 40px 25px;
-
       }
 
       .card {
-
-        min-height: 260px;
-
-        padding: 32px;
-
+        min-height: 280px;
+        padding: 30px;
       }
 
       .footer-top {
-
         flex-direction: column;
-
       }
 
     }
@@ -610,19 +408,20 @@
 
   <nav>
 
-    <div class="logo">FWORLD</div>
+    <div class="logo">
+      FWORLD
+    </div>
 
     <div class="nav-links">
 
       <a href="#about">ABOUT</a>
-
       <a href="#projects">PROJECTS</a>
-
       <a href="#contact">CONTACT</a>
 
     </div>
 
   </nav>
+
 
   <!-- HERO -->
 
@@ -631,38 +430,28 @@
     <div class="hero-content">
 
       <div class="eyebrow">
-
         Welcome to Fworld Online
-
       </div>
 
       <h1>
-
         Business.<br>
-
         <span>Beauty.</span><br>
-
         Purpose.
-
       </h1>
 
       <p>
-
         A digital space connecting ideas, products, women,
-
         travel, and opportunities — all in one place.
-
       </p>
 
       <a href="#projects" class="button">
-
         EXPLORE FWORLD
-
       </a>
 
     </div>
 
   </header>
+
 
   <!-- ABOUT -->
 
@@ -673,37 +462,25 @@
       <div>
 
         <div class="section-label">
-
           About Fworld
-
         </div>
 
         <h2 class="section-title">
-
           More than a business.
-
         </h2>
 
         <p class="about-text">
-
           Fworld is a growing digital ecosystem built around
-
           entrepreneurship, beauty, personal growth, digital
-
           products, women empowerment, and meaningful experiences.
-
         </p>
 
         <br>
 
         <p class="about-text">
-
           We believe that business can create opportunities,
-
           products can create value, and purpose can create
-
           lasting impact.
-
         </p>
 
       </div>
@@ -711,13 +488,9 @@
       <div class="about-box">
 
         <h3>
-
           Create.<br>
-
           Connect.<br>
-
           Grow.
-
         </h3>
 
       </div>
@@ -726,31 +499,27 @@
 
   </section>
 
+
   <!-- PROJECTS -->
 
   <section id="projects" class="projects">
 
     <div class="section-label">
-
       The Fworld Ecosystem
-
     </div>
 
     <h2 class="section-title">
-
       Explore our world.
-
     </h2>
 
     <p class="section-intro">
-
       Discover the different businesses, communities,
-
       services, and digital products connected to Fworld.
-
     </p>
 
+
     <div class="cards">
+
 
       <!-- Fworld Products -->
 
@@ -759,36 +528,27 @@
         <div>
 
           <div class="card-number">
-
             01 / BEAUTY
-
           </div>
 
           <h3>
-
             Fworld Products
-
           </h3>
 
           <p>
-
             Discover beauty and personal care products,
-
             including Sophia Cosmetics and other carefully
-
             selected products.
-
           </p>
 
         </div>
 
-        <a href="#products" class="card-link">
-
+        <a href="/products.html" class="card-link">
           EXPLORE PRODUCTS →
-
         </a>
 
       </div>
+
 
       <!-- Digital Products -->
 
@@ -797,36 +557,27 @@
         <div>
 
           <div class="card-number">
-
             02 / DIGITAL
-
           </div>
 
           <h3>
-
             Digital Products
-
           </h3>
 
           <p>
-
             Books, eBooks, guides, workbooks, and digital
-
             resources created to inspire learning, growth,
-
             and better living.
-
           </p>
 
         </div>
 
         <a href="#" class="card-link">
-
           VIEW DIGITAL PRODUCTS →
-
         </a>
 
       </div>
+
 
       <!-- TYMA -->
 
@@ -835,36 +586,27 @@
         <div>
 
           <div class="card-number">
-
             03 / COMMUNITY
-
           </div>
 
           <h3>
-
             The You Matter Academy
-
           </h3>
 
           <p>
-
             A women-centered community focused on self-worth,
-
             confidence, clarity, purpose, technology,
-
             mentorship, and possibilities.
-
           </p>
 
         </div>
 
         <a href="#" class="card-link">
-
           DISCOVER TYMA →
-
         </a>
 
       </div>
+
 
       <!-- Azure Pearl -->
 
@@ -873,38 +615,28 @@
         <div>
 
           <div class="card-number">
-
             04 / RELOCATION
-
           </div>
 
           <h3>
-
             Azure Pearl PH
-
           </h3>
 
           <p>
-
             Your gateway to experiencing the Philippines —
-
             from travel and accommodation to relocation,
-
             investment, retirement, and second-home
-
             possibilities.
-
           </p>
 
         </div>
 
         <a href="#" class="card-link">
-
           EXPLORE AZURE PEARL →
-
         </a>
 
       </div>
+
 
       <!-- FMSI -->
 
@@ -913,36 +645,27 @@
         <div>
 
           <div class="card-number">
-
             05 / TRAVEL
-
           </div>
 
           <h3>
-
             FMSI Travel & Tours
-
           </h3>
 
           <p>
-
             Local and international travel services,
-
             airfare, accommodation, tours, transportation,
-
             visa assistance, and customized travel solutions.
-
           </p>
 
         </div>
 
         <a href="#" class="card-link">
-
           PLAN YOUR JOURNEY →
-
         </a>
 
       </div>
+
 
       <!-- Future -->
 
@@ -951,76 +674,58 @@
         <div>
 
           <div class="card-number">
-
             06 / FUTURE
-
           </div>
 
           <h3>
-
             More to Come
-
           </h3>
 
           <p>
-
             Fworld continues to grow through new ideas,
-
             partnerships, digital ventures, and opportunities
-
             designed to create meaningful value.
-
           </p>
 
         </div>
 
         <a href="#contact" class="card-link">
-
           CONNECT WITH US →
-
         </a>
 
       </div>
 
+
     </div>
 
   </section>
+
 
   <!-- FEATURE -->
 
   <section class="feature">
 
     <div class="section-label">
-
       Our Philosophy
-
     </div>
 
     <h2>
-
       When you create with purpose,
-
       possibilities become bigger.
-
     </h2>
 
     <p>
-
       Fworld is about building businesses and communities
-
       that create value while making room for people,
-
       ideas, and dreams to grow.
-
     </p>
 
     <a href="#contact" class="button">
-
       CONNECT WITH FWORLD
-
     </a>
 
   </section>
+
 
   <!-- CONTACT -->
 
@@ -1031,41 +736,30 @@
       <div>
 
         <div class="section-label">
-
           Get in Touch
-
         </div>
 
         <h2 class="section-title">
-
           Let's connect.
-
         </h2>
 
         <p class="section-intro">
-
           Interested in our products, digital resources,
-
           travel services, partnerships, or community?
-
           We'd love to hear from you.
-
         </p>
 
       </div>
 
+
       <div class="contact-info">
 
         <p>
-
           <strong>Fworld Online</strong>
-
         </p>
 
         <p>
-
           Digital Business Hub
-
         </p>
 
         <br>
@@ -1073,21 +767,15 @@
         <div class="contact-links">
 
           <a href="mailto:hello@fworld.online">
-
             Email Fworld →
-
           </a>
 
           <a href="#">
-
             Facebook →
-
           </a>
 
           <a href="#">
-
             Instagram →
-
           </a>
 
         </div>
@@ -1098,6 +786,7 @@
 
   </section>
 
+
   <!-- FOOTER -->
 
   <footer>
@@ -1105,27 +794,22 @@
     <div class="footer-top">
 
       <div class="footer-logo">
-
         FWORLD ONLINE
-
       </div>
 
       <p>
-
         Business • Beauty • Digital • Women • Travel
-
       </p>
 
     </div>
 
     <div class="copyright">
-
-      © 2026 Fworld Online. All rights reserved.
-
+      ©️ 2026 Fworld Online. All rights reserved.
     </div>
 
   </footer>
 
+
 </body>
 
-  </html>
+</html>
