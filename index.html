@@ -398,8 +398,47 @@
 
     }
 
-  </style>
+  
+     .mobile-menu-button {
+       display: none;
+       font-size: 28px;
+       cursor: pointer;
+       line-height: 1;
+    }
 
+     @media (max-width: 768px) {
+
+       .mobile-menu-button {
+          display: block;
+        }
+  
+       #main-nav {
+         display: none;
+         position: absolute;
+         top: 70px;
+         right: 20px;
+         background: #fff;
+         width: 180px;
+         padding: 15px 0;
+         box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+         border-radius: 8px;
+         z-index: 999;
+       }
+  
+       #main-nav.active {
+         display: flex;
+         flex-direction: column;
+       }
+
+       #main-nav a {
+         display: block;
+         padding: 12px 20px;
+      }
+  
+  }
+  
+</style>
+  
 </head>
 
 <body>
@@ -412,11 +451,13 @@
       FWORLD
     </div>
 
-    <div class="nav-links">
+    <div class="mobile-menu-button" onclick="toggleMenu()">=</div>
 
-      <a href="#about">ABOUT</a>
-      <a href="projects.html">PROJECTS</a>
-      <a href="#contact">CONTACT</a>
+    <nav id="main-nav">
+      <a href="#about" onclick="closeMenu()">Home</a>
+      <a href="projects.html" onclick="closeMenu()">Projects</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
 
     </div>
 
@@ -809,7 +850,16 @@
 
   </footer>
 
+<script>
+function toggleMenu() {
+  document.getElementById("main-nav").classList.toggle("active");
+}
+
+function closeMenu() {
+  document.getElementById("main-nav").classList.remove("active");
+}
+</script>
 
 </body>
-
 </html>
+
