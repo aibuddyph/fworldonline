@@ -1,1 +1,955 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FWORLD Projects | Ideas • Platforms • Possibilities</title>
+
+<style>
+:root {
+  --black: #111111;
+  --white: #ffffff;
+  --cream: #f6f5f1;
+  --gray: #777777;
+  --line: #dddddd;
+  --orange: #d96b32;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--black);
+  background: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1180px, 92%);
+  margin: auto;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+
+.nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  font-size: 13px;
+}
+
+.nav-button {
+  background: var(--black);
+  color: white;
+  padding: 11px 18px;
+  border-radius: 30px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 570px;
+
+  display: flex;
+  align-items: center;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.82),
+      rgba(0,0,0,.25)
+    ),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 760px;
+  padding: 80px 0;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 11px;
+  color: #dddddd;
+}
+
+.hero h1 {
+  font-size: clamp(50px, 8vw, 82px);
+  line-height: .95;
+  margin: 18px 0;
+}
+
+.hero p {
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #eeeeee;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+  padding: 80px 0;
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  font-size: 34px;
+  margin: 0;
+}
+
+.section-heading p {
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* =========================
+   PROJECT GRID
+========================= */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.project {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  border-radius: 22px;
+  color: white;
+  background: #222;
+}
+
+.project img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: .68;
+
+  transition: .5s;
+}
+
+.project:hover img {
+  transform: scale(1.06);
+  opacity: .8;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.88),
+      rgba(0,0,0,.05)
+    );
+}
+
+.project-content {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+}
+
+.project-number {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #dddddd;
+}
+
+.project-tag {
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.project h3 {
+  font-size: 31px;
+  margin: 8px 0;
+}
+
+.project p {
+  color: #eeeeee;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.project-button {
+  display: inline-block;
+  margin-top: 10px;
+
+  background: white;
+  color: var(--black);
+
+  padding: 12px 20px;
+  border-radius: 30px;
+
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* =========================
+   FEATURE STATEMENT
+========================= */
+
+.statement {
+  background: var(--cream);
+  text-align: center;
+}
+
+.statement-inner {
+  max-width: 800px;
+  margin: auto;
+}
+
+.statement h2 {
+  font-size: clamp(34px, 5vw, 55px);
+  line-height: 1.05;
+  margin: 15px 0;
+}
+
+.statement p {
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* =========================
+   ECOSYSTEM
+========================= */
+
+.ecosystem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.ecosystem-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+}
+
+.ecosystem-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.ecosystem-content {
+  padding: 25px;
+}
+
+.ecosystem-content h3 {
+  margin: 8px 0;
+  font-size: 24px;
+}
+
+.ecosystem-content p {
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.tag {
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* =========================
+   FUTURE PROJECTS
+========================= */
+
+.future {
+  background: var(--black);
+  color: white;
+  text-align: center;
+}
+
+.future h2 {
+  font-size: 42px;
+}
+
+.future p {
+  color: #cccccc;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+.future-button {
+  display: inline-block;
+  margin-top: 25px;
+
+  background: var(--orange);
+  color: white;
+
+  padding: 14px 24px;
+  border-radius: 30px;
+
+  font-weight: bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background: var(--black);
+  color: white;
+  padding: 45px 0;
+  border-top: 1px solid #333;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-small {
+  color: #999;
+  font-size: 12px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 800px) {
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .ecosystem {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links a:not(.nav-button) {
+    display: none;
+  }
+}
+
+@media(max-width: 520px) {
+
+  .container {
+    width: 90%;
+  }
+
+  .hero {
+    min-height: 600px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .project {
+    min-height: 400px;
+  }
+
+  .project-content {
+    left: 23px;
+    right: 23px;
+    bottom: 23px;
+  }
+
+  .project h3 {
+    font-size: 27px;
+  }
+
+  .footer {
+    display: block;
+  }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+  <div class="container nav">
+
+    <div class="logo">
+      FWORLD <span>PROJECTS</span>
+    </div>
+
+    <nav class="nav-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="projects.html">
+        Projects
+      </a>
+
+      <a href="marketplace.html">
+        Marketplace
+      </a>
+
+      <a href="#contact" class="nav-button">
+        Contact
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="container hero-content">
+
+    <div class="eyebrow">
+      FWORLD ONLINE
+    </div>
+
+    <h1>
+      Ideas.<br>
+      Platforms.<br>
+      Possibilities.
+    </h1>
+
+    <p>
+      Explore the projects and platforms being
+      developed through the FWORLD ecosystem —
+      built around people, business, technology,
+      travel and opportunities.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <h2>
+        Our Projects
+      </h2>
+
+      <p>
+        Different ideas. One ecosystem.
+      </p>
+
+    </div>
+
+
+    <div class="projects">
+
+
+      <!-- TYMA -->
+
+      <div class="project">
+
+        <img
+          src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85"
+          alt="Women in business"
+        >
+
+        <div class="project-overlay"></div>
+
+        <div class="project-content">
+
+          <div class="project-number">
+            PROJECT 01
+          </div>
+
+          <div class="project-tag">
+            Women • Community • Growth
+          </div>
+
+          <h3>
+            TYMA
+          </h3>
+
+          <p>
+            The You Matter Academy — a women-centered
+            community for personal development,
+            confidence, clarity, technology and growth.
+          </p>
+
+          <a href="#" class="project-button">
+            Explore TYMA
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- AI BUDDY -->
+
+      <div class="project">
+
+        <img
+          src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85"
+          alt="Artificial intelligence technology"
+        >
+
+        <div class="project-overlay"></div>
+
+        <div class="project-content">
+
+          <div class="project-number">
+            PROJECT 02
+          </div>
+
+          <div class="project-tag">
+            AI • Learning • Technology
+          </div>
+
+          <h3>
+            AI Buddy PH
+          </h3>
+
+          <p>
+            A practical AI companion designed to help
+            Filipinos learn, discover tools and use
+            artificial intelligence in everyday life.
+          </p>
+
+          <a href="#" class="project-button">
+            Explore AI Buddy
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- FMSI -->
+
+      <div class="project">
+
+        <img
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85"
+          alt="Travel destination"
+        >
+
+        <div class="project-overlay"></div>
+
+        <div class="project-content">
+
+          <div class="project-number">
+            PROJECT 03
+          </div>
+
+          <div class="project-tag">
+            Travel • Tours • Experiences
+          </div>
+
+          <h3>
+            FMSI Travel & Tours
+          </h3>
+
+          <p>
+            Travel services connecting people to
+            destinations, accommodation, tours,
+            transportation and travel experiences.
+          </p>
+
+          <a href="#" class="project-button">
+            Explore FMSI
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- AZURE PEARL -->
+
+      <div class="project">
+
+        <img
+          src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
+          alt="Luxury property"
+        >
+
+        <div class="project-overlay"></div>
+
+        <div class="project-content">
+
+          <div class="project-number">
+            PROJECT 04
+          </div>
+
+          <div class="project-tag">
+            Relocation • Tourism • Investment
+          </div>
+
+          <h3>
+            Azure Pearl PH
+          </h3>
+
+          <p>
+            A relocation and lifestyle platform connecting
+            international clients with Philippine travel,
+            accommodation, transportation and opportunities.
+          </p>
+
+          <a href="#" class="project-button">
+            Explore Azure Pearl
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- FWORLD PRODUCTS -->
+
+      <div class="project">
+
+        <img
+          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1200&q=85"
+          alt="Beauty products"
+        >
+
+        <div class="project-overlay"></div>
+
+        <div class="project-content">
+
+          <div class="project-number">
+            PROJECT 05
+          </div>
+
+          <div class="project-tag">
+            Beauty • Personal Care • Lifestyle
+          </div>
+
+          <h3>
+            FWORLD Products
+          </h3>
+
+          <p>
+            A growing collection of beauty, personal
+            care and lifestyle products within the
+            FWORLD ecosystem.
+          </p>
+
+          <a href="marketplace.html" class="project-button">
+            Explore Marketplace
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- DIGITAL PRODUCTS -->
+
+      <div class="project">
+
+        <img
+          src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=85"
+          alt="Books and digital products"
+        >
+
+        <div class="project-overlay"></div>
+
+        <div class="project-content">
+
+          <div class="project-number">
+            PROJECT 06
+          </div>
+
+          <div class="project-tag">
+            Books • Guides • Digital Products
+          </div>
+
+          <h3>
+            Digital Products
+          </h3>
+
+          <p>
+            Books, ebooks, guides and workbooks created
+            to share knowledge, experiences, ideas
+            and practical tools.
+          </p>
+
+          <a href="marketplace.html" class="project-button">
+            Explore Marketplace
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     STATEMENT
+========================= -->
+
+<section class="statement">
+
+  <div class="container statement-inner">
+
+    <div class="tag">
+      THE FWORLD VISION
+    </div>
+
+    <h2>
+      One world.<br>
+      Many possibilities.
+    </h2>
+
+    <p>
+      FWORLD brings different projects, services,
+      products and communities together into one
+      evolving digital ecosystem.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ECOSYSTEM
+========================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <h2>
+        Explore the Ecosystem
+      </h2>
+
+      <p>
+        More than projects — connected possibilities.
+      </p>
+
+    </div>
+
+
+    <div class="ecosystem">
+
+
+      <div class="ecosystem-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
+          alt="Business community"
+        >
+
+        <div class="ecosystem-content">
+
+          <div class="tag">
+            COMMUNITY
+          </div>
+
+          <h3>
+            People First
+          </h3>
+
+          <p>
+            Communities and platforms designed to
+            connect people, ideas, skills and opportunities.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="ecosystem-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85"
+          alt="Digital technology"
+        >
+
+        <div class="ecosystem-content">
+
+          <div class="tag">
+            DIGITAL
+          </div>
+
+          <h3>
+            Built for the Future
+          </h3>
+
+          <p>
+            Digital tools and platforms that make
+            information, services and opportunities
+            easier to discover.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FUTURE PROJECTS
+========================= -->
+
+<section class="future">
+
+  <div class="container">
+
+    <div class="tag">
+      WHAT'S NEXT
+    </div>
+
+    <h2>
+      More projects are coming.
+    </h2>
+
+    <p>
+      FWORLD is an evolving ecosystem.
+      New ideas, businesses, platforms and
+      collaborations can become part of the journey.
+    </p>
+
+    <a href="marketplace.html" class="future-button">
+      Visit FWORLD Marketplace
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer id="contact">
+
+  <div class="container footer">
+
+    <div>
+
+      <div class="logo">
+        FWORLD
+      </div>
+
+      <p class="footer-small">
+        Business • Beauty • Digital • Travel • Community
+      </p>
+
+    </div>
+
+    <div class="footer-small">
+      © 2026 FWORLD ONLINE
+    </div>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
