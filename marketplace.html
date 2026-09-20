@@ -1,1 +1,901 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FWORLD Marketplace</title>
+
+  <meta name="description" content="FWORLD Marketplace — Discover, Connect, Shop and Grow.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      width: 100%;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      background: rgba(255,255,255,.96);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 80px 7%;
+
+      background:
+        linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.48)),
+        url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero small {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 11px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 85px);
+      line-height: .95;
+      margin: 20px 0;
+      letter-spacing: -4px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* SEARCH */
+
+    .search-area {
+      padding: 45px 7%;
+      background: #f7f7f7;
+      text-align: center;
+    }
+
+    .search-box {
+      max-width: 750px;
+      margin: auto;
+      display: flex;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 17px 20px;
+      border: 1px solid #ddd;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .search-box button {
+      padding: 17px 28px;
+      border: none;
+      background: #111;
+      color: #fff;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* GENERAL SECTION */
+
+    section {
+      padding: 85px 7%;
+    }
+
+    .heading {
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+
+    .heading small {
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+    }
+
+    .heading h2 {
+      font-size: clamp(35px, 5vw, 58px);
+      letter-spacing: -2px;
+      margin: 8px 0;
+    }
+
+    .heading p {
+      color: #666;
+    }
+
+    /* CATEGORY GRID */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .category {
+      min-height: 190px;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+      padding: 22px;
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .category::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.75));
+    }
+
+    .category h3 {
+      position: relative;
+      z-index: 2;
+      font-size: 20px;
+    }
+
+    /* FEATURED STORES */
+
+    .stores {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .store {
+      border: 1px solid #e5e5e5;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .store img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .store-info {
+      padding: 25px;
+    }
+
+    .store-info h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .store-info p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* TYMA STORE */
+
+    .tyma {
+      background: #111;
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .tyma img {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+    }
+
+    .tyma-content small {
+      color: #bbb;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .tyma-content h2 {
+      font-size: clamp(38px, 5vw, 65px);
+      line-height: 1;
+      margin: 15px 0;
+    }
+
+    .tyma-content p {
+      color: #ccc;
+      margin-bottom: 25px;
+      max-width: 520px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #fff;
+      color: #111;
+      padding: 14px 25px;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    /* PRODUCTS */
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .product {
+      border: 1px solid #eee;
+      background: #fff;
+    }
+
+    .product img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info h3 {
+      font-size: 18px;
+    }
+
+    .product-info p {
+      color: #777;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    /* REAL ESTATE */
+
+    .real-estate {
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      padding: 60px;
+      color: white;
+
+      background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .real-estate-content {
+      max-width: 650px;
+    }
+
+    .real-estate h2 {
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1;
+      margin: 15px 0;
+    }
+
+    /* FRANCHISING */
+
+    .franchise {
+      background: #f6f6f6;
+      text-align: center;
+    }
+
+    .franchise h2 {
+      font-size: clamp(38px, 6vw, 65px);
+      margin-bottom: 15px;
+    }
+
+    .franchise p {
+      max-width: 650px;
+      margin: auto auto 25px;
+      color: #666;
+    }
+
+    /* MEMBERSHIP */
+
+    .membership {
+      text-align: center;
+      border-top: 1px solid #eee;
+    }
+
+    .membership h2 {
+      font-size: clamp(38px, 6vw, 65px);
+      margin-bottom: 15px;
+    }
+
+    .membership p {
+      max-width: 650px;
+      margin: auto auto 25px;
+      color: #666;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      background: #111;
+      color: #fff;
+    }
+
+    .cta h2 {
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #ccc;
+      max-width: 600px;
+      margin: auto auto 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 7%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 12px;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stores {
+        grid-template-columns: 1fr;
+      }
+
+      .tyma {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      nav {
+        padding: 18px 5%;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      .nav-links {
+        gap: 9px;
+        font-size: 8px;
+      }
+
+      section {
+        padding: 65px 5%;
+      }
+
+      .categories,
+      .products {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .category {
+        min-height: 150px;
+      }
+
+      .real-estate {
+        padding: 40px 25px;
+      }
+
+      .search-box {
+        flex-direction: column;
+      }
+
+      .search-box button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <a href="index.html" class="logo">FWORLD</a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <small>FWORLD ONLINE</small>
+
+      <h1>Marketplace</h1>
+
+      <p>
+        Discover • Connect • Shop • Grow
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- SEARCH -->
+
+  <div class="search-area">
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        placeholder="Search products, services, stores..."
+      >
+
+      <button>Search</button>
+
+    </div>
+
+  </div>
+
+
+  <!-- CATEGORIES -->
+
+  <section>
+
+    <div class="heading">
+
+      <small>Explore</small>
+
+      <h2>Marketplace Categories</h2>
+
+      <p>
+        Discover products, services, businesses and opportunities
+        from different parts of the FWORLD ecosystem.
+      </p>
+
+    </div>
+
+
+    <div class="categories">
+
+      <a class="category"
+         style="background-image:url('https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=80');">
+        <h3>Products</h3>
+      </a>
+
+      <a class="category"
+         style="background-image:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80');">
+        <h3>Massage Therapy</h3>
+      </a>
+
+      <a class="category"
+         style="background-image:url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=80');">
+        <h3>Therapy & Counseling</h3>
+      </a>
+
+      <a class="category"
+         style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80');">
+        <h3>Real Estate</h3>
+      </a>
+
+      <a class="category"
+         style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=80');">
+        <h3>Travel & Tours</h3>
+      </a>
+
+      <a class="category"
+         style="background-image:url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80');">
+        <h3>Professional Services</h3>
+      </a>
+
+      <a class="category"
+         style="background-image:url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80');">
+        <h3>Beauty</h3>
+      </a>
+
+      <a class="category"
+         style="background-image:url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80');">
+        <h3>Fashion</h3>
+      </a>
+
+      <a class="category"
+         style="background-image:url('https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80');">
+        <h3>Digital Products</h3>
+      </a>
+
+      <a class="category"
+         style="background-image:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80');">
+        <h3>Franchising</h3>
+      </a>
+
+      <a class="category"
+         style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80');">
+        <h3>Membership</h3>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURED STORES -->
+
+  <section>
+
+    <div class="heading">
+
+      <small>Discover</small>
+
+      <h2>Featured Stores</h2>
+
+      <p>
+        Explore stores and businesses within the FWORLD Marketplace.
+      </p>
+
+    </div>
+
+
+    <div class="stores">
+
+      <article class="store">
+
+        <img
+          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=85"
+          alt="Fashion store"
+        >
+
+        <div class="store-info">
+
+          <h3>Fashion & Lifestyle</h3>
+
+          <p>
+            Discover products, fashion pieces and lifestyle collections.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="store">
+
+        <img
+          src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=1200&q=85"
+          alt="Beauty store"
+        >
+
+        <div class="store-info">
+
+          <h3>Beauty Collection</h3>
+
+          <p>
+            Beauty and personal care products from independent sellers.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="store">
+
+        <img
+          src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=85"
+          alt="Professional services"
+        >
+
+        <div class="store-info">
+
+          <h3>Professional Services</h3>
+
+          <p>
+            Connect with professionals offering skills and services.
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- TYMA COMMUNITY STORE -->
+
+  <section class="tyma">
+
+    <img
+      src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85"
+      alt="Women community"
+    >
+
+    <div class="tyma-content">
+
+      <small>Exclusive Community Feature</small>
+
+      <h2>TYMA Community Store</h2>
+
+      <p>
+        Your skills. Your products. Your story. Your store.
+
+        Create your own mini e-store and showcase what you offer —
+        exclusively for verified TYMA members.
+      </p>
+
+      <a href="#" class="button">
+        Create Your Store
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURED PRODUCTS -->
+
+  <section>
+
+    <div class="heading">
+
+      <small>Featured</small>
+
+      <h2>Products & Services</h2>
+
+      <p>
+        A growing collection of products and services available
+        through the FWORLD Marketplace.
+      </p>
+
+    </div>
+
+
+    <div class="products">
+
+      <article class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=80"
+          alt="Beauty products"
+        >
+
+        <div class="product-info">
+
+          <h3>Beauty Products</h3>
+
+          <p>Beauty & personal care</p>
+
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80"
+          alt="Massage therapy"
+        >
+
+        <div class="product-info">
+
+          <h3>Massage Therapy</h3>
+
+          <p>Wellness services</p>
+
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80"
+          alt="Digital products"
+        >
+
+        <div class="product-info">
+
+          <h3>Digital Products</h3>
+
+          <p>Books, guides & resources</p>
+
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80"
+          alt="Business services"
+        >
+
+        <div class="product-info">
+
+          <h3>Professional Services</h3>
+
+          <p>Skills & expertise</p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- REAL ESTATE -->
+
+  <section>
+
+    <div class="real-estate">
+
+      <div class="real-estate-content">
+
+        <small>Property</small>
+
+        <h2>Real Estate Opportunities</h2>
+
+        <p>
+          Explore properties, spaces and real estate opportunities
+          available through the FWORLD Marketplace.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FRANCHISING -->
+
+  <section class="franchise">
+
+    <h2>Franchising Opportunities</h2>
+
+    <p>
+      Explore businesses, concepts and partnership opportunities
+      available through FWORLD Marketplace.
+    </p>
+
+    <a href="#" class="button">
+      Explore Franchising
+    </a>
+
+  </section>
+
+
+  <!-- MEMBERSHIP -->
+
+  <section class="membership">
+
+    <h2>Membership</h2>
+
+    <p>
+      Discover memberships, communities, programs and exclusive
+      member benefits available within the FWORLD ecosystem.
+    </p>
+
+    <a href="#" class="button">
+      Explore Membership
+    </a>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <h2>Discover Your Place in FWORLD.</h2>
+
+    <p>
+      Discover. Connect. Shop. Grow.
+    </p>
+
+    <a href="index.html" class="button">
+      Back to Home
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div>
+      © 2026 FWORLD ONLINE
+    </div>
+
+    <div>
+      Business • Beauty • Digital • Travel
+    </div>
+
+  </footer>
+
+</body>
+  </html>
