@@ -1,1 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FWORLD JOURNAL | Diary • Blog • Content</title>
+
+  <meta name="description" content="FWORLD JOURNAL — Diary, Blog and Content from the Fworld ecosystem.">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f7f6f3;
+      color: #111;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      background: #111;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .back {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .back:hover {
+      opacity: 0.6;
+    }
+
+    /* JOURNAL HEADER */
+
+    .journal-header {
+      text-align: center;
+      padding: 75px 7% 55px;
+      background: white;
+      border-bottom: 1px solid #222;
+    }
+
+    .journal-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .journal-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(55px, 10vw, 110px);
+      line-height: 0.95;
+      letter-spacing: -5px;
+      margin-bottom: 20px;
+    }
+
+    .journal-tagline {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    /* CATEGORY BAR */
+
+    .category-bar {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      padding: 16px;
+      background: #f7f6f3;
+      border-bottom: 1px solid #ddd;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    /* FEATURE ARTICLE */
+
+    .feature {
+      max-width: 1200px;
+      margin: 70px auto;
+      padding: 0 7%;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .feature-image {
+      min-height: 430px;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .feature-image h2 {
+      font-size: 45px;
+      line-height: 1.05;
+      font-weight: normal;
+    }
+
+    .category {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 15px;
+    }
+
+    .feature h1 {
+      font-size: clamp(38px, 5vw, 65px);
+      line-height: 1.02;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .feature-excerpt {
+      color: #555;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .read-more {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      border-bottom: 1px solid #111;
+      padding-bottom: 5px;
+    }
+
+    /* AUTHOR */
+
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 30px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .author-photo,
+    .author-fallback {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-fallback {
+      background: #111;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .author-info {
+      font-size: 12px;
+    }
+
+    .author-name {
+      font-weight: 700;
+    }
+
+    .author-date {
+      color: #888;
+    }
+
+    /* JOURNAL COLUMNS */
+
+    .columns {
+      max-width: 1200px;
+      margin: 0 auto 80px;
+      padding: 0 7%;
+    }
+
+    .columns-title {
+      border-top: 3px solid #111;
+      border-bottom: 1px solid #111;
+      padding: 15px 0;
+      margin-bottom: 35px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .column-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+
+    .column-card {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 25px;
+    }
+
+    .column-card h3 {
+      font-size: 27px;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .column-card p {
+      color: #666;
+      font-size: 15px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 45px 7%;
+      text-align: center;
+    }
+
+    footer h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: #999;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+
+      .journal-title {
+        font-size: 65px;
+        letter-spacing: -3px;
+      }
+
+      .category-bar {
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-image {
+        min-height: 280px;
+      }
+
+      .column-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        margin: 50px auto;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <div class="logo">
+      FWORLD
+    </div>
+
+    <a href="index.html" class="back">
+      ← BACK TO FWORLD
+    </a>
+
+  </nav>
+
+
+  <!-- JOURNAL HEADER -->
+
+  <header class="journal-header">
+
+    <div class="journal-label">
+      FWORLD ONLINE
+    </div>
+
+    <h1 class="journal-title">
+      JOURNAL
+    </h1>
+
+    <div class="journal-tagline">
+      Diary • Blog • Content
+    </div>
+
+  </header>
+
+
+  <!-- CATEGORY BAR -->
+
+  <div class="category-bar">
+
+    <span>DIARY</span>
+    <span>BLOG</span>
+    <span>CONTENT</span>
+
+  </div>
+
+
+  <!-- FEATURE ARTICLE -->
+
+  <main>
+
+    <section class="feature">
+
+      <div class="feature-grid">
+
+        <div class="feature-image">
+
+          <h2>
+            I Wasn't a Tech Person —
+            Until I Started Learning AI.
+          </h2>
+
+        </div>
+
+
+        <div>
+
+          <div class="category">
+            FEATURED • DIARY
+          </div>
+
+          <h1>
+            I Wasn't a Tech Person —
+            Until I Started Learning AI.
+          </h1>
+
+          <p class="feature-excerpt">
+            Sometimes the things we think are not for us
+            become the very things that open a new door.
+          </p>
+
+          <a href="#" class="read-more">
+            READ STORY →
+          </a>
+
+
+          <div class="author">
+
+            <img
+              src="author-fatima.jpg"
+              alt="Fatima Biston"
+              class="author-photo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+
+            <div class="author-fallback" style="display:none;">
+              FB
+            </div>
+
+            <div class="author-info">
+
+              <div class="author-name">
+                Fatima Biston
+              </div>
+
+              <div class="author-date">
+                Founder • Fworld Online
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- JOURNAL COLUMNS -->
+
+    <section class="columns">
+
+      <div class="columns-title">
+        From the Journal
+      </div>
+
+
+      <div class="column-grid">
+
+
+        <article class="column-card">
+
+          <div class="category">
+            DIARY
+          </div>
+
+          <h3>
+            Stories from the Journey
+          </h3>
+
+          <p>
+            Personal experiences, realizations,
+            lessons, and moments that shaped the journey.
+          </p>
+
+        </article>
+
+
+        <article class="column-card">
+
+          <div class="category">
+            BLOG
+          </div>
+
+          <h3>
+            Ideas Worth Sharing
+          </h3>
+
+          <p>
+            Deeper articles about business, technology,
+            growth, creativity, and everyday life.
+          </p>
+
+        </article>
+
+
+        <article class="column-card">
+
+          <div class="category">
+            CONTENT
+          </div>
+
+          <h3>
+            Thoughts in Motion
+          </h3>
+
+          <p>
+            Short insights, quotes, tips, reflections,
+            and ideas created for the Fworld community.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h3>
+      FWORLD JOURNAL
+    </h3>
+
+    <p>
+      Stories • Ideas • Voice
+    </p>
+
+  </footer>
+
+
+</body>
+  </html>
