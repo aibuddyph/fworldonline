@@ -397,11 +397,41 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .nav-links a:not(.nav-button) {
+  .mobile-menu-button {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .nav-links {
     display: none;
+    position: absolute;
+    top: 72px;
+    right: 4%;
+    background: white;
+    width: 190px;
+    padding: 12px 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+    border-radius: 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 13px 20px;
+  }
+
+  .nav-button {
+    border-radius: 0;
   }
 }
-
 @media(max-width: 520px) {
 
   .container {
@@ -449,29 +479,31 @@ footer {
   <div class="container nav">
 
     <div class="logo">
-      FWORLD <span>PROJECTS</span>
-    </div>
+  FWORLD <span>PROJECTS</span>
+</div>
 
-    <nav class="nav-links">
+<div class="mobile-menu-button" onclick="toggleMenu()">☰</div>
 
-      <a href="index.html">
-        Home
-      </a>
+<nav class="nav-links" id="main-nav">
 
-      <a href="projects.html">
-        Projects
-      </a>
+  <a href="index.html#about" onclick="closeMenu()">
+    About
+  </a>
 
-      <a href="marketplace.html">
-        Marketplace
-      </a>
+  <a href="projects.html" onclick="closeMenu()">
+    Projects
+  </a>
 
-      <a href="#contact" class="nav-button">
-        Contact
-      </a>
+  <a href="marketplace.html" onclick="closeMenu()">
+    Marketplace
+  </a>
 
-    </nav>
+  <a href="#contact" class="nav-button" onclick="closeMenu()">
+    Contact
+  </a>
 
+</nav>
+    
   </div>
 
 </header>
@@ -950,6 +982,15 @@ footer {
 
 </footer>
 
+  <script>
+function toggleMenu() {
+  document.getElementById("main-nav").classList.toggle("active");
+}
+
+function closeMenu() {
+  document.getElementById("main-nav").classList.remove("active");
+}
+  </script>
 
 </body>
 </html>
