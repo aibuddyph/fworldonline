@@ -1,1 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EQUILIBRIUM | AmitafLee</title>
+
+  <meta name="description" content="EQUILIBRIUM: A Guide to Love, Wandering, and Becoming Whole by AmitafLee.">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f7f6f3;
+      color: #111;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAV */
+
+    nav {
+      background: #111;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .back {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .back:hover {
+      opacity: 0.6;
+    }
+
+    /* HERO */
+
+    .book-hero {
+      background: white;
+      padding: 90px 7%;
+      border-bottom: 1px solid #222;
+    }
+
+    .book-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    /* BOOK COVER */
+
+    .book-cover {
+      min-height: 520px;
+      background: #111;
+      color: white;
+      padding: 45px 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      box-shadow: 15px 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .book-cover-top {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+    }
+
+    .book-cover-title {
+      font-size: 54px;
+      line-height: 0.95;
+      letter-spacing: -2px;
+    }
+
+    .book-cover-subtitle {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    .book-cover-author {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    /* BOOK INTRO */
+
+    .category {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 15px;
+    }
+
+    .book-title {
+      font-size: clamp(55px, 8vw, 95px);
+      line-height: 0.9;
+      letter-spacing: -5px;
+      margin-bottom: 25px;
+    }
+
+    .subtitle {
+      font-size: 25px;
+      line-height: 1.3;
+      max-width: 650px;
+      margin-bottom: 25px;
+    }
+
+    .author {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #111;
+      color: white;
+      padding: 15px 28px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-right: 10px;
+    }
+
+    .button:hover {
+      background: #333;
+    }
+
+    .button.light {
+      background: white;
+      color: #111;
+      border: 1px solid #111;
+    }
+
+    /* STORY */
+
+    .story {
+      max-width: 900px;
+      margin: auto;
+      padding: 90px 7%;
+    }
+
+    .story-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: #777;
+    }
+
+    .story h2 {
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1;
+      margin-bottom: 30px;
+      letter-spacing: -2px;
+    }
+
+    .story p {
+      font-size: 19px;
+      color: #444;
+      margin-bottom: 22px;
+    }
+
+    /* BOOK THEMES */
+
+    .themes {
+      background: #111;
+      color: white;
+      padding: 85px 7%;
+    }
+
+    .themes-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .themes-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .themes h2 {
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1;
+      margin-bottom: 45px;
+    }
+
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .theme {
+      border-top: 1px solid #444;
+      padding-top: 20px;
+    }
+
+    .theme h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .theme p {
+      color: #aaa;
+      font-size: 15px;
+    }
+
+    /* AUTHOR */
+
+    .about-author {
+      background: white;
+      padding: 85px 7%;
+    }
+
+    .author-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .author-inner h2 {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    .author-inner p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 45px 7%;
+    }
+
+    footer h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+
+      .book-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .book-cover {
+        max-width: 330px;
+        margin: auto;
+        min-height: 470px;
+      }
+
+      .book-title {
+        font-size: 65px;
+      }
+
+      .theme-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        margin-bottom: 10px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <div class="logo">
+      FWORLD
+    </div>
+
+    <a href="journal.html" class="back">
+      ← BACK TO JOURNAL
+    </a>
+
+  </nav>
+
+
+  <!-- BOOK HERO -->
+
+  <section class="book-hero">
+
+    <div class="book-grid">
+
+
+      <!-- TEMPORARY BOOK COVER -->
+
+      <div class="book-cover">
+
+        <div class="book-cover-top">
+          A BOOK BY AMITAFLEE
+        </div>
+
+        <div>
+
+          <div class="book-cover-title">
+            EQUILIBRIUM
+          </div>
+
+          <br>
+
+          <div class="book-cover-subtitle">
+            A Guide to Love,<br>
+            Wandering, and<br>
+            Becoming Whole.
+          </div>
+
+        </div>
+
+        <div class="book-cover-author">
+          AMITAFLEE
+        </div>
+
+      </div>
+
+
+      <!-- BOOK INFORMATION -->
+
+      <div>
+
+        <div class="category">
+          FWORLD DIGITAL BOOK
+        </div>
+
+        <h1 class="book-title">
+          EQUILIBRIUM
+        </h1>
+
+        <p class="subtitle">
+          A Guide to Love, Wandering, and Becoming Whole.
+        </p>
+
+        <p class="author">
+          Written by <strong>AmitafLee</strong>
+        </p>
+
+        <a href="#" class="button">
+          GET THE BOOK →
+        </a>
+
+        <a href="journal.html" class="button light">
+          BACK TO JOURNAL
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- STORY -->
+
+  <section class="story">
+
+    <div class="story-label">
+      Behind the Book
+    </div>
+
+    <h2>
+      Some stories are written
+      because we need to understand
+      what we have lived.
+    </h2>
+
+    <p>
+      EQUILIBRIUM is a reflection on love, wandering,
+      self-discovery, detachment, healing, and the journey
+      toward becoming whole.
+    </p>
+
+    <p>
+      It is about the spaces between holding on and letting go,
+      between loving someone and remembering how to love yourself.
+    </p>
+
+    <p>
+      This book was created from experiences, thoughts,
+      questions, and lessons that slowly became words.
+    </p>
+
+  </section>
+
+
+  <!-- THEMES -->
+
+  <section class="themes">
+
+    <div class="themes-inner">
+
+      <div class="themes-label">
+        INSIDE THE BOOK
+      </div>
+
+      <h2>
+        What you'll find
+        between the pages.
+      </h2>
+
+      <div class="theme-grid">
+
+
+        <div class="theme">
+
+          <h3>
+            Love
+          </h3>
+
+          <p>
+            Understanding love without losing yourself
+            in the process.
+          </p>
+
+        </div>
+
+
+        <div class="theme">
+
+          <h3>
+            Wandering
+          </h3>
+
+          <p>
+            The uncertainty, questions, and discoveries
+            that happen along the way.
+          </p>
+
+        </div>
+
+
+        <div class="theme">
+
+          <h3>
+            Becoming Whole
+          </h3>
+
+          <p>
+            Finding yourself again and creating a life
+            rooted in self-worth.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT AUTHOR -->
+
+  <section class="about-author">
+
+    <div class="author-inner">
+
+      <div class="story-label">
+        ABOUT THE AUTHOR
+      </div>
+
+      <h2>
+        AmitafLee
+      </h2>
+
+      <p>
+        A writer, entrepreneur, and storyteller who believes
+        that sometimes the things we experience become the
+        stories we need to write.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h3>
+      FWORLD DIGITAL BOOKS
+    </h3>
+
+    <p>
+      Stories • Ideas • Books
+    </p>
+
+  </footer>
+
+
+</body>
+  </html>
