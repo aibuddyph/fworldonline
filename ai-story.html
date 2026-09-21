@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>I Wasn't a Tech Person — Until I Started Learning AI | FWORLD JOURNAL</title>
+
+  <meta name="description" content="I wasn't a tech person until I started learning AI. A personal story by Fatima Biston about learning, technology, courage, and discovering new possibilities.">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f7f6f3;
+      color: #111;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      background: #111;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .back {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .back:hover {
+      opacity: 0.6;
+    }
+
+    /* ARTICLE HEADER */
+
+    .article-header {
+      background: white;
+      text-align: center;
+      padding: 85px 7% 70px;
+      border-bottom: 1px solid #222;
+    }
+
+    .category {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .article-header h1 {
+      max-width: 950px;
+      margin: auto;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      font-weight: 500;
+    }
+
+    .article-subtitle {
+      max-width: 700px;
+      margin: 25px auto 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    /* AUTHOR */
+
+    .author {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    .author-photo,
+    .author-fallback {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-fallback {
+      background: #111;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .author-info {
+      text-align: left;
+    }
+
+    .author-name {
+      font-weight: bold;
+    }
+
+    .author-date {
+      color: #888;
+      margin-top: 2px;
+    }
+
+    /* FEATURE IMAGE */
+
+    .article-image {
+      max-width: 1050px;
+      margin: 65px auto 0;
+      min-height: 430px;
+      background: #111;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .article-image h2 {
+      max-width: 700px;
+      font-size: clamp(35px, 6vw, 60px);
+      line-height: 1.05;
+      font-weight: normal;
+    }
+
+    /* ARTICLE */
+
+    .article {
+      max-width: 760px;
+      margin: auto;
+      padding: 80px 7%;
+    }
+
+    .article p {
+      font-size: 19px;
+      margin-bottom: 28px;
+      color: #333;
+    }
+
+    .article .opening {
+      font-size: 26px;
+      line-height: 1.5;
+      color: #111;
+      margin-bottom: 35px;
+    }
+
+    .article h2 {
+      font-size: 38px;
+      line-height: 1.1;
+      margin: 55px 0 25px;
+      letter-spacing: -1px;
+    }
+
+    .article blockquote {
+      border-left: 3px solid #111;
+      padding-left: 25px;
+      margin: 45px 0;
+      font-size: 25px;
+      line-height: 1.5;
+      color: #222;
+    }
+
+    /* FWORLD INVITATION */
+
+    .invitation {
+      background: #111;
+      color: white;
+      padding: 65px 7%;
+      margin-top: 30px;
+    }
+
+    .invitation-inner {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .invitation-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: #aaa;
+      margin-bottom: 18px;
+    }
+
+    .invitation h2 {
+      font-size: 42px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .invitation p {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+
+    .journal-button {
+      display: inline-block;
+      border: 1px solid white;
+      padding: 13px 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .journal-button:hover {
+      background: white;
+      color: #111;
+    }
+
+    /* SHARE */
+
+    .share {
+      max-width: 760px;
+      margin: auto;
+      padding: 50px 7%;
+      text-align: center;
+    }
+
+    .share p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 45px 7%;
+    }
+
+    footer h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+
+      .article-header {
+        padding: 60px 7% 50px;
+      }
+
+      .article-header h1 {
+        font-size: 45px;
+        letter-spacing: -2px;
+      }
+
+      .article-image {
+        min-height: 300px;
+        margin-top: 40px;
+      }
+
+      .article {
+        padding-top: 55px;
+      }
+
+      .article p {
+        font-size: 18px;
+      }
+
+      .article .opening {
+        font-size: 23px;
+      }
+
+      .article h2 {
+        font-size: 32px;
+      }
+
+      .invitation h2 {
+        font-size: 34px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <div class="logo">
+      FWORLD
+    </div>
+
+    <a href="journal.html" class="back">
+      ← BACK TO JOURNAL
+    </a>
+
+  </nav>
+
+
+  <!-- ARTICLE HEADER -->
+
+  <header class="article-header">
+
+    <div class="category">
+      FEATURED • DIARY
+    </div>
+
+    <h1>
+      I Wasn't a Tech Person —
+      Until I Started Learning AI.
+    </h1>
+
+    <p class="article-subtitle">
+      Sometimes the things we think are not for us
+      become the very things that open a new door.
+    </p>
+
+
+    <div class="author">
+
+      <img
+        src="author-fatima.jpg"
+        alt="Fatima Biston"
+        class="author-photo"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      >
+
+      <div class="author-fallback" style="display:none;">
+        FB
+      </div>
+
+      <div class="author-info">
+
+        <div class="author-name">
+          Fatima Biston
+        </div>
+
+        <div class="author-date">
+          Founder • Fworld Online
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- FEATURE IMAGE -->
+
+  <section class="article-image">
+
+    <h2>
+      I wasn't a tech person.
+      I was simply curious enough to begin.
+    </h2>
+
+  </section>
+
+
+  <!-- ARTICLE CONTENT -->
+
+  <main class="article">
+
+    <p class="opening">
+      For the longest time, I never thought of myself
+      as a technology person.
+    </p>
+
+
+    <p>
+      I knew business.
+      I knew people.
+      I knew how to sell, communicate, lead,
+      build relationships, and create opportunities.
+    </p>
+
+
+    <p>
+      But technology felt different.
+      It felt like a world created for people
+      who already knew what they were doing.
+    </p>
+
+
+    <p>
+      And honestly, I thought maybe it wasn't for me.
+    </p>
+
+
+    <h2>
+      Then AI changed the way I looked at technology.
+    </h2>
+
+
+    <p>
+      I started learning AI not because I considered myself
+      a technology expert, but because I wanted to understand
+      what was happening around me.
+    </p>
+
+
+    <p>
+      I became curious.
+    </p>
+
+
+    <p>
+      What can AI actually do?
+      How can I use it in business?
+      How can it help women?
+      How can it help someone who is not technical?
+    </p>
+
+
+    <blockquote>
+      Sometimes we don't need to know everything
+      before we begin. We only need to be willing to learn.
+    </blockquote>
+
+
+    <p>
+      The more I learned, the more I realized that technology
+      does not always have to feel complicated.
+    </p>
+
+
+    <p>
+      Sometimes it simply needs to be explained in a way
+      that makes sense to us.
+    </p>
+
+
+    <h2>
+      I started building instead of just watching.
+    </h2>
+
+
+    <p>
+      One idea became another.
+      A website became a project.
+      A project became a possibility.
+    </p>
+
+
+    <p>
+      I began exploring how digital tools could connect
+      business, beauty, travel, education, creativity,
+      and women empowerment in one ecosystem.
+    </p>
+
+
+    <p>
+      That journey became part of what I now call
+      <strong>FWORLD ONLINE.</strong>
+    </p>
+
+
+    <h2>
+      And I realized something important.
+    </h2>
+
+
+    <p>
+      Learning technology is not about becoming someone else.
+    </p>
+
+
+    <p>
+      It is about taking what you already know
+      and discovering new ways to use it.
+    </p>
+
+
+    <p>
+      You don't have to be a tech person to start learning AI.
+    </p>
+
+
+    <p>
+      You don't have to understand everything on day one.
+    </p>
+
+
+    <p>
+      You just have to start.
+    </p>
+
+
+  </main>
+
+
+  <!-- FWORLD INVITATION -->
+
+  <section class="invitation">
+
+    <div class="invitation-inner">
+
+      <div class="invitation-label">
+        A NOTE FROM FWORLD
+      </div>
+
+      <h2>
+        Maybe this is your time to begin too.
+      </h2>
+
+      <p>
+        FWORLD ONLINE is a growing digital ecosystem
+        where business, beauty, technology, ideas,
+        and purpose come together.
+      </p>
+
+      <p>
+        This is only the beginning.
+      </p>
+
+      <a href="index.html" class="journal-button">
+        EXPLORE FWORLD →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- SHARE -->
+
+  <section class="share">
+
+    <p>
+      Share this story • FWORLD JOURNAL
+    </p>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h3>
+      FWORLD JOURNAL
+    </h3>
+
+    <p>
+      Stories • Ideas • Voice
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
