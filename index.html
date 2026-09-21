@@ -41,7 +41,13 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.96);
+      background: 
+        linear-gradient(
+          rgba(0, 0, 0, 0.15),
+          rgba(0, 0, 0, 0.25)
+  ),
+  url("https://raw.githubusercontent.com/aibuddyph/fworldonline/main/IMG-20260921-WA0001.jpg")
+  center center / cover no-repeat;
       border-bottom: 1px solid #e5e5e5;
       padding: 18px 7%;
       display: flex;
@@ -109,13 +115,19 @@
 
     .hero h1 span {
       font-weight: 300;
-    }
 
-    .hero p {
-      max-width: 650px;
-      font-size: 19px;
-      color: #d5d5d5;
-      margin-bottom: 38px;
+      .hero p {
+        font-size: clamp(28px, 4.5vw, 58px);
+        line-height: 1.1;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin: 25px 0 35px;
+        color: #ffffff;
+      }
+
+       .hero p .orange {
+        color: #f28c28;
+      }
     }
 
     .button {
@@ -489,7 +501,7 @@
     </h1>
 
     <p>
-      Business • Beauty • Purpose
+      <span class="orange">Business</span> • Beauty • Purpose
     </p>
 
     <a href="#projects" class="button">
