@@ -1,1 +1,673 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Create Your e-Store | Tatak Pinoy</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#fffaf6;
+  color:#252525;
+  line-height:1.6;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+  background:#ffffff;
+
+  border-bottom:1px solid #eeeeee;
+
+  padding:16px 7%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:19px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#e87532;
+}
+
+.back-link{
+  color:#252525;
+
+  text-decoration:none;
+
+  font-size:13px;
+}
+
+.back-link:hover{
+  color:#e87532;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  text-align:center;
+
+  padding:65px 20px 45px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffaf6,
+      #f8eee7,
+      #ffffff
+    );
+}
+
+.hero small{
+  color:#e87532;
+
+  font-size:12px;
+  font-weight:bold;
+
+  letter-spacing:1.5px;
+
+  text-transform:uppercase;
+}
+
+.hero h1{
+  font-size:clamp(38px,6vw,58px);
+
+  line-height:1.05;
+
+  margin:12px 0 15px;
+
+  letter-spacing:-1.5px;
+}
+
+.hero h1 span{
+  color:#e87532;
+}
+
+.hero p{
+  max-width:650px;
+
+  margin:auto;
+
+  color:#666;
+
+  font-size:15px;
+}
+
+
+/* =========================
+   FORM CONTAINER
+========================= */
+
+.form-section{
+  max-width:850px;
+
+  margin:auto;
+
+  padding:55px 20px 80px;
+}
+
+.form-card{
+  background:#ffffff;
+
+  border:1px solid #eeeeee;
+
+  border-radius:22px;
+
+  padding:35px;
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.05);
+}
+
+.form-title{
+  margin-bottom:30px;
+}
+
+.form-title h2{
+  font-size:24px;
+
+  margin-bottom:5px;
+}
+
+.form-title p{
+  color:#777;
+
+  font-size:13px;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group{
+  margin-bottom:22px;
+}
+
+.form-group label{
+  display:block;
+
+  font-weight:bold;
+
+  font-size:13px;
+
+  margin-bottom:7px;
+}
+
+.form-group span{
+  color:#e87532;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+  width:100%;
+
+  padding:13px 14px;
+
+  border:1px solid #dddddd;
+
+  border-radius:10px;
+
+  outline:none;
+
+  font-family:inherit;
+
+  font-size:14px;
+
+  background:#ffffff;
+}
+
+.form-group textarea{
+  min-height:120px;
+
+  resize:vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+  border-color:#e87532;
+}
+
+
+/* =========================
+   TWO COLUMNS
+========================= */
+
+.form-row{
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:18px;
+}
+
+
+/* =========================
+   STORE PREVIEW
+========================= */
+
+.preview-box{
+  margin-top:30px;
+
+  padding:25px;
+
+  border-radius:16px;
+
+  background:#fffaf6;
+
+  border:1px solid #eeeeee;
+}
+
+.preview-box h3{
+  margin-bottom:8px;
+
+  font-size:17px;
+}
+
+.preview-box p{
+  color:#777;
+
+  font-size:13px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.create-btn{
+  width:100%;
+
+  border:none;
+
+  padding:14px 20px;
+
+  margin-top:10px;
+
+  background:#252525;
+
+  color:#ffffff;
+
+  border-radius:30px;
+
+  font-size:14px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.create-btn:hover{
+  background:#e87532;
+}
+
+
+/* =========================
+   NOTE
+========================= */
+
+.form-note{
+  text-align:center;
+
+  margin-top:15px;
+
+  color:#888;
+
+  font-size:11px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#ffffff;
+
+  border-top:1px solid #eeeeee;
+
+  text-align:center;
+
+  padding:30px 20px;
+
+  color:#777;
+
+  font-size:12px;
+}
+
+footer strong{
+  color:#252525;
+}
+
+.footer-links{
+  margin:10px 0;
+}
+
+.footer-links a{
+  color:#555;
+
+  text-decoration:none;
+
+  margin:0 7px;
+}
+
+.footer-links a:hover{
+  color:#e87532;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  nav{
+    padding:15px 20px;
+  }
+
+  .hero{
+    padding:55px 20px 40px;
+  }
+
+  .hero h1{
+    font-size:43px;
+  }
+
+  .form-section{
+    padding:40px 15px 60px;
+  }
+
+  .form-card{
+    padding:25px 20px;
+
+    border-radius:18px;
+  }
+
+  .form-row{
+    grid-template-columns:1fr;
+
+    gap:0;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+  <div class="logo">
+    🇵🇭 TATAK <span>PINOY</span>
+  </div>
+
+  <a
+    href="tatak-pinoy.html"
+    class="back-link"
+  >
+    ← Back to Tatak Pinoy
+  </a>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <small>
+    TATAK PINOY · COMMUNITY SELLER
+  </small>
+
+  <h1>
+    Create Your<br>
+    <span>e-Store</span>
+  </h1>
+
+  <p>
+    Your products. Your ideas. Your business.
+    Create your own space inside the
+    Tatak Pinoy community.
+  </p>
+
+</section>
+
+
+<!-- =========================
+     FORM
+========================= -->
+
+<section class="form-section">
+
+  <div class="form-card">
+
+    <div class="form-title">
+
+      <h2>
+        Let's Create Your Store
+      </h2>
+
+      <p>
+        Start by telling us a little about
+        your store and what you want to share.
+      </p>
+
+    </div>
+
+
+    <form>
+
+
+      <!-- STORE NAME -->
+
+      <div class="form-group">
+
+        <label>
+          Store Name <span>*</span>
+        </label>
+
+        <input
+          type="text"
+          placeholder="Example: Bai's Beauty Shop"
+          required
+        >
+
+      </div>
+
+
+      <!-- OWNER -->
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label>
+            Your Name <span>*</span>
+          </label>
+
+          <input
+            type="text"
+            placeholder="Your full name"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Store Category <span>*</span>
+          </label>
+
+          <select required>
+
+            <option value="">
+              Select category
+            </option>
+
+            <option>
+              Digital Products
+            </option>
+
+            <option>
+              Beauty & Personal Care
+            </option>
+
+            <option>
+              Filipino Products
+            </option>
+
+            <option>
+              Food & Lifestyle
+            </option>
+
+            <option>
+              Services
+            </option>
+
+            <option>
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <!-- DESCRIPTION -->
+
+      <div class="form-group">
+
+        <label>
+          About Your Store <span>*</span>
+        </label>
+
+        <textarea
+          placeholder="Tell the community about your products, services, or business..."
+          required
+        ></textarea>
+
+      </div>
+
+
+      <!-- EMAIL -->
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label>
+            Email Address <span>*</span>
+          </label>
+
+          <input
+            type="email"
+            placeholder="you@example.com"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Contact / Social Link
+          </label>
+
+          <input
+            type="text"
+            placeholder="Facebook, Instagram, website..."
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- STORE PREVIEW -->
+
+      <div class="preview-box">
+
+        <h3>
+          🏪 Your Community Store
+        </h3>
+
+        <p>
+          After your store is created, you will
+          be able to showcase your products,
+          services, story, and business to the
+          Tatak Pinoy community.
+        </p>
+
+      </div>
+
+
+      <!-- BUTTON -->
+
+      <button
+        type="submit"
+        class="create-btn"
+      >
+        Create My e-Store
+      </button>
+
+
+      <p class="form-note">
+        Your store information will be reviewed
+        before being published in the community.
+      </p>
+
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <p>
+    <strong>
+      Tatak Pinoy · Ato ni Bai!
+    </strong>
+  </p>
+
+  <div class="footer-links">
+
+    <a href="tatak-pinoy.html">
+      Tatak Pinoy
+    </a>
+
+    <a href="marketplace.html">
+      Marketplace
+    </a>
+
+    <a href="index.html">
+      FWORLD
+    </a>
+
+  </div>
+
+  <p>
+    Part of the FWORLD Ecosystem
+  </p>
+
+  <p>
+    © 2026 FWORLD
+  </p>
+
+</footer>
+
+
+</body>
+
+</html>
