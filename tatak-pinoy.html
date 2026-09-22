@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tatak Pinoy | Ato ni Bai! | FWORLD</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#fffaf6;
+  color:#252525;
+  line-height:1.6;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:#ffffff;
+  border-bottom:1px solid #eeeeee;
+
+  padding:16px 7%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:19px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#e87532;
+}
+
+.nav-links{
+  list-style:none;
+
+  display:flex;
+  gap:24px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#252525;
+
+  font-size:13px;
+}
+
+.nav-links a:hover{
+  color:#e87532;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  text-align:center;
+
+  padding:75px 20px 70px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffaf6,
+      #f8eee7,
+      #ffffff
+    );
+}
+
+.hero small{
+  color:#e87532;
+
+  font-size:12px;
+  font-weight:bold;
+
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  font-size:clamp(42px,7vw,72px);
+
+  line-height:1.03;
+
+  margin:12px 0 18px;
+
+  letter-spacing:-2px;
+}
+
+.hero h1 span{
+  color:#e87532;
+}
+
+.hero p{
+  max-width:680px;
+
+  margin:0 auto;
+
+  color:#666;
+
+  font-size:16px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-area{
+  max-width:850px;
+
+  margin:-25px auto 0;
+
+  padding:0 20px;
+
+  position:relative;
+  z-index:10;
+}
+
+.search-box{
+  background:#ffffff;
+
+  border:1px solid #e7e7e7;
+
+  border-radius:40px;
+
+  padding:7px;
+
+  display:flex;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.07);
+}
+
+.search-box input{
+  flex:1;
+
+  border:none;
+  outline:none;
+
+  padding:13px 18px;
+
+  font-size:14px;
+
+  background:transparent;
+}
+
+.search-box button{
+  border:none;
+
+  background:#252525;
+  color:#ffffff;
+
+  padding:12px 22px;
+
+  border-radius:30px;
+
+  cursor:pointer;
+
+  font-size:13px;
+}
+
+.search-box button:hover{
+  background:#e87532;
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+.section{
+  max-width:1150px;
+
+  margin:auto;
+
+  padding:70px 20px;
+}
+
+.section-title{
+  text-align:center;
+
+  margin-bottom:35px;
+}
+
+.section-title h2{
+  font-size:30px;
+
+  margin-bottom:7px;
+}
+
+.section-title p{
+  color:#777;
+
+  font-size:14px;
+}
+
+
+/* =========================
+   CATEGORY CARDS
+========================= */
+
+.categories{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:18px;
+}
+
+.category{
+  background:#ffffff;
+
+  border:1px solid #eeeeee;
+
+  border-radius:18px;
+
+  padding:25px 18px;
+
+  text-align:center;
+
+  transition:0.3s;
+}
+
+.category:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.06);
+}
+
+.category-icon{
+  font-size:32px;
+
+  margin-bottom:10px;
+}
+
+.category h3{
+  font-size:16px;
+
+  margin-bottom:6px;
+}
+
+.category p{
+  color:#777;
+
+  font-size:12px;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:22px;
+}
+
+.product-card{
+  background:#ffffff;
+
+  border:1px solid #eeeeee;
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  transition:0.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.07);
+}
+
+.product-image{
+  height:220px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4e7dc,
+      #fafafa
+    );
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  color:#999;
+
+  font-size:12px;
+
+  letter-spacing:1px;
+}
+
+.product-info{
+  padding:22px;
+}
+
+.product-info h3{
+  font-size:18px;
+
+  margin-bottom:7px;
+}
+
+.product-info p{
+  color:#777;
+
+  font-size:13px;
+
+  margin-bottom:14px;
+}
+
+.price{
+  font-weight:bold;
+
+  color:#e87532;
+
+  margin-bottom:14px;
+}
+
+.shop-btn{
+  display:inline-block;
+
+  text-decoration:none;
+
+  background:#252525;
+  color:#ffffff;
+
+  padding:9px 17px;
+
+  border-radius:25px;
+
+  font-size:12px;
+}
+
+.shop-btn:hover{
+  background:#e87532;
+}
+
+
+/* =========================
+   COMMUNITY E-STORES
+========================= */
+
+.stores{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:22px;
+}
+
+.store-card{
+  background:#ffffff;
+
+  border:1px solid #eeeeee;
+
+  border-radius:18px;
+
+  padding:25px;
+
+  text-align:center;
+
+  transition:0.3s;
+}
+
+.store-card:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.07);
+}
+
+.store-logo{
+  width:75px;
+  height:75px;
+
+  margin:0 auto 15px;
+
+  border-radius:50%;
+
+  background:#f3e5da;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  font-size:28px;
+}
+
+.store-card h3{
+  margin-bottom:5px;
+}
+
+.store-card small{
+  color:#e87532;
+
+  font-size:12px;
+}
+
+.store-card p{
+  color:#777;
+
+  font-size:13px;
+
+  margin:10px 0 17px;
+}
+
+.store-btn{
+  display:inline-block;
+
+  text-decoration:none;
+
+  border:1px solid #252525;
+
+  color:#252525;
+
+  padding:8px 17px;
+
+  border-radius:25px;
+
+  font-size:12px;
+}
+
+.store-btn:hover{
+  background:#252525;
+
+  color:#ffffff;
+}
+
+
+/* =========================
+   SELLER CTA
+========================= */
+
+.seller{
+  margin-top:20px;
+
+  background:#252525;
+
+  color:#ffffff;
+
+  text-align:center;
+
+  padding:75px 20px;
+}
+
+.seller h2{
+  font-size:34px;
+
+  margin-bottom:12px;
+}
+
+.seller p{
+  max-width:650px;
+
+  margin:0 auto 25px;
+
+  color:#dddddd;
+
+  font-size:15px;
+}
+
+.seller-btn{
+  display:inline-block;
+
+  background:#e87532;
+
+  color:#ffffff;
+
+  text-decoration:none;
+
+  padding:12px 24px;
+
+  border-radius:30px;
+
+  font-size:13px;
+}
+
+.seller-btn:hover{
+  background:#ffffff;
+
+  color:#252525;
+}
+
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials{
+  background:#ffffff;
+
+  border-top:1px solid #eeeeee;
+
+  border-bottom:1px solid #eeeeee;
+}
+
+.testimonial-grid{
+  max-width:900px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:22px;
+}
+
+.testimonial-card{
+  background:#fffaf6;
+
+  border:1px solid #eeeeee;
+
+  border-radius:18px;
+
+  padding:28px;
+
+  text-align:center;
+}
+
+.quote{
+  font-size:30px;
+
+  margin-bottom:10px;
+}
+
+.testimonial-card p{
+  color:#555;
+
+  font-size:14px;
+
+  margin-bottom:15px;
+}
+
+.testimonial-card strong{
+  font-size:13px;
+
+  color:#252525;
+}
+
+
+/* =========================
+   COMMUNITY STORIES / BLOG
+========================= */
+
+.stories{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:22px;
+}
+
+.story-card{
+  background:#ffffff;
+
+  border:1px solid #eeeeee;
+
+  border-radius:18px;
+
+  padding:25px;
+
+  transition:0.3s;
+}
+
+.story-card:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.06);
+}
+
+.story-tag{
+  color:#e87532;
+
+  font-size:11px;
+
+  font-weight:bold;
+
+  text-transform:uppercase;
+
+  letter-spacing:1px;
+}
+
+.story-card h3{
+  margin:10px 0;
+
+  font-size:18px;
+}
+
+.story-card p{
+  color:#777;
+
+  font-size:13px;
+
+  margin-bottom:17px;
+}
+
+.read-btn{
+  text-decoration:none;
+
+  color:#252525;
+
+  font-size:12px;
+
+  font-weight:bold;
+}
+
+.read-btn:hover{
+  color:#e87532;
+}
+
+
+/* =========================
+   COMMUNITY MESSAGE
+========================= */
+
+.community-message{
+  text-align:center;
+
+  padding:65px 20px;
+}
+
+.community-message h2{
+  font-size:30px;
+
+  margin-bottom:12px;
+}
+
+.community-message p{
+  max-width:700px;
+
+  margin:auto;
+
+  color:#666;
+
+  font-size:15px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#ffffff;
+
+  border-top:1px solid #eeeeee;
+
+  text-align:center;
+
+  padding:35px 20px;
+
+  color:#777;
+
+  font-size:12px;
+}
+
+footer strong{
+  color:#252525;
+}
+
+.footer-links{
+  margin:12px 0;
+}
+
+.footer-links a{
+  color:#555;
+
+  text-decoration:none;
+
+  margin:0 8px;
+}
+
+.footer-links a:hover{
+  color:#e87532;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  nav{
+    padding:15px 20px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    padding:65px 20px 60px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .search-area{
+    padding:0 15px;
+  }
+
+  .search-box{
+    border-radius:20px;
+
+    flex-direction:column;
+
+    padding:8px;
+  }
+
+  .search-box input{
+    width:100%;
+  }
+
+  .search-box button{
+    width:100%;
+  }
+
+  .section{
+    padding:60px 20px;
+  }
+
+  .section-title h2{
+    font-size:27px;
+  }
+
+  .categories,
+  .products,
+  .stores,
+  .stories,
+  .testimonial-grid{
+    grid-template-columns:1fr;
+  }
+
+  .product-image{
+    height:200px;
+  }
+
+  .seller{
+    padding:60px 20px;
+  }
+
+  .seller h2{
+    font-size:28px;
+  }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media(max-width:400px){
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .logo{
+    font-size:16px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+  <div class="logo">
+    🇵🇭 TATAK <span>PINOY</span>
+  </div>
+
+  <ul class="nav-links">
+
+    <li>
+      <a href="index.html">
+        FWORLD
+      </a>
+    </li>
+
+    <li>
+      <a href="marketplace.html">
+        Marketplace
+      </a>
+    </li>
+
+    <li>
+      <a href="#products">
+        Products
+      </a>
+    </li>
+
+    <li>
+      <a href="#stores">
+        e-Stores
+      </a>
+    </li>
+
+    <li>
+      <a href="#stories">
+        Stories
+      </a>
+    </li>
+
+  </ul>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <small>
+    FWORLD COMMUNITY MARKETPLACE
+  </small>
+
+  <h1>
+    Tatak Pinoy<br>
+    <span>Ato ni Bai!</span>
+  </h1>
+
+  <p>
+    Discover Filipino products, businesses,
+    creators, and community-owned e-Stores
+    all in one place.
+  </p>
+
+</section>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<div class="search-area">
+
+  <div class="search-box">
+
+    <input
+      type="text"
+      placeholder="Search products, stores, services..."
+    >
+
+    <button>
+      Search
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section class="section" id="categories">
+
+  <div class="section-title">
+
+    <h2>
+      Explore Categories
+    </h2>
+
+    <p>
+      Find something from our growing
+      Filipino community.
+    </p>
+
+  </div>
+
+
+  <div class="categories">
+
+
+    <div class="category">
+
+      <div class="category-icon">
+        📚
+      </div>
+
+      <h3>
+        Digital Products
+      </h3>
+
+      <p>
+        Ebooks, guides, workbooks,
+        templates and resources.
+      </p>
+
+    </div>
+
+
+    <div class="category">
+
+      <div class="category-icon">
+        ✨
+      </div>
+
+      <h3>
+        Beauty
+      </h3>
+
+      <p>
+        Beauty and personal care
+        products from our community.
+      </p>
+
+    </div>
+
+
+    <div class="category">
+
+      <div class="category-icon">
+        🛍️
+      </div>
+
+      <h3>
+        Filipino Products
+      </h3>
+
+      <p>
+        Products and creations
+        proudly shared by Filipinos.
+      </p>
+
+    </div>
+
+
+    <div class="category">
+
+      <div class="category-icon">
+        💼
+      </div>
+
+      <h3>
+        Services
+      </h3>
+
+      <p>
+        Businesses, professionals
+        and community services.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURED PRODUCTS
+========================= -->
+
+<section class="section" id="products">
+
+  <div class="section-title">
+
+    <h2>
+      Featured Products
+    </h2>
+
+    <p>
+      Discover something created
+      by our community.
+    </p>
+
+  </div>
+
+
+  <div class="products">
+
+
+    <div class="product-card">
+
+      <div class="product-image">
+        PRODUCT IMAGE
+      </div>
+
+      <div class="product-info">
+
+        <h3>
+          Digital Guide
+        </h3>
+
+        <p>
+          Practical resources designed
+          to help you learn and grow.
+        </p>
+
+        <div class="price">
+          $4.99
+        </div>
+
+        <a href="#" class="shop-btn">
+          View Product
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="product-card">
+
+      <div class="product-image">
+        PRODUCT IMAGE
+      </div>
+
+      <div class="product-info">
+
+        <h3>
+          Beauty Collection
+        </h3>
+
+        <p>
+          Beauty and personal care
+          products from our community.
+        </p>
+
+        <div class="price">
+          Shop Collection
+        </div>
+
+        <a href="#" class="shop-btn">
+          View Products
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="product-card">
+
+      <div class="product-image">
+        PRODUCT IMAGE
+      </div>
+
+      <div class="product-info">
+
+        <h3>
+          Filipino Creation
+        </h3>
+
+        <p>
+          Discover products made,
+          designed, or shared by Filipinos.
+        </p>
+
+        <div class="price">
+          Discover
+        </div>
+
+        <a href="#" class="shop-btn">
+          Explore
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     COMMUNITY E-STORES
+========================= -->
+
+<section class="section" id="stores">
+
+  <div class="section-title">
+
+    <h2>
+      Community e-Stores
+    </h2>
+
+    <p>
+      Meet the people behind the products.
+    </p>
+
+  </div>
+
+
+  <div class="stores">
+
+
+    <div class="store-card">
+
+      <div class="store-logo">
+        🛍️
+      </div>
+
+      <h3>
+        Your Store Here
+      </h3>
+
+      <small>
+        COMMUNITY SELLER
+      </small>
+
+      <p>
+        This space is ready for
+        a TYMA community store.
+      </p>
+
+      <a href="#seller" class="store-btn">
+        Create a Store
+      </a>
+
+    </div>
+
+
+    <div class="store-card">
+
+      <div class="store-logo">
+        ✨
+      </div>
+
+      <h3>
+        Your Brand Here
+      </h3>
+
+      <small>
+        WOMEN-OWNED
+      </small>
+
+      <p>
+        Showcase your products
+        and business to the community.
+      </p>
+
+      <a href="#seller" class="store-btn">
+        Become a Seller
+      </a>
+
+    </div>
+
+
+    <div class="store-card">
+
+      <div class="store-logo">
+        🇵🇭
+      </div>
+
+      <h3>
+        Community Store
+      </h3>
+
+      <small>
+        TATAK PINOY
+      </small>
+
+      <p>
+        More community-owned
+        stores coming soon.
+      </p>
+
+      <a href="#seller" class="store-btn">
+        Open Your Store
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SELLER CTA
+========================= -->
+
+<section class="seller" id="seller">
+
+  <h2>
+    Have Something to Share?
+  </h2>
+
+  <p>
+    Create your own community e-Store
+    and share your products, services,
+    skills, ideas, or business with
+    the Tatak Pinoy community.
+  </p>
+
+  <a href="community-store.html" class="seller-btn">
+    Create Your e-Store
+  </a>
+
+</section>
+
+
+<!-- =========================
+     TESTIMONIALS
+========================= -->
+
+<section class="section testimonials">
+
+  <div class="section-title">
+
+    <h2>
+      ❤️ Community Experiences
+    </h2>
+
+    <p>
+      Real stories from people building,
+      sharing, and growing together.
+    </p>
+
+  </div>
+
+
+  <div class="testimonial-grid">
+
+
+    <div class="testimonial-card">
+
+      <div class="quote">
+        “
+      </div>
+
+      <p>
+        Your community experience
+        could inspire another person
+        to take their first step.
+      </p>
+
+      <strong>
+        Community Member
+      </strong>
+
+    </div>
+
+
+    <div class="testimonial-card">
+
+      <div class="quote">
+        “
+      </div>
+
+      <p>
+        Your seller journey could
+        encourage someone else
+        to start their own store.
+      </p>
+
+      <strong>
+        Community Seller
+      </strong>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     COMMUNITY STORIES / BLOG
+========================= -->
+
+<section class="section" id="stories">
+
+  <div class="section-title">
+
+    <h2>
+      📖 Community Stories
+    </h2>
+
+    <p>
+      Stories, experiences, and journeys
+      from our growing community.
+    </p>
+
+  </div>
+
+
+  <div class="stories">
+
+
+    <div class="story-card">
+
+      <span class="story-tag">
+        Community Story
+      </span>
+
+      <h3>
+        Your Story Could Be Here
+      </h3>
+
+      <p>
+        Share your experience,
+        your journey, or what the
+        community means to you.
+      </p>
+
+      <a href="#" class="read-btn">
+        Read Story →
+      </a>
+
+    </div>
+
+
+    <div class="story-card">
+
+      <span class="story-tag">
+        Seller Journey
+      </span>
+
+      <h3>
+        From Idea to e-Store
+      </h3>
+
+      <p>
+        A future story about a
+        community member building
+        something of her own.
+      </p>
+
+      <a href="#" class="read-btn">
+        Read Story →
+      </a>
+
+    </div>
+
+
+    <div class="story-card">
+
+      <span class="story-tag">
+        FWORLD Journal
+      </span>
+
+      <h3>
+        More Stories Coming Soon
+      </h3>
+
+      <p>
+        Community experiences and
+        inspiring stories will be
+        featured here.
+      </p>
+
+      <a href="#" class="read-btn">
+        Visit Journal →
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     COMMUNITY MESSAGE
+========================= -->
+
+<section class="community-message">
+
+  <h2>
+    Ato ni Bai! 🇵🇭
+  </h2>
+
+  <p>
+    Tatak Pinoy is more than a marketplace.
+    It is a space where we can discover,
+    support, share, and grow together —
+    one product, one business, and one story
+    at a time.
+  </p>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <p>
+    <strong>
+      Tatak Pinoy · Ato ni Bai!
+    </strong>
+  </p>
+
+
+  <div class="footer-links">
+
+    <a href="index.html">
+      FWORLD
+    </a>
+
+    <a href="marketplace.html">
+      Marketplace
+    </a>
+
+    <a href="community-store.html">
+      Create Your Store
+    </a>
+
+  </div>
+
+
+  <p>
+    Part of the FWORLD Ecosystem ·
+    The You Matter Academy
+  </p>
+
+  <p>
+    © 2026 FWORLD
+  </p>
+
+</footer>
+
+
+</body>
+
+</html>
