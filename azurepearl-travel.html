@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Azure Pearl PH | Tatak Pinoy e-Store</title>
+
+<meta name="description" content="Azure Pearl PH — Travel, accommodation, transportation, tours, and relocation support in the Philippines. Discover Azure Pearl inside the Tatak Pinoy Community Marketplace.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Azure Pearl PH | Tatak Pinoy e-Store">
+<meta property="og:description" content="Travel, accommodation, transportation, tours, and relocation support in the Philippines.">
+<meta property="og:image" content="https://www.fworld.online/azurepearl-logo.jpg">
+<meta property="og:url" content="https://www.fworld.online/azurepearl-travel.html">
+<meta property="og:site_name" content="FWORLD · Tatak Pinoy">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Azure Pearl PH | Tatak Pinoy e-Store">
+<meta name="twitter:description" content="Travel, accommodation, transportation, tours, and relocation support in the Philippines.">
+<meta name="twitter:image" content="https://www.fworld.online/azurepearl-logo.jpg">
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7fbfc;
+  color:#252525;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #e8eeee;
+  padding:16px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-size:19px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#168fa3;
+}
+
+.back{
+  font-size:13px;
+  font-weight:600;
+  color:#666;
+}
+
+.hero{
+  text-align:center;
+  padding:65px 20px 55px;
+  background:linear-gradient(135deg,#f2fbfc,#fff);
+}
+
+.store-logo{
+  width:125px;
+  height:125px;
+  margin:0 auto 22px;
+  border-radius:50%;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid #e3eeee;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.store-logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.eyebrow{
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:700;
+  color:#168fa3;
+  margin-bottom:12px;
+}
+
+.hero h1{
+  font-size:46px;
+  line-height:1.1;
+  margin-bottom:14px;
+}
+
+.hero h1 span{
+  color:#168fa3;
+}
+
+.hero p{
+  max-width:680px;
+  margin:0 auto 25px;
+  color:#777;
+  font-size:16px;
+}
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.website-btn,
+.facebook-btn,
+.share-btn{
+  display:inline-block;
+  padding:13px 21px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:700;
+  transition:.2s;
+}
+
+.website-btn{
+  background:#168fa3;
+  color:#fff;
+}
+
+.facebook-btn{
+  background:#252525;
+  color:#fff;
+}
+
+.share-btn{
+  background:#fff;
+  color:#252525;
+  border:1px solid #252525;
+}
+
+.website-btn:hover,
+.facebook-btn:hover,
+.share-btn:hover{
+  transform:translateY(-2px);
+}
+
+.section{
+  max-width:1100px;
+  margin:0 auto;
+  padding:60px 20px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:32px;
+}
+
+.section-title h2{
+  font-size:29px;
+  margin-bottom:7px;
+}
+
+.section-title p{
+  color:#777;
+  font-size:14px;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.service{
+  background:#fff;
+  border:1px solid #e8eeee;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(0,0,0,.04);
+}
+
+.service-image{
+  height:190px;
+  background:#e9f5f6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:48px;
+}
+
+.service-info{
+  padding:21px;
+}
+
+.service-info h3{
+  font-size:18px;
+  margin-bottom:6px;
+}
+
+.service-info p{
+  font-size:13px;
+  color:#777;
+  margin-bottom:16px;
+}
+
+.view-btn{
+  display:inline-block;
+  padding:10px 16px;
+  border:1px solid #252525;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.about{
+  background:#252525;
+  color:#fff;
+  text-align:center;
+}
+
+.about-inner{
+  max-width:720px;
+  margin:auto;
+  padding:65px 20px;
+}
+
+.about h2{
+  font-size:30px;
+  margin-bottom:13px;
+}
+
+.about p{
+  color:#ddd;
+  font-size:15px;
+}
+
+.community{
+  text-align:center;
+  padding:45px 20px;
+  background:#fff;
+}
+
+.community h2{
+  font-size:26px;
+  margin-bottom:8px;
+}
+
+.community p{
+  color:#777;
+  font-size:14px;
+}
+
+footer{
+  background:#fff;
+  border-top:1px solid #eee;
+  padding:28px 20px;
+  text-align:center;
+}
+
+.footer-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+  margin-bottom:10px;
+}
+
+.footer-links a{
+  font-size:13px;
+  color:#555;
+}
+
+footer p{
+  font-size:12px;
+  color:#999;
+}
+
+@media(max-width:700px){
+
+  nav{
+    padding:14px 5%;
+  }
+
+  .logo{
+    font-size:16px;
+  }
+
+  .back{
+    font-size:11px;
+  }
+
+  .hero{
+    padding:50px 20px 45px;
+  }
+
+  .hero h1{
+    font-size:36px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+    max-width:290px;
+    margin:auto;
+  }
+
+  .website-btn,
+  .facebook-btn,
+  .share-btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  .service-image{
+    height:200px;
+  }
+
+  .section{
+    padding:48px 20px;
+  }
+
+  .about-inner{
+    padding:52px 20px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<a href="tatak-pinoy.html" class="logo">
+🇵🇭 TATAK <span>PINOY</span>
+</a>
+
+<a href="tatak-pinoy.html" class="back">
+← Back to Tatak Pinoy
+</a>
+
+</nav>
+
+
+<section class="hero">
+
+<div class="store-logo">
+
+<img
+src="azurepearl-logo.jpg"
+alt="Azure Pearl PH Logo">
+
+</div>
+
+<div class="eyebrow">
+TATAK PINOY · COMMUNITY e-STORE
+</div>
+
+<h1>
+Azure <span>Pearl PH</span>
+</h1>
+
+<p>
+Discover the Philippines with travel, accommodation,
+transportation, tours, and relocation support designed
+to help you explore, experience, and connect with the country.
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="https://www.azurepearlph.com"
+target="_blank"
+rel="noopener noreferrer"
+class="website-btn">
+
+Visit Azure Pearl Website →
+
+</a>
+
+<a
+href="https://www.facebook.com/share/19kQ5Kkr7D/?mibextid=wwXIfr"
+target="_blank"
+rel="noopener noreferrer"
+class="facebook-btn">
+
+Visit Facebook Page →
+
+</a>
+
+<a
+href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.fworld.online%2Fazurepearl-travel.html"
+target="_blank"
+rel="noopener noreferrer"
+class="share-btn">
+
+Share This Store on Facebook ↗
+
+</a>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>
+Explore Azure Pearl
+</h2>
+
+<p>
+Travel and relocation services for discovering the Philippines.
+</p>
+
+</div>
+
+
+<div class="services">
+
+
+<div class="service">
+
+<div class="service-image">
+✈️
+</div>
+
+<div class="service-info">
+
+<h3>
+Travel & Tours
+</h3>
+
+<p>
+Discover destinations, travel packages,
+and experiences across the Philippines.
+</p>
+
+<a
+href="https://www.azurepearlph.com"
+target="_blank"
+rel="noopener noreferrer"
+class="view-btn">
+
+Explore →
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-image">
+🏨
+</div>
+
+<div class="service-info">
+
+<h3>
+Accommodation & Transport
+</h3>
+
+<p>
+Convenient accommodation and transportation
+support for your Philippine journey.
+</p>
+
+<a
+href="https://www.azurepearlph.com"
+target="_blank"
+rel="noopener noreferrer"
+class="view-btn">
+
+Explore →
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-image">
+🌊
+</div>
+
+<div class="service-info">
+
+<h3>
+Relocation Support
+</h3>
+
+<p>
+Support for foreigners exploring travel,
+investment, retirement, and relocation opportunities.
+</p>
+
+<a
+href="https://www.azurepearlph.com"
+target="_blank"
+rel="noopener noreferrer"
+class="view-btn">
+
+Explore →
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="about">
+
+<div class="about-inner">
+
+<h2>
+About Azure Pearl PH
+</h2>
+
+<p>
+Azure Pearl PH connects travelers, visitors,
+and international clients with services and
+experiences across the Philippines — from
+accommodation and transportation to tours
+and relocation support.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="community">
+
+<h2>
+Ato ni Bai! 🇵🇭
+</h2>
+
+<p>
+Discover Filipino products, brands, creators,
+businesses, and services inside the Tatak Pinoy community.
+</p>
+
+</section>
+
+
+<footer>
+
+<div class="footer-links">
+
+<a href="tatak-pinoy.html">
+Tatak Pinoy
+</a>
+
+<a href="marketplace.html">
+Marketplace
+</a>
+
+<a href="index.html">
+FWORLD
+</a>
+
+<a
+href="https://www.azurepearlph.com"
+target="_blank"
+rel="noopener noreferrer">
+
+Azure Pearl Website
+
+</a>
+
+</div>
+
+<p>
+© 2026 Azure Pearl PH · Tatak Pinoy Community e-Store
+</p>
+
+</footer>
+
+</body>
+</html>
