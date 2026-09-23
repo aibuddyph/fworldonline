@@ -1,1 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FWORLD | Mindanao Products</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&family=Allura&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", Arial, sans-serif;
+    color: #111;
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    height: 88px;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #fff;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 999;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+
+    color: #111;
+}
+
+.logo strong {
+    font-size: 30px;
+    font-weight: 500;
+
+    letter-spacing: 2px;
+}
+
+.logo small {
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+
+    margin-top: 5px;
+}
+
+
+/* NAVIGATION */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+
+    margin-left: auto;
+    margin-right: 35px;
+}
+
+.navigation a {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    opacity: 0.55;
+}
+
+.navigation span {
+    font-size: 16px;
+}
+
+
+/* HEADER ICONS */
+
+.header-icons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.header-icons button {
+    border: none;
+
+    background: transparent;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.98) 0%,
+            rgba(255,255,255,0.94) 32%,
+            rgba(255,255,255,0.55) 52%,
+            rgba(255,255,255,0.03) 78%
+        ),
+
+        url("hero.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+
+    width: 58%;
+
+    padding-left: 5%;
+
+    padding-top: 10px;
+
+}
+
+
+/* SMALL TITLE */
+
+.eyebrow {
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 26px;
+
+}
+
+
+/* MAIN TITLE */
+
+.hero h1 {
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(55px, 7vw, 80px);
+
+    font-weight: 500;
+
+    line-height: 0.91;
+
+    letter-spacing: -2px;
+
+}
+
+
+/* SMALL LINE */
+
+.hero-line {
+
+    width: 70px;
+
+    height: 2px;
+
+    background: #111;
+
+    margin: 21px 0 14px;
+
+}
+
+
+/* HERO SUBTITLE */
+
+.hero-subtitle {
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 24px;
+
+}
+
+.hero-subtitle span {
+
+    margin: 0 5px;
+
+}
+
+
+/* HERO DESCRIPTION */
+
+.hero-description {
+
+    max-width: 580px;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    margin-bottom: 26px;
+
+}
+
+
+/* SHOP BUTTON */
+
+.shop-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    background: #111;
+
+    color: white;
+
+    padding: 17px 27px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+
+}
+
+.shop-button:hover {
+
+    background: #333;
+
+    transform: translateY(-2px);
+
+}
+
+.shop-button .arrow {
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+}
+
+
+/* =========================================================
+   FEATURED CATEGORIES
+========================================================= */
+
+.categories {
+
+    padding: 36px 3% 48px;
+
+    background: #fff;
+
+}
+
+
+/* TITLE */
+
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    margin-bottom: 30px;
+
+}
+
+.section-title .line {
+
+    width: 200px;
+
+    height: 1px;
+
+    background: #777;
+
+}
+
+.section-title h2 {
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    white-space: nowrap;
+
+}
+
+
+/* CATEGORY GRID */
+
+.category-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 22px;
+
+}
+
+
+/* CATEGORY CARD */
+
+.category {
+
+    text-align: center;
+
+}
+
+
+/* IMAGE */
+
+.category-image {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background: #eee;
+
+}
+
+.category-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+
+}
+
+.category:hover .category-image img {
+
+    transform: scale(1.06);
+
+}
+
+
+/* CATEGORY TITLE */
+
+.category h3 {
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    margin-top: 14px;
+
+}
+
+
+/* CATEGORY DESCRIPTION */
+
+.category p {
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    color: #444;
+
+    letter-spacing: 1px;
+
+    margin-top: 10px;
+
+}
+
+
+/* ARROW */
+
+.category-arrow {
+
+    display: inline-block;
+
+    font-size: 25px;
+
+    margin-top: 7px;
+
+    transition: transform 0.3s;
+
+}
+
+.category:hover .category-arrow {
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================================
+   BENEFITS / TRUST BAR
+========================================================= */
+
+.benefits {
+
+    min-height: 110px;
+
+    padding: 15px 5%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    align-items: center;
+
+    color: #fff;
+
+    background-image:
+
+        linear-gradient(
+            rgba(25,20,15,0.94),
+            rgba(25,20,15,0.94)
+        ),
+
+        url("trust-strip.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+/* BENEFIT */
+
+.benefit {
+
+    min-height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 17px;
+
+    border-right:
+        1px solid
+        rgba(255,255,255,0.35);
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.4;
+
+}
+
+.benefit:last-child {
+
+    border-right: none;
+
+}
+
+
+/* ICON */
+
+.benefit-icon {
+
+    font-size: 28px;
+
+    font-weight: 300;
+
+}
+
+
+/* =========================================================
+   CLOSING MESSAGE
+========================================================= */
+
+.closing {
+
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    background: #fff;
+
+}
+
+
+.closing-line {
+
+    width: 70px;
+
+    height: 1px;
+
+    background: #777;
+
+}
+
+
+.closing-text {
+
+    font-family:
+        "Allura",
+        cursive;
+
+    font-size: 28px;
+
+    color: #222;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: #f6f4ef;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+
+    .navigation {
+
+        gap: 20px;
+
+    }
+
+
+    .category-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+
+    .benefits {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .benefit:nth-child(2) {
+
+        border-right: none;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+
+    /* HEADER */
+
+    .header {
+
+        height: 72px;
+
+        padding:
+            0 20px;
+
+    }
+
+
+    .logo strong {
+
+        font-size: 23px;
+
+    }
+
+
+    .logo small {
+
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+
+    .navigation {
+
+        display: none;
+
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        min-height: 600px;
+
+        align-items: flex-start;
+
+        background-position:
+            67% center;
+
+    }
+
+
+    .hero-content {
+
+        width: 100%;
+
+        padding:
+            55px 25px;
+
+    }
+
+
+    .eyebrow {
+
+        font-size: 12px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 55px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 14px;
+
+    }
+
+
+    /* CATEGORIES */
+
+    .categories {
+
+        padding:
+            30px 15px 40px;
+
+    }
+
+
+    .section-title {
+
+        gap: 10px;
+
+    }
+
+
+    .section-title .line {
+
+        width: 35px;
+
+    }
+
+
+    .section-title h2 {
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .category-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            28px 12px;
+
+    }
+
+
+    .category h3 {
+
+        font-size: 16px;
+
+    }
+
+
+    .category p {
+
+        font-size: 8px;
+
+        line-height: 1.5;
+
+    }
+
+
+    /* BENEFITS */
+
+    .benefits {
+
+        grid-template-columns:
+            1fr;
+
+        padding:
+            10px 25px;
+
+    }
+
+
+    .benefit {
+
+        justify-content:
+            flex-start;
+
+        padding:
+            15px 0;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,0.25);
+
+    }
+
+
+    .benefit:last-child {
+
+        border-bottom: none;
+
+    }
+
+
+    /* CLOSING */
+
+    .closing {
+
+        padding:
+            20px;
+
+        gap:
+            10px;
+
+    }
+
+
+    .closing-line {
+
+        width: 30px;
+
+    }
+
+
+    .closing-text {
+
+        font-size: 22px;
+
+        text-align: center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+
+    <a href="#" class="logo">
+
+        <strong>FWORLD</strong>
+
+        <small>
+            EXPLORE OUR WORLD
+        </small>
+
+    </a>
+
+
+    <nav class="navigation">
+
+        <a href="#">
+            HOME
+        </a>
+
+        <a href="#projects">
+            PROJECTS
+            <span>⌄</span>
+        </a>
+
+        <a href="#marketplace">
+            MARKETPLACE
+        </a>
+
+        <a href="#journal">
+            JOURNAL
+        </a>
+
+        <a href="#contact">
+            CONTACT
+        </a>
+
+    </nav>
+
+
+    <div class="header-icons">
+
+        <button aria-label="Search">
+            ⌕
+        </button>
+
+        <button aria-label="Menu">
+            ☰
+        </button>
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="marketplace">
+
+
+    <div class="hero-content">
+
+
+        <div class="eyebrow">
+
+            TATAK PINOY
+
+        </div>
+
+
+        <h1>
+
+            Mindanao<br>
+
+            Products
+
+        </h1>
+
+
+        <div class="hero-line"></div>
+
+
+        <div class="hero-subtitle">
+
+            RICH HERITAGE
+
+            <span>•</span>
+
+            TIMELESS CRAFTS
+
+            <span>•</span>
+
+            LOCAL PRIDE
+
+        </div>
+
+
+        <p class="hero-description">
+
+            Discover authentic products from Mindanao —
+            from handcrafted treasures to indigenous delicacies.
+            Support local communities. Celebrate our diverse culture.
+
+        </p>
+
+
+        <a href="#categories"
+           class="shop-button">
+
+            SHOP MINDANAO
+
+            <span class="arrow">
+                →
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FEATURED CATEGORIES
+===================================================== -->
+
+<section class="categories"
+         id="categories">
+
+
+    <div class="section-title">
+
+        <span class="line"></span>
+
+        <h2>
+            FEATURED CATEGORIES
+        </h2>
+
+        <span class="line"></span>
+
+    </div>
+
+
+
+    <div class="category-grid">
+
+
+        <!-- 1 -->
+
+        <article class="category">
+
+            <div class="category-image">
+
+                <img
+                    src="category-1.jpg"
+                    alt="Malong and Textiles">
+
+            </div>
+
+            <h3>
+                Malong &amp; Textiles
+            </h3>
+
+            <p>
+                WEAR • HOME • LIFESTYLE
+            </p>
+
+            <a
+                href="#"
+                class="category-arrow">
+
+                →
+
+            </a>
+
+        </article>
+
+
+
+        <!-- 2 -->
+
+        <article class="category">
+
+            <div class="category-image">
+
+                <img
+                    src="category-2.jpg"
+                    alt="Okir Wood Crafts">
+
+            </div>
+
+            <h3>
+                Okir Wood Crafts
+            </h3>
+
+            <p>
+                ART • DÉCOR • SOUVENIRS
+            </p>
+
+            <a
+                href="#"
+                class="category-arrow">
+
+                →
+
+            </a>
+
+        </article>
+
+
+
+        <!-- 3 -->
+
+        <article class="category">
+
+            <div class="category-image">
+
+                <img
+                    src="category-3.jpg"
+                    alt="Brassware">
+
+            </div>
+
+            <h3>
+                Brassware
+            </h3>
+
+            <p>
+                TRADITION • CRAFTSMANSHIP
+            </p>
+
+            <a
+                href="#"
+                class="category-arrow">
+
+                →
+
+            </a>
+
+        </article>
+
+
+
+        <!-- 4 -->
+
+        <article class="category">
+
+            <div class="category-image">
+
+                <img
+                    src="category-4.jpg"
+                    alt="Kulintang and Instruments">
+
+            </div>
+
+            <h3>
+                Kulintang &amp; Instruments
+            </h3>
+
+            <p>
+                MUSIC • CULTURE • HERITAGE
+            </p>
+
+            <a
+                href="#"
+                class="category-arrow">
+
+                →
+
+            </a>
+
+        </article>
+
+
+
+        <!-- 5 -->
+
+        <article class="category">
+
+            <div class="category-image">
+
+                <img
+                    src="category-5.jpg"
+                    alt="Sarimanok Cultural Decor">
+
+            </div>
+
+            <h3>
+                Sarimanok &amp; Cultural Décor
+            </h3>
+
+            <p>
+                LEGEND • ART • IDENTITY
+            </p>
+
+            <a
+                href="#"
+                class="category-arrow">
+
+                →
+
+            </a>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
+<section class="benefits"
+         id="projects">
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">
+            ◈
+        </div>
+
+        <div>
+
+            AUTHENTIC<br>
+            MINDANAO PRODUCTS
+
+        </div>
+
+    </div>
+
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">
+            ♢
+        </div>
+
+        <div>
+
+            SUPPORTS<br>
+            LOCAL COMMUNITIES
+
+        </div>
+
+    </div>
+
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">
+            ♙
+        </div>
+
+        <div>
+
+            SECURE &amp; RELIABLE<br>
+            SHOPPING
+
+        </div>
+
+    </div>
+
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">
+            ▱
+        </div>
+
+        <div>
+
+            NATIONWIDE<br>
+            DELIVERY
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CLOSING
+===================================================== -->
+
+<section class="closing"
+         id="journal">
+
+
+    <span class="closing-line"></span>
+
+
+    <p class="closing-text">
+
+        Mindanao.
+        More than a destination —
+        it’s a treasure.
+
+    </p>
+
+
+    <span class="closing-line"></span>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer"
+        id="contact">
+
+    © 2026 FWORLD.
+    EXPLORE OUR WORLD.
+
+</footer>
+
+
+
+</body>
+
+</html>
