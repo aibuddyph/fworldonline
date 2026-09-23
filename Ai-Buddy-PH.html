@@ -1,1 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Buddy PH | Learn AI. Do More. Grow Together.</title>
+
+<meta
+  name="description"
+  content="AI Buddy PH — a friendly space for Filipinos to learn AI, discover tools, practice prompts, and grow their AI skills."
+>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f8f6ef;
+  color:#183b3d;
+  line-height:1.5;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+  background:#ffffff;
+  border-bottom:1px solid #e8e4d8;
+  padding:14px 6%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  text-decoration:none;
+  color:#183b3d;
+}
+
+.brand-icon{
+  width:42px;
+  height:42px;
+
+  border-radius:14px;
+
+  background:#159a91;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:22px;
+}
+
+.brand-text strong{
+  display:block;
+  font-size:17px;
+}
+
+.brand-text span{
+  font-size:11px;
+  color:#718080;
+}
+
+.top-button{
+  text-decoration:none;
+
+  background:#183b3d;
+  color:#ffffff;
+
+  padding:9px 17px;
+
+  border-radius:22px;
+
+  font-size:12px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  padding:55px 6% 45px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eaf8f4,
+      #fffdf5
+    );
+}
+
+.hero-content{
+  max-width:1100px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:40px;
+
+  align-items:center;
+}
+
+.eyebrow{
+  color:#159a91;
+
+  font-size:12px;
+  font-weight:bold;
+
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+
+  margin-bottom:10px;
+}
+
+.hero h1{
+  font-size:clamp(40px,6vw,68px);
+
+  line-height:1.02;
+
+  letter-spacing:-2px;
+
+  margin-bottom:18px;
+}
+
+.hero h1 span{
+  color:#159a91;
+}
+
+.hero p{
+  max-width:650px;
+
+  color:#647272;
+
+  font-size:16px;
+
+  margin-bottom:24px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.primary-btn,
+.secondary-btn{
+  display:inline-block;
+
+  text-decoration:none;
+
+  padding:12px 20px;
+
+  border-radius:28px;
+
+  font-size:13px;
+  font-weight:bold;
+}
+
+.primary-btn{
+  background:#159a91;
+  color:#ffffff;
+}
+
+.secondary-btn{
+  border:1px solid #183b3d;
+  color:#183b3d;
+  background:#ffffff;
+}
+
+
+/* =========================
+   ANITA CARD
+========================= */
+
+.anita-card{
+  background:#ffffff;
+
+  border:1px solid #e5e2d7;
+
+  border-radius:28px;
+
+  padding:30px;
+
+  text-align:center;
+
+  box-shadow:0 18px 45px rgba(24,59,61,.08);
+}
+
+.anita-avatar{
+  width:105px;
+  height:105px;
+
+  margin:0 auto 16px;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #159a91,
+      #f4b942
+    );
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:48px;
+}
+
+.anita-card h2{
+  font-size:23px;
+  margin-bottom:5px;
+}
+
+.anita-card p{
+  color:#718080;
+  font-size:13px;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard{
+  max-width:1100px;
+
+  margin:auto;
+
+  padding:55px 20px;
+}
+
+.greeting{
+  margin-bottom:28px;
+}
+
+.greeting small{
+  color:#159a91;
+  font-weight:bold;
+}
+
+.greeting h2{
+  font-size:30px;
+  margin-top:4px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:16px;
+
+  margin-bottom:35px;
+}
+
+.stat-card{
+  background:#ffffff;
+
+  border:1px solid #e8e4d8;
+
+  border-radius:20px;
+
+  padding:20px;
+}
+
+.stat-icon{
+  font-size:23px;
+  margin-bottom:7px;
+}
+
+.stat-card strong{
+  display:block;
+  font-size:22px;
+}
+
+.stat-card span{
+  color:#718080;
+  font-size:12px;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+  margin-bottom:18px;
+}
+
+.section-title h2{
+  font-size:24px;
+}
+
+.section-title p{
+  color:#718080;
+  font-size:13px;
+}
+
+
+/* =========================
+   QUICK ACTIONS
+========================= */
+
+.actions{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:16px;
+
+  margin-bottom:50px;
+}
+
+.action-card{
+  background:#ffffff;
+
+  border:1px solid #e8e4d8;
+
+  border-radius:20px;
+
+  padding:22px;
+
+  text-decoration:none;
+
+  color:#183b3d;
+
+  transition:.25s;
+}
+
+.action-card:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 12px 28px rgba(24,59,61,.08);
+}
+
+.action-icon{
+  font-size:28px;
+
+  margin-bottom:12px;
+}
+
+.action-card h3{
+  font-size:16px;
+  margin-bottom:5px;
+}
+
+.action-card p{
+  color:#718080;
+  font-size:12px;
+}
+
+
+/* =========================
+   LEARNING
+========================= */
+
+.learning{
+  display:grid;
+
+  grid-template-columns:
+    1.4fr .6fr;
+
+  gap:20px;
+
+  margin-bottom:50px;
+}
+
+.learning-card{
+  background:#183b3d;
+
+  color:#ffffff;
+
+  border-radius:24px;
+
+  padding:28px;
+}
+
+.learning-card small{
+  color:#f4b942;
+
+  font-size:11px;
+
+  font-weight:bold;
+
+  letter-spacing:1px;
+}
+
+.learning-card h3{
+  font-size:25px;
+
+  margin:9px 0;
+}
+
+.learning-card p{
+  color:#d8e5e3;
+
+  font-size:13px;
+
+  max-width:600px;
+
+  margin-bottom:20px;
+}
+
+.learn-btn{
+  display:inline-block;
+
+  background:#f4b942;
+  color:#183b3d;
+
+  padding:10px 18px;
+
+  border-radius:24px;
+
+  text-decoration:none;
+
+  font-size:12px;
+
+  font-weight:bold;
+}
+
+.challenge-card{
+  background:#fff1cf;
+
+  border-radius:24px;
+
+  padding:28px;
+}
+
+.challenge-card small{
+  color:#9a6a00;
+
+  font-weight:bold;
+}
+
+.challenge-card h3{
+  margin:10px 0;
+
+  font-size:21px;
+}
+
+.challenge-card p{
+  color:#6d654e;
+
+  font-size:13px;
+
+  margin-bottom:17px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:16px;
+
+  margin-bottom:50px;
+}
+
+.feature{
+  background:#ffffff;
+
+  border:1px solid #e8e4d8;
+
+  border-radius:20px;
+
+  padding:22px;
+}
+
+.feature-icon{
+  font-size:25px;
+
+  margin-bottom:10px;
+}
+
+.feature h3{
+  font-size:15px;
+
+  margin-bottom:5px;
+}
+
+.feature p{
+  color:#718080;
+
+  font-size:12px;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-card{
+  background:#ffffff;
+
+  border:1px solid #e8e4d8;
+
+  border-radius:24px;
+
+  padding:26px;
+
+  margin-bottom:50px;
+}
+
+.progress-top{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:15px;
+}
+
+.progress-top strong{
+  font-size:17px;
+}
+
+.progress-top span{
+  color:#159a91;
+
+  font-size:13px;
+
+  font-weight:bold;
+}
+
+.progress-bar{
+  height:10px;
+
+  background:#e7e5dc;
+
+  border-radius:20px;
+
+  overflow:hidden;
+}
+
+.progress-fill{
+  width:65%;
+
+  height:100%;
+
+  background:#159a91;
+
+  border-radius:20px;
+}
+
+
+/* =========================
+   CALL TO ACTION
+========================= */
+
+.cta{
+  background:#159a91;
+
+  color:#ffffff;
+
+  text-align:center;
+
+  padding:65px 20px;
+}
+
+.cta h2{
+  font-size:32px;
+
+  margin-bottom:10px;
+}
+
+.cta p{
+  max-width:620px;
+
+  margin:0 auto 22px;
+
+  color:#e4f6f3;
+
+  font-size:14px;
+}
+
+.cta a{
+  display:inline-block;
+
+  background:#ffffff;
+
+  color:#183b3d;
+
+  text-decoration:none;
+
+  padding:12px 22px;
+
+  border-radius:25px;
+
+  font-size:13px;
+
+  font-weight:bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#183b3d;
+
+  color:#ffffff;
+
+  text-align:center;
+
+  padding:35px 20px;
+}
+
+footer strong{
+  font-size:16px;
+}
+
+footer p{
+  color:#b9cecb;
+
+  font-size:12px;
+
+  margin-top:7px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .topbar{
+    padding:12px 18px;
+  }
+
+  .top-button{
+    display:none;
+  }
+
+  .hero{
+    padding:42px 20px;
+  }
+
+  .hero-content{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .hero h1{
+    font-size:47px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .anita-card{
+    padding:25px;
+  }
+
+  .dashboard{
+    padding:45px 18px;
+  }
+
+  .greeting h2{
+    font-size:27px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .actions{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .learning{
+    grid-template-columns:1fr;
+  }
+
+  .features{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media(max-width:420px){
+
+  .brand-text strong{
+    font-size:15px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .primary-btn,
+  .secondary-btn{
+    text-align:center;
+    width:100%;
+  }
+
+  .actions{
+    grid-template-columns:1fr;
+  }
+
+  .features{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<header class="topbar">
+
+  <a href="#" class="brand">
+
+    <div class="brand-icon">
+      🤖
+    </div>
+
+    <div class="brand-text">
+
+      <strong>
+        AI Buddy PH
+      </strong>
+
+      <span>
+        Learn AI. Do More.
+      </span>
+
+    </div>
+
+  </a>
+
+  <a href="#learn" class="top-button">
+    Start Learning
+  </a>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div>
+
+      <div class="eyebrow">
+        YOUR AI COMPANION
+      </div>
+
+      <h1>
+        Meet your<br>
+        <span>AI Buddy.</span>
+      </h1>
+
+      <p>
+        Learn AI, discover useful tools,
+        practice prompts, and take simple
+        steps toward becoming more confident
+        with technology.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#learn" class="primary-btn">
+          Learn AI →
+        </a>
+
+        <a href="#tools" class="secondary-btn">
+          Explore Tools
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="anita-card">
+
+      <div class="anita-avatar">
+        🤖
+      </div>
+
+      <h2>
+        Hi, I'm Anita!
+      </h2>
+
+      <p>
+        Your friendly AI Buddy PH companion.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     DASHBOARD
+========================= -->
+
+<main class="dashboard">
+
+
+  <div class="greeting">
+
+    <small>
+      WELCOME BACK
+    </small>
+
+    <h2>
+      Kumusta, Bai! 👋
+    </h2>
+
+  </div>
+
+
+  <!-- STATS -->
+
+  <div class="stats">
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        🔥
+      </div>
+
+      <strong>
+        7
+      </strong>
+
+      <span>
+        Day AI Streak
+      </span>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        📚
+      </div>
+
+      <strong>
+        4
+      </strong>
+
+      <span>
+        Lessons Completed
+      </span>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        ⭐
+      </div>
+
+      <strong>
+        120
+      </strong>
+
+      <span>
+        AI Points
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- QUICK ACTIONS -->
+
+  <div class="section-title">
+
+    <h2>
+      What do you want to do?
+    </h2>
+
+    <p>
+      Choose a quick action and start learning.
+    </p>
+
+  </div>
+
+
+  <div class="actions">
+
+
+    <a href="#ask" class="action-card">
+
+      <div class="action-icon">
+        💬
+      </div>
+
+      <h3>
+        Ask AI
+      </h3>
+
+      <p>
+        Get help with your questions.
+      </p>
+
+    </a>
+
+
+    <a href="#learn" class="action-card">
+
+      <div class="action-icon">
+        📚
+      </div>
+
+      <h3>
+        Learn AI
+      </h3>
+
+      <p>
+        Learn one simple concept at a time.
+      </p>
+
+    </a>
+
+
+    <a href="#tools" class="action-card">
+
+      <div class="action-icon">
+        🧰
+      </div>
+
+      <h3>
+        AI Tools
+      </h3>
+
+      <p>
+        Discover useful AI tools.
+      </p>
+
+    </a>
+
+
+    <a href="#prompts" class="action-card">
+
+      <div class="action-icon">
+        ✨
+      </div>
+
+      <h3>
+        Prompt Library
+      </h3>
+
+      <p>
+        Find prompts you can actually use.
+      </p>
+
+    </a>
+
+
+  </div>
+
+
+  <!-- LEARNING -->
+
+  <div id="learn" class="section-title">
+
+    <h2>
+      Continue Learning
+    </h2>
+
+    <p>
+      Keep your AI learning journey moving.
+    </p>
+
+  </div>
+
+
+  <div class="learning">
+
+
+    <div class="learning-card">
+
+      <small>
+        DO THIS NOW
+      </small>
+
+      <h3>
+        Your First AI Prompt
+      </h3>
+
+      <p>
+        Learn how to write a simple prompt
+        and get better results from AI.
+      </p>
+
+      <a href="#daily" class="learn-btn">
+        Continue Lesson →
+      </a>
+
+    </div>
+
+
+    <div id="daily" class="challenge-card">
+
+      <small>
+        DAILY AI
+      </small>
+
+      <h3>
+        Today's Challenge
+      </h3>
+
+      <p>
+        Ask AI to turn one task you do
+        every day into a simple checklist.
+      </p>
+
+      <a href="#ask" class="learn-btn">
+        Try It →
+      </a>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- FEATURES -->
+
+  <div class="section-title">
+
+    <h2>
+      Your AI Learning Space
+    </h2>
+
+    <p>
+      Everything you need in one place.
+    </p>
+
+  </div>
+
+
+  <div class="features">
+
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        🧠
+      </div>
+
+      <h3>
+        Learn AI
+      </h3>
+
+      <p>
+        Simple lessons designed for beginners.
+      </p>
+
+    </div>
+
+
+    <div id="ask" class="feature">
+
+      <div class="feature-icon">
+        💬
+      </div>
+
+      <h3>
+        Ask AI
+      </h3>
+
+      <p>
+        Practice asking better questions.
+      </p>
+
+    </div>
+
+
+    <div id="tools" class="feature">
+
+      <div class="feature-icon">
+        🔎
+      </div>
+
+      <h3>
+        Tool Finder
+      </h3>
+
+      <p>
+        Find AI tools for everyday tasks.
+      </p>
+
+    </div>
+
+
+    <div id="prompts" class="feature">
+
+      <div class="feature-icon">
+        📝
+      </div>
+
+      <h3>
+        Prompt Library
+      </h3>
+
+      <p>
+        Ready-to-use prompts for your work.
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- PROGRESS -->
+
+  <div class="section-title">
+
+    <h2>
+      My Progress
+    </h2>
+
+    <p>
+      Small steps become real skills.
+    </p>
+
+  </div>
+
+
+  <div class="progress-card">
+
+    <div class="progress-top">
+
+      <strong>
+        AI Beginner Journey
+      </strong>
+
+      <span>
+        65%
+      </span>
+
+    </div>
+
+    <div class="progress-bar">
+
+      <div class="progress-fill"></div>
+
+    </div>
+
+  </div>
+
+
+</main>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+  <h2>
+    You don't have to learn AI alone.
+  </h2>
+
+  <p>
+    AI Buddy PH is here to help you learn,
+    practice, explore, and grow — one step
+    at a time.
+  </p>
+
+  <a href="#learn">
+    Start Your AI Journey →
+  </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <strong>
+    🤖 AI Buddy PH
+  </strong>
+
+  <p>
+    Learn AI. Do More. Grow Together.
+  </p>
+
+  <p>
+    Part of the FWORLD Ecosystem · 2026
+  </p>
+
+</footer>
+
+
+</body>
+
+</html>
