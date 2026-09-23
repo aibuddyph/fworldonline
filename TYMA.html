@@ -1,1 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TYMA | The You Matter Academy</title>
+
+<meta name="description"
+content="The You Matter Academy — a women-centered community for self-worth, confidence, clarity, purpose, technology, community and mentorship.">
+
+<meta name="keywords"
+content="TYMA, The You Matter Academy, women empowerment, self-worth, confidence, purpose, women community">
+
+<meta property="og:title"
+content="TYMA | The You Matter Academy">
+
+<meta property="og:description"
+content="When a woman knows that she matters, she begins to see what is possible.">
+
+<meta property="og:url"
+content="https://www.fworld.online/TYMA.html">
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#fffaf7;
+  color:#292929;
+  line-height:1.6;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+  background:#1f1f1f;
+  padding:15px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.back-button{
+  color:#ffffff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.top-links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.top-button{
+  text-decoration:none;
+  color:#222222;
+  background:#ffffff;
+  padding:9px 16px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.top-button:hover{
+  background:#ffe1d0;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  background:
+  linear-gradient(
+    135deg,
+    #fff4ec,
+    #ffe0cc
+  );
+
+  padding:70px 6%;
+}
+
+.hero-inner{
+  max-width:1150px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.hero-logo{
+  width:95px;
+  height:95px;
+  object-fit:cover;
+  border-radius:50%;
+  margin-bottom:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,.12);
+}
+
+.eyebrow{
+  color:#e66d2f;
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:2px;
+  margin-bottom:12px;
+}
+
+.hero h1{
+  font-size:clamp(42px,6vw,70px);
+  line-height:1.05;
+  color:#252525;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:#e66d2f;
+}
+
+.hero p{
+  max-width:590px;
+  font-size:18px;
+  color:#5e5551;
+  margin-bottom:25px;
+}
+
+.hero-quote{
+  border-left:4px solid #e66d2f;
+  padding-left:18px;
+  margin:25px 0;
+  color:#4f4642;
+  font-style:italic;
+  font-size:17px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.primary-btn,
+.secondary-btn{
+  display:inline-block;
+  text-decoration:none;
+  padding:13px 22px;
+  border-radius:30px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.primary-btn{
+  background:#e66d2f;
+  color:#ffffff;
+}
+
+.secondary-btn{
+  border:1px solid #e66d2f;
+  color:#d45f24;
+  background:#ffffff;
+}
+
+.primary-btn:hover{
+  background:#c9571f;
+}
+
+.secondary-btn:hover{
+  background:#fff0e7;
+}
+
+
+/* =========================
+   WOMAN PHOTO
+========================= */
+
+.hero-visual{
+  text-align:center;
+}
+
+.hero-visual img{
+  width:100%;
+  max-width:440px;
+  height:500px;
+  object-fit:cover;
+  border-radius:30px;
+  box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+
+
+/* =========================
+   SHARE
+========================= */
+
+.share-section{
+  background:#ffffff;
+  text-align:center;
+  padding:25px 6%;
+  border-bottom:1px solid #f0ddd3;
+}
+
+.share-button{
+  display:inline-block;
+  background:#1877f2;
+  color:#ffffff;
+  text-decoration:none;
+  padding:12px 23px;
+  border-radius:30px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.share-button:hover{
+  opacity:.9;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+.section{
+  padding:75px 6%;
+}
+
+.section-inner{
+  max-width:1150px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title .small{
+  color:#e66d2f;
+  font-size:13px;
+  letter-spacing:2px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.section-title h2{
+  font-size:38px;
+  color:#292929;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  max-width:680px;
+  margin:auto;
+  color:#716965;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.about-card{
+  background:#ffffff;
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 10px 30px rgba(80,50,30,.07);
+  border:1px solid #f2ded2;
+}
+
+.about-card h3{
+  color:#e66d2f;
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+.about-card p{
+  color:#68605c;
+}
+
+
+/* =========================
+   MATTERS
+========================= */
+
+.matters-section{
+  background:#fff0e7;
+}
+
+.matters{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.matter-card{
+  background:#ffffff;
+  padding:28px 22px;
+  border-radius:20px;
+  text-align:center;
+  border:1px solid #f3ddd0;
+  transition:.3s;
+}
+
+.matter-card:hover{
+  transform:translateY(-5px);
+}
+
+.matter-icon{
+  font-size:34px;
+  margin-bottom:12px;
+}
+
+.matter-card h3{
+  color:#d86127;
+  margin-bottom:8px;
+}
+
+.matter-card p{
+  color:#6d6561;
+  font-size:14px;
+}
+
+
+/* =========================
+   COMMUNITY
+========================= */
+
+.community{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:center;
+}
+
+.community-box{
+  background:#ffffff;
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 10px 30px rgba(80,50,30,.07);
+}
+
+.community-box h2{
+  color:#e66d2f;
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.community-box p{
+  color:#68605c;
+  margin-bottom:15px;
+}
+
+.check-list{
+  list-style:none;
+  margin-top:20px;
+}
+
+.check-list li{
+  margin-bottom:11px;
+  color:#514a47;
+}
+
+.check-list li::before{
+  content:"✓";
+  color:#e66d2f;
+  font-weight:bold;
+  margin-right:9px;
+}
+
+
+/* =========================
+   SESSIONS
+========================= */
+
+.sessions-section{
+  background:#ffffff;
+}
+
+.session-card{
+  max-width:850px;
+  margin:auto;
+  background:#292929;
+  color:#ffffff;
+  padding:40px;
+  border-radius:25px;
+  text-align:center;
+}
+
+.session-card h2{
+  font-size:32px;
+  margin-bottom:12px;
+}
+
+.session-card p{
+  color:#eeeeee;
+  margin-bottom:22px;
+}
+
+.session-time{
+  color:#ff9a68;
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+
+/* =========================
+   PROJECT 100 WOMEN
+========================= */
+
+.project-section{
+  background:#fff0e7;
+}
+
+.project-card{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  background:#ffffff;
+  padding:45px 30px;
+  border-radius:25px;
+  border:1px solid #f2d7c8;
+}
+
+.project-number{
+  font-size:55px;
+  font-weight:bold;
+  color:#e66d2f;
+  line-height:1;
+  margin-bottom:10px;
+}
+
+.project-card h2{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.project-card p{
+  max-width:650px;
+  margin:auto;
+  color:#68605c;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+  padding:80px 6%;
+  background:#e66d2f;
+  color:#ffffff;
+  text-align:center;
+}
+
+.cta h2{
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+.cta p{
+  max-width:650px;
+  margin:0 auto 25px;
+}
+
+.cta-button{
+  display:inline-block;
+  background:#ffffff;
+  color:#d45f24;
+  text-decoration:none;
+  padding:14px 28px;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#1f1f1f;
+  color:#ffffff;
+  text-align:center;
+  padding:35px 6%;
+}
+
+.footer-title{
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+footer p{
+  color:#bbbbbb;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#ffffff;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.footer-links a:hover{
+  color:#ff9a68;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .topbar{
+    justify-content:center;
+    text-align:center;
+  }
+
+  .hero{
+    padding:50px 6%;
+  }
+
+  .hero-inner{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .hero-content{
+    text-align:center;
+  }
+
+  .hero p{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-quote{
+    text-align:left;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .hero-visual{
+    order:2;
+  }
+
+  .hero-visual img{
+    height:400px;
+    max-width:100%;
+  }
+
+  .section{
+    padding:55px 6%;
+  }
+
+  .section-title h2{
+    font-size:30px;
+  }
+
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  .matters{
+    grid-template-columns:1fr;
+  }
+
+  .community{
+    grid-template-columns:1fr;
+  }
+
+  .session-card{
+    padding:30px 22px;
+  }
+
+  .session-card h2{
+    font-size:27px;
+  }
+
+  .project-card{
+    padding:35px 22px;
+  }
+
+  .project-number{
+    font-size:45px;
+  }
+
+  .project-card h2{
+    font-size:27px;
+  }
+
+  .cta h2{
+    font-size:32px;
+  }
+
+}
+
+
+/* EXTRA SMALL PHONES */
+
+@media(max-width:420px){
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero-logo{
+    width:80px;
+    height:80px;
+  }
+
+  .hero-visual img{
+    height:350px;
+  }
+
+  .top-button{
+    padding:8px 13px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<header class="topbar">
+
+  <a href="projects.html" class="back-button">
+    ← Back to Project
+  </a>
+
+  <div class="top-links">
+
+    <a
+      href="https://www.facebook.com/share/1HzGgrnXUZ/"
+      class="top-button"
+      target="_blank"
+      rel="noopener noreferrer">
+      Facebook
+    </a>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div>
+
+      <img
+        src="TYMA-logo.jpg"
+        alt="TYMA - The You Matter Academy"
+        class="hero-logo">
+
+      <div class="eyebrow">
+        THE YOU MATTER ACADEMY
+      </div>
+
+      <h1>
+        When you know
+        <span>you matter.</span>
+      </h1>
+
+      <p>
+        TYMA is a women-centered community created to help women
+        rediscover their worth, build confidence, find clarity,
+        discover purpose, and see what is possible.
+      </p>
+
+      <div class="hero-quote">
+        “When a woman knows that she matters,
+        she begins to see what is possible.”
+      </div>
+
+      <div class="hero-buttons">
+
+        <a href="#community" class="primary-btn">
+          Join TYMA →
+        </a>
+
+        <a href="#sessions" class="secondary-btn">
+          Our Sessions
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- WOMAN PHOTO -->
+
+    <div class="hero-visual">
+
+      <img
+        src="woman-tyma.jpg"
+        alt="Woman representing confidence and personal growth">
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SHARE
+========================= -->
+
+<section class="share-section">
+
+  <a
+    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.fworld.online%2FTYMA.html"
+    class="share-button"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    Share TYMA to Facebook
+
+  </a>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section">
+
+  <div class="section-inner">
+
+    <div class="section-title">
+
+      <div class="small">
+        ABOUT TYMA
+      </div>
+
+      <h2>
+        You Matter.
+      </h2>
+
+      <p>
+        TYMA creates a space where women can learn,
+        reflect, connect, and grow together.
+      </p>
+
+    </div>
+
+
+    <div class="about">
+
+      <div class="about-card">
+
+        <h3>
+          Why TYMA?
+        </h3>
+
+        <p>
+          Sometimes women spend so much time taking care
+          of everyone else that they forget to take care
+          of themselves.
+        </p>
+
+        <br>
+
+        <p>
+          TYMA reminds every woman that her story,
+          dreams, voice, growth and future matter.
+        </p>
+
+      </div>
+
+
+      <div class="about-card">
+
+        <h3>
+          Our Purpose
+        </h3>
+
+        <p>
+          To create a supportive community where women
+          can develop self-worth, confidence, clarity,
+          purpose and practical skills for today's world.
+        </p>
+
+        <br>
+
+        <p>
+          We believe growth becomes more meaningful
+          when women grow together.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     WHAT MATTERS
+========================= -->
+
+<section class="section matters-section">
+
+  <div class="section-inner">
+
+    <div class="section-title">
+
+      <div class="small">
+        WHAT WE EXPLORE
+      </div>
+
+      <h2>
+        What Matters to Women
+      </h2>
+
+      <p>
+        Conversations and learning designed around
+        real life, real challenges and real possibilities.
+      </p>
+
+    </div>
+
+
+    <div class="matters">
+
+
+      <div class="matter-card">
+
+        <div class="matter-icon">
+          ❤️
+        </div>
+
+        <h3>
+          Self-Worth
+        </h3>
+
+        <p>
+          Remember your value and build a stronger
+          relationship with yourself.
+        </p>
+
+      </div>
+
+
+      <div class="matter-card">
+
+        <div class="matter-icon">
+          ✨
+        </div>
+
+        <h3>
+          Confidence
+        </h3>
+
+        <p>
+          Learn to trust your voice, your decisions
+          and your ability to grow.
+        </p>
+
+      </div>
+
+
+      <div class="matter-card">
+
+        <div class="matter-icon">
+          🧭
+        </div>
+
+        <h3>
+          Clarity
+        </h3>
+
+        <p>
+          Slow down, reflect and discover what
+          truly matters to you.
+        </p>
+
+      </div>
+
+
+      <div class="matter-card">
+
+        <div class="matter-icon">
+          🌱
+        </div>
+
+        <h3>
+          Purpose
+        </h3>
+
+        <p>
+          Explore your gifts, dreams and the direction
+          you want your life to take.
+        </p>
+
+      </div>
+
+
+      <div class="matter-card">
+
+        <div class="matter-icon">
+          💻
+        </div>
+
+        <h3>
+          Technology
+        </h3>
+
+        <p>
+          Learn practical digital and AI skills
+          without feeling left behind.
+        </p>
+
+      </div>
+
+
+      <div class="matter-card">
+
+        <div class="matter-icon">
+          🤝
+        </div>
+
+        <h3>
+          Community
+        </h3>
+
+        <p>
+          Connect with women who are also learning,
+          growing and becoming.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     COMMUNITY
+========================= -->
+
+<section class="section" id="community">
+
+  <div class="section-inner">
+
+    <div class="community">
+
+      <div class="community-box">
+
+        <div class="eyebrow">
+          TYMA COMMUNITY
+        </div>
+
+        <h2>
+          A space where women can grow together.
+        </h2>
+
+        <p>
+          TYMA is more than a conversation.
+          It is a community where women can learn,
+          share experiences, ask questions and support
+          one another.
+        </p>
+
+        <ul class="check-list">
+
+          <li>
+            Personal development
+          </li>
+
+          <li>
+            Confidence and self-worth
+          </li>
+
+          <li>
+            Purpose and clarity
+          </li>
+
+          <li>
+            Technology and AI learning
+          </li>
+
+          <li>
+            Mentorship and connection
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="community-box">
+
+        <div class="eyebrow">
+          WOMEN SUPPORTING WOMEN
+        </div>
+
+        <h2>
+          Your story matters too.
+        </h2>
+
+        <p>
+          Every woman carries a story.
+          TYMA creates room for those stories to be heard,
+          respected and shared.
+        </p>
+
+        <p>
+          Because sometimes, knowing that you are not alone
+          is already the beginning of something new.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SESSIONS
+========================= -->
+
+<section class="section sessions-section" id="sessions">
+
+  <div class="section-inner">
+
+    <div class="section-title">
+
+      <div class="small">
+        TYMA SESSIONS
+      </div>
+
+      <h2>
+        Learn. Reflect. Connect.
+      </h2>
+
+      <p>
+        Join our free community sessions and grow
+        alongside other women.
+      </p>
+
+    </div>
+
+
+    <div class="session-card">
+
+      <h2>
+        Free TYMA Community Sessions
+      </h2>
+
+      <div class="session-time">
+        Every Tuesday & Thursday • 8:00 PM
+      </div>
+
+      <p>
+        Online via Zoom
+      </p>
+
+      <p>
+        Conversations, learning, personal development,
+        technology, AI and meaningful connections.
+      </p>
+
+      <a
+        href="https://www.facebook.com/share/1HzGgrnXUZ/"
+        class="cta-button"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        Follow TYMA on Facebook →
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECT 100 WOMEN
+========================= -->
+
+<section class="section project-section">
+
+  <div class="section-inner">
+
+    <div class="project-card">
+
+      <div class="project-number">
+        100
+      </div>
+
+      <h2>
+        Project 100 Women 2026
+      </h2>
+
+      <p>
+        100 women. 100 stories.
+        A collection of voices, experiences,
+        lessons and possibilities from women
+        who know that their stories matter.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+  <h2>
+    You Matter.
+  </h2>
+
+  <p>
+    Your story matters. Your dreams matter.
+    Your growth matters. And there is still
+    so much more possible for you.
+  </p>
+
+  <a
+    href="https://www.facebook.com/share/1HzGgrnXUZ/"
+    class="cta-button"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    Join TYMA →
+
+  </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="footer-title">
+    The You Matter Academy
+  </div>
+
+  <p>
+    A community where women learn,
+    grow and remember that they matter.
+  </p>
+
+  <div class="footer-links">
+
+    <a href="projects.html">
+      Back to Projects
+    </a>
+
+    <a
+      href="https://www.facebook.com/share/1HzGgrnXUZ/"
+      target="_blank"
+      rel="noopener noreferrer">
+      Facebook
+    </a>
+
+  </div>
+
+  <br>
+
+  <p>
+    © 2026 TYMA • The You Matter Academy
+  </p>
+
+</footer>
+
+
+</body>
+
+</html>
