@@ -1,1 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Digital Products | FWORLD ONLINE</title>
+
+<meta name="description"
+content="Explore FWORLD Digital Products — eBooks created around love, relationships, personal growth, AI and women's empowerment.">
+
+<meta name="keywords"
+content="FWORLD Digital Products, eBooks, Equilibrium, Love Beyond, AI for Women, Stay or Run, After Choice, Relationship Reset">
+
+<meta name="author"
+content="Fatima Biston">
+
+<meta property="og:title"
+content="Digital Products | FWORLD ONLINE">
+
+<meta property="og:description"
+content="Explore eBooks from FWORLD covering love, relationships, personal growth, AI and women's empowerment.">
+
+<meta property="og:url"
+content="https://www.fworld.online/digital-products.html">
+
+<meta property="og:type"
+content="website">
+
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#fafafa;
+  color:#222;
+  line-height:1.6;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+  background:#1d1d1d;
+  padding:15px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.back-button{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.top-links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.top-button{
+  background:#fff;
+  color:#222;
+  text-decoration:none;
+  padding:9px 16px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.top-button:hover{
+  background:#eeeeee;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f3f3f3
+    );
+
+  padding:75px 6%;
+  text-align:center;
+}
+
+.hero-inner{
+  max-width:900px;
+  margin:auto;
+}
+
+.eyebrow{
+  color:#777;
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:3px;
+  margin-bottom:12px;
+}
+
+.hero h1{
+  font-size:clamp(42px,7vw,70px);
+  line-height:1.05;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:#111;
+}
+
+.hero p{
+  max-width:680px;
+  margin:auto;
+  color:#666;
+  font-size:18px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+  padding:75px 6%;
+}
+
+.section-inner{
+  max-width:1150px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title .small{
+  color:#777;
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:2px;
+  margin-bottom:8px;
+}
+
+.section-title h2{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:#777;
+  max-width:650px;
+  margin:auto;
+}
+
+
+/* =========================
+   EBOOK GRID
+========================= */
+
+.ebook-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+.ebook-card{
+  background:#fff;
+  border:1px solid #e7e7e7;
+  border-radius:20px;
+  overflow:hidden;
+  transition:.3s;
+  box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
+
+.ebook-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(0,0,0,.10);
+}
+
+.ebook-cover{
+  background:#f2f2f2;
+  padding:20px;
+  text-align:center;
+}
+
+.ebook-cover img{
+  width:100%;
+  max-width:240px;
+  height:300px;
+  object-fit:cover;
+  border-radius:8px;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.ebook-content{
+  padding:25px;
+}
+
+.ebook-content h3{
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.ebook-content p{
+  color:#6b6b6b;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.ebook-button{
+  display:inline-block;
+  background:#222;
+  color:#fff;
+  text-decoration:none;
+  padding:11px 20px;
+  border-radius:25px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.ebook-button:hover{
+  background:#555;
+}
+
+
+/* =========================
+   MORE DIGITAL PRODUCTS
+========================= */
+
+.coming-section{
+  background:#f4f4f4;
+}
+
+.coming-card{
+  max-width:850px;
+  margin:auto;
+  background:#fff;
+  border-radius:22px;
+  padding:45px 30px;
+  text-align:center;
+  border:1px solid #e5e5e5;
+}
+
+.coming-card h2{
+  font-size:32px;
+  margin-bottom:12px;
+}
+
+.coming-card p{
+  color:#707070;
+  max-width:650px;
+  margin:auto;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+  background:#222;
+  color:#fff;
+  text-align:center;
+  padding:70px 6%;
+}
+
+.cta h2{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.cta p{
+  max-width:650px;
+  margin:0 auto 25px;
+  color:#ddd;
+}
+
+.cta-button{
+  display:inline-block;
+  background:#fff;
+  color:#222;
+  text-decoration:none;
+  padding:13px 25px;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#151515;
+  color:#fff;
+  text-align:center;
+  padding:35px 6%;
+}
+
+.footer-title{
+  font-size:21px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+footer p{
+  color:#aaa;
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.footer-links a:hover{
+  text-decoration:underline;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:900px){
+
+  .ebook-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+  .topbar{
+    justify-content:center;
+  }
+
+  .hero{
+    padding:55px 6%;
+  }
+
+  .hero h1{
+    font-size:45px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .section{
+    padding:55px 6%;
+  }
+
+  .section-title h2{
+    font-size:30px;
+  }
+
+  .ebook-grid{
+    grid-template-columns:1fr;
+  }
+
+  .ebook-cover img{
+    height:auto;
+    max-height:380px;
+  }
+
+  .coming-card{
+    padding:35px 22px;
+  }
+
+  .cta h2{
+    font-size:31px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<header class="topbar">
+
+  <a
+    href="projects.html"
+    class="back-button">
+
+    ← Back to Project
+
+  </a>
+
+
+  <div class="top-links">
+
+    <a
+      href="marketplace.html"
+      class="top-button">
+
+      Marketplace
+
+    </a>
+
+
+    <a
+      href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.fworld.online%2Fdigital-products.html"
+      class="top-button"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      Share to Facebook
+
+    </a>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+
+      FWORLD DIGITAL PRODUCTS
+
+    </div>
+
+
+    <h1>
+
+      Ideas you can
+      <span>take with you.</span>
+
+    </h1>
+
+
+    <p>
+
+      Explore digital books created around love,
+      relationships, personal growth, AI and
+      women's empowerment.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     EBOOKS
+========================= -->
+
+<section class="section">
+
+  <div class="section-inner">
+
+
+    <div class="section-title">
+
+      <div class="small">
+
+        EBOOK COLLECTION
+
+      </div>
+
+
+      <h2>
+
+        eBooks
+
+      </h2>
+
+
+      <p>
+
+        Stories, reflections and practical guides
+        for different seasons of life.
+
+      </p>
+
+    </div>
+
+
+    <div class="ebook-grid">
+
+
+      <!-- EQUILIBRIUM -->
+
+      <article class="ebook-card">
+
+        <div class="ebook-cover">
+
+          <img
+            src="Equilibrium-ebook.jpg"
+            alt="EQUILIBRIUM eBook by Fatima Biston">
+
+        </div>
+
+
+        <div class="ebook-content">
+
+          <h3>
+            EQUILIBRIUM
+          </h3>
+
+
+          <p>
+            A guide to love, wandering and becoming whole.
+          </p>
+
+
+          <a
+            href="https://payhip.com/b/RJuET"
+            class="ebook-button"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            View eBook →
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- LOVE BEYOND -->
+
+      <article class="ebook-card">
+
+        <div class="ebook-cover">
+
+          <img
+            src="Lovebeyond-ebook.jpg"
+            alt="Love Beyond eBook">
+
+        </div>
+
+
+        <div class="ebook-content">
+
+          <h3>
+            LOVE BEYOND
+          </h3>
+
+
+          <p>
+            A reflection on love, growth and what comes after.
+          </p>
+
+
+          <a
+            href="https://payhip.com/b/EJSIB"
+            class="ebook-button"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            View eBook →
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- AI FOR WOMEN -->
+
+      <article class="ebook-card">
+
+        <div class="ebook-cover">
+
+          <img
+            src="AIforwomen-ebook.jpg"
+            alt="AI for Women eBook">
+
+        </div>
+
+
+        <div class="ebook-content">
+
+          <h3>
+            AI FOR WOMEN
+          </h3>
+
+
+          <p>
+            Discover practical ways women can learn
+            and use AI with confidence.
+          </p>
+
+
+          <a
+            href="https://payhip.com/b/tLr93"
+            class="ebook-button"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            View eBook →
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- STAY OR RUN -->
+
+      <article class="ebook-card">
+
+        <div class="ebook-cover">
+
+          <img
+            src="stayorrun-ebook.jpg"
+            alt="Stay or Run eBook">
+
+        </div>
+
+
+        <div class="ebook-content">
+
+          <h3>
+            STAY OR RUN
+          </h3>
+
+
+          <p>
+            A reflective guide for moments when
+            difficult choices need clarity.
+          </p>
+
+
+          <a
+            href="https://payhip.com/b/gGrZn"
+            class="ebook-button"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            View eBook →
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- AFTER CHOICE -->
+
+      <article class="ebook-card">
+
+        <div class="ebook-cover">
+
+          <img
+            src="Afterchoice-ebook.jpg"
+            alt="After Choice eBook">
+
+        </div>
+
+
+        <div class="ebook-content">
+
+          <h3>
+            AFTER CHOICE
+          </h3>
+
+
+          <p>
+            Reflections on life, decisions and
+            the person we become afterward.
+          </p>
+
+
+          <a
+            href="https://payhip.com/b/FwWJj"
+            class="ebook-button"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            View eBook →
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- RELATIONSHIP RESET -->
+
+      <article class="ebook-card">
+
+        <div class="ebook-cover">
+
+          <img
+            src="Relationshipreset-ebook.jpg"
+            alt="Relationship Reset eBook">
+
+        </div>
+
+
+        <div class="ebook-content">
+
+          <h3>
+            RELATIONSHIP RESET
+          </h3>
+
+
+          <p>
+            A practical reflection guide for
+            understanding relationships and boundaries.
+          </p>
+
+
+          <a
+            href="https://payhip.com/b/SXPED"
+            class="ebook-button"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            View eBook →
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     MORE DIGITAL PRODUCTS
+========================= -->
+
+<section class="section coming-section">
+
+  <div class="section-inner">
+
+    <div class="coming-card">
+
+      <h2>
+        More Digital Products
+      </h2>
+
+
+      <p>
+
+        More guides, resources and digital creations
+        will be added to FWORLD Digital Products.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+  <h2>
+    Explore FWORLD
+  </h2>
+
+
+  <p>
+
+    Discover more projects, communities,
+    opportunities and digital creations
+    across the FWORLD ecosystem.
+
+  </p>
+
+
+  <a
+    href="marketplace.html"
+    class="cta-button">
+
+    Visit FWORLD Marketplace →
+
+  </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="footer-title">
+
+    FWORLD ONLINE
+
+  </div>
+
+
+  <p>
+
+    Business • Beauty • Digital • Travel
+
+  </p>
+
+
+  <div class="footer-links">
+
+    <a href="index.html">
+      Home
+    </a>
+
+
+    <a href="projects.html">
+      Projects
+    </a>
+
+
+    <a href="marketplace.html">
+      Marketplace
+    </a>
+
+  </div>
+
+
+  <br>
+
+
+  <p>
+
+    © 2026 FWORLD ONLINE
+
+  </p>
+
+</footer>
+
+
+</body>
+
+</html>
