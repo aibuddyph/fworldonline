@@ -542,7 +542,7 @@ footer p{
 }
 
 
-/* =========================
+  /* =========================
    MOBILE
 ========================= */
 
@@ -632,10 +632,46 @@ footer p{
     font-size:32px;
   }
 
+
+  /* =========================
+     FACEBOOK SHARE BUTTON
+  ========================= */
+
+  .share-button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:90%;
+    max-width:320px;
+    min-height:50px;
+
+    margin:15px auto;
+    padding:15px 18px;
+
+    box-sizing:border-box;
+
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+    line-height:1.2;
+
+    cursor:pointer;
+    touch-action:manipulation;
+    pointer-events:auto;
+
+    position:relative;
+    z-index:100;
+
+    -webkit-tap-highlight-color:transparent;
+  }
+
 }
 
 
-/* EXTRA SMALL PHONES */
+/* =========================
+   EXTRA SMALL PHONES
+========================= */
 
 @media(max-width:420px){
 
@@ -656,16 +692,15 @@ footer p{
     padding:8px 13px;
   }
 
+
+  /* FACEBOOK BUTTON */
+  .share-button{
+    width:92%;
+    min-height:48px;
+    font-size:15px;
+  }
+
 }
-
-</style>
-
-</head>
-
-
-<body>
-
-
 <!-- =========================
      TOP BAR
 ========================= -->
