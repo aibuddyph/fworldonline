@@ -1,1 +1,666 @@
-1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Clyne e-Store | Property Consultant & Furniture Making | Tatak Pinoy</title>
+
+  <meta name="description"
+    content="Clyne Bofill – Property Consultant & Furniture Making. Discover real estate services and handcrafted furniture through Clyne e-Store, part of FWORLD Tatak Pinoy.">
+
+  <meta name="keywords"
+    content="Clyne Bofill, property consultant, real estate, furniture making, Clyne e-Store, Tatak Pinoy, FWORLD Marketplace">
+
+  <meta name="author" content="Clyne Bofill">
+
+  <!-- Facebook / Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Clyne e-Store | Property Consultant & Furniture Making">
+  <meta property="og:description"
+    content="Discover real estate services and furniture making by Clyne Bofill through FWORLD Tatak Pinoy.">
+  <meta property="og:image" content="clyne-estore-logo.jpg">
+  <meta property="og:url" content="https://www.fworld.online/clyne-estore.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clyne e-Store">
+  <meta name="twitter:description"
+    content="Clyne Bofill – Property Consultant & Furniture Making">
+  <meta name="twitter:image" content="clyne-estore-logo.jpg">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f5;
+      color: #171717;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* TOP NAVIGATION */
+    .top-nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 22px 20px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .back-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 9px 15px;
+      border: 1px solid #222;
+      border-radius: 30px;
+      font-size: 13px;
+      transition: 0.3s;
+      background: white;
+    }
+
+    .back-btn:hover {
+      background: #222;
+      color: white;
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 55px 25px;
+      background: white;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    }
+
+    .store-logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 58px);
+      letter-spacing: -1.5px;
+      margin-bottom: 8px;
+    }
+
+    .hero h2 {
+      font-size: 18px;
+      font-weight: 400;
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #555;
+      font-size: 15px;
+    }
+
+    /* BUTTONS */
+    .actions {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .facebook-btn {
+      background: #1877f2;
+      color: white;
+    }
+
+    .facebook-btn:hover {
+      opacity: 0.88;
+    }
+
+    .share-btn {
+      background: #111;
+      color: white;
+    }
+
+    .share-btn:hover {
+      background: #333;
+    }
+
+    /* CONTENT */
+    .section {
+      max-width: 1100px;
+      margin: 45px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .section-title h2 {
+      font-size: 30px;
+      margin-bottom: 5px;
+    }
+
+    .section-title p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* ABOUT */
+    .about {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 35px;
+      align-items: center;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+    }
+
+    .about-photo {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+    }
+
+    .about h3 {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .about p {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    /* SERVICES */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.05);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 22px;
+    }
+
+    .card-content h3 {
+      font-size: 23px;
+      margin-bottom: 7px;
+    }
+
+    .card-content p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 15px;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    /* CTA */
+    .cta {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 50px 25px;
+      background: #171717;
+      color: white;
+      border-radius: 22px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #ccc;
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .cta .facebook-btn {
+      display: inline-block;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px 20px 45px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #222;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+
+      .top-nav {
+        justify-content: center;
+      }
+
+      .hero {
+        margin: 10px 12px 25px;
+        padding: 40px 20px;
+      }
+
+      .store-logo {
+        width: 100px;
+        height: 100px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .about-photo {
+        max-width: 260px;
+        margin: auto;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery img {
+        height: 170px;
+      }
+
+      .section {
+        margin: 35px auto;
+      }
+    }
+
+    @media (max-width: 430px) {
+
+      .back-btn {
+        font-size: 12px;
+        padding: 8px 12px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img {
+        height: 230px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <div class="top-nav">
+
+    <div class="back-links">
+      <a href="tatak-pinoy.html" class="back-btn">
+        ← Back to Tatak Pinoy
+      </a>
+
+      <a href="marketplace.html" class="back-btn">
+        ← Back to Marketplace
+      </a>
+    </div>
+
+  </div>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <img
+      src="clyne-estore-logo.jpg"
+      alt="Clyne e-Store Logo"
+      class="store-logo"
+    >
+
+    <h1>Clyne e-Store</h1>
+
+    <h2>
+      Clyne Bofill — Property Consultant & Furniture Making
+    </h2>
+
+    <p>
+      Connecting people with property opportunities and quality
+      furniture craftsmanship through trusted personal service.
+    </p>
+
+    <div class="actions">
+
+      <a
+        href="https://www.facebook.com/share/1BoFZZhVt6/?mibextid=wwXIfr"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn facebook-btn"
+      >
+        Visit Facebook
+      </a>
+
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.fworld.online%2Fclyne-estore.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn share-btn"
+      >
+        Share on Facebook
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="section">
+
+    <div class="section-title">
+      <h2>Meet Clyne</h2>
+      <p>Property • Furniture • Personalized Service</p>
+    </div>
+
+    <div class="about">
+
+      <div>
+        <img
+          src="clyne-selfpicture.jpg"
+          alt="Clyne Bofill"
+          class="about-photo"
+        >
+      </div>
+
+      <div>
+
+        <h3>Clyne Bofill</h3>
+
+        <p>
+          <strong>Property Consultant & Furniture Making</strong>
+        </p>
+
+        <p>
+          Clyne e-Store brings together property consulting and
+          furniture-making services in one place — helping clients
+          explore opportunities while also creating functional and
+          beautiful furniture pieces.
+        </p>
+
+        <p>
+          For inquiries, property opportunities, furniture projects,
+          and collaborations, connect directly through Facebook.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+  <section class="section">
+
+    <div class="section-title">
+      <h2>What Clyne Offers</h2>
+      <p>Explore the services and featured work.</p>
+    </div>
+
+    <div class="cards">
+
+      <!-- REAL ESTATE -->
+      <div class="card">
+
+        <img
+          src="clyne-realestate.jpg"
+          alt="Clyne real estate property"
+          class="card-image"
+        >
+
+        <div class="card-content">
+
+          <h3>Real Estate</h3>
+
+          <p>
+            Property consulting and assistance for clients looking
+            for real estate opportunities.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- FURNITURE -->
+      <div class="card">
+
+        <img
+          src="clyne-furniture.jpg"
+          alt="Clyne furniture making"
+          class="card-image"
+        >
+
+        <div class="card-content">
+
+          <h3>Furniture Making</h3>
+
+          <p>
+            Furniture projects created with attention to design,
+            function, and the needs of each client.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REAL ESTATE GALLERY -->
+  <section class="section">
+
+    <div class="section-title">
+
+      <h2>Property Features</h2>
+
+      <p>
+        Selected real estate features from Clyne.
+      </p>
+
+    </div>
+
+    <div class="gallery">
+
+      <img
+        src="clyne-realestate.jpg"
+        alt="Clyne real estate feature"
+      >
+
+      <img
+        src="clyne-realestate1.jpg"
+        alt="Clyne real estate property"
+      >
+
+    </div>
+
+  </section>
+
+
+  <!-- FURNITURE GALLERY -->
+  <section class="section">
+
+    <div class="section-title">
+
+      <h2>Furniture Collection</h2>
+
+      <p>
+        Featured furniture-making projects.
+      </p>
+
+    </div>
+
+    <div class="gallery">
+
+      <img
+        src="clyne-furniture.jpg"
+        alt="Clyne furniture project"
+      >
+
+      <img
+        src="clyne-furniture1.jpg"
+        alt="Clyne furniture project"
+      >
+
+      <img
+        src="clyne-furniture2.jpg"
+        alt="Clyne furniture project"
+      >
+
+      <img
+        src="clyne-furniture4.jpg"
+        alt="Clyne furniture project"
+      >
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <h2>Interested in Clyne's Services?</h2>
+
+    <p>
+      For property inquiries, furniture projects, and other
+      business inquiries, connect directly with Clyne Bofill.
+    </p>
+
+    <a
+      href="https://www.facebook.com/share/1BoFZZhVt6/?mibextid=wwXIfr"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn facebook-btn"
+    >
+      Visit Clyne on Facebook
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      <strong>Clyne e-Store</strong>
+    </p>
+
+    <p>
+      Clyne Bofill — Property Consultant & Furniture Making
+    </p>
+
+    <p>
+      Part of <strong>FWORLD Marketplace • Tatak Pinoy</strong>
+    </p>
+
+    <br>
+
+    <p>
+      © 2026 FWORLD Online. All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- FACEBOOK SDK / SHARING SUPPORT -->
+  <script>
+    function shareClyneStore() {
+      const url = encodeURIComponent(
+        "https://www.fworld.online/clyne-estore.html"
+      );
+
+      window.open(
+        "https://www.facebook.com/sharer/sharer.php?u=" + url,
+        "_blank",
+        "width=600,height=500"
+      );
+    }
+  </script>
+
+</body>
+</html>
