@@ -1,1 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Sophia Reseller Program | FWORLD</title>
+
+  <meta name="description" content="Discover the Sophia Reseller Program — build your beauty business, connect with a growing community, and grow with Sophia Cosmetics through FWORLD Marketplace.">
+
+  <meta name="keywords" content="Sophia Reseller Program, Sophia Cosmetics, beauty reseller, reseller program, beauty business, FWORLD Marketplace, Tatak Pinoy">
+
+  <meta property="og:title" content="Sophia Reseller Program | FWORLD">
+  <meta property="og:description" content="Build your beauty business with the Sophia Reseller Program.">
+  <meta property="og:image" content="sophia-logo.jpg">
+  <meta property="og:type" content="website">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fafafa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+    .top-nav {
+      width: 100%;
+      background: #111;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .top-nav a {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 9px 15px;
+      border-radius: 20px;
+      transition: 0.3s ease;
+    }
+
+    .top-nav a:hover {
+      background: #fff;
+      color: #111;
+    }
+
+    /* HERO */
+    .hero {
+      background: #fff;
+      text-align: center;
+      padding: 55px 20px 45px;
+    }
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 50%;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 6vw, 52px);
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 25px;
+      color: #666;
+      font-size: 17px;
+    }
+
+    /* VIDEO */
+    .video-section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px 55px;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      background: #000;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+    }
+
+    .video-wrapper video {
+      display: block;
+      width: 100%;
+      max-height: 620px;
+      object-fit: cover;
+    }
+
+    /* GENERAL SECTION */
+    .section {
+      padding: 70px 20px;
+    }
+
+    .section-inner {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(27px, 5vw, 40px);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #666;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* RESELLER PROGRAM */
+    .program {
+      background: #f1eee9;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px 25px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .card-number {
+      width: 45px;
+      height: 45px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 15px;
+    }
+
+    /* TOP MEMBERS */
+    .members {
+      background: #fff;
+    }
+
+    .member-intro {
+      max-width: 720px;
+      margin: 25px auto 45px;
+      text-align: center;
+      color: #666;
+    }
+
+    /* COMMUNITY */
+    .community {
+      background: #111;
+      color: #fff;
+    }
+
+    .community .section-title p {
+      color: #ccc;
+    }
+
+    .community-box {
+      max-width: 800px;
+      margin: 35px auto 0;
+      text-align: center;
+      padding: 40px 25px;
+      border: 1px solid #444;
+      border-radius: 20px;
+    }
+
+    .community-box h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .community-box p {
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    /* GALLERY */
+    .gallery-section {
+      background: #f8f8f8;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 40px;
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    /* CTA */
+    .cta {
+      background: #fff;
+      text-align: center;
+      padding: 75px 20px;
+    }
+
+    .cta h2 {
+      font-size: clamp(28px, 5vw, 42px);
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: #666;
+      max-width: 620px;
+      margin: 0 auto 28px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .button-dark {
+      background: #111;
+      color: #fff;
+    }
+
+    .button-dark:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    .button-light {
+      border: 1px solid #111;
+      color: #111;
+      background: #fff;
+    }
+
+    .button-light:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      .top-nav {
+        gap: 3px;
+        padding: 11px 8px;
+      }
+
+      .top-nav a {
+        font-size: 11px;
+        padding: 8px 10px;
+      }
+
+      .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .logo {
+        width: 125px;
+        height: 125px;
+      }
+
+      .section {
+        padding: 55px 18px;
+      }
+    }
+
+    @media (max-width: 400px) {
+
+      .top-nav a {
+        font-size: 10px;
+        padding: 7px 8px;
+      }
+
+      .gallery {
+        gap: 9px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP NAVIGATION -->
+  <nav class="top-nav">
+    <a href="index.html">FWORLD</a>
+    <a href="marketplace.html">MARKETPLACE</a>
+    <a href="tatak-pinoy.html">TATAK PINOY</a>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero">
+
+    <img
+      src="sophia-logo.jpg"
+      alt="Sophia Cosmetics"
+      class="logo"
+    >
+
+    <h1>Sophia Reseller Program</h1>
+
+    <p>
+      Build your own beauty business, connect with a growing community,
+      and grow together with Sophia.
+    </p>
+
+  </header>
+
+
+  <!-- VIDEO -->
+  <section class="video-section">
+
+    <div class="video-wrapper">
+
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        poster="sophia-logo.jpg"
+      >
+        <source src="sophia-reseller-video1.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+
+    </div>
+
+  </section>
+
+
+  <!-- RESELLER PROGRAM -->
+  <section class="section program">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+        <h2>Reseller Program</h2>
+
+        <p>
+          A simple opportunity for people who want to explore
+          beauty, business, and entrepreneurship with Sophia.
+        </p>
+      </div>
+
+
+      <div class="program-grid">
+
+        <div class="card">
+          <div class="card-number">1</div>
+
+          <h3>Join</h3>
+
+          <p>
+            Become part of the Sophia reseller community
+            and begin your journey.
+          </p>
+        </div>
+
+
+        <div class="card">
+          <div class="card-number">2</div>
+
+          <h3>Share</h3>
+
+          <p>
+            Introduce Sophia products to your customers,
+            friends, and community.
+          </p>
+        </div>
+
+
+        <div class="card">
+          <div class="card-number">3</div>
+
+          <h3>Grow</h3>
+
+          <p>
+            Build relationships, develop your skills,
+            and grow your beauty business.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TOP MEMBERS -->
+  <section class="section members">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>Top Members</h2>
+
+        <p>
+          Celebrating the people who continue to learn,
+          share, support, and grow within the Sophia community.
+        </p>
+
+      </div>
+
+
+      <p class="member-intro">
+        Success is not only about numbers. It is also about
+        consistency, leadership, relationships, and the willingness
+        to help others grow.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- COMMUNITY -->
+  <section class="section community">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>Community</h2>
+
+        <p>
+          More than products — a community where people can
+          connect, learn, share experiences, and support one another.
+        </p>
+
+      </div>
+
+
+      <div class="community-box">
+
+        <h3>Grow Together</h3>
+
+        <p>
+          The Sophia community brings resellers together through
+          shared experiences, product knowledge, encouragement,
+          and business conversations.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PHOTO GALLERY -->
+  <section class="section gallery-section">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>Sophia Community</h2>
+
+        <p>
+          Moments, people, and stories from the Sophia community.
+        </p>
+
+      </div>
+
+
+      <div class="gallery">
+
+        <img src="sophia-picture1.jpg" alt="Sophia community member">
+        <img src="sophia-picture2.jpg" alt="Sophia community">
+        <img src="sophia-picture3.jpg" alt="Sophia reseller">
+        <img src="sophia-picture4.jpg" alt="Sophia community">
+        <img src="sophia-picture5.jpg" alt="Sophia reseller community">
+        <img src="sophia-picture6.jpg" alt="Sophia community">
+        <img src="sophia-picture7.jpg" alt="Sophia reseller">
+        <img src="sophia-picture8.jpg" alt="Sophia community">
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <h2>Ready to Explore Sophia?</h2>
+
+    <p>
+      Discover the Sophia Reseller Program and connect
+      with the community.
+    </p>
+
+
+    <div class="buttons">
+
+      <!-- Facebook Page -->
+      <a
+        href="https://www.facebook.com/share/1Ds6nJYJRY/?mibextid=wwXIfr"
+        class="button button-dark"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Visit Facebook Page
+      </a>
+
+
+      <!-- Share Page -->
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u=https://fworld.online/sophia-reseller-program.html"
+        class="button button-light"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Share to Facebook
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      <strong>FWORLD</strong> · Sophia Reseller Program
+    </p>
+
+    <p>
+      © 2026 FWORLD. All rights reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
