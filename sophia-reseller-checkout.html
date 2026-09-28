@@ -131,17 +131,17 @@
       <h1>Checkout</h1>
 
       <p class="subtitle">
-        Sophia Cosmetics Reselling Package
+        Sophia Cosmetics Reseller Package
       </p>
 
       <div class="product-summary">
 
         <h2>Sophia Cosmetics Lip Tint</h2>
 
-        <p>Reselling Package</p>
+        <p>Reseller Package</p>
 
         <div class="price">
-          ₱[AMOUNT]
+          ₱1499.00
         </div>
 
       </div>
@@ -180,17 +180,18 @@
         ></textarea>
 
         <label for="shipping">Shipping / Logistics</label>
+
         <select id="shipping" name="shipping" required>
+        <option value="">Select shipping option</option>
 
-          <option value="">
-            Select shipping option
-          </option>
-
-          <option value="standard">
-            Standard Delivery
-          </option>
-
+        <option value="standard" data-price="250">
+            Standard Delivery — ₱250
+           </option>
         </select>
+
+          <p class="shipping-note">
+           Standard Delivery: ₱250
+          </p>
 
         <button
           type="submit"
