@@ -197,6 +197,76 @@
           type="submit"
           class="buy-button"
         >
+
+          <!-- PAYMENT METHOD -->
+<div class="payment-section">
+
+  <h2>Payment Method</h2>
+
+  <p class="payment-note">
+    Please choose your preferred payment method and complete your payment
+    after submitting your order.
+  </p>
+
+  <div class="payment-card">
+
+    <label for="payment">Select Payment Method</label>
+
+    <select id="payment" name="payment" required>
+      <option value="">Select payment method</option>
+
+      <option value="gotyme">
+        GO TYME
+      </option>
+
+      <option value="bpi_bank_transfer">
+        BPI Bank Transfer
+      </option>
+    </select>
+
+  </div>
+
+  <div class="payment-details">
+
+    <div class="payment-option">
+
+      <h3>GO TYME</h3>
+
+      <p>
+        <strong>Account Number:</strong><br>
+        019421267430
+      </p>
+
+    </div>
+
+    <div class="payment-option">
+
+      <h3>BPI Bank Transfer</h3>
+
+      <p>
+        <strong>Bank Account Name:</strong><br>
+        FMSI Travel Agency
+      </p>
+
+      <p>
+        <strong>Bank Account Number:</strong><br>
+        9439225189
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="payment-status">
+
+    <strong>Payment Status:</strong>
+    <span>PENDING PAYMENT</span>
+
+  </div>
+
+</div>
+
+          
           Place Order →
         </button>
 
