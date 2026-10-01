@@ -384,9 +384,14 @@
 
   </div>
 <script>
+let isSubmitting = false;
+
 document.querySelector("form").addEventListener("submit", async function (event) {
 
   event.preventDefault();
+
+  if (isSubmitting) return;
+  isSubmitting = true;
 
   const order = {
     fullName: document.getElementById("name").value.trim(),
@@ -438,14 +443,14 @@ document.querySelector("form").addEventListener("submit", async function (event)
 
   } catch (error) {
 
-    console.error(error);
+    isSubmitting = false;
 
     alert(
       "Sorry, we could not submit your order.\n\n" +
       error.message
     );
   }
-
+    
 });
 </script>
 </body>
