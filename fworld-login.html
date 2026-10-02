@@ -1,421 +1,1064 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FWORLD Membership | Member Login</title>
+  <meta charset="UTF-8">
 
-<meta name="description"
-      content="FWORLD Membership Login — Enter your FWORLD and access your personal member dashboard.">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  <title>FWORLD AI | Member Login</title>
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 50% 15%, #252525 0%, #111 38%, #050505 75%);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px;
-  overflow-x: hidden;
-}
+  <meta name="description"
+        content="Enter your FWORLD AI Member System and access your personal FWORLD Dashboard.">
 
-/* AI BACKGROUND */
-.ai-orbit {
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 50%;
-  pointer-events: none;
-}
+  <meta property="og:title"
+        content="FWORLD AI | Member Login">
 
-.ai-orbit::before,
-.ai-orbit::after {
-  content: "";
-  position: absolute;
-  inset: 45px;
-  border: 1px solid rgba(255,140,0,.12);
-  border-radius: 50%;
-}
-
-.ai-orbit::after {
-  inset: 100px;
-  border-color: rgba(255,255,255,.05);
-}
-
-.login-wrapper {
-  width: 100%;
-  max-width: 440px;
-  position: relative;
-  z-index: 2;
-}
-
-/* BRAND */
-.brand {
-  text-align: center;
-  margin-bottom: 28px;
-}
-
-.brand-name {
-  font-size: 34px;
-  font-weight: 900;
-  letter-spacing: 5px;
-}
-
-.brand-line {
-  width: 45px;
-  height: 3px;
-  background: #ff8a00;
-  margin: 13px auto;
-  border-radius: 10px;
-}
-
-.brand-subtitle {
-  color: #aaa;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-/* LOGIN CARD */
-.login-card {
-  background: rgba(255,255,255,.055);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 28px;
-  padding: 38px 32px;
-  backdrop-filter: blur(18px);
-  box-shadow: 0 25px 80px rgba(0,0,0,.5);
-}
-
-.ai-icon {
-  width: 66px;
-  height: 66px;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,138,0,.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  box-shadow:
-    0 0 0 8px rgba(255,138,0,.04),
-    0 0 35px rgba(255,138,0,.12);
-}
-
-.login-card h1 {
-  text-align: center;
-  font-size: 27px;
-  margin-bottom: 9px;
-}
-
-.intro {
-  text-align: center;
-  color: #999;
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-/* FORM */
-.form-group {
-  margin-bottom: 18px;
-}
-
-label {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #bbb;
-  margin-bottom: 8px;
-}
-
-input {
-  width: 100%;
-  height: 54px;
-  padding: 0 17px;
-  border-radius: 14px;
-  border: 1px solid #333;
-  outline: none;
-  background: rgba(0,0,0,.5);
-  color: #fff;
-  font-size: 15px;
-  transition: .25s ease;
-}
-
-input::placeholder {
-  color: #666;
-}
-
-input:focus {
-  border-color: #ff8a00;
-  box-shadow: 0 0 0 3px rgba(255,138,0,.08);
-}
-
-/* BUTTON */
-.login-btn {
-  width: 100%;
-  height: 56px;
-  margin-top: 8px;
-  border: none;
-  border-radius: 15px;
-  background: #fff;
-  color: #080808;
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 1.5px;
-  cursor: pointer;
-  transition: .25s ease;
-}
-
-.login-btn:hover {
-  background: #ff8a00;
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.login-btn:active {
-  transform: scale(.98);
-}
-
-/* LINKS */
-.forgot {
-  display: block;
-  text-align: center;
-  color: #999;
-  font-size: 12px;
-  margin-top: 19px;
-  text-decoration: none;
-}
-
-.forgot:hover {
-  color: #ff8a00;
-}
-
-.join {
-  text-align: center;
-  margin-top: 30px;
-  padding-top: 23px;
-  border-top: 1px solid rgba(255,255,255,.08);
-  color: #888;
-  font-size: 13px;
-}
-
-.join a {
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.join a:hover {
-  color: #ff8a00;
-}
-
-/* AI STATUS */
-.ai-status {
-  margin-top: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  color: #777;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  background: #ff8a00;
-  border-radius: 50%;
-  box-shadow: 0 0 12px rgba(255,138,0,.7);
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  margin-top: 25px;
-  color: #555;
-  font-size: 10px;
-  letter-spacing: 1px;
-}
-
-/* MOBILE */
-@media (max-width: 480px) {
-
-  body {
-    padding: 18px;
-  }
-
-  .login-card {
-    padding: 32px 22px;
-    border-radius: 23px;
-  }
-
-  .brand-name {
-    font-size: 29px;
-  }
-
-  .login-card h1 {
-    font-size: 24px;
-  }
-
-  .ai-orbit {
-    width: 350px;
-    height: 350px;
-  }
-    @media (max-width: 768px) {
-  .member-login {
-    width: auto;
-    display: inline-flex;
-    padding: 9px 14px;
-    margin-top: 5px;
-    border-radius: 999px;
-    font-size: 12px;
-  }
+  <meta property="og:description"
+        content="Your FWORLD. Your business. Your digital world.">
 
 
-  }
-}
-</style>
+  <style>
+
+    /* =========================================
+       RESET
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    /* =========================================
+       BODY
+    ========================================= */
+
+    body {
+
+      min-height: 100vh;
+
+      font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      color: #ffffff;
+
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          rgba(255, 20, 147, .10),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 15% 85%,
+          rgba(255, 20, 147, .06),
+          transparent 25%
+        ),
+        #050505;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow-x: hidden;
+
+      padding: 24px;
+    }
+
+
+    /* =========================================
+       FUTURISTIC GRID
+    ========================================= */
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      opacity: .18;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.035) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.035) 1px,
+          transparent 1px
+        );
+
+      background-size: 45px 45px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 85%
+        );
+    }
+
+
+    /* =========================================
+       FLOATING LIGHTS
+    ========================================= */
+
+    .light {
+
+      position: fixed;
+
+      width: 5px;
+      height: 5px;
+
+      background: #ff1493;
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 10px #ff1493,
+        0 0 25px rgba(255,20,147,.7);
+
+      opacity: .7;
+
+      animation:
+        floatLight 6s infinite ease-in-out;
+    }
+
+    .light.one {
+      top: 18%;
+      left: 12%;
+    }
+
+    .light.two {
+      top: 72%;
+      right: 14%;
+      animation-delay: 2s;
+    }
+
+    .light.three {
+      top: 32%;
+      right: 8%;
+      animation-delay: 4s;
+    }
+
+    @keyframes floatLight {
+
+      0%,100% {
+        transform: translateY(0);
+        opacity: .35;
+      }
+
+      50% {
+        transform: translateY(-20px);
+        opacity: 1;
+      }
+    }
+
+
+    /* =========================================
+       MAIN
+    ========================================= */
+
+    .system {
+
+      width: 100%;
+      max-width: 440px;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    /* =========================================
+       FWORLD BRAND
+    ========================================= */
+
+    .brand {
+
+      text-align: center;
+
+      margin-bottom: 25px;
+    }
+
+    .brand-name {
+
+      font-size: 38px;
+
+      font-weight: 900;
+
+      letter-spacing: 7px;
+
+      color: #ffffff;
+
+      text-shadow:
+        0 0 20px rgba(255,20,147,.25);
+    }
+
+    .brand-ai {
+
+      margin-top: 8px;
+
+      font-size: 10px;
+
+      letter-spacing: 4px;
+
+      color: #ff1493;
+
+      font-weight: 800;
+    }
+
+
+    /* =========================================
+       AI CORE
+    ========================================= */
+
+    .ai-core {
+
+      width: 105px;
+      height: 105px;
+
+      margin: 0 auto 28px;
+
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    /* OUTER ORBIT */
+
+    .orbit {
+
+      position: absolute;
+
+      inset: 0;
+
+      border:
+
+        1px solid
+        rgba(255,20,147,.45);
+
+      border-radius: 50%;
+
+      animation:
+        rotateOrbit 8s linear infinite;
+    }
+
+
+    .orbit::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 9px;
+      height: 9px;
+
+      background: #ff1493;
+
+      border-radius: 50%;
+
+      top: 7px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      box-shadow:
+        0 0 10px #ff1493,
+        0 0 25px #ff1493;
+    }
+
+
+    /* SECOND ORBIT */
+
+    .orbit.two {
+
+      inset: 11px;
+
+      transform: rotate(55deg);
+
+      border-color:
+        rgba(255,255,255,.20);
+
+      animation-duration: 5s;
+
+      animation-direction: reverse;
+    }
+
+
+    .orbit.two::before {
+
+      width: 5px;
+      height: 5px;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 0 10px #ffffff;
+    }
+
+
+    @keyframes rotateOrbit {
+
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+
+    /* CORE */
+
+    .core-center {
+
+      width: 54px;
+      height: 54px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          #ff8ac7 0%,
+          #ff1493 35%,
+          #8c0051 70%,
+          #080808 100%
+        );
+
+      box-shadow:
+
+        0 0 15px #ff1493,
+        0 0 40px rgba(255,20,147,.55),
+        0 0 80px rgba(255,20,147,.25);
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      font-size: 24px;
+
+      animation:
+        corePulse 2.5s infinite ease-in-out;
+    }
+
+    @keyframes corePulse {
+
+      0%,100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.07);
+      }
+    }
+
+
+    /* =========================================
+       LOGIN CARD
+    ========================================= */
+
+    .login-card {
+
+      position: relative;
+
+      background:
+        rgba(255,255,255,.96);
+
+      color: #111111;
+
+      border-radius: 28px;
+
+      padding: 34px 30px;
+
+      border:
+        1px solid
+        rgba(255,20,147,.22);
+
+      box-shadow:
+
+        0 30px 90px
+        rgba(0,0,0,.65),
+
+        0 0 45px
+        rgba(255,20,147,.08);
+
+      overflow: hidden;
+    }
+
+
+    /* PINK LIGHT LINE */
+
+    .login-card::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 3px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          #ff1493,
+          transparent
+        );
+
+      box-shadow:
+        0 0 15px #ff1493;
+    }
+
+
+    /* =========================================
+       LOGIN TEXT
+    ========================================= */
+
+    .system-label {
+
+      text-align: center;
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: 3px;
+
+      color: #ff1493;
+
+      margin-bottom: 12px;
+    }
+
+
+    h1 {
+
+      text-align: center;
+
+      font-size: 26px;
+
+      font-weight: 900;
+
+      margin-bottom: 8px;
+    }
+
+
+    .welcome {
+
+      text-align: center;
+
+      color: #666666;
+
+      font-size: 13px;
+
+      line-height: 1.6;
+
+      margin-bottom: 27px;
+    }
+
+
+    /* =========================================
+       INPUTS
+    ========================================= */
+
+    .field {
+
+      margin-bottom: 17px;
+    }
+
+
+    .field label {
+
+      display: block;
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      margin-bottom: 7px;
+
+      letter-spacing: .3px;
+    }
+
+
+    .field input {
+
+      width: 100%;
+
+      padding: 14px 15px;
+
+      border:
+        1px solid #dddddd;
+
+      border-radius: 12px;
+
+      background: #fafafa;
+
+      color: #111111;
+
+      font-size: 14px;
+
+      outline: none;
+
+      transition:
+        border .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+    }
+
+
+    .field input:focus {
+
+      border-color: #ff1493;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 0 0 4px
+        rgba(255,20,147,.09);
+    }
+
+
+    /* =========================================
+       LOGIN BUTTON
+    ========================================= */
+
+    .enter-button {
+
+      width: 100%;
+
+      margin-top: 5px;
+
+      padding: 15px;
+
+      border: none;
+
+      border-radius: 13px;
+
+      background: #111111;
+
+      color: #ffffff;
+
+      font-size: 14px;
+
+      font-weight: 900;
+
+      letter-spacing: .5px;
+
+      cursor: pointer;
+
+      transition:
+        .2s ease;
+
+      box-shadow:
+        0 8px 22px
+        rgba(0,0,0,.18);
+    }
+
+
+    .enter-button:hover {
+
+      background: #ff1493;
+
+      box-shadow:
+        0 8px 28px
+        rgba(255,20,147,.35);
+
+      transform:
+        translateY(-1px);
+    }
+
+
+    .enter-button:active {
+
+      transform:
+        scale(.98);
+    }
+
+
+    /* =========================================
+       FORGOT PASSWORD
+    ========================================= */
+
+    .forgot {
+
+      display: block;
+
+      text-align: center;
+
+      margin-top: 18px;
+
+      color: #ff1493;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      text-decoration: none;
+    }
+
+
+    .forgot:hover {
+
+      text-decoration: underline;
+    }
+
+
+    /* =========================================
+       DIVIDER
+    ========================================= */
+
+    .divider {
+
+      height: 1px;
+
+      background: #eeeeee;
+
+      margin: 24px 0;
+    }
+
+
+    /* =========================================
+       MEMBERSHIP
+    ========================================= */
+
+    .join {
+
+      text-align: center;
+
+      color: #777777;
+
+      font-size: 12px;
+
+      line-height: 1.7;
+    }
+
+
+    .join a {
+
+      display: inline-block;
+
+      margin-top: 5px;
+
+      color: #111111;
+
+      font-weight: 900;
+
+      text-decoration: none;
+    }
+
+
+    .join a:hover {
+
+      color: #ff1493;
+    }
+
+
+    /* =========================================
+       SYSTEM STATUS
+    ========================================= */
+
+    .status {
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      margin-top: 20px;
+
+      font-size: 10px;
+
+      letter-spacing: 2px;
+
+      color: #999999;
+
+      font-weight: 700;
+    }
+
+
+    .status-dot {
+
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #ff1493;
+
+      box-shadow:
+        0 0 8px #ff1493,
+        0 0 16px rgba(255,20,147,.5);
+
+      animation:
+        statusPulse 1.8s infinite;
+    }
+
+
+    @keyframes statusPulse {
+
+      0%,100% {
+        opacity: .4;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+
+    /* =========================================
+       BACK TO FWORLD
+    ========================================= */
+
+    .back {
+
+      display: block;
+
+      text-align: center;
+
+      margin-top: 18px;
+
+      color: #777777;
+
+      font-size: 11px;
+
+      text-decoration: none;
+    }
+
+
+    .back:hover {
+
+      color: #ffffff;
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 480px) {
+
+      body {
+
+        padding: 18px;
+      }
+
+
+      .brand-name {
+
+        font-size: 29px;
+
+        letter-spacing: 5px;
+      }
+
+
+      .brand-ai {
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+      }
+
+
+      .ai-core {
+
+        width: 88px;
+        height: 88px;
+
+        margin-bottom: 23px;
+      }
+
+
+      .core-center {
+
+        width: 47px;
+        height: 47px;
+
+        font-size: 21px;
+      }
+
+
+      .login-card {
+
+        padding: 30px 21px;
+
+        border-radius: 23px;
+      }
+
+
+      h1 {
+
+        font-size: 22px;
+      }
+
+
+      .welcome {
+
+        font-size: 12px;
+
+        margin-bottom: 23px;
+      }
+
+
+      .field input {
+
+        padding: 13px;
+      }
+
+
+      .enter-button {
+
+        padding: 14px;
+
+        font-size: 13px;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-<div class="ai-orbit"></div>
 
-<main class="login-wrapper">
+  <!-- FLOATING AI PARTICLES -->
 
-  <div class="brand">
-    <div class="brand-name">FWORLD</div>
-    <div class="brand-line"></div>
-    <div class="brand-subtitle">
-      Intelligent Member System
+  <div class="light one"></div>
+  <div class="light two"></div>
+  <div class="light three"></div>
+
+
+  <main class="system">
+
+
+    <!-- FWORLD BRAND -->
+
+    <div class="brand">
+
+      <div class="brand-name">
+        FWORLD
+      </div>
+
+      <div class="brand-ai">
+        AI MEMBER SYSTEM
+      </div>
+
     </div>
-  </div>
 
-  <section class="login-card">
 
-    <div class="ai-icon">🤖</div>
+    <!-- AI CORE -->
 
-    <h1>Welcome, Member</h1>
+    <div class="ai-core">
 
-    <p class="intro">
-      Your FWORLD is ready.<br>
-      Enter your account to continue.
-    </p>
+      <div class="orbit"></div>
 
-    <form id="memberLoginForm">
+      <div class="orbit two"></div>
 
-      <div class="form-group">
-        <label for="username">Username</label>
-
-        <input
-          type="text"
-          id="username"
-          name="username"
-          placeholder="Enter your username"
-          autocomplete="username"
-          required
-        >
+      <div class="core-center">
+        ✦
       </div>
 
-      <div class="form-group">
-        <label for="passcode">Passcode</label>
+    </div>
 
-        <input
-          type="password"
-          id="passcode"
-          name="passcode"
-          placeholder="Enter your passcode"
-          autocomplete="current-password"
-          required
-        >
+
+    <!-- LOGIN -->
+
+    <section class="login-card">
+
+
+      <div class="system-label">
+        INTELLIGENT ACCESS
       </div>
 
-      <button type="submit" class="login-btn">
-        ENTER FWORLD →
-      </button>
 
-    </form>
+      <h1>
+        Welcome to FWORLD
+      </h1>
 
-    <a href="#" class="forgot">
-      Forgot your passcode?
+
+      <p class="welcome">
+        Your digital world is ready.<br>
+        Sign in to continue to your personal FWORLD Dashboard.
+      </p>
+
+
+      <form id="loginForm">
+
+
+        <div class="field">
+
+          <label for="username">
+            USERNAME OR EMAIL
+          </label>
+
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username or email"
+            autocomplete="username"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="password">
+            PASSWORD
+          </label>
+
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="enter-button"
+        >
+          ENTER MY FWORLD →
+        </button>
+
+
+      </form>
+
+
+      <a
+        href="#"
+        class="forgot"
+      >
+        Forgot your password?
+      </a>
+
+
+      <div class="divider"></div>
+
+
+      <div class="join">
+
+        New to FWORLD?
+
+        <br>
+
+        <a href="#">
+          JOIN FWORLD MEMBERSHIP →
+        </a>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- SYSTEM STATUS -->
+
+    <div class="status">
+
+      <span class="status-dot"></span>
+
+      AI SYSTEM ONLINE
+
+    </div>
+
+
+    <!-- BACK -->
+
+    <a
+      href="index.html"
+      class="back"
+    >
+      ← Back to FWORLD
     </a>
 
-    <div class="join">
-      Not yet a member?
-      <a href="#">Join FWORLD Membership</a>
-    </div>
 
-    <div class="ai-status">
-      <span class="status-dot"></span>
-      FWORLD AI SYSTEM READY
-    </div>
+  </main>
 
-  </section>
 
-  <div class="footer">
-    © 2026 FWORLD ONLINE
-  </div>
-
-</main>
-
-<script>
-document
-  .getElementById("memberLoginForm")
-  .addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    const username =
-      document.getElementById("username").value.trim();
-
-    const passcode =
-      document.getElementById("passcode").value.trim();
-
-    if (!username || !passcode) {
-      alert("Please enter your username and passcode.");
-      return;
-    }
+  <script>
 
     /*
-      TEMPORARY PREVIEW ONLY
+      FWORLD AI MEMBER LOGIN
 
-      Later we will replace this with
-      real FWORLD Membership authentication.
+      FRONT-END PREVIEW ONLY
 
-      Example future flow:
-
-      Login
-        ↓
-      Member ID
-        ↓
-      Dashboard
-        ↓
-      AI Member Experience
+      Real authentication will be connected
+      to the FWORLD Membership Backend later.
     */
 
-    alert(
-      "Welcome to FWORLD, " +
-      username +
-      "!\\n\\nAuthentication will be connected to the FWORLD Membership system."
+    const loginForm =
+      document.getElementById("loginForm");
+
+
+    loginForm.addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+        const button =
+          document.querySelector(".enter-button");
+
+        button.textContent =
+          "CONNECTING TO FWORLD...";
+
+        button.style.background =
+          "#ff1493";
+
+        setTimeout(function() {
+
+          alert(
+            "FWORLD AI MEMBER SYSTEM\n\n" +
+            "Authentication will be connected " +
+            "to the FWORLD Membership Backend."
+          );
+
+          button.textContent =
+            "ENTER MY FWORLD →";
+
+          button.style.background =
+            "#111111";
+
+        }, 900);
+
+      }
     );
 
-  });
-</script>
+  </script>
+
 
 </body>
 </html>
