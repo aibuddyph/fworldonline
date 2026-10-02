@@ -1,1 +1,1118 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FWORLD GAMES | Play • Learn • Build • Grow</title>
+
+  <meta
+    name="description"
+    content="FWORLD GAMES — play, learn, make decisions, build your city and grow through interactive games."
+  >
+
+  <meta
+    name="keywords"
+    content="FWORLD Games, FWORLD City, Dream Board Game, business game, strategy game, Filipino games"
+  >
+
+  <meta property="og:title" content="FWORLD GAMES">
+  <meta
+    property="og:description"
+    content="Play. Learn. Build. Grow."
+  >
+  <meta property="og:type" content="website">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f7;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 9px 13px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      background: #111;
+      color: #fff;
+      padding: 90px 20px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: #ff7a00;
+      font-size: 0.85rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 9vw, 6rem);
+      line-height: 0.95;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+
+    .hero-flow {
+      margin-top: 25px;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================== */
+
+    .actions {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 23px;
+      border-radius: 10px;
+      font-weight: 900;
+      border: 2px solid #111;
+      background: #111;
+      color: #fff;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #ff7a00;
+      border-color: #ff7a00;
+      transform: translateY(-2px);
+    }
+
+    .btn.light {
+      background: #fff;
+      color: #111;
+      border-color: #fff;
+    }
+
+    .btn.light:hover {
+      background: #ff7a00;
+      color: #fff;
+      border-color: #ff7a00;
+    }
+
+    /* =========================
+       SECTION
+    ========================== */
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title span {
+      color: #ff7a00;
+      font-size: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-top: 5px;
+    }
+
+    .section-title p {
+      color: #666;
+      max-width: 700px;
+      margin: 10px auto 0;
+    }
+
+    /* =========================
+       FEATURED CITY
+    ========================== */
+
+    .featured {
+      background: #fff;
+    }
+
+    .city-card {
+      background: #111;
+      color: #fff;
+      border-radius: 28px;
+      padding: 45px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .city-label {
+      color: #ff7a00;
+      font-weight: 900;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+
+    .city-card h2 {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 0.95;
+      margin-bottom: 18px;
+    }
+
+    .city-card p {
+      color: #ccc;
+      max-width: 600px;
+    }
+
+    .city-loop {
+      margin-top: 22px;
+      font-weight: 900;
+      line-height: 2;
+    }
+
+    .city-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* CITY VISUAL */
+
+    .city-visual {
+      min-height: 320px;
+      border: 1px solid #444;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background:
+        linear-gradient(
+          135deg,
+          #151515,
+          #222
+        );
+    }
+
+    .city-icon {
+      font-size: 8rem;
+      filter: drop-shadow(0 15px 20px rgba(0,0,0,.4));
+    }
+
+    .floating-card {
+      position: absolute;
+      background: #fff;
+      color: #111;
+      border-radius: 12px;
+      padding: 12px 15px;
+      font-weight: 900;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+
+    .floating-one {
+      top: 25px;
+      left: 20px;
+    }
+
+    .floating-two {
+      right: 20px;
+      top: 80px;
+    }
+
+    .floating-three {
+      bottom: 25px;
+      left: 40px;
+    }
+
+    /* =========================
+       TOKEN INTRO
+    ========================== */
+
+    .token-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 35px;
+      text-align: center;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .token-value {
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      font-weight: 900;
+      margin: 10px 0;
+    }
+
+    .token-box p {
+      color: #666;
+    }
+
+    /* =========================
+       OTHER GAMES
+    ========================== */
+
+    .other-games {
+      background: #f7f7f7;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .game-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 18px;
+      padding: 28px;
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.2s ease;
+    }
+
+    .game-item:hover {
+      transform: translateY(-5px);
+      border-color: #ff7a00;
+    }
+
+    .game-icon {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+    }
+
+    .game-item h3 {
+      font-size: 1.35rem;
+      margin-bottom: 7px;
+    }
+
+    .game-item p {
+      color: #666;
+      font-size: 0.92rem;
+    }
+
+    .game-link {
+      margin-top: 20px;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .game-link:hover {
+      color: #ff7a00;
+    }
+
+    /* =========================
+       WHY GAMES
+    ========================== */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .why-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      padding: 25px 18px;
+      text-align: center;
+    }
+
+    .why-item .icon {
+      font-size: 2.3rem;
+      margin-bottom: 10px;
+    }
+
+    .why-item h3 {
+      margin-bottom: 5px;
+    }
+
+    .why-item p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       FINAL CTA
+    ========================== */
+
+    .final {
+      background: #ff7a00;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .final h2 {
+      font-size: clamp(2.2rem, 7vw, 4.5rem);
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .final p {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .final .btn {
+      margin-top: 25px;
+      background: #111;
+      border-color: #111;
+    }
+
+    .final .btn:hover {
+      background: #fff;
+      color: #111;
+      border-color: #fff;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 32px 15px;
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 850px) {
+
+      .nav {
+        flex-direction: column;
+        padding: 15px 0;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .city-card {
+        grid-template-columns: 1fr;
+        padding: 30px;
+      }
+
+      .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width: 550px) {
+
+      .hero {
+        padding: 65px 15px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .city-card {
+        padding: 25px;
+        border-radius: 20px;
+      }
+
+      .city-visual {
+        min-height: 250px;
+      }
+
+      .city-icon {
+        font-size: 6rem;
+      }
+
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .floating-card {
+        font-size: 0.75rem;
+        padding: 9px 10px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+
+    <div class="container nav">
+
+      <a href="fworld-games.html" class="brand">
+        FWORLD GAMES
+      </a>
+
+      <nav class="nav-links">
+
+        <a href="fworld.html">
+          FWORLD
+        </a>
+
+        <a href="fworld-games.html">
+          Games
+        </a>
+
+        <a href="fworld-city.html">
+          FWORLD CITY
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        FWORLD GAMES
+      </div>
+
+      <h1>
+        PLAY.<br>
+        BUILD.<br>
+        GROW.
+      </h1>
+
+      <p>
+        Games designed to make learning,
+        decision-making, strategy and personal
+        growth more interactive.
+      </p>
+
+      <div class="hero-flow">
+        🎮 PLAY &nbsp; • &nbsp;
+        🧠 LEARN &nbsp; • &nbsp;
+        🎯 ACT &nbsp; • &nbsp;
+        🌱 GROW
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FEATURED GAME
+  ========================== -->
+
+  <section class="featured">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>FEATURED GAME</span>
+
+        <h2>
+          Start With Your Dream.
+        </h2>
+
+        <p>
+          FWORLD CITY turns the Dream Board
+          into a playable experience.
+        </p>
+
+      </div>
+
+
+      <div class="city-card">
+
+        <div>
+
+          <div class="city-label">
+            FWORLD CITY
+          </div>
+
+          <h2>
+            🏙️
+            <br>
+            FWORLD CITY
+          </h2>
+
+          <p>
+            A 1–4 player strategy card game
+            where your dreams become decisions,
+            your decisions become actions,
+            and your actions build your city.
+          </p>
+
+          <div class="city-loop">
+
+            ♥️ DREAM
+            →
+            ♠️ STRATEGY
+            →
+            ♦️ RESOURCE
+            →
+            ♣️ ACTION
+            →
+            🏙️ BUILD
+            →
+            🌱 GROW
+
+          </div>
+
+
+          <div class="city-actions">
+
+            <a
+              href="fworld-city.html"
+              class="btn light"
+            >
+              ▶ PLAY FWORLD CITY
+            </a>
+
+            <a
+              href="how-to-play.html"
+              class="btn"
+            >
+              📖 HOW TO PLAY
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="city-visual">
+
+          <div class="floating-card floating-one">
+            ♥️ DREAM
+          </div>
+
+          <div class="floating-card floating-two">
+            🃏 JOKER
+          </div>
+
+          <div class="floating-card floating-three">
+            🪙 ₱100
+          </div>
+
+          <div class="city-icon">
+            🏙️
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TOKENS
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="token-box">
+
+        <div class="eyebrow">
+          FWORLD CITY
+        </div>
+
+        <h2>
+          🃏 THE CARDS ARE THE TOKENS
+        </h2>
+
+        <div class="token-value">
+          1 TOKEN = ₱1
+        </div>
+
+        <p>
+          Value cards represent game money.
+          Players earn, spend, save, invest,
+          trade and build using their cards.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       OTHER GAMES
+  ========================== -->
+
+  <section class="other-games">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>MORE TO PLAY</span>
+
+        <h2>
+          OTHER GAMES
+        </h2>
+
+        <p>
+          More interactive experiences
+          are coming to FWORLD GAMES.
+        </p>
+
+      </div>
+
+
+      <div class="games-grid">
+
+
+        <!-- QUIZ -->
+
+        <div class="game-item">
+
+          <div>
+
+            <div class="game-icon">
+              🧠
+            </div>
+
+            <h3>
+              FWORLD QUIZ
+            </h3>
+
+            <p>
+              Test your knowledge,
+              learn something new,
+              and challenge yourself.
+            </p>
+
+          </div>
+
+          <div class="game-link">
+            COMING SOON →
+          </div>
+
+        </div>
+
+
+        <!-- DAILY CHALLENGE -->
+
+        <div class="game-item">
+
+          <div>
+
+            <div class="game-icon">
+              🎯
+            </div>
+
+            <h3>
+              DAILY CHALLENGE
+            </h3>
+
+            <p>
+              One challenge.
+              One action.
+              One opportunity to grow.
+            </p>
+
+          </div>
+
+          <div class="game-link">
+            COMING SOON →
+          </div>
+
+        </div>
+
+
+        <!-- BUSINESS BUILDER -->
+
+        <div class="game-item">
+
+          <div>
+
+            <div class="game-icon">
+              💼
+            </div>
+
+            <h3>
+              BUSINESS BUILDER
+            </h3>
+
+            <p>
+              Start, manage and grow
+              a virtual business through
+              strategic decisions.
+            </p>
+
+          </div>
+
+          <div class="game-link">
+            COMING SOON →
+          </div>
+
+        </div>
+
+
+        <!-- MONEY MOVES -->
+
+        <div class="game-item">
+
+          <div>
+
+            <div class="game-icon">
+              💰
+            </div>
+
+            <h3>
+              MONEY MOVES
+            </h3>
+
+            <p>
+              Make financial decisions,
+              manage resources and
+              explore different outcomes.
+            </p>
+
+          </div>
+
+          <div class="game-link">
+            COMING SOON →
+          </div>
+
+        </div>
+
+
+        <!-- 7 DAY GROWTH -->
+
+        <div class="game-item">
+
+          <div>
+
+            <div class="game-icon">
+              🌱
+            </div>
+
+            <h3>
+              7-DAY GROWTH
+            </h3>
+
+            <p>
+              Seven days.
+              Seven actions.
+              One growth journey.
+            </p>
+
+          </div>
+
+          <div class="game-link">
+            COMING SOON →
+          </div>
+
+        </div>
+
+
+        <!-- FUTURE GAME -->
+
+        <div class="game-item">
+
+          <div>
+
+            <div class="game-icon">
+              ✨
+            </div>
+
+            <h3>
+              MORE GAMES
+            </h3>
+
+            <p>
+              New games and challenges
+              will be added to the
+              FWORLD playground.
+            </p>
+
+          </div>
+
+          <div class="game-link">
+            STAY TUNED →
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       WHY FWORLD GAMES
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>THE FWORLD WAY</span>
+
+        <h2>
+          More Than Just A Game
+        </h2>
+
+      </div>
+
+
+      <div class="why-grid">
+
+
+        <div class="why-item">
+
+          <div class="icon">
+            💭
+          </div>
+
+          <h3>
+            DREAM
+          </h3>
+
+          <p>
+            Know what you want.
+          </p>
+
+        </div>
+
+
+        <div class="why-item">
+
+          <div class="icon">
+            🧠
+          </div>
+
+          <h3>
+            THINK
+          </h3>
+
+          <p>
+            Make better decisions.
+          </p>
+
+        </div>
+
+
+        <div class="why-item">
+
+          <div class="icon">
+            🎯
+          </div>
+
+          <h3>
+            ACT
+          </h3>
+
+          <p>
+            Turn decisions into action.
+          </p>
+
+        </div>
+
+
+        <div class="why-item">
+
+          <div class="icon">
+            🏙️
+          </div>
+
+          <h3>
+            BUILD
+          </h3>
+
+          <p>
+            Create the life you imagine.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FINAL CTA
+  ========================== -->
+
+  <section class="final">
+
+    <div class="container">
+
+      <h2>
+        YOUR DREAM IS THE BEGINNING.
+      </h2>
+
+      <p>
+        Step into FWORLD CITY and start
+        building your own story.
+      </p>
+
+      <a
+        href="fworld-city.html"
+        class="btn"
+      >
+        ▶ ENTER FWORLD CITY
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      <strong>FWORLD GAMES</strong>
+    </p>
+
+    <p>
+      Play • Learn • Build • Grow
+    </p>
+
+    <p style="margin-top:10px;">
+      © 2026 FWORLD ONLINE
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
