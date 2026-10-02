@@ -1,1 +1,1541 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>FWORLD Services | Your Digital Space</title>
+
+  <meta name="description"
+        content="Explore FWORLD services, connect clients, book services, and grow your FWORLD journey.">
+
+  <meta property="og:title"
+        content="FWORLD Services | Your Digital Space">
+
+  <meta property="og:description"
+        content="Explore services and celebrate your FWORLD client connections.">
+
+  <meta property="og:type"
+        content="website">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #eef9ff;
+      color: #111;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e7e7e7;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .brand-tagline {
+      font-size: 11px;
+      color: #777;
+      margin-top: 2px;
+    }
+
+    .back-btn {
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 11px 17px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .back-btn:hover {
+      background: #ff6b35;
+      transform: translateY(-1px);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      background:
+        radial-gradient(circle at top right, rgba(0, 207, 255, .25), transparent 35%),
+        linear-gradient(135deg, #dff8ff, #f8fdff);
+      padding: 65px 22px 55px;
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #fff;
+      color: #008db5;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: .95;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #00a8d6;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #555;
+      font-size: 17px;
+    }
+
+    .ai-card {
+      background: #111;
+      color: #fff;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 25px 60px rgba(0,0,0,.15);
+    }
+
+    .ai-avatar {
+      width: 62px;
+      height: 62px;
+      background: linear-gradient(135deg, #00d9ff, #7b61ff);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+
+    .ai-card h2 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .ai-card p {
+      color: #ccc;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .ai-btn {
+      width: 100%;
+      border: none;
+      background: #fff;
+      color: #111;
+      padding: 13px;
+      border-radius: 14px;
+      font-weight: 800;
+    }
+
+    .ai-btn:hover {
+      background: #00c8ef;
+      color: #fff;
+    }
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 55px 22px 80px;
+    }
+
+    .section-heading {
+      margin-bottom: 25px;
+    }
+
+    .section-heading .eyebrow {
+      color: #00a0c8;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .section-heading h2 {
+      font-size: 34px;
+      letter-spacing: -1px;
+    }
+
+    .section-heading p {
+      color: #666;
+      margin-top: 7px;
+    }
+
+    /* =========================
+       SERVICE GRID
+    ========================== */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 24px;
+      min-height: 245px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 12px 35px rgba(0,0,0,.07);
+      border: 1px solid rgba(0,0,0,.04);
+      transition: .25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      right: -35px;
+      top: -35px;
+      background: rgba(0, 190, 230, .10);
+      border-radius: 50%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(0,0,0,.11);
+    }
+
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      margin-bottom: 17px;
+    }
+
+    .blue {
+      background: #dff8ff;
+    }
+
+    .purple {
+      background: #eee6ff;
+    }
+
+    .pink {
+      background: #ffe6f1;
+    }
+
+    .orange {
+      background: #fff0dc;
+    }
+
+    .green {
+      background: #e3faed;
+    }
+
+    .yellow {
+      background: #fff7d6;
+    }
+
+    .service-card h3 {
+      font-size: 19px;
+      margin-bottom: 7px;
+    }
+
+    .service-card p {
+      color: #666;
+      font-size: 13px;
+      flex: 1;
+    }
+
+    .service-btn {
+      margin-top: 18px;
+      width: 100%;
+      padding: 12px 15px;
+      border: none;
+      background: #111;
+      color: #fff;
+      border-radius: 13px;
+      font-weight: 800;
+      font-size: 13px;
+      transition: .2s;
+    }
+
+    .service-btn:hover {
+      background: #ff6b35;
+    }
+
+    /* =========================
+       ACHIEVEMENT
+    ========================== */
+
+    .achievement {
+      margin-top: 65px;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.3), transparent 30%),
+        linear-gradient(135deg, #111, #18333d);
+      color: #fff;
+      border-radius: 32px;
+      padding: 42px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .achievement::before {
+      content: "🎉";
+      position: absolute;
+      right: 35px;
+      top: 25px;
+      font-size: 90px;
+      opacity: .12;
+    }
+
+    .achievement-label {
+      color: #59dcff;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .achievement h2 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .achievement p {
+      color: #cbd6da;
+      max-width: 650px;
+    }
+
+    .achievement-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    .stat {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px;
+      padding: 13px 18px;
+    }
+
+    .stat small {
+      display: block;
+      color: #9fb2b8;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .stat strong {
+      font-size: 19px;
+    }
+
+    .achievement-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .share-btn,
+    .secret-btn {
+      border: none;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .share-btn {
+      background: #fff;
+      color: #111;
+    }
+
+    .share-btn:hover {
+      background: #1877f2;
+      color: #fff;
+    }
+
+    .secret-btn {
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.2);
+    }
+
+    .secret-btn:hover {
+      background: rgba(255,255,255,.2);
+    }
+
+    /* =========================
+       MY ACHIEVEMENTS
+    ========================== */
+
+    .my-achievements {
+      margin-top: 65px;
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .achievement-box {
+      background: #fff;
+      border-radius: 22px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    }
+
+    .achievement-box .big {
+      font-size: 32px;
+      margin-bottom: 7px;
+    }
+
+    .achievement-box strong {
+      display: block;
+      font-size: 22px;
+    }
+
+    .achievement-box span {
+      color: #777;
+      font-size: 12px;
+    }
+
+    /* =========================
+       SHARE INFORMATION
+    ========================== */
+
+    .share-info {
+      margin-top: 65px;
+      background: #fff;
+      border-radius: 28px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 10px 35px rgba(0,0,0,.06);
+    }
+
+    .share-info h2 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .share-info p {
+      color: #666;
+      max-width: 680px;
+      margin: auto;
+    }
+
+    /* =========================
+       AI FLOATING BUTTON
+    ========================== */
+
+    .ai-floating {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1200;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      background: linear-gradient(135deg, #00d9ff, #7b61ff);
+      color: #fff;
+      font-size: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    }
+
+    .ai-floating:hover {
+      transform: scale(1.07);
+    }
+
+    /* =========================
+       MODAL
+    ========================== */
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.65);
+      z-index: 2000;
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      width: min(500px, 100%);
+      background: #fff;
+      border-radius: 28px;
+      padding: 32px;
+      text-align: center;
+      position: relative;
+      animation: pop .2s ease;
+    }
+
+    @keyframes pop {
+      from {
+        transform: scale(.92);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .modal-icon {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    .modal-box h2 {
+      font-size: 30px;
+      margin-bottom: 7px;
+    }
+
+    .modal-box p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .achievement-preview {
+      background: #eefaff;
+      border: 1px solid #d7f5ff;
+      border-radius: 18px;
+      padding: 20px;
+      margin: 22px 0;
+      text-align: left;
+    }
+
+    .achievement-preview strong {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 5px;
+    }
+
+    .modal-share {
+      width: 100%;
+      background: #1877f2;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 13px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .modal-close {
+      width: 100%;
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 13px;
+      font-weight: 900;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      color: #999;
+      font-size: 12px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 900px) {
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .achievement-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .nav {
+        padding: 13px 15px;
+      }
+
+      .brand-name {
+        font-size: 15px;
+      }
+
+      .brand-tagline {
+        font-size: 9px;
+      }
+
+      .back-btn {
+        padding: 9px 13px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 45px 18px 40px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .ai-card {
+        padding: 23px;
+      }
+
+      main {
+        padding: 42px 16px 70px;
+      }
+
+      .section-heading h2 {
+        font-size: 28px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 220px;
+      }
+
+      .achievement {
+        padding: 30px 22px;
+        border-radius: 25px;
+      }
+
+      .achievement h2 {
+        font-size: 36px;
+      }
+
+      .achievement-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .achievement-box {
+        padding: 18px 10px;
+      }
+
+      .achievement-actions {
+        flex-direction: column;
+      }
+
+      .share-btn,
+      .secret-btn {
+        width: 100%;
+      }
+
+      .share-info {
+        padding: 25px 18px;
+      }
+
+      .ai-floating {
+        width: 56px;
+        height: 56px;
+        right: 15px;
+        bottom: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+    <div class="nav">
+
+      <a href="fworld-dashboard.html" class="brand">
+        <span class="brand-name">FWORLD ONLINE</span>
+        <span class="brand-tagline">Your Digital Space</span>
+      </a>
+
+      <a href="fworld-dashboard.html" class="back-btn">
+        ← Back to Digital Space
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="hero-inner">
+
+      <div>
+
+        <div class="hero-badge">
+          🌐 YOUR FWORLD SERVICES
+        </div>
+
+        <h1>
+          Services<br>
+          <span>World.</span>
+        </h1>
+
+        <p>
+          Explore the services available inside FWORLD.
+          Connect clients, make bookings, refer people,
+          and grow your FWORLD journey — one connection at a time.
+        </p>
+
+      </div>
+
+
+      <div class="ai-card">
+
+        <div class="ai-avatar">
+          🤖
+        </div>
+
+        <h2>
+          Your AI Twin
+        </h2>
+
+        <p>
+          I can help you explore FWORLD Services,
+          find the right service, and understand how
+          your client connections work.
+        </p>
+
+        <button class="ai-btn" onclick="openAI()">
+          ✨ Show Me Around
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SERVICES
+  ========================== -->
+
+  <main>
+
+    <div class="section-heading">
+
+      <div class="eyebrow">
+        Explore FWORLD
+      </div>
+
+      <h2>
+        What can you connect today?
+      </h2>
+
+      <p>
+        Choose a service and start your next FWORLD connection.
+      </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+      <!-- FMSI -->
+
+      <div class="service-card">
+
+        <div class="service-icon blue">
+          ✈️
+        </div>
+
+        <h3>
+          Book Travel — FMSI Travel
+        </h3>
+
+        <p>
+          Connect clients to travel packages,
+          tours, and travel services through FMSI.
+        </p>
+
+        <button class="service-btn"
+                onclick="serviceMessage('FMSI Travel')">
+          Explore Service →
+        </button>
+
+      </div>
+
+
+      <!-- AZURE PEARL -->
+
+      <div class="service-card">
+
+        <div class="service-icon blue">
+          🌴
+        </div>
+
+        <h3>
+          Book Travel — Azure Pearl
+        </h3>
+
+        <p>
+          Connect clients looking for Philippine
+          travel, accommodation, tours, and relocation services.
+        </p>
+
+        <button class="service-btn"
+                onclick="serviceMessage('Azure Pearl')">
+          Explore Service →
+        </button>
+
+      </div>
+
+
+      <!-- DIGITAL -->
+
+      <div class="service-card">
+
+        <div class="service-icon purple">
+          💻
+        </div>
+
+        <h3>
+          Buy Digital Products
+        </h3>
+
+        <p>
+          Discover useful digital products and
+          resources available through FWORLD.
+        </p>
+
+        <button class="service-btn"
+                onclick="serviceMessage('Digital Products')">
+          Explore Service →
+        </button>
+
+      </div>
+
+
+      <!-- TYMA -->
+
+      <div class="service-card">
+
+        <div class="service-icon orange">
+          🧡
+        </div>
+
+        <h3>
+          Refer TYMA Community
+        </h3>
+
+        <p>
+          Connect women with The You Matter Academy
+          and its personal development community.
+        </p>
+
+        <button class="service-btn"
+                onclick="serviceMessage('TYMA Community')">
+          Refer a Client →
+        </button>
+
+      </div>
+
+
+      <!-- SOPHIA -->
+
+      <div class="service-card">
+
+        <div class="service-icon pink">
+          💄
+        </div>
+
+        <h3>
+          Buy Sophia Cosmetics
+        </h3>
+
+        <p>
+          Discover Sophia Cosmetics products
+          and connect interested customers.
+        </p>
+
+        <button class="service-btn"
+                onclick="serviceMessage('Sophia Cosmetics')">
+          Explore Products →
+        </button>
+
+      </div>
+
+
+      <!-- ISABELLA -->
+
+      <div class="service-card">
+
+        <div class="service-icon pink">
+          💋
+        </div>
+
+        <h3>
+          Buy Isabella Beauty Products
+        </h3>
+
+        <p>
+          Explore Isabella Beauty products
+          and connect customers through FWORLD.
+        </p>
+
+        <button class="service-btn"
+                onclick="serviceMessage('Isabella Beauty')">
+          Explore Products →
+        </button>
+
+      </div>
+
+
+      <!-- AMELYN -->
+
+      <div class="service-card">
+
+        <div class="service-icon green">
+          💆‍♀️
+        </div>
+
+        <h3>
+          Refer a Massage by Amelyn
+        </h3>
+
+        <p>
+          Connect clients to massage and
+          wellness services.
+        </p>
+
+        <button class="service-btn"
+                onclick="serviceMessage('Massage by Amelyn')">
+          Refer a Client →
+        </button>
+
+      </div>
+
+
+      <!-- ATE GEL -->
+
+      <div class="service-card">
+
+        <div class="service-icon green">
+          💆‍♀️
+        </div>
+
+        <h3>
+          Refer a Massage by Ate Gel
+        </h3>
+
+        <p>
+          Connect clients to Healing Massage
+          by Ate Gel.
+        </p>
+
+        <button class="service-btn"
+                onclick="serviceMessage('Healing Massage by Ate Gel')">
+          Refer a Client →
+        </button>
+
+      </div>
+
+
+      <!-- PROPERTY -->
+
+      <div class="service-card">
+
+        <div class="service-icon yellow">
+          🏠
+        </div>
+
+        <h3>
+          Refer a Client to Clyne Property
+        </h3>
+
+        <p>
+          Connect interested clients with
+          available property opportunities.
+        </p>
+
+        <button class="service-btn"
+                onclick="serviceMessage('Clyne Property')">
+          Refer a Client →
+        </button>
+
+      </div>
+
+
+      <!-- MEMBERSHIP -->
+
+      <div class="service-card">
+
+        <div class="service-icon orange">
+          ⭐
+        </div>
+
+        <h3>
+          Purchase FWORLD Membership
+        </h3>
+
+        <p>
+          Explore FWORLD membership and
+          become part of the digital ecosystem.
+        </p>
+
+        <button class="service-btn"
+                onclick="serviceMessage('FWORLD Membership')">
+          Explore Membership →
+        </button>
+
+      </div>
+
+
+      <!-- DIGITAL MEMBERSHIP -->
+
+      <div class="service-card">
+
+        <div class="service-icon purple">
+          🌐
+        </div>
+
+        <h3>
+          Refer a Digital Membership
+        </h3>
+
+        <p>
+          Introduce someone to the FWORLD
+          digital membership experience.
+        </p>
+
+        <button class="service-btn"
+                onclick="serviceMessage('Digital Membership')">
+          Refer a Client →
+        </button>
+
+      </div>
+
+
+      <!-- FRANCHISING -->
+
+      <div class="service-card">
+
+        <div class="service-icon orange">
+          🤝
+        </div>
+
+        <h3>
+          Refer a Franchising
+        </h3>
+
+        <p>
+          Connect interested people with
+          available franchising opportunities.
+        </p>
+
+        <button class="service-btn"
+                onclick="serviceMessage('Franchising')">
+          Explore Opportunity →
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         CLIENT ACHIEVEMENT
+    ========================== -->
+
+    <section class="achievement">
+
+      <div class="achievement-label">
+        🎉 FWORLD MOMENT
+      </div>
+
+      <h2>
+        CONGRATULATIONS!<br>
+        GOT 1 CLIENT!
+      </h2>
+
+      <p>
+        You successfully connected a client
+        to a FWORLD service. Every connection
+        is part of your FWORLD journey.
+      </p>
+
+
+      <div class="achievement-stats">
+
+        <div class="stat">
+          <small>Service</small>
+          <strong>FMSI Travel</strong>
+        </div>
+
+        <div class="stat">
+          <small>Status</small>
+          <strong>Successful</strong>
+        </div>
+
+        <div class="stat">
+          <small>Clients</small>
+          <strong>1 Client</strong>
+        </div>
+
+      </div>
+
+
+      <div class="achievement-actions">
+
+        <button class="share-btn"
+                onclick="openAchievement()">
+          📣 Share My Achievement
+        </button>
+
+        <button class="secret-btn"
+                onclick="keepSecret()">
+          🔒 Keep It Secret
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         MY ACHIEVEMENTS
+    ========================== -->
+
+    <section class="my-achievements">
+
+      <div class="section-heading">
+
+        <div class="eyebrow">
+          My Journey
+        </div>
+
+        <h2>
+          🏆 My FWORLD Achievements
+        </h2>
+
+        <p>
+          Your successful client connections will appear here.
+        </p>
+
+      </div>
+
+
+      <div class="achievement-grid">
+
+        <div class="achievement-box">
+          <div class="big">🎉</div>
+          <strong>1</strong>
+          <span>Clients Connected</span>
+        </div>
+
+        <div class="achievement-box">
+          <div class="big">🌐</div>
+          <strong>1</strong>
+          <span>Services Booked</span>
+        </div>
+
+        <div class="achievement-box">
+          <div class="big">✈️</div>
+          <strong>1</strong>
+          <span>Travel Clients</span>
+        </div>
+
+        <div class="achievement-box">
+          <div class="big">🏆</div>
+          <strong>1</strong>
+          <span>Achievements</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SHARE INFO
+    ========================== -->
+
+    <section class="share-info">
+
+      <h2>
+        Your Journey, Your Choice.
+      </h2>
+
+      <p>
+        Celebrate your FWORLD moments when you want to.
+        Sharing is always your choice. Private information
+        and client details should never be displayed publicly.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       AI FLOATING BUTTON
+  ========================== -->
+
+  <button class="ai-floating"
+          onclick="openAI()"
+          aria-label="Open AI Twin">
+    🤖
+  </button>
+
+
+  <!-- =========================
+       ACHIEVEMENT MODAL
+  ========================== -->
+
+  <div class="modal" id="achievementModal">
+
+    <div class="modal-box">
+
+      <div class="modal-icon">
+        🎉
+      </div>
+
+      <h2>
+        GOT 1 CLIENT!
+      </h2>
+
+      <p>
+        Your FWORLD achievement is ready to share.
+      </p>
+
+
+      <div class="achievement-preview">
+
+        <strong>
+          🎉 I GOT 1 CLIENT!
+        </strong>
+
+        <p>
+          Another connection made through
+          my FWORLD Digital Space. 🌐✨
+        </p>
+
+        <p style="margin-top:8px;">
+          One client. One connection.
+          One step forward.
+        </p>
+
+      </div>
+
+
+      <button class="modal-share"
+              onclick="shareAchievement()">
+        📣 Share to Facebook
+      </button>
+
+      <button class="modal-close"
+              onclick="closeAchievement()">
+        Cancel
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       AI MODAL
+  ========================== -->
+
+  <div class="modal" id="aiModal">
+
+    <div class="modal-box">
+
+      <div class="modal-icon">
+        🤖
+      </div>
+
+      <h2>
+        Hi! I'm your AI Twin.
+      </h2>
+
+      <p>
+        Welcome to FWORLD Services World!
+      </p>
+
+      <div class="achievement-preview">
+
+        <strong>
+          🌐 Explore FWORLD
+        </strong>
+
+        <p>
+          Choose a service, connect a client,
+          and celebrate every successful connection.
+        </p>
+
+      </div>
+
+      <button class="modal-close"
+              onclick="closeAI()">
+        Let's Explore ✨
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026 FWORLD ONLINE · Your Digital Space
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /*
+      PUBLIC FWORLD URL
+
+      IMPORTANT:
+      This is NOT the private dashboard.
+
+      Replace this later with the actual
+      public member FWORLD profile URL.
+    */
+
+    const publicFworldUrl =
+      "https://www.fworld.online/fatima";
+
+
+    /* =========================
+       SERVICE MESSAGE
+    ========================== */
+
+    function serviceMessage(service) {
+
+      alert(
+        service +
+        "\n\nService connection is ready for integration."
+      );
+
+    }
+
+
+    /* =========================
+       ACHIEVEMENT MODAL
+    ========================== */
+
+    function openAchievement() {
+
+      document
+        .getElementById("achievementModal")
+        .classList.add("active");
+
+    }
+
+
+    function closeAchievement() {
+
+      document
+        .getElementById("achievementModal")
+        .classList.remove("active");
+
+    }
+
+
+    /* =========================
+       FACEBOOK SHARE
+    ========================== */
+
+    function shareAchievement() {
+
+      const shareText =
+        "I GOT 1 CLIENT! 🎉 " +
+        "Another connection made through my FWORLD Digital Space. 🌐✨";
+
+      const facebookUrl =
+        "https://www.facebook.com/sharer/sharer.php?u=" +
+        encodeURIComponent(publicFworldUrl);
+
+      window.open(
+        facebookUrl,
+        "_blank",
+        "width=700,height=600"
+      );
+
+    }
+
+
+    /* =========================
+       KEEP SECRET
+    ========================== */
+
+    function keepSecret() {
+
+      alert(
+        "🔒 Kept Secret\n\n" +
+        "This achievement will stay inside your private FWORLD Digital Space."
+      );
+
+    }
+
+
+    /* =========================
+       AI TWIN
+    ========================== */
+
+    function openAI() {
+
+      document
+        .getElementById("aiModal")
+        .classList.add("active");
+
+    }
+
+
+    function closeAI() {
+
+      document
+        .getElementById("aiModal")
+        .classList.remove("active");
+
+    }
+
+
+    /* =========================
+       CLOSE MODALS OUTSIDE
+    ========================== */
+
+    window.addEventListener("click", function(event) {
+
+      const achievementModal =
+        document.getElementById("achievementModal");
+
+      const aiModal =
+        document.getElementById("aiModal");
+
+      if (event.target === achievementModal) {
+        closeAchievement();
+      }
+
+      if (event.target === aiModal) {
+        closeAI();
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
