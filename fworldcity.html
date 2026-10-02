@@ -1,1 +1,105 @@
-
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FWORLD CITY | 4-Card Game Prototype</title>
+<style>
+:root{--bg:#fff;--fg:#111;--gray:#f5f5f5;--line:#ddd;--muted:#777;--orange:#f28a24;--warm:#fffaf5;--track:#eee;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#161616;--fg:#f2f2f2;--gray:#202020;--line:#3a3a3a;--muted:#9a9a9a;--warm:#2a2119;--track:#333}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--fg)}
+.game{width:min(1100px,92%);margin:0 auto;padding:24px 0 60px}
+.header{text-align:center;margin-bottom:24px}
+.header h1{margin:0;font-size:clamp(30px,7vw,56px);letter-spacing:-2px}
+.header p{margin:8px 0 0;color:var(--muted)}
+.tagline{margin-top:10px;font-weight:bold}
+.ptext{display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;color:var(--muted)}
+.progress{height:8px;background:var(--track);border-radius:20px;overflow:hidden;margin-bottom:24px}
+#bar{width:0;height:100%;background:var(--orange);transition:width .3s}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+.card{position:relative;min-height:170px;padding:16px;border:2px solid var(--line);border-radius:18px;background:var(--bg);color:var(--fg);cursor:pointer;text-align:left;font:inherit;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:var(--fg)}
+.card.active{border-color:var(--orange);background:var(--warm)}
+.suit{font-size:36px;margin-bottom:18px}
+.num{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.ct{font-size:18px;font-weight:800;margin-top:4px}
+.cq{font-size:13px;color:var(--muted);margin-top:6px}
+.mark{position:absolute;right:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--orange);color:#111;display:none;align-items:center;justify-content:center;font-size:13px}
+.card.done .mark{display:flex}
+.play{border:1px solid var(--line);border-radius:22px;padding:24px;background:var(--gray)}
+.ph{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+.big{font-size:44px}
+.ph h2{margin:0;font-size:24px}
+.ph p{margin:4px 0 0;color:var(--muted);font-size:14px}
+label{display:block;font-weight:bold;margin-bottom:8px}
+textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:14px;padding:14px;font:inherit;font-size:16px;resize:vertical;background:var(--bg);color:var(--fg)}
+textarea:focus{outline:2px solid var(--orange);border-color:transparent}
+.save{margin-top:14px;min-height:50px;padding:0 24px;border:0;border-radius:12px;background:var(--fg);color:var(--bg);font-weight:bold;font-size:15px;cursor:pointer}
+.save:hover{background:var(--orange);color:#111}
+.city{display:none;margin-top:28px;padding:26px;border:2px solid var(--orange);border-radius:22px;text-align:center;background:var(--warm)}
+.city.show{display:block}
+.city h2{margin:0;font-size:28px}
+.city p{color:var(--muted)}
+.buildings{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:22px 0;text-align:left}
+.b{border:1px solid var(--line);border-radius:16px;background:var(--bg);padding:16px}
+.b .e{font-size:30px}
+.b b{display:block;font-size:11px;letter-spacing:1px;margin:6px 0 4px;color:var(--orange)}
+.b span{font-size:15px;line-height:1.4;word-break:break-word}
+.loop{font-weight:bold;line-height:1.8}
+.reset{margin-top:14px;background:none;border:1px solid var(--line);color:var(--muted);border-radius:10px;padding:8px 14px;cursor:pointer}
+@media(max-width:750px){.cards{grid-template-columns:1fr 1fr}}
+</style></head>
+<body><main class="game">
+<header class="header"><h1>🏙️ FWORLD CITY</h1><p>Your dream is the beginning.</p><div class="tagline">Build the life you dream.</div></header>
+<div class="ptext"><span id="pl"></span><span id="pp"></span></div>
+<div class="progress"><div id="bar"></div></div>
+<section class="cards" id="cards"></section>
+<section class="play">
+<div class="ph"><div class="big" id="bigSuit"></div><div><h2 id="pt"></h2><p id="pq"></p></div></div>
+<label for="answer">Your answer</label>
+<textarea id="answer"></textarea>
+<button class="save" id="save" type="button">SAVE CARD →</button>
+</section>
+<section class="city" id="city">
+<h2>🎉 YOUR CITY IS GROWING!</h2>
+<p>You completed your first FWORLD CITY journey.</p>
+<div class="buildings" id="buildings"></div>
+<div class="loop">♥️ DREAM → ♠️ STRATEGY → ♦️ RESOURCE → ♣️ ACTION → 🏙️ BUILD</div>
+<button class="reset" id="reset" type="button">Start a new city</button>
+</section>
+</main>
+<script>
+const D={
+dream:{s:"♥️",t:"DREAM",q:"What is one dream you want to build?",p:"Example: I want to build my own business.",c:"What do I want?",e:"🏠",n:"YOUR DREAM"},
+strategy:{s:"♠️",t:"STRATEGY",q:"How will you move toward that dream?",p:"Example: I will start with one product or service.",c:"How will I get there?",e:"🧭",n:"YOUR STRATEGY"},
+resource:{s:"♦️",t:"RESOURCE",q:"What do you already have that can help?",p:"Example: My skills, experience, phone, time, or network.",c:"What do I have?",e:"🧰",n:"YOUR RESOURCES"},
+action:{s:"♣️",t:"ACTION",q:"What is one real action you will take?",p:"Example: I will make my first offer today.",c:"What will I do?",e:"🚀",n:"YOUR FIRST ACTION"}};
+const order=Object.keys(D);
+let answers={},cur="dream";
+try{answers=JSON.parse(localStorage.getItem("fworld")||"{}")}catch(e){}
+function store(){try{localStorage.setItem("fworld",JSON.stringify(answers))}catch(e){}}
+const $=id=>document.getElementById(id);
+$("cards").innerHTML=order.map((k,i)=>`<button class="card" data-k="${k}" type="button"><div class="mark">✓</div><div class="suit">${D[k].s}</div><div class="num">Card 0${i+1}</div><div class="ct">${D[k].t}</div><div class="cq">${D[k].c}</div></button>`).join("");
+function esc(s){const d=document.createElement("div");d.textContent=s;return d.innerHTML}
+function render(){
+const d=D[cur],n=order.filter(k=>answers[k]).length;
+$("bigSuit").textContent=d.s;$("pt").textContent=d.t;$("pq").textContent=d.q;
+$("answer").placeholder=d.p;$("answer").value=answers[cur]||"";
+document.querySelectorAll(".card").forEach(c=>{c.classList.toggle("active",c.dataset.k===cur);c.classList.toggle("done",!!answers[c.dataset.k])});
+$("bar").style.width=n*25+"%";$("pp").textContent=n*25+"%";
+$("pl").textContent=n===4?"All 4 cards completed":n+" of 4 cards saved";
+$("city").classList.toggle("show",n===4);
+if(n===4)$("buildings").innerHTML=order.map(k=>`<div class="b"><div class="e">${D[k].e}</div><b>${D[k].n}</b><span>${esc(answers[k])}</span></div>`).join("");
+}
+document.querySelectorAll(".card").forEach(c=>c.addEventListener("click",()=>{cur=c.dataset.k;render()}));
+$("save").addEventListener("click",()=>{
+const v=$("answer").value.trim();
+if(!v){delete answers[cur];store();$("answer").focus();render();return}
+answers[cur]=v;store();
+const next=order.find(k=>!answers[k]);
+if(next)cur=next;
+render();
+if(!next)$("city").scrollIntoView({behavior:"smooth"});
+});
+$("reset").addEventListener("click",()=>{answers={};store();cur="dream";render();window.scrollTo({top:0,behavior:"smooth"})});
+render();
+</script></body></html>
