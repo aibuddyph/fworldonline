@@ -172,7 +172,49 @@
       background: white;
       color: #111;
     }
+      /* =========================
+        FWORLD MEMBER LOGIN
+       ========================= */
 
+.member-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 18px;
+
+  background: #000;
+  color: #fff !important;
+
+  border: 1px solid #000;
+  border-radius: 999px;
+
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: all .25s ease;
+}
+
+.member-login:hover {
+  background: #ff8a00;
+  border-color: #ff8a00;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+.member-login:active {
+  transform: scale(.97);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .member-login {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+}
     /* GENERAL */
 
     section {
@@ -498,7 +540,11 @@
       <a href="journal.html" onclick="closeMenu()">Journal</a>
       <a href="#contact" onclick="closeMenu()">Contact</a>
     </nav>
-
+      <!-- FWORLD MEMBERSHIP -->
+      <a href="fworld-login.html" class="member-login">
+        🔐 Member Login
+  </a>
+</nav>
     </div>
 
   </nav>
