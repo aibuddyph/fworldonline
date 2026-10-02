@@ -1315,8 +1315,10 @@ h1 {
 
 <script>
 
+<script>
 
 /* =========================================
+   PRIVATE MEMBER LOGIN
    LOGIN → AI LOADING → DASHBOARD
 ========================================= */
 
@@ -1338,6 +1340,33 @@ loginForm.addEventListener(
   function(event) {
 
     event.preventDefault();
+
+
+    /* GET LOGIN DETAILS */
+
+    const username =
+      document.getElementById("username").value.trim();
+
+    const password =
+      document.getElementById("password").value;
+
+
+    /* =========================================
+       TEMPORARY PRIVATE SAMPLE ACCESS
+    ========================================= */
+
+    if (
+      username !== "fatima" ||
+      password !== "fworld2026"
+    ) {
+
+      alert(
+        "Access denied. Please check your username and password."
+      );
+
+      return;
+
+    }
 
 
     /* BUTTON */
@@ -1396,17 +1425,12 @@ loginForm.addEventListener(
       }, 550);
 
 
-    /* PREVIEW REDIRECT */
+    /* GO TO DASHBOARD */
 
     setTimeout(function() {
 
       window.location.href =
-        "fworld-dashboard.html";
 
-    }, 3200);
-
-  }
-);
 
 </script>
 
