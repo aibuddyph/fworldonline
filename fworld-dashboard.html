@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,24 +21,31 @@
         content="website">
 
   <style>
+
     /* =========================================================
        FWORLD eSTORE DASHBOARD
+       BLACK + PINK EDITION
        Responsive: Phone + Tablet + Desktop
     ========================================================== */
 
     :root {
-      --black: #111111;
+      --black: #000000;
       --white: #ffffff;
       --soft: #f7f7f7;
       --line: #e8e8e8;
       --gray: #777777;
-      --orange: #ff6a00;
-      --pink: #ff4f81;
+
+      --pink: #ff4f9a;
+      --pink-dark: #e83e86;
+      --pink-soft: #fff0f6;
+
       --green: #2e9d67;
       --gold: #d7a52b;
+
       --shadow: 0 12px 35px rgba(0,0,0,.08);
       --radius: 24px;
     }
+
 
     * {
       box-sizing: border-box;
@@ -47,9 +53,11 @@
       padding: 0;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
+
 
     body {
       font-family:
@@ -65,43 +73,58 @@
       min-height: 100vh;
     }
 
+
     button,
     a {
       -webkit-tap-highlight-color: transparent;
     }
+
 
     button {
       font-family: inherit;
       cursor: pointer;
     }
 
+
     a {
       color: inherit;
       text-decoration: none;
     }
+
 
     /* =========================================================
        TOP HEADER
     ========================================================== */
 
     .top-header {
-      background: var(--white);
-      border-bottom: 1px solid var(--line);
+      background: var(--black);
+      color: var(--white);
+
+      border-bottom: 2px solid var(--pink);
+
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
+
     .header-inner {
       width: min(1180px, calc(100% - 32px));
       margin: auto;
+
       min-height: 72px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 20px;
     }
+
+
+    /* =========================================================
+       FWORLD BRAND
+    ========================================================== */
 
     .brand {
       display: flex;
@@ -109,11 +132,14 @@
       gap: 11px;
     }
 
+
     .brand-mark {
       width: 42px;
       height: 42px;
-      background: var(--black);
-      color: var(--white);
+
+      background: var(--pink);
+      color: var(--black);
+
       border-radius: 12px;
 
       display: grid;
@@ -121,21 +147,38 @@
 
       font-size: 15px;
       font-weight: 900;
+
       letter-spacing: -1px;
+
+      box-shadow:
+        0 5px 20px rgba(255,79,154,.25);
     }
+
 
     .brand-text strong {
       display: block;
+
+      color: var(--white);
+
       font-size: 15px;
-      letter-spacing: .04em;
+      letter-spacing: .08em;
     }
+
 
     .brand-text span {
       display: block;
-      color: var(--gray);
+
+      color: #ffb3d2;
+
       font-size: 11px;
+
       margin-top: 2px;
     }
+
+
+    /* =========================================================
+       HEADER ACTIONS
+    ========================================================== */
 
     .header-actions {
       display: flex;
@@ -143,19 +186,32 @@
       gap: 8px;
     }
 
+
     .header-btn {
-      border: 1px solid var(--line);
-      background: var(--white);
+      border: 1px solid rgba(255,255,255,.25);
+
+      background: var(--black);
+      color: var(--white);
+
       min-height: 42px;
+
       padding: 0 14px;
+
       border-radius: 12px;
+
       font-weight: 700;
       font-size: 13px;
+
+      transition: .2s ease;
     }
 
+
     .header-btn:hover {
-      border-color: var(--black);
+      background: var(--pink);
+      color: var(--black);
+      border-color: var(--pink);
     }
+
 
     /* =========================================================
        MAIN
@@ -163,9 +219,12 @@
 
     .dashboard {
       width: min(1180px, calc(100% - 32px));
+
       margin: auto;
+
       padding: 36px 0 100px;
     }
+
 
     /* =========================================================
        HERO
@@ -173,16 +232,23 @@
 
     .welcome-section {
       display: grid;
+
       grid-template-columns: 1.35fr .65fr;
+
       gap: 22px;
+
       margin-bottom: 22px;
     }
+
 
     .hero-card {
       background: var(--black);
       color: var(--white);
+
       border-radius: 30px;
+
       padding: 34px;
+
       min-height: 250px;
 
       position: relative;
@@ -191,67 +257,120 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      border: 1px solid #222;
     }
+
+
+    .hero-card::before {
+      content: "";
+
+      width: 130px;
+      height: 130px;
+
+      position: absolute;
+
+      right: 35px;
+      bottom: -65px;
+
+      background: var(--pink);
+
+      border-radius: 50%;
+
+      opacity: .12;
+    }
+
 
     .hero-card::after {
       content: "";
+
       width: 260px;
       height: 260px;
 
       position: absolute;
+
       right: -90px;
       top: -100px;
 
       border: 1px solid rgba(255,255,255,.14);
+
       border-radius: 50%;
+
       box-shadow:
         0 0 0 35px rgba(255,255,255,.025),
         0 0 0 70px rgba(255,255,255,.018);
     }
 
+
     .eyebrow {
       font-size: 11px;
+
       letter-spacing: .18em;
+
       text-transform: uppercase;
-      opacity: .65;
+
+      color: var(--pink);
+
+      font-weight: 800;
+
       margin-bottom: 10px;
     }
 
+
     .hero-card h1 {
       font-size: clamp(30px, 5vw, 54px);
+
       line-height: 1;
+
       letter-spacing: -.045em;
+
       margin-bottom: 12px;
+
       position: relative;
       z-index: 2;
     }
+
 
     .hero-card p {
       max-width: 510px;
+
       color: rgba(255,255,255,.7);
+
       line-height: 1.6;
+
       font-size: 14px;
+
       position: relative;
       z-index: 2;
     }
 
+
     .hero-tag {
       display: inline-flex;
+
       align-items: center;
+
       gap: 7px;
 
       margin-top: 22px;
+
       width: fit-content;
 
       padding: 9px 13px;
+
       border-radius: 100px;
 
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,79,154,.12);
+
+      border: 1px solid rgba(255,79,154,.3);
+
+      color: #ffb3d2;
 
       font-size: 12px;
+
       font-weight: 700;
     }
+
 
     /* =========================================================
        AI TWIN MINI CARD
@@ -259,8 +378,11 @@
 
     .twin-card {
       background: var(--white);
+
       border: 1px solid var(--line);
+
       border-radius: 30px;
+
       padding: 26px;
 
       box-shadow: var(--shadow);
@@ -270,15 +392,16 @@
       justify-content: space-between;
     }
 
+
     .twin-avatar {
       width: 72px;
       height: 72px;
+
       border-radius: 24px;
 
-      background:
-        linear-gradient(135deg, #111 0%, #333 100%);
+      background: var(--black);
 
-      color: white;
+      color: var(--pink);
 
       display: grid;
       place-items: center;
@@ -289,44 +412,67 @@
         0 8px 25px rgba(0,0,0,.15);
     }
 
+
     .twin-label {
       margin-top: 18px;
+
       font-size: 11px;
+
       text-transform: uppercase;
+
       letter-spacing: .15em;
+
       color: var(--gray);
+
       font-weight: 800;
     }
+
 
     .twin-card h2 {
       font-size: 22px;
+
       margin-top: 5px;
     }
 
+
     .twin-card p {
       color: var(--gray);
+
       font-size: 13px;
+
       line-height: 1.5;
+
       margin-top: 7px;
     }
 
+
     .twin-open {
       width: 100%;
+
       margin-top: 18px;
 
       min-height: 46px;
+
       border: 0;
+
       border-radius: 14px;
 
       background: var(--black);
-      color: white;
+
+      color: var(--white);
 
       font-weight: 800;
+
+      transition: .2s ease;
     }
 
+
     .twin-open:hover {
-      background: var(--orange);
+      background: var(--pink);
+
+      color: var(--black);
     }
+
 
     /* =========================================================
        TOKEN CARD
@@ -334,50 +480,75 @@
 
     .token-card {
       background: var(--white);
+
       border: 1px solid var(--line);
+
       border-radius: var(--radius);
+
       padding: 24px;
+
       margin-bottom: 28px;
 
       box-shadow: var(--shadow);
     }
 
+
     .section-heading {
       display: flex;
+
       align-items: flex-start;
+
       justify-content: space-between;
+
       gap: 15px;
+
       margin-bottom: 18px;
     }
 
+
     .section-heading h2 {
       font-size: 19px;
+
       letter-spacing: -.02em;
     }
 
+
     .section-heading p {
       color: var(--gray);
+
       font-size: 12px;
+
       margin-top: 4px;
     }
 
+
     .token-main {
       display: flex;
+
       align-items: center;
+
       gap: 18px;
     }
+
 
     .token-icon {
       width: 62px;
       height: 62px;
+
       border-radius: 50%;
 
       background:
-        radial-gradient(circle at 35% 30%, #fff, #ddd 45%, #aaa);
+        radial-gradient(
+          circle at 35% 30%,
+          #fff,
+          #ddd 45%,
+          #aaa
+        );
 
       border: 3px solid #999;
 
       display: grid;
+
       place-items: center;
 
       font-size: 25px;
@@ -385,49 +556,73 @@
       flex: 0 0 auto;
     }
 
+
     .token-number {
       font-size: clamp(26px, 5vw, 40px);
+
       font-weight: 900;
+
       letter-spacing: -.04em;
     }
 
+
     .token-label {
       color: var(--gray);
+
       font-size: 12px;
+
       margin-top: 2px;
     }
 
+
     .token-levels {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 8px;
+
       margin-top: 22px;
     }
 
+
     .level {
       padding: 8px 12px;
+
       border-radius: 100px;
+
       border: 1px solid var(--line);
+
       font-size: 11px;
+
       font-weight: 800;
     }
 
+
     .level.active {
       background: var(--black);
-      color: white;
+
+      color: var(--pink);
+
       border-color: var(--black);
     }
 
+
     .level.coming {
       color: #999;
+
       background: #fafafa;
     }
 
+
     .token-note {
       color: var(--gray);
+
       font-size: 11px;
+
       margin-top: 15px;
     }
+
 
     /* =========================================================
        MAIN SECTION TITLE
@@ -437,16 +632,22 @@
       margin: 32px 0 16px;
     }
 
+
     .dashboard-title h2 {
       font-size: 24px;
+
       letter-spacing: -.035em;
     }
 
+
     .dashboard-title p {
       color: var(--gray);
+
       font-size: 13px;
+
       margin-top: 4px;
     }
+
 
     /* =========================================================
        DASHBOARD CARDS
@@ -454,25 +655,35 @@
 
     .dashboard-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 16px;
     }
 
+
     .dashboard-card {
       background: var(--white);
+
       border: 1px solid var(--line);
+
       border-radius: 25px;
 
       min-height: 190px;
+
       padding: 22px;
 
       position: relative;
+
       overflow: hidden;
 
-      box-shadow: 0 7px 25px rgba(0,0,0,.04);
+      box-shadow:
+        0 7px 25px rgba(0,0,0,.04);
 
       display: flex;
+
       flex-direction: column;
+
       justify-content: space-between;
 
       transition:
@@ -481,72 +692,120 @@
         border-color .2s ease;
     }
 
+
     .dashboard-card:hover {
       transform: translateY(-4px);
+
       box-shadow: var(--shadow);
-      border-color: #d7d7d7;
+
+      border-color: var(--pink);
     }
+
 
     .card-top {
       display: flex;
+
       justify-content: space-between;
+
       align-items: flex-start;
     }
+
 
     .card-icon {
       width: 54px;
       height: 54px;
+
       border-radius: 17px;
 
       background: var(--soft);
 
       display: grid;
+
       place-items: center;
 
       font-size: 27px;
+
+      transition: .2s ease;
     }
+
+
+    .dashboard-card:hover .card-icon {
+      background: var(--pink-soft);
+    }
+
 
     .card-arrow {
       width: 34px;
       height: 34px;
+
       border-radius: 50%;
 
       border: 1px solid var(--line);
 
       display: grid;
+
       place-items: center;
 
       font-size: 16px;
+
       color: var(--gray);
+
+      transition: .2s ease;
     }
+
+
+    .dashboard-card:hover .card-arrow {
+      background: var(--pink);
+
+      color: var(--black);
+
+      border-color: var(--pink);
+    }
+
 
     .dashboard-card h3 {
       font-size: 19px;
+
       margin-top: 20px;
+
       letter-spacing: -.025em;
     }
 
+
     .dashboard-card p {
       color: var(--gray);
+
       font-size: 12px;
+
       line-height: 1.5;
+
       margin-top: 5px;
+
       max-width: 260px;
     }
 
+
     .card-link {
       display: inline-block;
+
       margin-top: 16px;
 
       font-size: 11px;
+
       font-weight: 900;
+
       text-transform: uppercase;
+
       letter-spacing: .08em;
+
+      transition: .2s ease;
     }
 
+
     .dashboard-card:hover .card-link {
-      color: var(--orange);
+      color: var(--pink-dark);
     }
+
 
     /* =========================================================
        FACEBOOK SHARE
@@ -556,47 +815,68 @@
       margin-top: 25px;
 
       background: var(--black);
-      color: white;
+
+      color: var(--white);
 
       border-radius: 24px;
+
       padding: 22px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       gap: 20px;
+
+      border: 1px solid #222;
     }
+
 
     .share-panel h3 {
       font-size: 18px;
     }
 
+
     .share-panel p {
       color: rgba(255,255,255,.65);
+
       font-size: 12px;
+
       margin-top: 4px;
     }
 
+
     .facebook-btn {
       border: 0;
-      background: white;
-      color: black;
+
+      background: var(--white);
+
+      color: var(--black);
 
       min-height: 46px;
+
       padding: 0 18px;
 
       border-radius: 14px;
 
       font-size: 12px;
+
       font-weight: 900;
 
       white-space: nowrap;
+
+      transition: .2s ease;
     }
 
+
     .facebook-btn:hover {
-      background: var(--orange);
-      color: white;
+      background: var(--pink);
+
+      color: var(--black);
     }
+
 
     /* =========================================================
        FOOTER
@@ -604,14 +884,19 @@
 
     footer {
       text-align: center;
+
       color: #999;
+
       font-size: 11px;
+
       padding: 25px 15px;
     }
+
 
     footer strong {
       color: var(--black);
     }
+
 
     /* =========================================================
        AI TWIN FLOATING BUTTON
@@ -621,17 +906,20 @@
       position: fixed;
 
       right: 22px;
+
       bottom: 22px;
 
       width: 66px;
+
       height: 66px;
 
       border-radius: 22px;
 
-      border: 3px solid white;
+      border: 3px solid var(--white);
 
       background: var(--black);
-      color: white;
+
+      color: var(--pink);
 
       box-shadow:
         0 12px 35px rgba(0,0,0,.22);
@@ -639,6 +927,7 @@
       z-index: 500;
 
       display: grid;
+
       place-items: center;
 
       font-size: 29px;
@@ -646,18 +935,26 @@
       transition: transform .2s ease;
     }
 
+
     .ai-floating:hover {
       transform: scale(1.06);
+
+      background: var(--pink);
+
+      color: var(--black);
     }
+
 
     .ai-floating::after {
       content: "";
+
       position: absolute;
 
       width: 11px;
       height: 11px;
 
       background: #35c77a;
+
       border: 2px solid white;
 
       border-radius: 50%;
@@ -666,18 +963,22 @@
       top: -2px;
     }
 
+
     /* =========================================================
        AI TWIN POPUP
     ========================================================== */
 
     .twin-overlay {
       position: fixed;
+
       inset: 0;
 
-      background: rgba(0,0,0,.52);
+      background: rgba(0,0,0,.62);
 
       display: none;
+
       align-items: center;
+
       justify-content: center;
 
       padding: 20px;
@@ -687,14 +988,17 @@
       backdrop-filter: blur(5px);
     }
 
+
     .twin-overlay.show {
       display: flex;
     }
 
+
     .twin-popup {
       width: min(460px, 100%);
 
-      background: white;
+      background: var(--white);
+
       border-radius: 30px;
 
       padding: 28px;
@@ -704,23 +1008,36 @@
 
       position: relative;
 
+      border-top: 4px solid var(--pink);
+
       animation: twinIn .28s ease;
     }
 
+
     @keyframes twinIn {
+
       from {
         opacity: 0;
-        transform: translateY(18px) scale(.97);
+
+        transform:
+          translateY(18px)
+          scale(.97);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+          translateY(0)
+          scale(1);
       }
+
     }
+
 
     .close-twin {
       position: absolute;
+
       right: 18px;
       top: 18px;
 
@@ -730,10 +1047,19 @@
       border-radius: 50%;
 
       border: 1px solid var(--line);
-      background: white;
+
+      background: var(--white);
 
       font-size: 17px;
     }
+
+
+    .close-twin:hover {
+      background: var(--pink);
+
+      border-color: var(--pink);
+    }
+
 
     .popup-avatar {
       width: 86px;
@@ -742,9 +1068,11 @@
       border-radius: 28px;
 
       background: var(--black);
-      color: white;
+
+      color: var(--pink);
 
       display: grid;
+
       place-items: center;
 
       font-size: 40px;
@@ -752,65 +1080,98 @@
       margin-bottom: 20px;
     }
 
+
     .popup-label {
-      color: var(--orange);
+      color: var(--pink-dark);
+
       font-size: 10px;
+
       text-transform: uppercase;
+
       letter-spacing: .16em;
+
       font-weight: 900;
     }
 
+
     .twin-popup h2 {
       font-size: 27px;
+
       letter-spacing: -.04em;
+
       margin-top: 5px;
     }
 
+
     .twin-popup p {
       color: var(--gray);
+
       font-size: 14px;
+
       line-height: 1.65;
+
       margin-top: 10px;
     }
 
+
     .twin-actions {
       display: grid;
+
       gap: 9px;
+
       margin-top: 22px;
     }
 
+
     .twin-action {
       width: 100%;
+
       min-height: 47px;
 
       border: 1px solid var(--line);
-      background: white;
+
+      background: var(--white);
 
       border-radius: 14px;
 
       text-align: left;
+
       padding: 0 15px;
 
       font-size: 12px;
+
       font-weight: 800;
+
+      transition: .2s ease;
     }
 
+
     .twin-action:hover {
-      border-color: var(--black);
-      background: #fafafa;
+      border-color: var(--pink);
+
+      background: var(--pink-soft);
     }
+
 
     .twin-action.primary {
       background: var(--black);
-      color: white;
+
+      color: var(--white);
+
       border-color: var(--black);
+
       text-align: center;
     }
 
+
     .twin-action.primary:hover {
-      background: var(--orange);
-      border-color: var(--orange);
+      background: var(--pink);
+
+      border-color: var(--pink);
+
+      color: var(--black);
     }
+
 
     /* =========================================================
        MOBILE
@@ -822,78 +1183,106 @@
         min-height: 64px;
       }
 
+
       .header-btn {
         padding: 0 11px;
       }
 
+
       .dashboard {
         width: min(100% - 22px, 1180px);
+
         padding-top: 18px;
       }
+
 
       .welcome-section {
         grid-template-columns: 1fr;
       }
 
+
       .hero-card {
         min-height: 220px;
+
         padding: 27px;
+
         border-radius: 25px;
       }
+
 
       .twin-card {
         border-radius: 25px;
       }
 
+
       .dashboard-grid {
         grid-template-columns: 1fr 1fr;
+
         gap: 11px;
       }
 
+
       .dashboard-card {
         min-height: 175px;
+
         padding: 17px;
+
         border-radius: 20px;
       }
 
+
       .dashboard-card h3 {
         font-size: 16px;
+
         margin-top: 15px;
       }
+
 
       .dashboard-card p {
         font-size: 11px;
       }
 
+
       .card-icon {
         width: 47px;
         height: 47px;
+
         border-radius: 14px;
+
         font-size: 23px;
       }
+
 
       .card-arrow {
         width: 30px;
         height: 30px;
       }
 
+
       .share-panel {
         flex-direction: column;
+
         align-items: stretch;
       }
+
 
       .facebook-btn {
         width: 100%;
       }
 
+
       .ai-floating {
         width: 58px;
         height: 58px;
+
         right: 15px;
         bottom: 15px;
+
         border-radius: 19px;
       }
+
     }
+
 
     @media (max-width: 420px) {
 
@@ -901,53 +1290,70 @@
         display: none;
       }
 
+
       .header-actions .header-btn:first-child {
         display: none;
       }
+
 
       .dashboard-grid {
         grid-template-columns: 1fr 1fr;
       }
 
+
       .dashboard-card {
         min-height: 165px;
       }
 
+
       .token-main {
         align-items: flex-start;
       }
+
 
       .token-icon {
         width: 54px;
         height: 54px;
       }
 
+
       .token-number {
         font-size: 27px;
       }
+
     }
+
 
     /* =========================================================
        ACCESSIBILITY
     ========================================================== */
 
     :focus-visible {
-      outline: 3px solid var(--orange);
+      outline: 3px solid var(--pink);
+
       outline-offset: 3px;
     }
 
+
     @media (prefers-reduced-motion: reduce) {
+
       *,
       *::before,
       *::after {
+
         animation-duration: .01ms !important;
+
         transition-duration: .01ms !important;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
+
 
   <!-- ========================================================
        HEADER
@@ -957,32 +1363,51 @@
 
     <div class="header-inner">
 
-      <a href="#" class="brand" aria-label="FWORLD Online Dashboard">
+
+      <a href="#"
+         class="brand"
+         aria-label="FWORLD Online Dashboard">
 
         <div class="brand-mark">
           FW
         </div>
 
+
         <div class="brand-text">
-          <strong>FWORLD ONLINE</strong>
-          <span>Your Digital Space</span>
+
+          <strong>
+            FWORLD ONLINE
+          </strong>
+
+          <span>
+            Your Digital Space
+          </span>
+
         </div>
 
       </a>
 
+
       <div class="header-actions">
+
 
         <button
           class="header-btn"
           onclick="shareDashboard()">
+
           Share
+
         </button>
+
 
         <button
           class="header-btn"
           onclick="openTwin()">
+
           AI Twin
+
         </button>
+
 
       </div>
 
@@ -991,15 +1416,18 @@
   </header>
 
 
+
   <!-- ========================================================
        DASHBOARD
   ========================================================= -->
 
   <main class="dashboard">
 
+
     <!-- HERO + AI TWIN -->
 
     <section class="welcome-section">
+
 
       <div class="hero-card">
 
@@ -1007,14 +1435,17 @@
           FWORLD eSTORE
         </div>
 
+
         <h1>
           Your Digital Space.
         </h1>
+
 
         <p>
           One space for your business, FWORLD services,
           learning, stories, opportunities and more.
         </p>
+
 
         <div class="hero-tag">
           ✦ Welcome to your FWORLD
@@ -1022,6 +1453,9 @@
 
       </div>
 
+
+
+      <!-- AI TWIN -->
 
       <div class="twin-card">
 
@@ -1031,19 +1465,23 @@
             🤖
           </div>
 
+
           <div class="twin-label">
             Your Digital Companion
           </div>
 
+
           <h2>
             My AI Twin
           </h2>
+
 
           <p>
             Your personal guide inside your FWORLD Digital Space.
           </p>
 
         </div>
+
 
         <button
           class="twin-open"
@@ -1058,20 +1496,26 @@
     </section>
 
 
+
     <!-- ======================================================
          FWORLD TOKENS
     ======================================================= -->
 
     <section class="token-card">
 
+
       <div class="section-heading">
 
         <div>
-          <h2>🪙 FWORLD TOKENS</h2>
+
+          <h2>
+            🪙 FWORLD TOKENS
+          </h2>
 
           <p>
             Your FWORLD platform balance
           </p>
+
         </div>
 
       </div>
@@ -1079,15 +1523,18 @@
 
       <div class="token-main">
 
+
         <div class="token-icon">
           🪙
         </div>
+
 
         <div>
 
           <div class="token-number">
             1,000
           </div>
+
 
           <div class="token-label">
             FWORLD Tokens
@@ -1100,19 +1547,23 @@
 
       <div class="token-levels">
 
+
         <span class="level active">
           Silver Token
         </span>
 
+
         <span class="level coming">
           Gold — Coming Soon
         </span>
+
 
         <span class="level coming">
           Black — Coming Soon
         </span>
 
       </div>
+
 
       <p class="token-note">
         Current reference: 1,000 FWORLD Tokens = $100.
@@ -1121,8 +1572,9 @@
     </section>
 
 
+
     <!-- ======================================================
-         DASHBOARD SECTIONS
+         MAIN SECTION
     ======================================================= -->
 
     <div class="dashboard-title">
@@ -1131,11 +1583,13 @@
         My FWORLD
       </h2>
 
+
       <p>
         Everything connected to your digital space.
       </p>
 
     </div>
+
 
 
     <section class="dashboard-grid">
@@ -1154,15 +1608,18 @@
               💰
             </div>
 
+
             <div class="card-arrow">
               →
             </div>
 
           </div>
 
+
           <h3>
             My Income
           </h3>
+
 
           <p>
             Referrals, commissions, earnings and income history.
@@ -1170,11 +1627,13 @@
 
         </div>
 
+
         <span class="card-link">
           Open
         </span>
 
       </a>
+
 
 
       <!-- FWORLD SERVICES -->
@@ -1190,15 +1649,18 @@
               🌐
             </div>
 
+
             <div class="card-arrow">
               →
             </div>
 
           </div>
 
+
           <h3>
             FWORLD Services
           </h3>
+
 
           <p>
             Travel, products, memberships, referrals and services.
@@ -1206,11 +1668,13 @@
 
         </div>
 
+
         <span class="card-link">
           Explore
         </span>
 
       </a>
+
 
 
       <!-- MY BUSINESS -->
@@ -1226,15 +1690,18 @@
               🛍️
             </div>
 
+
             <div class="card-arrow">
               →
             </div>
 
           </div>
 
+
           <h3>
             My Business
           </h3>
+
 
           <p>
             Manage your store, products, services and customers.
@@ -1242,11 +1709,13 @@
 
         </div>
 
+
         <span class="card-link">
           Manage
         </span>
 
       </a>
+
 
 
       <!-- LEARNINGS -->
@@ -1262,15 +1731,18 @@
               📚
             </div>
 
+
             <div class="card-arrow">
               →
             </div>
 
           </div>
 
+
           <h3>
             Learnings
           </h3>
+
 
           <p>
             TYMA Modules, AI Empowerment Training and more.
@@ -1278,11 +1750,13 @@
 
         </div>
 
+
         <span class="card-link">
           Learn
         </span>
 
       </a>
+
 
 
       <!-- GAMES -->
@@ -1298,15 +1772,18 @@
               🎮
             </div>
 
+
             <div class="card-arrow">
               →
             </div>
 
           </div>
 
+
           <h3>
             Games
           </h3>
+
 
           <p>
             Play, discover challenges and make your digital space fun.
@@ -1314,11 +1791,13 @@
 
         </div>
 
+
         <span class="card-link">
           Play
         </span>
 
       </a>
+
 
 
       <!-- MY JOURNAL -->
@@ -1334,21 +1813,25 @@
               📖
             </div>
 
+
             <div class="card-arrow">
               →
             </div>
 
           </div>
 
+
           <h3>
             My Journal
           </h3>
+
 
           <p>
             Stories, testimonials, diary entries and shareable moments.
           </p>
 
         </div>
+
 
         <span class="card-link">
           Open
@@ -1359,11 +1842,13 @@
     </section>
 
 
+
     <!-- ======================================================
          FACEBOOK SHARE
     ======================================================= -->
 
     <section class="share-panel">
+
 
       <div>
 
@@ -1371,11 +1856,13 @@
           📲 Share Your FWORLD
         </h3>
 
+
         <p>
           Share your digital space with your Facebook community.
         </p>
 
       </div>
+
 
       <button
         class="facebook-btn"
@@ -1390,16 +1877,21 @@
   </main>
 
 
+
   <!-- ========================================================
        FOOTER
   ========================================================= -->
 
   <footer>
 
-    <strong>FWORLD ONLINE</strong>
+    <strong>
+      FWORLD ONLINE
+    </strong>
+
     · Your Digital Space
 
   </footer>
+
 
 
   <!-- ========================================================
@@ -1416,8 +1908,9 @@
   </button>
 
 
+
   <!-- ========================================================
-       AI TWIN WELCOME POPUP
+       AI TWIN POPUP
   ========================================================= -->
 
   <div
@@ -1427,7 +1920,9 @@
     aria-modal="true"
     aria-labelledby="twinTitle">
 
+
     <div class="twin-popup">
+
 
       <button
         class="close-twin"
@@ -1463,6 +1958,7 @@
 
       <div class="twin-actions">
 
+
         <button
           class="twin-action primary"
           onclick="closeTwin()">
@@ -1470,6 +1966,7 @@
           ✨ Show Me Around
 
         </button>
+
 
         <button
           class="twin-action"
@@ -1479,6 +1976,7 @@
 
         </button>
 
+
         <button
           class="twin-action"
           onclick="goToServices()">
@@ -1486,6 +1984,7 @@
           🌐 Explore FWORLD Services
 
         </button>
+
 
         <button
           class="twin-action"
@@ -1502,17 +2001,17 @@
   </div>
 
 
+
   <!-- ========================================================
        JAVASCRIPT
   ========================================================= -->
 
   <script>
 
-    /*
-      ==========================================================
-      AI TWIN
-      ==========================================================
-    */
+
+    /* ==========================================================
+       AI TWIN
+    ========================================================== */
 
     const twinOverlay =
       document.getElementById("twinOverlay");
@@ -1536,80 +2035,86 @@
     }
 
 
-    /*
-      Close when clicking outside popup
-    */
+    /* Close outside */
 
-    twinOverlay.addEventListener("click", function(event) {
+    twinOverlay.addEventListener(
+      "click",
+      function(event) {
 
-      if (event.target === twinOverlay) {
-        closeTwin();
+        if (event.target === twinOverlay) {
+          closeTwin();
+        }
+
       }
+    );
 
-    });
 
+    /* Close ESC */
 
-    /*
-      Close with ESC
-    */
+    document.addEventListener(
+      "keydown",
+      function(event) {
 
-    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+          closeTwin();
+        }
 
-      if (event.key === "Escape") {
-        closeTwin();
       }
+    );
 
-    });
 
+    /* ==========================================================
+       SHOW AI TWIN AUTOMATICALLY
+    ========================================================== */
 
-    /*
-      ==========================================================
-      SHOW AI TWIN AUTOMATICALLY
-      ==========================================================
+    window.addEventListener(
+      "load",
+      function() {
 
-      This is the front-end prototype behavior.
-
-      Later, backend/account logic will determine
-      whether the user has just created an eStore.
-    */
-
-    window.addEventListener("load", function() {
-
-      const hasSeenTwin =
-        sessionStorage.getItem("fworldTwinSeen");
-
-      if (!hasSeenTwin) {
-
-        setTimeout(function() {
-
-          openTwin();
-
-          sessionStorage.setItem(
-            "fworldTwinSeen",
-            "true"
+        const hasSeenTwin =
+          sessionStorage.getItem(
+            "fworldTwinSeen"
           );
 
-        }, 900);
+
+        if (!hasSeenTwin) {
+
+          setTimeout(
+            function() {
+
+              openTwin();
+
+              sessionStorage.setItem(
+                "fworldTwinSeen",
+                "true"
+              );
+
+            },
+            900
+          );
+
+        }
 
       }
+    );
 
-    });
 
-
-    /*
-      ==========================================================
-      FACEBOOK SHARE
-      ==========================================================
-    */
+    /* ==========================================================
+       FACEBOOK SHARE
+    ========================================================== */
 
     function shareDashboard() {
 
       const shareUrl =
-        encodeURIComponent(window.location.href);
+        encodeURIComponent(
+          window.location.href
+        );
+
 
       const facebookUrl =
         "https://www.facebook.com/sharer/sharer.php?u="
         + shareUrl;
+
 
       window.open(
         facebookUrl,
@@ -1620,21 +2125,16 @@
     }
 
 
-    /*
-      ==========================================================
-      AI TWIN QUICK ACTIONS
-      ==========================================================
-    */
+    /* ==========================================================
+       AI TWIN QUICK ACTIONS
+    ========================================================== */
 
     function goToBusiness() {
 
       closeTwin();
 
-      document
-        .getElementById("business")
-        ?.scrollIntoView({
-          behavior: "smooth"
-        });
+      window.location.href =
+        "fworld-mybusiness.html";
 
     }
 
@@ -1643,11 +2143,8 @@
 
       closeTwin();
 
-      document
-        .getElementById("services")
-        ?.scrollIntoView({
-          behavior: "smooth"
-        });
+      window.location.href =
+        "fworld-services.html";
 
     }
 
