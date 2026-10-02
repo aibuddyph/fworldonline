@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HOW TO PLAY | FWORLD CITY</title>
+
+  <meta
+    name="description"
+    content="Learn how to play FWORLD CITY — a 1 to 4 player card-based dream, strategy, money and life game."
+  >
+
+  <meta
+    property="og:title"
+    content="HOW TO PLAY | FWORLD CITY"
+  >
+
+  <meta
+    property="og:description"
+    content="Dream. Strategize. Take action. Build your city."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f7;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 9px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      background: #111;
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero .eyebrow {
+      color: #ff7a00;
+      font-weight: 800;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 7vw, 4.5rem);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #ddd;
+      font-size: 1.05rem;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================== */
+
+    .actions {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-weight: 800;
+      border: 2px solid #fff;
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      background: #fff;
+      color: #111;
+    }
+
+    .btn:hover {
+      background: #ff7a00;
+      border-color: #ff7a00;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       SECTION
+    ========================== */
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title span {
+      color: #ff7a00;
+      font-size: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      margin-top: 5px;
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: 10px auto 0;
+      color: #666;
+    }
+
+    /* =========================
+       INTRO
+    ========================== */
+
+    .intro {
+      background: #fff;
+    }
+
+    .intro-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      padding: 35px;
+      border: 1px solid #ddd;
+      border-radius: 18px;
+      background: #fafafa;
+    }
+
+    .intro-box strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    /* =========================
+       STEPS
+    ========================== */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 18px;
+      padding: 28px;
+      position: relative;
+    }
+
+    .step-number {
+      font-size: 0.8rem;
+      font-weight: 900;
+      color: #ff7a00;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .step h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: #555;
+    }
+
+    /* =========================
+       FOUR CARDS
+    ========================== */
+
+    .four-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .game-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 18px;
+      padding: 25px 18px;
+      text-align: center;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .game-card .symbol {
+      font-size: 2.7rem;
+      margin-bottom: 10px;
+    }
+
+    .game-card h3 {
+      margin-bottom: 5px;
+    }
+
+    .game-card p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       SPECIAL CARDS
+    ========================== */
+
+    .special-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .special {
+      background: #111;
+      color: #fff;
+      border-radius: 18px;
+      padding: 25px 18px;
+      text-align: center;
+    }
+
+    .special .symbol {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .special h3 {
+      margin-bottom: 8px;
+    }
+
+    .special p {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       MONEY
+    ========================== */
+
+    .money-box {
+      background: #111;
+      color: #fff;
+      border-radius: 22px;
+      padding: 40px 25px;
+      text-align: center;
+    }
+
+    .money-box .big {
+      font-size: clamp(2rem, 7vw, 4rem);
+      font-weight: 900;
+      margin: 10px 0;
+    }
+
+    .money-box p {
+      color: #ccc;
+    }
+
+    .money-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .money-card {
+      background: #fff;
+      color: #111;
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-weight: 900;
+      border: 2px solid #ddd;
+    }
+
+    /* =========================
+       CITY
+    ========================== */
+
+    .city-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .city-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .city-item h3 {
+      margin-bottom: 6px;
+    }
+
+    .city-item p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       FLOW
+    ========================== */
+
+    .flow {
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+
+    .flow-line {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+      font-weight: 900;
+    }
+
+    .flow-line span {
+      padding: 10px 14px;
+      border: 1px solid #444;
+      border-radius: 10px;
+    }
+
+    .arrow {
+      color: #ff7a00;
+      font-size: 1.4rem;
+    }
+
+    /* =========================
+       MODES
+    ========================== */
+
+    .modes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .mode {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .mode h3 {
+      margin-bottom: 8px;
+    }
+
+    .mode p {
+      color: #666;
+    }
+
+    /* =========================
+       RULES
+    ========================== */
+
+    .rules {
+      background: #fff;
+    }
+
+    .rules-list {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    .rule {
+      padding: 18px 20px;
+      background: #f7f7f7;
+      border-left: 4px solid #111;
+      border-radius: 8px;
+    }
+
+    .rule strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* =========================
+       END GAME
+    ========================== */
+
+    .score-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .score-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .score-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 13px 0;
+      border-bottom: 1px solid #ddd;
+      font-weight: 700;
+    }
+
+    /* =========================
+       FINAL CTA
+    ========================== */
+
+    .final {
+      background: #ff7a00;
+      color: #111;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .final h2 {
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .final p {
+      max-width: 650px;
+      margin: auto;
+      font-size: 1.05rem;
+    }
+
+    .final .btn {
+      margin-top: 25px;
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    .final .btn:hover {
+      background: #fff;
+      color: #111;
+      border-color: #fff;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 800px) {
+
+      .nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 0;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .steps,
+      .city-grid,
+      .modes {
+        grid-template-columns: 1fr;
+      }
+
+      .four-cards,
+      .special-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section {
+        padding: 55px 0;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .hero {
+        padding: 60px 15px;
+      }
+
+      .four-cards,
+      .special-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .step,
+      .game-card,
+      .special {
+        padding: 25px;
+      }
+
+      .flow-line {
+        flex-direction: column;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+
+      .intro-box {
+        padding: 25px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+    <div class="container nav">
+
+      <a href="fworld-games.html" class="brand">
+        FWORLD GAMES
+      </a>
+
+      <nav class="nav-links">
+        <a href="fworld-games.html">Games</a>
+        <a href="fworld-city.html">FWORLD CITY</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        FWORLD CITY
+      </div>
+
+      <h1>HOW TO PLAY</h1>
+
+      <p>
+        A card-based dream, strategy, money and life game
+        for 1–4 players.
+      </p>
+
+      <div class="actions">
+
+        <a href="fworld-city.html" class="btn primary">
+          ▶ PLAY FWORLD CITY
+        </a>
+
+        <a href="fworld-games.html" class="btn">
+          ← BACK TO GAMES
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       INTRO
+  ========================== -->
+
+  <section class="intro">
+
+    <div class="container">
+
+      <div class="intro-box">
+
+        <strong>
+          Your Dream Is The Beginning.
+        </strong>
+
+        <p>
+          In FWORLD CITY, players make decisions,
+          manage resources, take action, earn game money,
+          build assets, develop businesses, and grow their city.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       GAME BASICS
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>START HERE</span>
+        <h2>Game Basics</h2>
+        <p>
+          Everything you need before the first turn.
+        </p>
+      </div>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>👥 Choose Your Players</h3>
+          <p>
+            FWORLD CITY supports 1–4 players.
+            Choose Solo, Duo, or City Mode.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>🃏 Prepare the Deck</h3>
+          <p>
+            Shuffle the FWORLD CITY cards and place
+            the deck in the center.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>🪙 Starting Wealth</h3>
+          <p>
+            Each player starts with ₱100 in value cards
+            and receives one Dream Card.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">04</div>
+          <h3>🔄 Choose the First Player</h3>
+          <p>
+            Select the first player. Turns then move
+            clockwise around the table.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOUR CARD SYSTEM
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>THE CORE MECHANIC</span>
+        <h2>The 4-Card System</h2>
+        <p>
+          Every major decision begins with these four ideas.
+        </p>
+      </div>
+
+      <div class="four-cards">
+
+        <div class="game-card">
+          <div class="symbol">♥️</div>
+          <h3>DREAM</h3>
+          <p>
+            What do I want?
+          </p>
+        </div>
+
+        <div class="game-card">
+          <div class="symbol">♠️</div>
+          <h3>STRATEGY</h3>
+          <p>
+            How will I get there?
+          </p>
+        </div>
+
+        <div class="game-card">
+          <div class="symbol">♦️</div>
+          <h3>RESOURCE</h3>
+          <p>
+            What do I have?
+          </p>
+        </div>
+
+        <div class="game-card">
+          <div class="symbol">♣️</div>
+          <h3>ACTION</h3>
+          <p>
+            What will I do?
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SPECIAL CARDS
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>SPECIAL CARDS</span>
+        <h2>Power Cards</h2>
+        <p>
+          Special cards add choice, bluffing,
+          leadership and negotiation.
+        </p>
+      </div>
+
+      <div class="special-cards">
+
+        <div class="special">
+          <div class="symbol">🂡</div>
+          <h3>ACE</h3>
+          <p>
+            <strong>CHOICE</strong><br>
+            You decide which legal action
+            to take.
+          </p>
+        </div>
+
+        <div class="special">
+          <div class="symbol">🃏</div>
+          <h3>JOKER</h3>
+          <p>
+            <strong>BLUFF</strong><br>
+            Use hidden information,
+            bluffing and challenges.
+          </p>
+        </div>
+
+        <div class="special">
+          <div class="symbol">👑</div>
+          <h3>KING</h3>
+          <p>
+            <strong>LEAD</strong><br>
+            Take a leadership role
+            in an opportunity or mission.
+          </p>
+        </div>
+
+        <div class="special">
+          <div class="symbol">👸</div>
+          <h3>QUEEN</h3>
+          <p>
+            <strong>NEGOTIATE</strong><br>
+            Propose special deals
+            with other players.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       HOW A TURN WORKS
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>YOUR TURN</span>
+        <h2>How a Turn Works</h2>
+      </div>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-number">01 — DRAW</div>
+          <h3>🃏 Draw a Card</h3>
+          <p>
+            Draw the next card from the FWORLD CITY deck.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02 — REVEAL</div>
+          <h3>👀 Read the Card</h3>
+          <p>
+            Reveal and read the instruction
+            when the card requires it.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03 — DECIDE</div>
+          <h3>🧠 Make Your Move</h3>
+          <p>
+            Choose the legal action that best
+            fits your current situation.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">04 — RESOLVE</div>
+          <h3>💰 Complete the Action</h3>
+          <p>
+            Receive, pay, trade, invest,
+            build, or complete the required action.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MONEY
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="money-box">
+
+        <div>🪙 FWORLD GAME MONEY</div>
+
+        <div class="big">
+          1 TOKEN = ₱1
+        </div>
+
+        <p>
+          Cards represent the player's game money.
+          The printed value on the card determines
+          its value during the game.
+        </p>
+
+        <div class="money-cards">
+
+          <div class="money-card">₱10</div>
+          <div class="money-card">₱20</div>
+          <div class="money-card">₱50</div>
+          <div class="money-card">₱100</div>
+          <div class="money-card">₱500</div>
+          <div class="money-card">₱1,000</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BUSINESS
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>BUILD YOUR WEALTH</span>
+        <h2>Business & Investment</h2>
+        <p>
+          Decide when to spend, invest, save,
+          grow or take an opportunity.
+        </p>
+      </div>
+
+      <div class="city-grid">
+
+        <div class="city-item">
+          <h3>💼 Start</h3>
+          <p>
+            Invest your game money into
+            an available business opportunity.
+          </p>
+        </div>
+
+        <div class="city-item">
+          <h3>📈 Grow</h3>
+          <p>
+            Upgrade your business when
+            the opportunity becomes available.
+          </p>
+        </div>
+
+        <div class="city-item">
+          <h3>💰 Earn</h3>
+          <p>
+            Businesses can generate game income
+            according to their individual card rules.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CITY BUILDING
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>BUILD YOUR CITY</span>
+        <h2>City Assets</h2>
+        <p>
+          Your progress becomes part of your city.
+        </p>
+      </div>
+
+      <div class="city-grid">
+
+        <div class="city-item">
+          <h3>🏠 Dream Home</h3>
+          <p>
+            Build the home connected to your dream.
+          </p>
+        </div>
+
+        <div class="city-item">
+          <h3>📚 Learning Center</h3>
+          <p>
+            Represents learning and personal growth.
+          </p>
+        </div>
+
+        <div class="city-item">
+          <h3>💼 Business</h3>
+          <p>
+            Build and develop your business.
+          </p>
+        </div>
+
+        <div class="city-item">
+          <h3>✈️ Travel</h3>
+          <p>
+            Unlock travel-related goals and experiences.
+          </p>
+        </div>
+
+        <div class="city-item">
+          <h3>🌳 Wellness Park</h3>
+          <p>
+            Represents balance and wellbeing.
+          </p>
+        </div>
+
+        <div class="city-item">
+          <h3>🏙️ City Landmark</h3>
+          <p>
+            A major milestone in your city development.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TRADING
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>PLAYER INTERACTION</span>
+        <h2>Trade & Negotiate</h2>
+        <p>
+          Players may negotiate and make mutually
+          agreed trades when allowed by the rules.
+        </p>
+      </div>
+
+      <div class="intro-box">
+
+        <strong>🤝 A Deal Must Be Agreed Upon</strong>
+
+        <p>
+          Example: one player offers a ₱50 card
+          in exchange for another player's
+          Opportunity Card.
+        </p>
+
+        <br>
+
+        <p>
+          Both players must agree before
+          the trade happens.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BLUFF
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>JOKER MECHANIC</span>
+        <h2>Bluff & Challenge</h2>
+        <p>
+          The Joker introduces hidden information
+          and psychological strategy.
+        </p>
+      </div>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>🎭 Make a Permitted Bluff</h3>
+          <p>
+            The player makes a claim according
+            to the Joker's rules.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>❓ Call Bluff</h3>
+          <p>
+            Another player may challenge
+            the claim when permitted.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>🔍 Reveal</h3>
+          <p>
+            The relevant hidden card is revealed
+            according to the challenge rule.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">04</div>
+          <h3>⚖️ Resolve</h3>
+          <p>
+            Apply the penalty or reward
+            specified by the card.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       DREAM SYSTEM
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>YOUR DREAM</span>
+        <h2>Dream Achievement</h2>
+        <p>
+          Turn your Dream into a playable objective.
+        </p>
+      </div>
+
+      <div class="intro-box">
+
+        <strong>
+          ♥️ DREAM → ♠️ STRATEGY → ♦️ RESOURCE → ♣️ ACTION
+        </strong>
+
+        <p>
+          Complete the required steps and conditions
+          to achieve your Dream.
+        </p>
+
+        <br>
+
+        <p>
+          Achieved Dreams can unlock milestones,
+          rewards and new city development.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MODES
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>PLAYER MODES</span>
+        <h2>1–4 Players</h2>
+      </div>
+
+      <div class="modes">
+
+        <div class="mode">
+          <h3>👤 Solo Mode</h3>
+          <p>
+            Build your city against the challenges
+            of the game deck.
+          </p>
+        </div>
+
+        <div class="mode">
+          <h3>👥 Duo Mode</h3>
+          <p>
+            Two players compete, negotiate,
+            trade and respond to opportunities.
+          </p>
+        </div>
+
+        <div class="mode">
+          <h3>👥👥 City Mode</h3>
+          <p>
+            Three or four players interact through
+            business, negotiation, challenges and strategy.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MILESTONES
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>PROGRESS</span>
+        <h2>FWORLD Milestones</h2>
+      </div>
+
+      <div class="city-grid">
+
+        <div class="city-item">
+          <h3>🌱 STARTER</h3>
+          <p>Your journey begins.</p>
+        </div>
+
+        <div class="city-item">
+          <h3>🏠 BUILDER</h3>
+          <p>You begin creating your city.</p>
+        </div>
+
+        <div class="city-item">
+          <h3>💼 ENTREPRENEUR</h3>
+          <p>You begin developing business.</p>
+        </div>
+
+        <div class="city-item">
+          <h3>🌟 GROWING</h3>
+          <p>Your city continues to expand.</p>
+        </div>
+
+        <div class="city-item">
+          <h3>🏙️ CITY BUILDER</h3>
+          <p>Major city progress is achieved.</p>
+        </div>
+
+        <div class="city-item">
+          <h3>👑 DREAM ACHIEVER</h3>
+          <p>You completed major Dream objectives.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       RULES
+  ========================== -->
+
+  <section class="rules">
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>IMPORTANT</span>
+        <h2>Game Rules</h2>
+      </div>
+
+      <div class="rules-list">
+
+        <div class="rule">
+          <strong>🃏 Rule 01 — Follow the Card</strong>
+          Each card's instruction must be followed
+          unless another card specifically changes it.
+        </div>
+
+        <div class="rule">
+          <strong>🪙 Rule 02 — Cards Are Game Money</strong>
+          Value cards represent the player's
+          game wealth.
+        </div>
+
+        <div class="rule">
+          <strong>🤝 Rule 03 — Trades Require Agreement</strong>
+          Normal trades require both players
+          to agree.
+        </div>
+
+        <div class="rule">
+          <strong>🂡 Rule 04 — Ace Gives Choice</strong>
+          The Ace allows a legal choice,
+          but does not remove the basic rules.
+        </div>
+
+        <div class="rule">
+          <strong>🃏 Rule 05 — Joker Has Limits</strong>
+          Joker powers follow the specific
+          Joker rules and cannot create unlimited money.
+        </div>
+
+        <div class="rule">
+          <strong>⚖️ Rule 06 — No Unlimited Taking</strong>
+          A player cannot take another player's
+          money or assets unless a card specifically allows it.
+        </div>
+
+        <div class="rule">
+          <strong>🔄 Rule 07 — Turns Stay in Order</strong>
+          Players take turns clockwise unless
+          a card changes the order.
+        </div>
+
+        <div class="rule">
+          <strong>❤️ Rule 08 — Dreams Guide the Game</strong>
+          Players build toward their Dreams
+          while managing their resources and decisions.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       GAME LENGTH
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>GAME LENGTH</span>
+        <h2>Choose Your Game</h2>
+      </div>
+
+      <div class="modes">
+
+        <div class="mode">
+          <h3>⚡ Short Game</h3>
+          <p>
+            20 rounds.
+            Quick-play experience.
+          </p>
+        </div>
+
+        <div class="mode">
+          <h3>🎮 Standard Game</h3>
+          <p>
+            40 rounds.
+            Full FWORLD CITY experience.
+          </p>
+        </div>
+
+        <div class="mode">
+          <h3>🏙️ Long Game</h3>
+          <p>
+            60 rounds.
+            Extended city-building experience.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       END GAME / SCORE
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>FINAL ROUND</span>
+        <h2>How the Game Ends</h2>
+        <p>
+          When the agreed number of rounds is complete,
+          players calculate their FWORLD Score.
+        </p>
+      </div>
+
+      <div class="score-box">
+
+        <div class="score-list">
+
+          <div class="score-item">
+            <span>🪙 Wealth</span>
+            <span>Game Value</span>
+          </div>
+
+          <div class="score-item">
+            <span>🏙️ Assets</span>
+            <span>City Progress</span>
+          </div>
+
+          <div class="score-item">
+            <span>💼 Businesses</span>
+            <span>Business Progress</span>
+          </div>
+
+          <div class="score-item">
+            <span>❤️ Dreams</span>
+            <span>Dreams Achieved</span>
+          </div>
+
+          <div class="score-item">
+            <span>⭐ Milestones</span>
+            <span>Progress Rewards</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       GAME FLOW
+  ========================== -->
+
+  <section class="flow">
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>REMEMBER THE LOOP</span>
+        <h2>FWORLD CITY</h2>
+      </div>
+
+      <div class="flow-line">
+
+        <span>♥️ DREAM</span>
+
+        <div class="arrow">→</div>
+
+        <span>♠️ STRATEGY</span>
+
+        <div class="arrow">→</div>
+
+        <span>♦️ RESOURCE</span>
+
+        <div class="arrow">→</div>
+
+        <span>♣️ ACTION</span>
+
+        <div class="arrow">→</div>
+
+        <span>🪙 EARN</span>
+
+        <div class="arrow">→</div>
+
+        <span>🏙️ BUILD</span>
+
+        <div class="arrow">→</div>
+
+        <span>🌱 GROW</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FINAL CTA
+  ========================== -->
+
+  <section class="final">
+
+    <div class="container">
+
+      <h2>BUILD THE LIFE YOU DREAM.</h2>
+
+      <p>
+        Your dream is the beginning.
+        Your decisions build the city.
+      </p>
+
+      <a href="fworld-city.html" class="btn">
+        ▶ PLAY FWORLD CITY
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      <strong>FWORLD GAMES</strong>
+    </p>
+
+    <p>
+      FWORLD CITY — Dream • Strategy • Money • Life
+    </p>
+
+    <p style="margin-top:10px;">
+      © 2026 FWORLD ONLINE
+    </p>
+
+  </footer>
+
+</body>
+</html>
