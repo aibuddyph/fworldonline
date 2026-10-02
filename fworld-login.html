@@ -1,844 +1,1093 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-  <title>FWORLD AI | Member Login</title>
+<title>FWORLD AI | Member Login</title>
 
-  <meta name="description"
-        content="Enter your FWORLD AI Member System and access your personal FWORLD Dashboard.">
+<meta name="description"
+      content="Enter your FWORLD AI Member System and access your personal FWORLD Dashboard.">
 
-  <meta property="og:title"
-        content="FWORLD AI | Member Login">
+<style>
 
-  <meta property="og:description"
-        content="Your FWORLD. Your business. Your digital world.">
+/* =========================================
+   RESET
+========================================= */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <style>
 
-    /* =========================================
-       RESET
-    ========================================= */
+/* =========================================
+   BODY
+========================================= */
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
 
+  min-height: 100vh;
 
-    /* =========================================
-       BODY
-    ========================================= */
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-    body {
+  background: #050505;
 
-      min-height: 100vh;
+  color: #fff;
 
-      font-family:
-        Inter,
-        Arial,
-        Helvetica,
-        sans-serif;
+  display: flex;
 
-      color: #ffffff;
+  align-items: center;
+  justify-content: center;
 
-      background:
-        radial-gradient(
-          circle at 50% 35%,
-          rgba(255, 20, 147, .10),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 15% 85%,
-          rgba(255, 20, 147, .06),
-          transparent 25%
-        ),
-        #050505;
+  padding: 20px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  overflow-x: hidden;
+}
 
-      overflow-x: hidden;
 
-      padding: 24px;
-    }
+/* =========================================
+   DIGITAL GRID
+========================================= */
 
+body::before {
 
-    /* =========================================
-       FUTURISTIC GRID
-    ========================================= */
+  content: "";
 
-    body::before {
+  position: fixed;
 
-      content: "";
+  inset: 0;
 
-      position: fixed;
+  pointer-events: none;
 
-      inset: 0;
+  opacity: .16;
 
-      pointer-events: none;
+  background-image:
 
-      opacity: .18;
+    linear-gradient(
+      rgba(255,255,255,.04) 1px,
+      transparent 1px
+    ),
 
-      background-image:
-        linear-gradient(
-          rgba(255,255,255,.035) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,.035) 1px,
-          transparent 1px
-        );
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.04) 1px,
+      transparent 1px
+    );
 
-      background-size: 45px 45px;
+  background-size: 45px 45px;
 
-      mask-image:
-        linear-gradient(
-          to bottom,
-          black,
-          transparent 85%
-        );
-    }
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+}
 
 
-    /* =========================================
-       FLOATING LIGHTS
-    ========================================= */
+/* =========================================
+   FLOATING PARTICLES
+========================================= */
 
-    .light {
+.particle {
 
-      position: fixed;
+  position: fixed;
 
-      width: 5px;
-      height: 5px;
+  width: 4px;
+  height: 4px;
 
-      background: #ff1493;
+  border-radius: 50%;
 
-      border-radius: 50%;
+  background: #ff1493;
 
-      box-shadow:
-        0 0 10px #ff1493,
-        0 0 25px rgba(255,20,147,.7);
+  box-shadow:
+    0 0 12px #ff1493;
 
-      opacity: .7;
+  opacity: .7;
 
-      animation:
-        floatLight 6s infinite ease-in-out;
-    }
+  animation:
+    particleFloat 6s infinite ease-in-out;
+}
 
-    .light.one {
-      top: 18%;
-      left: 12%;
-    }
+.particle.one {
+  top: 20%;
+  left: 12%;
+}
 
-    .light.two {
-      top: 72%;
-      right: 14%;
-      animation-delay: 2s;
-    }
+.particle.two {
+  top: 72%;
+  right: 13%;
+  animation-delay: 2s;
+}
 
-    .light.three {
-      top: 32%;
-      right: 8%;
-      animation-delay: 4s;
-    }
+.particle.three {
+  top: 35%;
+  right: 8%;
+  animation-delay: 4s;
+}
 
-    @keyframes floatLight {
+@keyframes particleFloat {
 
-      0%,100% {
-        transform: translateY(0);
-        opacity: .35;
-      }
+  0%,100% {
+    transform: translateY(0);
+    opacity: .3;
+  }
 
-      50% {
-        transform: translateY(-20px);
-        opacity: 1;
-      }
-    }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
 
+}
 
-    /* =========================================
-       MAIN
-    ========================================= */
 
-    .system {
+/* =========================================
+   LOGIN SYSTEM
+========================================= */
 
-      width: 100%;
-      max-width: 440px;
+.login-system {
 
-      position: relative;
+  width: 100%;
 
-      z-index: 2;
-    }
+  max-width: 440px;
 
+  position: relative;
 
-    /* =========================================
-       FWORLD BRAND
-    ========================================= */
+  z-index: 2;
+}
 
-    .brand {
 
-      text-align: center;
+/* =========================================
+   BRAND
+========================================= */
 
-      margin-bottom: 25px;
-    }
+.brand {
 
-    .brand-name {
+  text-align: center;
 
-      font-size: 38px;
+  margin-bottom: 25px;
+}
 
-      font-weight: 900;
+.brand-name {
 
-      letter-spacing: 7px;
+  font-size: 38px;
 
-      color: #ffffff;
+  font-weight: 900;
 
-      text-shadow:
-        0 0 20px rgba(255,20,147,.25);
-    }
+  letter-spacing: 7px;
+}
 
-    .brand-ai {
+.brand-ai {
 
-      margin-top: 8px;
+  margin-top: 8px;
 
-      font-size: 10px;
+  color: #ff1493;
 
-      letter-spacing: 4px;
+  font-size: 10px;
 
-      color: #ff1493;
+  font-weight: 800;
 
-      font-weight: 800;
-    }
+  letter-spacing: 4px;
+}
 
 
-    /* =========================================
-       AI CORE
-    ========================================= */
+/* =========================================
+   AI CORE
+========================================= */
 
-    .ai-core {
+.ai-core {
 
-      width: 105px;
-      height: 105px;
+  width: 105px;
+  height: 105px;
 
-      margin: 0 auto 28px;
+  margin: 0 auto 28px;
 
-      position: relative;
+  position: relative;
 
-      display: flex;
+  display: flex;
 
-      align-items: center;
-      justify-content: center;
-    }
+  align-items: center;
+  justify-content: center;
+}
 
 
-    /* OUTER ORBIT */
+/* ORBIT */
 
-    .orbit {
+.orbit {
 
-      position: absolute;
+  position: absolute;
 
-      inset: 0;
+  inset: 0;
 
-      border:
+  border:
+    1px solid
+    rgba(255,20,147,.55);
 
-        1px solid
-        rgba(255,20,147,.45);
+  border-radius: 50%;
 
-      border-radius: 50%;
+  animation:
+    rotateOrbit 7s linear infinite;
+}
 
-      animation:
-        rotateOrbit 8s linear infinite;
-    }
+.orbit::before {
 
+  content: "";
 
-    .orbit::before {
+  position: absolute;
 
-      content: "";
+  width: 9px;
+  height: 9px;
 
-      position: absolute;
+  background: #ff1493;
 
-      width: 9px;
-      height: 9px;
+  border-radius: 50%;
 
-      background: #ff1493;
+  top: 7px;
 
-      border-radius: 50%;
+  left: 50%;
 
-      top: 7px;
-      left: 50%;
+  transform: translateX(-50%);
 
-      transform: translateX(-50%);
+  box-shadow:
+    0 0 12px #ff1493,
+    0 0 30px #ff1493;
+}
 
-      box-shadow:
-        0 0 10px #ff1493,
-        0 0 25px #ff1493;
-    }
 
+/* SECOND ORBIT */
 
-    /* SECOND ORBIT */
+.orbit.two {
 
-    .orbit.two {
+  inset: 12px;
 
-      inset: 11px;
+  border-color:
+    rgba(255,255,255,.25);
 
-      transform: rotate(55deg);
+  animation:
+    rotateOrbitReverse 5s linear infinite;
+}
 
-      border-color:
-        rgba(255,255,255,.20);
+.orbit.two::before {
 
-      animation-duration: 5s;
+  width: 5px;
+  height: 5px;
 
-      animation-direction: reverse;
-    }
+  background: #fff;
 
+  box-shadow:
+    0 0 10px #fff;
+}
 
-    .orbit.two::before {
 
-      width: 5px;
-      height: 5px;
+@keyframes rotateOrbit {
 
-      background: #ffffff;
+  from {
+    transform: rotate(0deg);
+  }
 
-      box-shadow:
-        0 0 10px #ffffff;
-    }
+  to {
+    transform: rotate(360deg);
+  }
 
+}
 
-    @keyframes rotateOrbit {
+@keyframes rotateOrbitReverse {
 
-      from {
-        transform: rotate(0deg);
-      }
+  from {
+    transform: rotate(360deg);
+  }
 
-      to {
-        transform: rotate(360deg);
-      }
-    }
+  to {
+    transform: rotate(0deg);
+  }
 
+}
 
-    /* CORE */
 
-    .core-center {
+/* CORE CENTER */
 
-      width: 54px;
-      height: 54px;
+.core-center {
 
-      border-radius: 50%;
+  width: 54px;
+  height: 54px;
 
-      background:
-        radial-gradient(
-          circle,
-          #ff8ac7 0%,
-          #ff1493 35%,
-          #8c0051 70%,
-          #080808 100%
-        );
+  border-radius: 50%;
 
-      box-shadow:
+  background:
 
-        0 0 15px #ff1493,
-        0 0 40px rgba(255,20,147,.55),
-        0 0 80px rgba(255,20,147,.25);
+    radial-gradient(
+      circle,
+      #ff9bd1,
+      #ff1493 40%,
+      #7d0048 70%,
+      #050505
+    );
 
-      display: flex;
+  display: flex;
 
-      align-items: center;
-      justify-content: center;
+  align-items: center;
+  justify-content: center;
 
-      font-size: 24px;
+  font-size: 23px;
 
-      animation:
-        corePulse 2.5s infinite ease-in-out;
-    }
+  box-shadow:
 
-    @keyframes corePulse {
+    0 0 18px #ff1493,
 
-      0%,100% {
-        transform: scale(1);
-      }
+    0 0 45px
+    rgba(255,20,147,.55),
 
-      50% {
-        transform: scale(1.07);
-      }
-    }
+    0 0 90px
+    rgba(255,20,147,.25);
 
+  animation:
+    corePulse 2.3s infinite ease-in-out;
+}
 
-    /* =========================================
-       LOGIN CARD
-    ========================================= */
+@keyframes corePulse {
 
-    .login-card {
+  0%,100% {
+    transform: scale(1);
+  }
 
-      position: relative;
+  50% {
+    transform: scale(1.08);
+  }
 
-      background:
-        rgba(255,255,255,.96);
+}
 
-      color: #111111;
 
-      border-radius: 28px;
+/* =========================================
+   LOGIN CARD
+========================================= */
 
-      padding: 34px 30px;
+.login-card {
 
-      border:
-        1px solid
-        rgba(255,20,147,.22);
+  background:
+    rgba(255,255,255,.97);
 
-      box-shadow:
+  color: #111;
 
-        0 30px 90px
-        rgba(0,0,0,.65),
+  border-radius: 28px;
 
-        0 0 45px
-        rgba(255,20,147,.08);
+  padding: 34px 30px;
 
-      overflow: hidden;
-    }
+  position: relative;
 
+  overflow: hidden;
 
-    /* PINK LIGHT LINE */
+  border:
+    1px solid
+    rgba(255,20,147,.20);
 
-    .login-card::before {
+  box-shadow:
 
-      content: "";
+    0 30px 90px
+    rgba(0,0,0,.65);
+}
 
-      position: absolute;
 
-      top: 0;
-      left: 0;
+/* TOP LIGHT */
 
-      width: 100%;
-      height: 3px;
+.login-card::before {
 
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          #ff1493,
-          transparent
-        );
+  content: "";
 
-      box-shadow:
-        0 0 15px #ff1493;
-    }
+  position: absolute;
 
+  top: 0;
+  left: 0;
 
-    /* =========================================
-       LOGIN TEXT
-    ========================================= */
+  width: 100%;
+  height: 3px;
 
-    .system-label {
+  background:
 
-      text-align: center;
+    linear-gradient(
+      90deg,
+      transparent,
+      #ff1493,
+      transparent
+    );
 
-      font-size: 10px;
+  box-shadow:
+    0 0 15px #ff1493;
+}
 
-      font-weight: 800;
 
-      letter-spacing: 3px;
+/* =========================================
+   LOGIN CONTENT
+========================================= */
 
-      color: #ff1493;
+.system-label {
 
-      margin-bottom: 12px;
-    }
+  text-align: center;
 
+  color: #ff1493;
 
-    h1 {
+  font-size: 10px;
 
-      text-align: center;
+  font-weight: 800;
 
-      font-size: 26px;
+  letter-spacing: 3px;
 
-      font-weight: 900;
+  margin-bottom: 12px;
+}
 
-      margin-bottom: 8px;
-    }
+h1 {
 
+  text-align: center;
 
-    .welcome {
+  font-size: 26px;
 
-      text-align: center;
+  font-weight: 900;
 
-      color: #666666;
+  margin-bottom: 8px;
+}
 
-      font-size: 13px;
+.welcome {
 
-      line-height: 1.6;
+  text-align: center;
 
-      margin-bottom: 27px;
-    }
+  color: #666;
 
+  font-size: 13px;
 
-    /* =========================================
-       INPUTS
-    ========================================= */
+  line-height: 1.6;
 
-    .field {
+  margin-bottom: 27px;
+}
 
-      margin-bottom: 17px;
-    }
 
+/* =========================================
+   INPUTS
+========================================= */
 
-    .field label {
+.field {
 
-      display: block;
+  margin-bottom: 17px;
+}
 
-      font-size: 12px;
+.field label {
 
-      font-weight: 800;
+  display: block;
 
-      margin-bottom: 7px;
+  font-size: 12px;
 
-      letter-spacing: .3px;
-    }
+  font-weight: 800;
 
+  margin-bottom: 7px;
+}
 
-    .field input {
+.field input {
 
-      width: 100%;
+  width: 100%;
 
-      padding: 14px 15px;
+  padding: 14px 15px;
 
-      border:
-        1px solid #dddddd;
+  border:
+    1px solid #ddd;
 
-      border-radius: 12px;
+  border-radius: 12px;
 
-      background: #fafafa;
+  background: #fafafa;
 
-      color: #111111;
+  color: #111;
 
-      font-size: 14px;
+  font-size: 14px;
 
-      outline: none;
+  outline: none;
 
-      transition:
-        border .2s ease,
-        box-shadow .2s ease,
-        background .2s ease;
-    }
+  transition: .2s ease;
+}
 
+.field input:focus {
 
-    .field input:focus {
+  border-color: #ff1493;
 
-      border-color: #ff1493;
+  background: #fff;
 
-      background: #ffffff;
+  box-shadow:
+    0 0 0 4px
+    rgba(255,20,147,.09);
+}
 
-      box-shadow:
-        0 0 0 4px
-        rgba(255,20,147,.09);
-    }
 
+/* =========================================
+   LOGIN BUTTON
+========================================= */
 
-    /* =========================================
-       LOGIN BUTTON
-    ========================================= */
+.enter-button {
 
-    .enter-button {
+  width: 100%;
 
-      width: 100%;
+  padding: 15px;
 
-      margin-top: 5px;
+  margin-top: 5px;
 
-      padding: 15px;
+  border: none;
 
-      border: none;
+  border-radius: 13px;
 
-      border-radius: 13px;
+  background: #111;
 
-      background: #111111;
+  color: #fff;
 
-      color: #ffffff;
+  font-size: 14px;
 
-      font-size: 14px;
+  font-weight: 900;
 
-      font-weight: 900;
+  cursor: pointer;
 
-      letter-spacing: .5px;
+  transition: .2s ease;
+}
 
-      cursor: pointer;
+.enter-button:hover {
 
-      transition:
-        .2s ease;
+  background: #ff1493;
 
-      box-shadow:
-        0 8px 22px
-        rgba(0,0,0,.18);
-    }
+  box-shadow:
+    0 8px 28px
+    rgba(255,20,147,.35);
+}
 
+.enter-button:active {
 
-    .enter-button:hover {
+  transform: scale(.98);
+}
 
-      background: #ff1493;
 
-      box-shadow:
-        0 8px 28px
-        rgba(255,20,147,.35);
+/* =========================================
+   LINKS
+========================================= */
 
-      transform:
-        translateY(-1px);
-    }
+.forgot {
 
+  display: block;
 
-    .enter-button:active {
+  text-align: center;
 
-      transform:
-        scale(.98);
-    }
+  margin-top: 18px;
 
+  color: #ff1493;
 
-    /* =========================================
-       FORGOT PASSWORD
-    ========================================= */
+  font-size: 12px;
 
-    .forgot {
+  font-weight: 700;
 
-      display: block;
+  text-decoration: none;
+}
 
-      text-align: center;
+.divider {
 
-      margin-top: 18px;
+  height: 1px;
 
-      color: #ff1493;
+  background: #eee;
 
-      font-size: 12px;
+  margin: 24px 0;
+}
 
-      font-weight: 700;
+.join {
 
-      text-decoration: none;
-    }
+  text-align: center;
 
+  color: #777;
 
-    .forgot:hover {
+  font-size: 12px;
 
-      text-decoration: underline;
-    }
+  line-height: 1.7;
+}
 
+.join a {
 
-    /* =========================================
-       DIVIDER
-    ========================================= */
+  color: #111;
 
-    .divider {
+  font-weight: 900;
 
-      height: 1px;
+  text-decoration: none;
+}
 
-      background: #eeeeee;
+.join a:hover {
 
-      margin: 24px 0;
-    }
+  color: #ff1493;
+}
 
 
-    /* =========================================
-       MEMBERSHIP
-    ========================================= */
+/* =========================================
+   STATUS
+========================================= */
 
-    .join {
+.status {
 
-      text-align: center;
+  display: flex;
 
-      color: #777777;
+  align-items: center;
+  justify-content: center;
 
-      font-size: 12px;
+  gap: 8px;
 
-      line-height: 1.7;
-    }
+  margin-top: 20px;
 
+  color: #999;
 
-    .join a {
+  font-size: 10px;
 
-      display: inline-block;
+  font-weight: 700;
 
-      margin-top: 5px;
+  letter-spacing: 2px;
+}
 
-      color: #111111;
+.status-dot {
 
-      font-weight: 900;
+  width: 7px;
+  height: 7px;
 
-      text-decoration: none;
-    }
+  border-radius: 50%;
 
+  background: #ff1493;
 
-    .join a:hover {
+  box-shadow:
+    0 0 8px #ff1493,
+    0 0 18px #ff1493;
 
-      color: #ff1493;
-    }
+  animation:
+    statusPulse 1.8s infinite;
+}
 
+@keyframes statusPulse {
 
-    /* =========================================
-       SYSTEM STATUS
-    ========================================= */
+  0%,100% {
+    opacity: .35;
+  }
 
-    .status {
+  50% {
+    opacity: 1;
+  }
 
-      display: flex;
+}
 
-      align-items: center;
-      justify-content: center;
 
-      gap: 8px;
+/* =========================================
+   BACK
+========================================= */
 
-      margin-top: 20px;
+.back {
 
-      font-size: 10px;
+  display: block;
 
-      letter-spacing: 2px;
+  text-align: center;
 
-      color: #999999;
+  margin-top: 18px;
 
-      font-weight: 700;
-    }
+  color: #777;
 
+  font-size: 11px;
 
-    .status-dot {
+  text-decoration: none;
+}
 
-      width: 7px;
-      height: 7px;
+.back:hover {
 
-      border-radius: 50%;
+  color: #fff;
+}
 
-      background: #ff1493;
 
-      box-shadow:
-        0 0 8px #ff1493,
-        0 0 16px rgba(255,20,147,.5);
+/* =========================================
+   AI LOADING SCREEN
+========================================= */
 
-      animation:
-        statusPulse 1.8s infinite;
-    }
+.ai-loading {
 
+  position: fixed;
 
-    @keyframes statusPulse {
+  inset: 0;
 
-      0%,100% {
-        opacity: .4;
-      }
+  z-index: 9999;
 
-      50% {
-        opacity: 1;
-      }
-    }
+  background: #030303;
 
+  display: none;
 
-    /* =========================================
-       BACK TO FWORLD
-    ========================================= */
+  align-items: center;
 
-    .back {
+  justify-content: center;
 
-      display: block;
+  flex-direction: column;
 
-      text-align: center;
+  text-align: center;
 
-      margin-top: 18px;
+  padding: 20px;
+}
 
-      color: #777777;
 
-      font-size: 11px;
+/* SHOW */
 
-      text-decoration: none;
-    }
+.ai-loading.active {
 
+  display: flex;
 
-    .back:hover {
+  animation:
+    loadingAppear .35s ease forwards;
+}
 
-      color: #ffffff;
-    }
+@keyframes loadingAppear {
 
+  from {
+    opacity: 0;
+  }
 
-    /* =========================================
-       MOBILE
-    ========================================= */
+  to {
+    opacity: 1;
+  }
 
-    @media (max-width: 480px) {
+}
 
-      body {
 
-        padding: 18px;
-      }
+/* LOADING CORE */
 
+.loading-core {
 
-      .brand-name {
+  width: 150px;
+  height: 150px;
 
-        font-size: 29px;
+  position: relative;
 
-        letter-spacing: 5px;
-      }
+  display: flex;
 
+  align-items: center;
+  justify-content: center;
 
-      .brand-ai {
+  margin-bottom: 38px;
+}
 
-        font-size: 8px;
 
-        letter-spacing: 3px;
-      }
+/* OUTER ORBIT */
 
+.loading-orbit {
 
-      .ai-core {
+  position: absolute;
 
-        width: 88px;
-        height: 88px;
+  inset: 0;
 
-        margin-bottom: 23px;
-      }
+  border:
 
+    1px solid
+    rgba(255,20,147,.55);
 
-      .core-center {
+  border-radius: 50%;
 
-        width: 47px;
-        height: 47px;
+  animation:
+    loadingRotate 2.8s linear infinite;
+}
 
-        font-size: 21px;
-      }
+.loading-orbit::before {
 
+  content: "";
 
-      .login-card {
+  position: absolute;
 
-        padding: 30px 21px;
+  top: 5px;
 
-        border-radius: 23px;
-      }
+  left: 50%;
 
+  width: 12px;
+  height: 12px;
 
-      h1 {
+  transform:
+    translateX(-50%);
 
-        font-size: 22px;
-      }
+  border-radius: 50%;
 
+  background: #ff1493;
 
-      .welcome {
+  box-shadow:
 
-        font-size: 12px;
+    0 0 12px #ff1493,
 
-        margin-bottom: 23px;
-      }
+    0 0 35px #ff1493,
 
+    0 0 65px
+    rgba(255,20,147,.7);
+}
 
-      .field input {
 
-        padding: 13px;
-      }
+/* SECOND ORBIT */
 
+.loading-orbit.two {
 
-      .enter-button {
+  inset: 18px;
 
-        padding: 14px;
+  border-color:
+    rgba(255,255,255,.25);
 
-        font-size: 13px;
-      }
+  animation:
+    loadingRotateReverse 2s linear infinite;
+}
 
-    }
+.loading-orbit.two::before {
 
-  </style>
+  width: 7px;
+  height: 7px;
+
+  background: #fff;
+
+  box-shadow:
+    0 0 12px #fff;
+}
+
+
+/* THIRD ORBIT */
+
+.loading-orbit.three {
+
+  inset: 38px;
+
+  border-color:
+    rgba(255,20,147,.35);
+
+  animation:
+    loadingRotate 1.5s linear infinite;
+}
+
+.loading-orbit.three::before {
+
+  width: 5px;
+  height: 5px;
+
+  background: #ff9bd1;
+
+  box-shadow:
+    0 0 12px #ff1493;
+}
+
+
+@keyframes loadingRotate {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+@keyframes loadingRotateReverse {
+
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+
+}
+
+
+/* CENTER */
+
+.loading-center {
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+
+  background:
+
+    radial-gradient(
+      circle,
+      #ffb1da,
+      #ff1493 35%,
+      #760041 70%,
+      #000
+    );
+
+  box-shadow:
+
+    0 0 20px #ff1493,
+
+    0 0 55px
+    rgba(255,20,147,.65),
+
+    0 0 100px
+    rgba(255,20,147,.25);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 25px;
+
+  animation:
+    loadingPulse 1.5s infinite ease-in-out;
+}
+
+@keyframes loadingPulse {
+
+  0%,100% {
+    transform: scale(.92);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+}
+
+
+/* LOADING BRAND */
+
+.loading-brand {
+
+  font-size: 30px;
+
+  font-weight: 900;
+
+  letter-spacing: 6px;
+
+  margin-bottom: 10px;
+}
+
+
+/* LOADING MESSAGE */
+
+.loading-message {
+
+  color: #ff1493;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  min-height: 18px;
+}
+
+
+/* LOADING LINE */
+
+.loading-line {
+
+  width: 190px;
+
+  height: 2px;
+
+  background: #222;
+
+  margin-top: 18px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+}
+
+.loading-line span {
+
+  display: block;
+
+  width: 40%;
+
+  height: 100%;
+
+  background: #ff1493;
+
+  box-shadow:
+    0 0 12px #ff1493;
+
+  animation:
+    loadingBar 1.1s infinite ease-in-out;
+}
+
+@keyframes loadingBar {
+
+  from {
+    transform: translateX(-120%);
+  }
+
+  to {
+    transform: translateX(350%);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  body {
+    padding: 18px;
+  }
+
+  .brand-name {
+    font-size: 29px;
+    letter-spacing: 5px;
+  }
+
+  .brand-ai {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .ai-core {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 22px;
+  }
+
+  .core-center {
+    width: 47px;
+    height: 47px;
+    font-size: 20px;
+  }
+
+  .login-card {
+    padding: 30px 21px;
+    border-radius: 23px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .welcome {
+    font-size: 12px;
+  }
+
+  .loading-core {
+    width: 125px;
+    height: 125px;
+  }
+
+  .loading-brand {
+    font-size: 25px;
+    letter-spacing: 5px;
+  }
+
+  .loading-message {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+  }
+
+}
+
+</style>
 
 </head>
 
@@ -846,218 +1095,311 @@
 <body>
 
 
-  <!-- FLOATING AI PARTICLES -->
+<!-- PARTICLES -->
 
-  <div class="light one"></div>
-  <div class="light two"></div>
-  <div class="light three"></div>
-
-
-  <main class="system">
+<div class="particle one"></div>
+<div class="particle two"></div>
+<div class="particle three"></div>
 
 
-    <!-- FWORLD BRAND -->
+<!-- =========================================
+     LOGIN SYSTEM
+========================================= -->
 
-    <div class="brand">
+<main class="login-system">
 
-      <div class="brand-name">
-        FWORLD
-      </div>
 
-      <div class="brand-ai">
-        AI MEMBER SYSTEM
-      </div>
+  <div class="brand">
 
+    <div class="brand-name">
+      FWORLD
+    </div>
+
+    <div class="brand-ai">
+      AI MEMBER SYSTEM
+    </div>
+
+  </div>
+
+
+  <!-- AI CORE -->
+
+  <div class="ai-core">
+
+    <div class="orbit"></div>
+
+    <div class="orbit two"></div>
+
+    <div class="core-center">
+      ✦
+    </div>
+
+  </div>
+
+
+  <!-- LOGIN CARD -->
+
+  <section class="login-card">
+
+
+    <div class="system-label">
+      INTELLIGENT ACCESS
     </div>
 
 
-    <!-- AI CORE -->
-
-    <div class="ai-core">
-
-      <div class="orbit"></div>
-
-      <div class="orbit two"></div>
-
-      <div class="core-center">
-        ✦
-      </div>
-
-    </div>
+    <h1>
+      Welcome to FWORLD
+    </h1>
 
 
-    <!-- LOGIN -->
-
-    <section class="login-card">
-
-
-      <div class="system-label">
-        INTELLIGENT ACCESS
-      </div>
+    <p class="welcome">
+      Your digital world is ready.<br>
+      Sign in to continue to your personal FWORLD Dashboard.
+    </p>
 
 
-      <h1>
-        Welcome to FWORLD
-      </h1>
+    <form id="loginForm">
 
 
-      <p class="welcome">
-        Your digital world is ready.<br>
-        Sign in to continue to your personal FWORLD Dashboard.
-      </p>
+      <div class="field">
 
+        <label for="username">
+          USERNAME OR EMAIL
+        </label>
 
-      <form id="loginForm">
-
-
-        <div class="field">
-
-          <label for="username">
-            USERNAME OR EMAIL
-          </label>
-
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Enter your username or email"
-            autocomplete="username"
-            required
-          >
-
-        </div>
-
-
-        <div class="field">
-
-          <label for="password">
-            PASSWORD
-          </label>
-
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter your password"
-            autocomplete="current-password"
-            required
-          >
-
-        </div>
-
-
-        <button
-          type="submit"
-          class="enter-button"
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter your username or email"
+          autocomplete="username"
+          required
         >
-          ENTER MY FWORLD →
-        </button>
-
-
-      </form>
-
-
-      <a
-        href="#"
-        class="forgot"
-      >
-        Forgot your password?
-      </a>
-
-
-      <div class="divider"></div>
-
-
-      <div class="join">
-
-        New to FWORLD?
-
-        <br>
-
-        <a href="#">
-          JOIN FWORLD MEMBERSHIP →
-        </a>
 
       </div>
 
 
-    </section>
+      <div class="field">
+
+        <label for="password">
+          PASSWORD
+        </label>
+
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          autocomplete="current-password"
+          required
+        >
+
+      </div>
 
 
-    <!-- SYSTEM STATUS -->
-
-    <div class="status">
-
-      <span class="status-dot"></span>
-
-      AI SYSTEM ONLINE
-
-    </div>
+      <button
+        type="submit"
+        class="enter-button"
+        id="enterButton"
+      >
+        ENTER MY FWORLD →
+      </button>
 
 
-    <!-- BACK -->
+    </form>
+
 
     <a
-      href="index.html"
-      class="back"
+      href="#"
+      class="forgot"
     >
-      ← Back to FWORLD
+      Forgot your password?
     </a>
 
 
-  </main>
+    <div class="divider"></div>
 
 
-  <script>
+    <div class="join">
 
-    /*
-      FWORLD AI MEMBER LOGIN
+      New to FWORLD?
 
-      FRONT-END PREVIEW ONLY
+      <br>
 
-      Real authentication will be connected
-      to the FWORLD Membership Backend later.
-    */
+      <a href="#">
+        JOIN FWORLD MEMBERSHIP →
+      </a>
 
-    const loginForm =
-      document.getElementById("loginForm");
+    </div>
 
 
-    loginForm.addEventListener(
-      "submit",
-      function(event) {
+  </section>
 
-        event.preventDefault();
 
-        const button =
-          document.querySelector(".enter-button");
+  <div class="status">
 
-        button.textContent =
-          "CONNECTING TO FWORLD...";
+    <span class="status-dot"></span>
 
-        button.style.background =
-          "#ff1493";
+    AI SYSTEM ONLINE
 
-        setTimeout(function() {
+  </div>
 
-          alert(
-            "FWORLD AI MEMBER SYSTEM\n\n" +
-            "Authentication will be connected " +
-            "to the FWORLD Membership Backend."
-          );
 
-          button.textContent =
-            "ENTER MY FWORLD →";
+  <a
+    href="index.html"
+    class="back"
+  >
+    ← Back to FWORLD
+  </a>
 
-          button.style.background =
-            "#111111";
 
-        }, 900);
+</main>
 
-      }
-    );
 
-  </script>
+
+<!-- =========================================
+     AI LOADING SCREEN
+========================================= -->
+
+<div
+  class="ai-loading"
+  id="aiLoading"
+>
+
+
+  <div class="loading-core">
+
+    <div class="loading-orbit"></div>
+
+    <div class="loading-orbit two"></div>
+
+    <div class="loading-orbit three"></div>
+
+    <div class="loading-center">
+      ✦
+    </div>
+
+  </div>
+
+
+  <div class="loading-brand">
+    FWORLD
+  </div>
+
+
+  <div
+    class="loading-message"
+    id="loadingMessage"
+  >
+    INITIALIZING AI...
+  </div>
+
+
+  <div class="loading-line">
+
+    <span></span>
+
+  </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================================
+   LOGIN → AI LOADING → DASHBOARD
+========================================= */
+
+const loginForm =
+  document.getElementById("loginForm");
+
+const enterButton =
+  document.getElementById("enterButton");
+
+const aiLoading =
+  document.getElementById("aiLoading");
+
+const loadingMessage =
+  document.getElementById("loadingMessage");
+
+
+loginForm.addEventListener(
+  "submit",
+  function(event) {
+
+    event.preventDefault();
+
+
+    /* BUTTON */
+
+    enterButton.textContent =
+      "CONNECTING...";
+
+    enterButton.style.background =
+      "#ff1493";
+
+
+    /* SHOW AI LOADING */
+
+    setTimeout(function() {
+
+      aiLoading.classList.add("active");
+
+    }, 400);
+
+
+    /* AI SYSTEM MESSAGES */
+
+    const messages = [
+
+      "AUTHENTICATING MEMBER...",
+
+      "CONNECTING TO FWORLD...",
+
+      "LOADING YOUR WORLD...",
+
+      "SYNCING YOUR DASHBOARD...",
+
+      "FWORLD READY"
+
+    ];
+
+
+    let index = 0;
+
+
+    const messageTimer =
+      setInterval(function() {
+
+        loadingMessage.textContent =
+          messages[index];
+
+        index++;
+
+
+        if (index >= messages.length) {
+
+          clearInterval(messageTimer);
+
+        }
+
+      }, 550);
+
+
+    /* PREVIEW REDIRECT */
+
+    setTimeout(function() {
+
+      window.location.href =
+        "fworld-dashboard.html";
+
+    }, 3200);
+
+  }
+);
+
+</script>
 
 
 </body>
