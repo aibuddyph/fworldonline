@@ -5,31 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>FWORLD SYSTEM | Products & Services</title>
+  <title>FWORLD SYSTEM | Unified Commerce</title>
 
   <meta
     name="description"
-    content="FWORLD SYSTEM — One connected platform for products, services, referrals and member income."
+    content="FWORLD System — unified products, digital products, services, bookings and referrals."
   >
 
   <meta property="og:title" content="FWORLD SYSTEM">
   <meta
     property="og:description"
-    content="Choose what you need. Buy, request, refer and track your FWORLD transactions."
+    content="Buy, book, request and refer through the connected FWORLD System."
   >
 
   <style>
     :root {
-      --black: #0b0b0d;
-      --dark: #151519;
-      --pink: #ff3f91;
-      --pink-dark: #d92d75;
-      --pink-soft: #fff0f6;
+      --black: #111111;
       --white: #ffffff;
-      --gray: #6f6f76;
-      --light: #f7f7f8;
-      --border: #e9e9ec;
-      --success: #198754;
+      --soft: #f7f7f7;
+      --line: #e8e8e8;
+      --pink: #ff3f8e;
+      --pink-dark: #e51f70;
+      --green: #16845b;
+      --muted: #777777;
+      --shadow: 0 12px 35px rgba(0,0,0,.07);
     }
 
     * {
@@ -40,14 +39,8 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--light);
+      background: var(--soft);
       color: var(--black);
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
     }
 
     button,
@@ -56,507 +49,353 @@
       font: inherit;
     }
 
-    /* =========================
-       HEADER
-    ========================== */
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
 
     header {
       background: var(--black);
       color: var(--white);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid #25252a;
+      padding: 16px 0;
     }
 
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px 20px;
+    .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 15px;
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-size: 21px;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: .5px;
     }
 
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: var(--pink);
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
+    .brand span {
+      color: var(--pink);
     }
 
-    .brand span:last-child {
-      font-size: 16px;
-    }
-
-    .member-mini {
+    .member-badge {
       font-size: 12px;
-      color: #d7d7db;
-      text-align: right;
+      border: 1px solid #444;
+      padding: 8px 11px;
+      border-radius: 20px;
+      color: #ddd;
     }
 
-    .member-mini strong {
-      display: block;
-      color: var(--pink);
-    }
-
-    /* =========================
-       HERO
-    ========================== */
-
-    .hero {
-      background:
-        radial-gradient(circle at top right, rgba(255,63,145,.20), transparent 35%),
-        var(--black);
-      color: var(--white);
-      padding: 60px 20px 70px;
-    }
-
-    .hero-inner {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .eyebrow {
-      color: var(--pink);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 7vw, 72px);
-      line-height: 1;
-      max-width: 800px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: var(--pink);
-    }
-
-    .hero p {
-      max-width: 680px;
-      color: #d8d8dc;
-      font-size: 17px;
-      margin-bottom: 30px;
-    }
-
-    /* =========================
-       SEARCH
-    ========================== */
-
-    .search-box {
-      max-width: 800px;
-      background: var(--white);
-      border-radius: 18px;
-      padding: 8px;
-      display: flex;
-      gap: 8px;
-      box-shadow: 0 15px 40px rgba(0,0,0,.25);
-    }
-
-    .search-box input {
-      flex: 1;
-      border: 0;
-      outline: none;
-      padding: 14px;
-      min-width: 0;
-      border-radius: 12px;
-      color: var(--black);
-    }
-
-    .search-btn {
-      border: 0;
-      background: var(--pink);
-      color: white;
-      font-weight: 800;
-      padding: 14px 22px;
-      border-radius: 12px;
-      cursor: pointer;
-    }
-
-    .search-btn:hover {
-      background: var(--pink-dark);
-    }
-
-    /* =========================
-       MAIN
-    ========================== */
+    /* MAIN */
 
     main {
-      max-width: 1200px;
-      margin: auto;
-      padding: 45px 20px 80px;
+      padding: 28px 0 60px;
     }
 
-    .section-heading {
-      margin-bottom: 24px;
+    .intro {
+      margin-bottom: 22px;
     }
 
-    .section-heading h2 {
-      font-size: 30px;
-      margin-bottom: 5px;
+    .intro h1 {
+      font-size: clamp(28px, 6vw, 44px);
+      line-height: 1.05;
+      margin-bottom: 8px;
     }
 
-    .section-heading p {
-      color: var(--gray);
+    .intro p {
+      color: var(--muted);
+      max-width: 650px;
+      line-height: 1.6;
     }
 
-    /* =========================
-       ACTION CARDS
-    ========================== */
+    /* MEMBER BAR */
 
-    .action-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-bottom: 55px;
-    }
-
-    .action-card {
+    .member-panel {
       background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px;
-      transition: .2s ease;
-      cursor: pointer;
-    }
-
-    .action-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--pink);
-      box-shadow: 0 12px 30px rgba(255,63,145,.12);
-    }
-
-    .action-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 15px;
-      background: var(--pink-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
-      margin-bottom: 18px;
-    }
-
-    .action-card h3 {
-      font-size: 22px;
-      margin-bottom: 7px;
-    }
-
-    .action-card p {
-      color: var(--gray);
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    .action-link {
-      color: var(--pink-dark);
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    /* =========================
-       BUSINESS GRID
-    ========================== */
-
-    .business-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .business-card {
-      background: var(--white);
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 18px;
-      overflow: hidden;
-    }
-
-    .business-top {
-      height: 105px;
-      background: var(--black);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--pink);
-      font-size: 38px;
-    }
-
-    .business-content {
-      padding: 20px;
-    }
-
-    .business-content h3 {
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-
-    .business-content p {
-      color: var(--gray);
-      font-size: 13px;
-      min-height: 42px;
-      margin-bottom: 18px;
-    }
-
-    .business-btn {
-      width: 100%;
-      border: 0;
-      background: var(--black);
-      color: white;
-      padding: 13px;
-      border-radius: 10px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .business-btn:hover {
-      background: var(--pink);
-    }
-
-    /* =========================
-       MEMBER AREA
-    ========================== */
-
-    .member-area {
-      margin-top: 55px;
-      background: var(--black);
-      color: white;
-      border-radius: 24px;
-      padding: 30px;
-    }
-
-    .member-area h2 {
-      margin-bottom: 5px;
-    }
-
-    .member-area > p {
-      color: #c9c9ce;
-      margin-bottom: 25px;
+      padding: 18px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
     }
 
     .member-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 12px;
+      align-items: end;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 12px;
+      background: #fff;
+      outline: none;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      border-color: var(--pink);
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-weight: 800;
+      min-height: 45px;
+      transition: .2s ease;
+    }
+
+    .btn-black {
+      background: var(--black);
+      color: white;
+    }
+
+    .btn-black:hover {
+      background: var(--pink);
+    }
+
+    .btn-pink {
+      background: var(--pink);
+      color: white;
+    }
+
+    .btn-pink:hover {
+      background: var(--pink-dark);
+    }
+
+    .btn-light {
+      background: #f1f1f1;
+      color: var(--black);
+    }
+
+    /* PRODUCTS */
+
+    .products {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
     }
 
-    .member-box {
-      background: #18181d;
-      border: 1px solid #2b2b31;
-      border-radius: 15px;
-      padding: 20px;
-    }
-
-    .member-box small {
-      display: block;
-      color: #aaaab0;
-      margin-bottom: 5px;
-    }
-
-    .member-box strong {
-      font-size: 18px;
-      color: var(--pink);
-    }
-
-    .income-box {
-      background: var(--pink);
-      color: white;
-    }
-
-    .income-box small,
-    .income-box strong {
-      color: white;
-    }
-
-    /* =========================
-       MODAL
-    ========================== */
-
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.70);
-      z-index: 2000;
-      padding: 20px;
-      overflow-y: auto;
-    }
-
-    .modal.active {
+    .product {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: var(--shadow);
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      min-height: 250px;
     }
 
-    .modal-box {
-      background: white;
-      width: 100%;
-      max-width: 620px;
-      border-radius: 22px;
-      padding: 28px;
-      position: relative;
+    .product-type {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--pink);
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      margin-bottom: 12px;
     }
 
-    .close {
-      position: absolute;
-      right: 18px;
-      top: 14px;
-      border: 0;
-      background: transparent;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    .modal-box h2 {
+    .product h2 {
+      font-size: 20px;
       margin-bottom: 8px;
     }
 
-    .modal-box > p {
-      color: var(--gray);
-      margin-bottom: 20px;
+    .product p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      flex: 1;
     }
 
-    .form-group {
-      margin-bottom: 15px;
+    .price {
+      font-size: 20px;
+      font-weight: 900;
+      margin: 16px 0;
     }
 
-    .form-group label {
+    .product-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .product-actions .btn {
+      flex: 1;
+    }
+
+    /* TRANSACTION PANEL */
+
+    .transaction {
+      display: none;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .transaction.show {
       display: block;
-      font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 6px;
     }
 
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      outline: none;
+    .transaction h2 {
+      margin-bottom: 5px;
     }
 
-    .form-group input:focus,
-    .form-group select:focus {
-      border-color: var(--pink);
+    .transaction-subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
     }
 
-    .primary-btn {
-      width: 100%;
-      border: 0;
-      background: var(--black);
-      color: white;
+    .transaction-summary {
+      background: #fafafa;
+      border: 1px solid var(--line);
+      border-radius: 12px;
       padding: 15px;
-      border-radius: 11px;
-      font-weight: 800;
-      cursor: pointer;
+      margin-bottom: 18px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 6px 0;
+      font-size: 14px;
+    }
+
+    .summary-row strong {
+      text-align: right;
+    }
+
+    .transaction-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 100px;
+      resize: vertical;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .submit-row {
+      display: flex;
+      gap: 10px;
       margin-top: 5px;
     }
 
-    .primary-btn:hover {
-      background: var(--pink);
-    }
+    /* RESULT */
 
-    .result-box {
-      background: var(--pink-soft);
-      border-radius: 14px;
+    .result {
+      display: none;
+      background: #f5fff9;
+      border: 1px solid #bdebd5;
+      border-radius: 15px;
       padding: 18px;
       margin-top: 18px;
-      display: none;
     }
 
-    .result-box strong {
-      color: var(--pink-dark);
+    .result.show {
+      display: block;
     }
 
-    /* =========================
-       FOOTER
-    ========================== */
+    .result h3 {
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .reference {
+      font-size: 22px;
+      font-weight: 900;
+      margin: 8px 0;
+    }
+
+    .status {
+      display: inline-block;
+      background: #fff3d6;
+      color: #875d00;
+      border-radius: 20px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* FOOTER */
 
     footer {
-      background: var(--black);
-      color: #aaa;
       text-align: center;
-      padding: 28px 20px;
-      font-size: 13px;
+      padding: 25px 0;
+      color: #888;
+      font-size: 12px;
     }
 
-    footer strong {
-      color: var(--pink);
-    }
+    @media (max-width: 800px) {
+      .products {
+        grid-template-columns: 1fr 1fr;
+      }
 
-    /* =========================
-       RESPONSIVE
-    ========================== */
-
-    @media (max-width: 850px) {
-      .action-grid,
-      .business-grid,
       .member-grid {
         grid-template-columns: 1fr 1fr;
       }
+
+      .member-grid .btn {
+        grid-column: 1 / -1;
+      }
     }
 
-    @media (max-width: 600px) {
-      .nav {
-        padding: 12px 15px;
-      }
-
-      .member-mini {
-        display: none;
-      }
-
-      .hero {
-        padding: 45px 18px 55px;
-      }
-
-      .search-box {
+    @media (max-width: 560px) {
+      .header-inner {
+        align-items: flex-start;
         flex-direction: column;
-        background: transparent;
-        padding: 0;
-        box-shadow: none;
       }
 
-      .search-box input,
-      .search-btn {
-        width: 100%;
-      }
-
-      main {
-        padding: 35px 15px 60px;
-      }
-
-      .action-grid,
-      .business-grid,
-      .member-grid {
+      .products {
         grid-template-columns: 1fr;
       }
 
-      .action-card {
-        padding: 23px;
+      .member-grid,
+      .transaction-form {
+        grid-template-columns: 1fr;
       }
 
-      .member-area {
-        padding: 23px;
+      .full {
+        grid-column: auto;
+      }
+
+      .product-actions,
+      .submit-row {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
       }
     }
   </style>
@@ -564,294 +403,103 @@
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      FWORLD <span>SYSTEM</span>
+    </div>
 
-  <header>
-    <nav class="nav">
+    <div class="member-badge" id="memberBadge">
+      Member ID: Guest
+    </div>
+  </div>
+</header>
 
-      <a href="fworld-services.html" class="brand">
-        <div class="brand-mark">F</div>
-        <span>FWORLD SYSTEM</span>
-      </a>
+<main>
+  <div class="container">
 
-      <div class="member-mini">
-        MEMBER
-        <strong id="headerMemberId">FW-M000001</strong>
-      </div>
-
-    </nav>
-  </header>
-
-
-  <!-- =========================
-       HERO
-  ========================== -->
-
-  <section class="hero">
-
-    <div class="hero-inner">
-
-      <div class="eyebrow">WELCOME TO FWORLD</div>
-
-      <h1>
-        What do you
-        <span>need?</span>
-      </h1>
-
+    <div class="intro">
+      <h1>FWORLD SYSTEM</h1>
       <p>
-        One connected platform for FWORLD products, services,
-        referrals and member opportunities.
+        One connected system for FWORLD products, digital products,
+        services, and affiliation transactions.
       </p>
+    </div>
 
-      <div class="search-box">
+    <!-- MEMBER IDENTIFICATION -->
 
-        <input
-          type="search"
-          id="searchInput"
-          placeholder="Search products, services or businesses..."
-          oninput="searchFWORLD()"
+    <section class="member-panel">
+
+      <div class="member-grid">
+
+        <div class="field">
+          <label>MEMBER ID</label>
+          <input
+            type="text"
+            id="memberId"
+            placeholder="Enter Member ID"
+          >
+        </div>
+
+        <div class="field">
+          <label>REFERRAL CODE</label>
+          <input
+            type="text"
+            id="referralCode"
+            placeholder="Enter Referral Code"
+          >
+        </div>
+
+        <button
+          class="btn btn-black"
+          onclick="activateMember()"
         >
-
-        <button class="search-btn" onclick="searchFWORLD()">
-          SEARCH
+          CONNECT
         </button>
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
-
-
-  <!-- =========================
-       MAIN
-  ========================== -->
-
-  <main>
+    <!-- PRODUCTS -->
 
     <section>
 
-      <div class="section-heading">
-        <h2>Choose what you need</h2>
-        <p>
-          Select an action and continue inside the FWORLD SYSTEM.
-        </p>
-      </div>
+      <div class="products">
 
+        <article class="product">
 
-      <div class="action-grid">
+          <div class="product-type">
+            FWORLD PRODUCT
+          </div>
 
-        <div class="action-card" onclick="openAction('BUY')">
-
-          <div class="action-icon">🛍️</div>
-
-          <h3>BUY</h3>
+          <h2>Sophia Cosmetics</h2>
 
           <p>
-            Browse FWORLD products and place your order.
+            Physical beauty products available through the
+            FWORLD commerce system.
           </p>
 
-          <div class="action-link">
-            SHOP NOW →
+          <div class="price">
+            ₱1,499
           </div>
 
-        </div>
-
-
-        <div class="action-card" onclick="openAction('BOOK / REQUEST')">
-
-          <div class="action-icon">📅</div>
-
-          <h3>BOOK / REQUEST</h3>
-
-          <p>
-            Request available FWORLD services and appointments.
-          </p>
-
-          <div class="action-link">
-            CONTINUE →
-          </div>
-
-        </div>
-
-
-        <div class="action-card" onclick="openAction('REFER')">
-
-          <div class="action-icon">🤝</div>
-
-          <h3>REFER</h3>
-
-          <p>
-            Refer clients to participating FWORLD businesses.
-          </p>
-
-          <div class="action-link">
-            REFER NOW →
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         BUSINESSES
-    ========================== -->
-
-    <section id="businessSection">
-
-      <div class="section-heading">
-
-        <h2>Explore FWORLD</h2>
-
-        <p>
-          Choose a business or service to get started.
-        </p>
-
-      </div>
-
-
-      <div class="business-grid" id="businessGrid">
-
-        <article class="business-card" data-search="sophia cosmetics beauty products buy">
-
-          <div class="business-top">💄</div>
-
-          <div class="business-content">
-
-            <h3>Sophia Cosmetics</h3>
-
-            <p>
-              Beauty products available through FWORLD.
-            </p>
+          <div class="product-actions">
 
             <button
-              class="business-btn"
-              onclick="openProduct('Sophia Cosmetics')"
+              class="btn btn-black"
+              onclick="openTransaction(
+                'Sophia Cosmetics',
+                'BUY',
+                1499
+              )"
             >
-              BUY NOW
+              BUY
             </button>
 
-          </div>
-
-        </article>
-
-
-        <article class="business-card" data-search="isabella beauty products buy">
-
-          <div class="business-top">💋</div>
-
-          <div class="business-content">
-
-            <h3>Isabella Beauty</h3>
-
-            <p>
-              Explore Isabella beauty products.
-            </p>
-
             <button
-              class="business-btn"
-              onclick="openProduct('Isabella Beauty')"
-            >
-              BUY NOW
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <article class="business-card" data-search="digital products ebooks digital buy">
-
-          <div class="business-top">💻</div>
-
-          <div class="business-content">
-
-            <h3>Digital Products</h3>
-
-            <p>
-              Discover digital products available through FWORLD.
-            </p>
-
-            <button
-              class="business-btn"
-              onclick="openProduct('Digital Products')"
-            >
-              BUY NOW
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <article class="business-card" data-search="massage amelyn wellness book">
-
-          <div class="business-top">💆</div>
-
-          <div class="business-content">
-
-            <h3>Massage by Amelyn</h3>
-
-            <p>
-              Wellness service available for booking/request.
-            </p>
-
-            <button
-              class="business-btn"
-              onclick="openService('Massage by Amelyn')"
-            >
-              BOOK / REQUEST
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <article class="business-card" data-search="massage ate gel wellness book">
-
-          <div class="business-top">💆</div>
-
-          <div class="business-content">
-
-            <h3>Massage by Ate Gel</h3>
-
-            <p>
-              Wellness service available for booking/request.
-            </p>
-
-            <button
-              class="business-btn"
-              onclick="openService('Massage by Ate Gel')"
-            >
-              BOOK / REQUEST
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <article class="business-card" data-search="property clyne real estate refer">
-
-          <div class="business-top">🏠</div>
-
-          <div class="business-content">
-
-            <h3>Property Consultant by Clyne</h3>
-
-            <p>
-              Refer clients for property-related assistance.
-            </p>
-
-            <button
-              class="business-btn"
-              onclick="openReferral('Property Consultant by Clyne')"
+              class="btn btn-light"
+              onclick="referProduct('Sophia Cosmetics')"
             >
               REFER
             </button>
@@ -861,21 +509,165 @@
         </article>
 
 
-        <article class="business-card" data-search="tyma community women refer">
+        <article class="product">
 
-          <div class="business-top">👩</div>
+          <div class="product-type">
+            DIGITAL PRODUCT
+          </div>
 
-          <div class="business-content">
+          <h2>FWORLD Digital Product</h2>
 
-            <h3>TYMA</h3>
+          <p>
+            Digital products and downloadable offers connected
+            to the FWORLD System.
+          </p>
 
-            <p>
-              Connect with The You Matter Academy community.
-            </p>
+          <div class="price">
+            ₱499
+          </div>
+
+          <div class="product-actions">
 
             <button
-              class="business-btn"
-              onclick="openReferral('TYMA')"
+              class="btn btn-black"
+              onclick="openTransaction(
+                'FWORLD Digital Product',
+                'BUY',
+                499
+              )"
+            >
+              BUY
+            </button>
+
+            <button
+              class="btn btn-light"
+              onclick="referProduct(
+                'FWORLD Digital Product'
+              )"
+            >
+              REFER
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <article class="product">
+
+          <div class="product-type">
+            AFFILIATION STORE
+          </div>
+
+          <h2>Partner Store</h2>
+
+          <p>
+            Connected partner and affiliation stores inside
+            the FWORLD ecosystem.
+          </p>
+
+          <div class="price">
+            View Store
+          </div>
+
+          <div class="product-actions">
+
+            <button
+              class="btn btn-black"
+              onclick="openTransaction(
+                'Partner Store',
+                'BOOK / REQUEST',
+                0
+              )"
+            >
+              OPEN
+            </button>
+
+            <button
+              class="btn btn-light"
+              onclick="referProduct('Partner Store')"
+            >
+              REFER
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <article class="product">
+
+          <div class="product-type">
+            FWORLD SERVICE
+          </div>
+
+          <h2>FMSI Travel</h2>
+
+          <p>
+            Travel booking and service requests connected
+            to FWORLD Services.
+          </p>
+
+          <div class="price">
+            BOOK
+          </div>
+
+          <div class="product-actions">
+
+            <button
+              class="btn btn-black"
+              onclick="openExternal(
+                'fworldservices-fmsitravel.html'
+              )"
+            >
+              BOOK
+            </button>
+
+            <button
+              class="btn btn-light"
+              onclick="referProduct('FMSI Travel')"
+            >
+              REFER
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <article class="product">
+
+          <div class="product-type">
+            FWORLD SERVICE
+          </div>
+
+          <h2>Azure Pearl PH</h2>
+
+          <p>
+            Philippines accommodation, tours, relocation
+            and assistance requests.
+          </p>
+
+          <div class="price">
+            REQUEST
+          </div>
+
+          <div class="product-actions">
+
+            <button
+              class="btn btn-black"
+              onclick="openExternal(
+                'fworldservices-azurepearl.html'
+              )"
+            >
+              REQUEST
+            </button>
+
+            <button
+              class="btn btn-light"
+              onclick="referProduct(
+                'Azure Pearl PH'
+              )"
             >
               REFER
             </button>
@@ -889,396 +681,452 @@
     </section>
 
 
-    <!-- =========================
-         MEMBER DASHBOARD PREVIEW
-    ========================== -->
+    <!-- TRANSACTION ENGINE -->
 
-    <section class="member-area">
+    <section
+      class="transaction"
+      id="transactionPanel"
+    >
 
-      <h2>My FWORLD Account</h2>
+      <h2 id="transactionTitle">
+        Transaction
+      </h2>
 
-      <p>
-        Your Member ID and Referral Code connect your qualified
-        transactions to your FWORLD account.
-      </p>
+      <div class="transaction-subtitle">
+        Complete the transaction details below.
+      </div>
+
+      <div class="transaction-summary">
+
+        <div class="summary-row">
+          <span>Product / Service</span>
+          <strong id="summaryProduct">—</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Transaction Type</span>
+          <strong id="summaryType">—</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Amount</span>
+          <strong id="summaryAmount">—</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Member ID</span>
+          <strong id="summaryMember">—</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Referral Code</span>
+          <strong id="summaryReferral">—</strong>
+        </div>
+
+      </div>
 
 
-      <div class="member-grid">
+      <div class="transaction-form">
 
-        <div class="member-box">
+        <div class="field">
+          <label>FULL NAME</label>
+          <input
+            type="text"
+            id="customerName"
+            placeholder="Your full name"
+          >
+        </div>
 
-          <small>MEMBER ID</small>
+        <div class="field">
+          <label>EMAIL</label>
+          <input
+            type="email"
+            id="customerEmail"
+            placeholder="you@email.com"
+          >
+        </div>
 
-          <strong id="memberIdDisplay">
-            FW-M000001
-          </strong>
+        <div class="field">
+          <label>PHONE / WHATSAPP</label>
+          <input
+            type="text"
+            id="customerPhone"
+            placeholder="+63..."
+          >
+        </div>
+
+        <div class="field">
+          <label>QUANTITY</label>
+          <input
+            type="number"
+            id="quantity"
+            value="1"
+            min="1"
+          >
+        </div>
+
+        <div class="field full">
+          <label>MESSAGE / REQUEST</label>
+
+          <textarea
+            id="customerMessage"
+            placeholder="Additional details..."
+          ></textarea>
+        </div>
+
+        <div class="submit-row full">
+
+          <button
+            class="btn btn-pink"
+            onclick="submitTransaction()"
+          >
+            SUBMIT TRANSACTION
+          </button>
+
+          <button
+            class="btn btn-light"
+            onclick="closeTransaction()"
+          >
+            CANCEL
+          </button>
 
         </div>
 
+      </div>
 
-        <div class="member-box">
 
-          <small>REFERRAL CODE</small>
+      <!-- RESULT -->
 
-          <strong id="referralDisplay">
-            FWR-FATIMA01
-          </strong>
+      <div
+        class="result"
+        id="resultPanel"
+      >
 
+        <h3>Transaction Recorded</h3>
+
+        <div class="reference" id="referenceNumber">
+          FW-000000
         </div>
 
+        <span class="status">
+          Pending Review
+        </span>
 
-        <div class="member-box income-box">
-
-          <small>MY INCOME</small>
-
-          <strong>
-            ₱0.00
-          </strong>
-
-        </div>
+        <p style="margin-top:12px;color:#666;">
+          Your transaction has been recorded in the
+          FWORLD System prototype.
+        </p>
 
       </div>
 
     </section>
-
-  </main>
-
-
-  <!-- =========================
-       ACTION MODAL
-  ========================== -->
-
-  <div class="modal" id="actionModal">
-
-    <div class="modal-box">
-
-      <button class="close" onclick="closeModal()">×</button>
-
-      <h2 id="modalTitle">FWORLD</h2>
-
-      <p id="modalDescription"></p>
-
-      <div class="form-group">
-
-        <label>MEMBER ID</label>
-
-        <input
-          type="text"
-          id="modalMemberId"
-          value="FW-M000001"
-          readonly
-        >
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>REFERRAL CODE</label>
-
-        <input
-          type="text"
-          id="modalReferral"
-          value="FWR-FATIMA01"
-          readonly
-        >
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>SELECT BUSINESS</label>
-
-        <select id="modalBusiness">
-
-          <option>Sophia Cosmetics</option>
-          <option>Isabella Beauty</option>
-          <option>Digital Products</option>
-          <option>Massage by Amelyn</option>
-          <option>Massage by Ate Gel</option>
-          <option>Property Consultant by Clyne</option>
-          <option>TYMA</option>
-
-        </select>
-
-      </div>
-
-
-      <button class="primary-btn" onclick="startTransaction()">
-        CONTINUE
-      </button>
-
-
-      <div class="result-box" id="resultBox">
-
-        <strong>Transaction Started</strong>
-
-        <p id="resultText"></p>
-
-      </div>
-
-    </div>
 
   </div>
+</main>
 
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
-  <footer>
-
-    <strong>FWORLD SYSTEM</strong><br>
-
-    One connected platform for FWORLD products,
-    services and opportunities.
-
-  </footer>
+<footer>
+  FWORLD SYSTEM • Unified Commerce & Member Transaction Engine
+</footer>
 
 
-  <script>
+<script>
 
-    /* =========================
-       MEMBER DATA
-    ========================== */
+  let currentTransaction = {
+    product: "",
+    type: "",
+    amount: 0
+  };
 
-    const member = {
-      memberId: "FW-M000001",
-      referralCode: "FWR-FATIMA01"
+
+  function activateMember() {
+
+    const memberId =
+      document.getElementById("memberId").value.trim();
+
+    const referral =
+      document.getElementById("referralCode").value.trim();
+
+    if (!memberId) {
+      alert("Please enter your Member ID.");
+      return;
+    }
+
+    document.getElementById("memberBadge").textContent =
+      "Member ID: " + memberId;
+
+    alert(
+      "Member connected." +
+      (referral
+        ? "\nReferral Code: " + referral
+        : "")
+    );
+  }
+
+
+  function openTransaction(product, type, amount) {
+
+    const memberId =
+      document.getElementById("memberId").value.trim();
+
+    if (!memberId) {
+
+      alert(
+        "Please enter your Member ID first."
+      );
+
+      document
+        .getElementById("memberId")
+        .focus();
+
+      return;
+    }
+
+    currentTransaction = {
+      product: product,
+      type: type,
+      amount: amount
+    };
+
+    document.getElementById(
+      "transactionPanel"
+    ).classList.add("show");
+
+    document.getElementById(
+      "transactionTitle"
+    ).textContent = type;
+
+    document.getElementById(
+      "summaryProduct"
+    ).textContent = product;
+
+    document.getElementById(
+      "summaryType"
+    ).textContent = type;
+
+    document.getElementById(
+      "summaryAmount"
+    ).textContent =
+      amount > 0
+        ? "₱" + amount.toLocaleString()
+        : "Request";
+
+    document.getElementById(
+      "summaryMember"
+    ).textContent = memberId;
+
+    document.getElementById(
+      "summaryReferral"
+    ).textContent =
+      document.getElementById(
+        "referralCode"
+      ).value || "None";
+
+    document.getElementById(
+      "resultPanel"
+    ).classList.remove("show");
+
+    document
+      .getElementById("transactionPanel")
+      .scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+  }
+
+
+  function closeTransaction() {
+
+    document
+      .getElementById("transactionPanel")
+      .classList.remove("show");
+
+  }
+
+
+  function submitTransaction() {
+
+    const name =
+      document.getElementById(
+        "customerName"
+      ).value.trim();
+
+    const email =
+      document.getElementById(
+        "customerEmail"
+      ).value.trim();
+
+    if (!name || !email) {
+
+      alert(
+        "Please enter your name and email."
+      );
+
+      return;
+    }
+
+    const reference =
+      "FW-" +
+      Date.now()
+        .toString()
+        .slice(-8);
+
+    /*
+      PROTOTYPE TRANSACTION OBJECT
+
+      This is the structure that can later
+      be sent to the FWORLD backend.
+
+      Example:
+
+      {
+        memberId,
+        referralCode,
+        product,
+        transactionType,
+        amount,
+        customer,
+        reference,
+        status
+      }
+    */
+
+    const transaction = {
+
+      memberId:
+        document.getElementById(
+          "memberId"
+        ).value.trim(),
+
+      referralCode:
+        document.getElementById(
+          "referralCode"
+        ).value.trim(),
+
+      product:
+        currentTransaction.product,
+
+      transactionType:
+        currentTransaction.type,
+
+      amount:
+        currentTransaction.amount,
+
+      customer: {
+        name: name,
+
+        email:
+          email,
+
+        phone:
+          document.getElementById(
+            "customerPhone"
+          ).value.trim()
+      },
+
+      quantity:
+        Number(
+          document.getElementById(
+            "quantity"
+          ).value
+        ),
+
+      message:
+        document.getElementById(
+          "customerMessage"
+        ).value.trim(),
+
+      reference:
+        reference,
+
+      status:
+        "Pending Review",
+
+      createdAt:
+        new Date().toISOString()
     };
 
 
-    document.getElementById("headerMemberId").textContent =
-      member.memberId;
-
-    document.getElementById("memberIdDisplay").textContent =
-      member.memberId;
-
-    document.getElementById("referralDisplay").textContent =
-      member.referralCode;
-
-    document.getElementById("modalMemberId").value =
-      member.memberId;
-
-    document.getElementById("modalReferral").value =
-      member.referralCode;
+    console.log(
+      "FWORLD TRANSACTION:",
+      transaction
+    );
 
 
-    /* =========================
-       MODAL
-    ========================== */
+    document.getElementById(
+      "referenceNumber"
+    ).textContent = reference;
 
-    function openModal(title, description) {
+    document.getElementById(
+      "resultPanel"
+    ).classList.add("show");
 
-      document.getElementById("modalTitle").textContent = title;
-
-      document.getElementById("modalDescription").textContent =
-        description;
-
-      document.getElementById("resultBox").style.display = "none";
-
-      document.getElementById("actionModal").classList.add("active");
-    }
-
-
-    function closeModal() {
-
-      document.getElementById("actionModal")
-        .classList.remove("active");
-
-    }
+    document
+      .getElementById("resultPanel")
+      .scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+  }
 
 
-    /* =========================
-       ACTIONS
-    ========================== */
+  function referProduct(product) {
 
-    function openAction(type) {
+    const memberId =
+      document.getElementById(
+        "memberId"
+      ).value.trim();
 
-      let description = "";
+    if (!memberId) {
 
-      if (type === "BUY") {
-
-        description =
-          "Choose a FWORLD business and continue to your product order.";
-
-      }
-
-      if (type === "BOOK / REQUEST") {
-
-        description =
-          "Choose a FWORLD service and submit your booking or request.";
-
-      }
-
-      if (type === "REFER") {
-
-        description =
-          "Choose a FWORLD affiliate and submit a client referral.";
-
-      }
-
-      openModal(type, description);
-    }
-
-
-    function openProduct(name) {
-
-      openModal(
-        "BUY — " + name,
-        "Continue to the product ordering process."
+      alert(
+        "Please connect your Member ID first."
       );
 
-      document.getElementById("modalBusiness").value = name;
-
+      return;
     }
 
+    const referralCode =
+      document.getElementById(
+        "referralCode"
+      ).value.trim();
 
-    function openService(name) {
+    const shareText =
+      "Check this out on FWORLD: " +
+      product +
+      "\n\n" +
+      "Referral Code: " +
+      (referralCode || memberId);
 
-      openModal(
-        "BOOK / REQUEST — " + name,
-        "Continue to submit your service request."
-      );
+    if (
+      navigator.share
+    ) {
 
-      document.getElementById("modalBusiness").value = name;
-
-    }
-
-
-    function openReferral(name) {
-
-      openModal(
-        "REFER — " + name,
-        "Continue to submit a client referral."
-      );
-
-      document.getElementById("modalBusiness").value = name;
-
-    }
-
-
-    /* =========================
-       TRANSACTION PROTOTYPE
-    ========================== */
-
-    function startTransaction() {
-
-      const type =
-        document.getElementById("modalTitle").textContent;
-
-      const business =
-        document.getElementById("modalBusiness").value;
-
-      const transactionId =
-        "FW-" +
-        Date.now().toString().slice(-8);
-
-      const transaction = {
-
-        transactionId: transactionId,
-
-        memberId: member.memberId,
-
-        referralCode: member.referralCode,
-
-        business: business,
-
-        transactionType: type,
-
-        status: "PENDING",
-
-        createdAt: new Date().toISOString()
-
-      };
-
-
-      /*
-        FRONTEND PROTOTYPE ONLY
-
-        Later this object will be sent to:
-
-        FWORLD SYSTEM BACKEND
-
-        POST /api/transactions
-
-        The backend will validate:
-        - Member ID
-        - Referral Code
-        - Transaction
-        - Commission rules
-        - Commission amount
-        - Ledger entry
-      */
-
-      localStorage.setItem(
-        "fworld_last_transaction",
-        JSON.stringify(transaction)
-      );
-
-
-      document.getElementById("resultBox").style.display =
-        "block";
-
-
-      document.getElementById("resultText").innerHTML =
-        "Reference: <strong>" +
-        transactionId +
-        "</strong><br>" +
-        "Member ID: " +
-        member.memberId +
-        "<br>" +
-        "Referral Code: " +
-        member.referralCode +
-        "<br>" +
-        "Status: PENDING";
-
-    }
-
-
-    /* =========================
-       SEARCH
-    ========================== */
-
-    function searchFWORLD() {
-
-      const query =
-        document.getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
-
-      const cards =
-        document.querySelectorAll(".business-card");
-
-      cards.forEach(card => {
-
-        const text =
-          card.dataset.search.toLowerCase();
-
-        card.style.display =
-          text.includes(query) ? "" : "none";
-
+      navigator.share({
+        title: "FWORLD",
+        text: shareText
       });
 
+    } else {
+
+      navigator.clipboard.writeText(
+        shareText
+      );
+
+      alert(
+        "Referral message copied."
+      );
     }
+  }
 
 
-    /* =========================
-       CLOSE MODAL OUTSIDE
-    ========================== */
+  function openExternal(page) {
 
-    document.getElementById("actionModal")
-      .addEventListener("click", function(e) {
+    window.location.href = page;
 
-        if (e.target === this) {
-          closeModal();
-        }
+  }
 
-      });
-
-  </script>
+</script>
 
 </body>
 </html>
