@@ -1,1 +1,1081 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MY JOURNAL | FWORLD ONLINE</title>
+
+  <meta name="description" content="MY JOURNAL — Your stories, memories, milestones and journey inside FWORLD.">
+  <meta name="keywords" content="FWORLD, My Journal, Journal World, Stories, Memories, Milestones">
+
+  <meta property="og:title" content="MY JOURNAL | FWORLD ONLINE">
+  <meta property="og:description" content="Your story matters. Your journey matters.">
+  <meta property="og:type" content="website">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: #111;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #f5c400;
+    }
+
+    .back-btn {
+      border: 1px solid #555;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      transition: .2s;
+    }
+
+    .back-btn:hover {
+      background: #f5c400;
+      border-color: #f5c400;
+      color: #111;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      background:
+        linear-gradient(135deg, #fffbea, #fff 55%, #fff6bd);
+      border-bottom: 1px solid #eee;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 20px 60px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .world-label {
+      display: inline-block;
+      background: #f5c400;
+      color: #111;
+      padding: 7px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 78px);
+      line-height: .95;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #d6a900;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      min-height: 50px;
+      padding: 13px 22px;
+      border-radius: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .primary-btn {
+      background: #111;
+      color: #fff;
+      border: 1px solid #111;
+    }
+
+    .primary-btn:hover {
+      background: #f5c400;
+      color: #111;
+      border-color: #f5c400;
+    }
+
+    .secondary-btn {
+      background: #fff;
+      color: #111;
+      border: 1px solid #ddd;
+    }
+
+    .secondary-btn:hover {
+      border-color: #d6a900;
+      color: #b18b00;
+    }
+
+    /* =========================
+       JOURNAL PREVIEW
+    ========================== */
+
+    .journal-preview {
+      background: #111;
+      color: #fff;
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.12);
+    }
+
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 25px;
+    }
+
+    .author-photo {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #f5c400;
+      border: 3px solid #f5c400;
+    }
+
+    .author-placeholder {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background: #f5c400;
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    .author-card h3 {
+      font-size: 21px;
+    }
+
+    .author-card small {
+      color: #aaa;
+    }
+
+    .quote {
+      border-left: 3px solid #f5c400;
+      padding-left: 16px;
+      color: #ddd;
+      font-size: 15px;
+    }
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 65px 20px;
+    }
+
+    .section-heading {
+      margin-bottom: 30px;
+    }
+
+    .mini {
+      color: #c39a00;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-size: 35px;
+      margin-top: 5px;
+    }
+
+    .section-heading p {
+      color: #666;
+      margin-top: 6px;
+    }
+
+    /* =========================
+       JOURNAL TYPES
+    ========================== */
+
+    .journal-types {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .type-card {
+      border: 1px solid #eee;
+      border-radius: 22px;
+      padding: 25px;
+      background: #fff;
+      min-height: 190px;
+      transition: .25s;
+    }
+
+    .type-card:hover {
+      transform: translateY(-5px);
+      border-color: #f5c400;
+      box-shadow: 0 15px 35px rgba(0,0,0,.07);
+    }
+
+    .type-icon {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .type-card h3 {
+      font-size: 21px;
+      margin-bottom: 6px;
+    }
+
+    .type-card p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* =========================
+       JOURNAL ENTRY
+    ========================== */
+
+    .entries {
+      background: #fffbea;
+    }
+
+    .entries-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .entry-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 22px;
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .entry-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,.08);
+    }
+
+    .entry-image {
+      height: 180px;
+      background: #f5c400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+    }
+
+    .entry-content {
+      padding: 22px;
+    }
+
+    .entry-date {
+      color: #b18b00;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .entry-content h3 {
+      font-size: 21px;
+      margin-bottom: 7px;
+    }
+
+    .entry-content p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .read-more:hover {
+      color: #b18b00;
+    }
+
+    /* =========================
+       MILESTONES
+    ========================== */
+
+    .milestones {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 15px;
+    }
+
+    .milestone {
+      border: 1px solid #eee;
+      border-radius: 20px;
+      padding: 22px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .milestone-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .milestone h3 {
+      font-size: 17px;
+    }
+
+    .milestone p {
+      color: #777;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    /* =========================
+       TESTIMONIALS
+    ========================== */
+
+    .testimonials {
+      background: #111;
+      color: #fff;
+    }
+
+    .testimonials .section-heading p {
+      color: #aaa;
+    }
+
+    .testimonials .mini {
+      color: #f5c400;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      background: #1c1c1c;
+      border: 1px solid #333;
+      border-radius: 22px;
+      padding: 25px;
+    }
+
+    .testimonial p {
+      color: #ddd;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .testimonial strong {
+      color: #f5c400;
+    }
+
+    /* =========================
+       JOURNAL CTA
+    ========================== */
+
+    .journal-cta {
+      text-align: center;
+      padding: 75px 20px;
+      background: #f5c400;
+    }
+
+    .journal-cta h2 {
+      font-size: clamp(32px,5vw,50px);
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .journal-cta p {
+      max-width: 600px;
+      margin: auto auto 25px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 850px) {
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .journal-types,
+      .entries-grid,
+      .testimonial-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .milestones {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .nav {
+        padding: 12px 15px;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      .back-btn {
+        font-size: 11px;
+        padding: 7px 11px;
+      }
+
+      .hero-inner {
+        padding: 45px 18px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .primary-btn,
+      .secondary-btn {
+        width: 100%;
+      }
+
+      .container {
+        padding: 48px 18px;
+      }
+
+      .section-heading h2 {
+        font-size: 29px;
+      }
+
+      .journal-types,
+      .entries-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .milestones {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .journal-preview {
+        padding: 23px;
+      }
+
+      .author-photo,
+      .author-placeholder {
+        width: 65px;
+        height: 65px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+
+    <div class="nav">
+
+      <a href="index.html" class="logo">
+        F<span>WORLD</span>
+      </a>
+
+      <a href="fworld-dashboard.html" class="back-btn">
+        ← Dashboard
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="hero-inner">
+
+      <div>
+
+        <div class="world-label">
+          💛 JOURNAL WORLD
+        </div>
+
+        <h1>
+          MY<br>
+          <span>JOURNAL</span>
+        </h1>
+
+        <p>
+          Your story matters.
+          Your journey matters.
+          Keep the moments, lessons, milestones,
+          memories and people that make your FWORLD journey meaningful.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="#entries" class="primary-btn">
+            ✍️ Write My Story
+          </a>
+
+          <a href="#memories" class="secondary-btn">
+            📖 View My Journal
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- JOURNAL PREVIEW -->
+
+      <div class="journal-preview">
+
+        <div class="author-card">
+
+          <!-- Replace with author-fatima.jpg when needed -->
+          <div class="author-placeholder">
+            F
+          </div>
+
+          <div>
+            <h3>My Journey</h3>
+            <small>My FWORLD Story</small>
+          </div>
+
+        </div>
+
+        <div class="quote">
+          Every achievement has a story.
+          Every lesson becomes part of the journey.
+          Every dream deserves to be remembered.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       JOURNAL TYPES
+  ========================== -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="mini">
+          MY JOURNAL
+        </div>
+
+        <h2>
+          What do you want to remember?
+        </h2>
+
+        <p>
+          Your journal can grow with you.
+        </p>
+
+      </div>
+
+
+      <div class="journal-types">
+
+
+        <div class="type-card">
+
+          <div class="type-icon">📖</div>
+
+          <h3>My Stories</h3>
+
+          <p>
+            Share your experiences, lessons,
+            challenges and moments that shaped you.
+          </p>
+
+        </div>
+
+
+        <div class="type-card">
+
+          <div class="type-icon">📸</div>
+
+          <h3>My Memories</h3>
+
+          <p>
+            Keep meaningful photos, moments,
+            events and memories in one place.
+          </p>
+
+        </div>
+
+
+        <div class="type-card">
+
+          <div class="type-icon">🏆</div>
+
+          <h3>My Achievements</h3>
+
+          <p>
+            Record milestones, accomplishments
+            and moments you are proud of.
+          </p>
+
+        </div>
+
+
+        <div class="type-card">
+
+          <div class="type-icon">💭</div>
+
+          <h3>My Reflections</h3>
+
+          <p>
+            Write what you learned,
+            what changed and what you discovered.
+          </p>
+
+        </div>
+
+
+        <div class="type-card">
+
+          <div class="type-icon">⭐</div>
+
+          <h3>My Testimonials</h3>
+
+          <p>
+            Collect meaningful feedback,
+            customer stories and people who supported you.
+          </p>
+
+        </div>
+
+
+        <div class="type-card">
+
+          <div class="type-icon">🌱</div>
+
+          <h3>My Growth</h3>
+
+          <p>
+            Look back and see how far
+            you have come.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       JOURNAL ENTRIES
+  ========================== -->
+
+  <section class="entries" id="entries">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="mini">
+          MY STORIES
+        </div>
+
+        <h2>
+          My Journal Entries
+        </h2>
+
+        <p>
+          Your personal collection of stories and moments.
+        </p>
+
+      </div>
+
+
+      <div class="entries-grid">
+
+
+        <article class="entry-card">
+
+          <div class="entry-image">
+            ✍️
+          </div>
+
+          <div class="entry-content">
+
+            <div class="entry-date">
+              JOURNAL ENTRY
+            </div>
+
+            <h3>
+              My First Entry
+            </h3>
+
+            <p>
+              Start writing your story here.
+              Tell the world where your journey begins.
+            </p>
+
+            <a href="#" class="read-more">
+              Read Story →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="entry-card">
+
+          <div class="entry-image">
+            🌱
+          </div>
+
+          <div class="entry-content">
+
+            <div class="entry-date">
+              GROWTH
+            </div>
+
+            <h3>
+              A Lesson I Learned
+            </h3>
+
+            <p>
+              Capture an experience that changed
+              the way you see your journey.
+            </p>
+
+            <a href="#" class="read-more">
+              Read Story →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="entry-card">
+
+          <div class="entry-image">
+            🏆
+          </div>
+
+          <div class="entry-content">
+
+            <div class="entry-date">
+              MILESTONE
+            </div>
+
+            <h3>
+              Something I Achieved
+            </h3>
+
+            <p>
+              Celebrate a milestone and remember
+              how you made it happen.
+            </p>
+
+            <a href="#" class="read-more">
+              Read Story →
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MILESTONES
+  ========================== -->
+
+  <section id="memories">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="mini">
+          MY MILESTONES
+        </div>
+
+        <h2>
+          Moments worth remembering.
+        </h2>
+
+        <p>
+          Your journey becomes a story one milestone at a time.
+        </p>
+
+      </div>
+
+
+      <div class="milestones">
+
+        <div class="milestone">
+          <div class="milestone-icon">🌱</div>
+          <h3>Started</h3>
+          <p>My beginning</p>
+        </div>
+
+        <div class="milestone">
+          <div class="milestone-icon">💡</div>
+          <h3>Learned</h3>
+          <p>Something new</p>
+        </div>
+
+        <div class="milestone">
+          <div class="milestone-icon">🏆</div>
+          <h3>Achieved</h3>
+          <p>A personal milestone</p>
+        </div>
+
+        <div class="milestone">
+          <div class="milestone-icon">🚀</div>
+          <h3>Growing</h3>
+          <p>What's next?</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TESTIMONIALS
+  ========================== -->
+
+  <section class="testimonials">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="mini">
+          TESTIMONIALS
+        </div>
+
+        <h2>
+          People who became part of the journey.
+        </h2>
+
+        <p>
+          Save meaningful words from customers,
+          friends, mentors and your community.
+        </p>
+
+      </div>
+
+
+      <div class="testimonial-grid">
+
+        <div class="testimonial">
+
+          <p>
+            “Your testimonial will appear here.”
+          </p>
+
+          <strong>
+            — Customer / Friend
+          </strong>
+
+        </div>
+
+
+        <div class="testimonial">
+
+          <p>
+            “A meaningful message can become
+            part of your story.”
+          </p>
+
+          <strong>
+            — Community Member
+          </strong>
+
+        </div>
+
+
+        <div class="testimonial">
+
+          <p>
+            “Keep the people and moments
+            that helped you grow.”
+          </p>
+
+          <strong>
+            — Someone Special
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CTA
+  ========================== -->
+
+  <section class="journal-cta">
+
+    <h2>
+      Your story<br>
+      is worth keeping.
+    </h2>
+
+    <p>
+      Start your journal today and build a collection
+      of stories, memories and milestones you can look back on.
+    </p>
+
+    <a href="#" class="primary-btn">
+      ✍️ Create My First Journal
+    </a>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <strong>FWORLD ONLINE</strong><br>
+
+    Build it beautiful.
+    Build it searchable.
+    Build it shareable.
+    Build it connected.
+
+  </footer>
+
+</body>
+</html>
