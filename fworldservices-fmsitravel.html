@@ -1,1 +1,1741 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FMSI Travel | Book Your Journey</title>
+
+  <meta
+    name="description"
+    content="FMSI Travel booking platform for flights, hotels, transportation, visa assistance and tour packages."
+  >
+
+  <meta property="og:title" content="FMSI Travel | Book Your Journey">
+  <meta
+    property="og:description"
+    content="Flights, hotels, transportation, visa assistance and tour packages."
+  >
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --navy: #082b55;
+      --navy-dark: #041d3b;
+      --blue: #0d4f91;
+      --light-blue: #eef6ff;
+      --white: #ffffff;
+      --text: #182230;
+      --muted: #687386;
+      --border: #dfe6ee;
+      --success: #16784b;
+      --danger: #b42318;
+      --shadow: 0 12px 35px rgba(4, 29, 59, .10);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f8fc;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: var(--navy-dark);
+      color: white;
+    }
+
+    .topbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: white;
+      color: var(--navy);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .brand h1 {
+      font-size: 20px;
+      letter-spacing: .5px;
+    }
+
+    .brand p {
+      font-size: 12px;
+      opacity: .75;
+    }
+
+    .back-btn {
+      border: 1px solid rgba(255,255,255,.3);
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 13px;
+    }
+
+    .back-btn:hover {
+      background: white;
+      color: var(--navy);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      background:
+        linear-gradient(
+          135deg,
+          var(--navy-dark),
+          var(--navy),
+          #1265ad
+        );
+      color: white;
+      padding: 48px 20px 90px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: clamp(30px, 5vw, 52px);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      opacity: .88;
+      font-size: 16px;
+    }
+
+    /* =========================
+       SERVICE TABS
+    ========================== */
+
+    .services-wrap {
+      max-width: 1100px;
+      margin: -48px auto 0;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .services {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      overflow: hidden;
+    }
+
+    .service-tab {
+      border: 0;
+      background: white;
+      padding: 18px 10px;
+      color: var(--muted);
+      font-weight: 600;
+      border-right: 1px solid var(--border);
+      transition: .2s;
+    }
+
+    .service-tab:last-child {
+      border-right: 0;
+    }
+
+    .service-tab span {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .service-tab.active {
+      color: white;
+      background: var(--navy);
+    }
+
+    .service-tab:hover {
+      background: var(--light-blue);
+      color: var(--navy);
+    }
+
+    .service-tab.active:hover {
+      background: var(--navy);
+      color: white;
+    }
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 35px 20px 70px;
+    }
+
+    .panel {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 25px;
+    }
+
+    .panel h3 {
+      color: var(--navy);
+      margin-bottom: 6px;
+      font-size: 24px;
+    }
+
+    .panel-subtitle {
+      color: var(--muted);
+      margin-bottom: 22px;
+      font-size: 14px;
+    }
+
+    /* =========================
+       SEARCH FORM
+    ========================== */
+
+    .trip-type {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .trip-type label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .search-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: white;
+      padding: 13px;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(13,79,145,.08);
+    }
+
+    .search-button {
+      width: 100%;
+      margin-top: 18px;
+      border: 0;
+      border-radius: 12px;
+      padding: 15px;
+      background: var(--navy);
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .search-button:hover {
+      background: #063e78;
+    }
+
+    /* =========================
+       RESULTS
+    ========================== */
+
+    #resultsSection {
+      display: none;
+    }
+
+    .results-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .sample-note {
+      background: #fff8e6;
+      color: #7a5700;
+      border: 1px solid #f0dfaa;
+      border-radius: 10px;
+      padding: 11px 13px;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    .result-card {
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 14px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .result-main {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .result-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      background: var(--light-blue);
+      color: var(--navy);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .result-info h4 {
+      margin-bottom: 5px;
+      color: var(--navy);
+    }
+
+    .result-info p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .result-price {
+      text-align: right;
+    }
+
+    .result-price strong {
+      display: block;
+      color: var(--navy);
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+
+    .select-btn {
+      border: 0;
+      background: var(--navy);
+      color: white;
+      padding: 10px 17px;
+      border-radius: 9px;
+      font-weight: 700;
+    }
+
+    .select-btn:hover {
+      background: var(--blue);
+    }
+
+    /* =========================
+       TRAVELER FORM
+    ========================== */
+
+    #travelerSection {
+      display: none;
+    }
+
+    .traveler-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .submit-booking {
+      margin-top: 20px;
+      width: 100%;
+      padding: 16px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--navy);
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    /* =========================
+       CONFIRMATION
+    ========================== */
+
+    #confirmationSection {
+      display: none;
+    }
+
+    .confirmation {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .success-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #e7f7ef;
+      color: var(--success);
+      display: grid;
+      place-items: center;
+      font-size: 35px;
+      margin: 0 auto 18px;
+    }
+
+    .reference {
+      background: var(--light-blue);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 20px auto;
+      max-width: 450px;
+    }
+
+    .reference small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .reference strong {
+      color: var(--navy);
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    .status {
+      display: inline-block;
+      background: #fff3cd;
+      color: #765900;
+      padding: 7px 13px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .new-search {
+      border: 0;
+      background: var(--navy);
+      color: white;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: var(--navy-dark);
+      color: white;
+      padding: 35px 20px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3 {
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: rgba(255,255,255,.72);
+      font-size: 13px;
+      margin: 5px 0;
+    }
+
+    .copyright {
+      max-width: 1100px;
+      margin: 25px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.15);
+      font-size: 12px;
+      color: rgba(255,255,255,.5);
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 800px) {
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .service-tab:nth-child(2),
+      .service-tab:nth-child(4) {
+        border-right: 0;
+      }
+
+      .service-tab:nth-child(-n+3) {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .search-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .result-card {
+        grid-template-columns: 1fr;
+      }
+
+      .result-price {
+        text-align: left;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .topbar {
+        padding: 13px 15px;
+      }
+
+      .brand h1 {
+        font-size: 17px;
+      }
+
+      .brand p {
+        font-size: 10px;
+      }
+
+      .back-btn {
+        font-size: 11px;
+        padding: 8px 10px;
+      }
+
+      .hero {
+        padding: 38px 18px 70px;
+      }
+
+      .hero h2 {
+        font-size: 34px;
+      }
+
+      .services-wrap {
+        padding: 0 12px;
+      }
+
+      .service-tab {
+        font-size: 12px;
+        padding: 15px 5px;
+      }
+
+      .service-tab span {
+        font-size: 21px;
+      }
+
+      main {
+        padding: 25px 12px 50px;
+      }
+
+      .panel {
+        padding: 20px 16px;
+      }
+
+      .search-grid,
+      .traveler-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .full {
+        grid-column: auto;
+      }
+
+      .results-head {
+        display: block;
+      }
+
+      .result-main {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header>
+  <div class="topbar">
+
+    <a href="fworld-services.html" class="brand">
+      <div class="brand-icon">✈</div>
+
+      <div>
+        <h1>FMSI TRAVEL</h1>
+        <p>Travel & Tours</p>
+      </div>
+    </a>
+
+    <a href="fworld-services.html" class="back-btn">
+      ← FWORLD SERVICES
+    </a>
+
+  </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <h2>Where will you go next?</h2>
+
+    <p>
+      Search your travel needs with FMSI Travel —
+      flights, hotels, transportation, visa assistance
+      and tour packages.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICE TABS
+========================== -->
+
+<div class="services-wrap">
+
+  <div class="services">
+
+    <button
+      class="service-tab active"
+      data-service="flight"
+      onclick="changeService('flight')"
+    >
+      <span>✈️</span>
+      Flights
+    </button>
+
+    <button
+      class="service-tab"
+      data-service="hotel"
+      onclick="changeService('hotel')"
+    >
+      <span>🏨</span>
+      Hotels
+    </button>
+
+    <button
+      class="service-tab"
+      data-service="transport"
+      onclick="changeService('transport')"
+    >
+      <span>🚐</span>
+      Transport
+    </button>
+
+    <button
+      class="service-tab"
+      data-service="visa"
+      onclick="changeService('visa')"
+    >
+      <span>🛂</span>
+      Visa
+    </button>
+
+    <button
+      class="service-tab"
+      data-service="tour"
+      onclick="changeService('tour')"
+    >
+      <span>🌏</span>
+      Tours
+    </button>
+
+  </div>
+
+</div>
+
+
+<main>
+
+  <!-- =========================
+       SEARCH
+  ========================== -->
+
+  <section class="panel">
+
+    <h3 id="searchTitle">
+      Search Flights
+    </h3>
+
+    <p class="panel-subtitle" id="searchSubtitle">
+      Find a flight and send your booking request to FMSI Travel.
+    </p>
+
+    <div id="flightOptions">
+
+      <div class="trip-type">
+
+        <label>
+          <input
+            type="radio"
+            name="tripType"
+            value="round"
+            checked
+          >
+          Round Trip
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="tripType"
+            value="oneway"
+          >
+          One Way
+        </label>
+
+      </div>
+
+    </div>
+
+    <div class="search-grid">
+
+      <div class="field">
+        <label id="fromLabel">From</label>
+
+        <input
+          id="from"
+          type="text"
+          placeholder="Davao (DVO)"
+        >
+      </div>
+
+      <div class="field">
+        <label id="toLabel">To</label>
+
+        <input
+          id="to"
+          type="text"
+          placeholder="Tokyo (NRT)"
+        >
+      </div>
+
+      <div class="field">
+
+        <label id="dateLabel">
+          Departure
+        </label>
+
+        <input
+          id="date"
+          type="date"
+        >
+
+      </div>
+
+      <div class="field">
+
+        <label>Travelers</label>
+
+        <select id="travelers">
+
+          <option value="1">
+            1 Traveler
+          </option>
+
+          <option value="2">
+            2 Travelers
+          </option>
+
+          <option value="3">
+            3 Travelers
+          </option>
+
+          <option value="4">
+            4 Travelers
+          </option>
+
+          <option value="5">
+            5 Travelers
+          </option>
+
+          <option value="6">
+            6+ Travelers
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+    <button
+      class="search-button"
+      onclick="searchTravel()"
+    >
+      🔎 Search
+    </button>
+
+  </section>
+
+
+  <!-- =========================
+       RESULTS
+  ========================== -->
+
+  <section
+    class="panel"
+    id="resultsSection"
+  >
+
+    <div class="results-head">
+
+      <div>
+
+        <h3 id="resultsTitle">
+          Available Options
+        </h3>
+
+        <p class="panel-subtitle">
+          Select an option to continue.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="sample-note">
+      ℹ️ <strong>Prototype mode:</strong>
+      These are sample options for testing the FMSI Travel
+      booking flow. Final availability and pricing will be
+      confirmed by FMSI Travel.
+    </div>
+
+    <div id="resultsContainer"></div>
+
+  </section>
+
+
+  <!-- =========================
+       TRAVELER DETAILS
+  ========================== -->
+
+  <section
+    class="panel"
+    id="travelerSection"
+  >
+
+    <h3>Traveler Details</h3>
+
+    <p class="panel-subtitle">
+      Enter the details needed for your FMSI Travel booking request.
+    </p>
+
+    <div class="traveler-grid">
+
+      <div class="field">
+
+        <label>First Name</label>
+
+        <input
+          id="firstName"
+          type="text"
+          placeholder="First name"
+          required
+        >
+
+      </div>
+
+      <div class="field">
+
+        <label>Last Name</label>
+
+        <input
+          id="lastName"
+          type="text"
+          placeholder="Last name"
+          required
+        >
+
+      </div>
+
+      <div class="field">
+
+        <label>Email</label>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="your@email.com"
+          required
+        >
+
+      </div>
+
+      <div class="field">
+
+        <label>Mobile Number</label>
+
+        <input
+          id="phone"
+          type="tel"
+          placeholder="+63"
+          required
+        >
+
+      </div>
+
+      <div class="field full">
+
+        <label>Special Request / Notes</label>
+
+        <input
+          id="notes"
+          type="text"
+          placeholder="Optional request"
+        >
+
+      </div>
+
+    </div>
+
+    <button
+      class="submit-booking"
+      onclick="submitBooking()"
+    >
+      Submit Booking Request
+    </button>
+
+  </section>
+
+
+  <!-- =========================
+       CONFIRMATION
+  ========================== -->
+
+  <section
+    class="panel"
+    id="confirmationSection"
+  >
+
+    <div class="confirmation">
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <h3>
+        Booking Request Received
+      </h3>
+
+      <p class="panel-subtitle">
+        Your request has been recorded for review by FMSI Travel.
+      </p>
+
+      <div class="reference">
+
+        <small>
+          Booking Reference
+        </small>
+
+        <strong id="bookingReference">
+          FMSI-TR-000000
+        </strong>
+
+      </div>
+
+      <span class="status">
+        Pending Review
+      </span>
+
+      <p
+        id="confirmationDetails"
+        style="margin-top:18px;font-size:14px;color:#687386;"
+      ></p>
+
+      <button
+        class="new-search"
+        onclick="startNewSearch()"
+      >
+        New Travel Search
+      </button>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+
+      <h3>FMSI Travel & Tours</h3>
+
+      <p>
+        Your travel planning partner.
+      </p>
+
+      <p>
+        Flights • Hotels • Transportation
+      </p>
+
+      <p>
+        Visa Assistance • Tour Packages
+      </p>
+
+    </div>
+
+    <div>
+
+      <h3>Booking Assistance</h3>
+
+      <p>
+        Email: fmsitravel@gmail.com
+      </p>
+
+      <p>
+        WhatsApp / Viber / Telegram:
+        +63 920 553 5280
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="copyright">
+
+    © 2026 FMSI Travel & Tours. All rights reserved.
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  /* ==========================================
+     FMSI TRAVEL BOOKING SYSTEM
+     SAMPLE DATA
+  ========================================== */
+
+  let currentService = "flight";
+  let selectedOption = null;
+
+
+  const sampleData = {
+
+    flight: [
+
+      {
+        icon: "✈️",
+        name: "FMSI Air Partner",
+        details: "Davao → Manila → Tokyo",
+        duration: "Approx. 8h 30m",
+        price: "₱28,500"
+      },
+
+      {
+        icon: "✈️",
+        name: "International Partner",
+        details: "Davao → Singapore → Tokyo",
+        duration: "Approx. 10h 15m",
+        price: "₱31,800"
+      },
+
+      {
+        icon: "✈️",
+        name: "Asia Travel Partner",
+        details: "Davao → Hong Kong → Tokyo",
+        duration: "Approx. 11h",
+        price: "₱34,200"
+      }
+
+    ],
+
+
+    hotel: [
+
+      {
+        icon: "🏨",
+        name: "Tokyo City Hotel",
+        details: "Central Tokyo • Standard Room",
+        duration: "Per night",
+        price: "₱6,800"
+      },
+
+      {
+        icon: "🏨",
+        name: "Tokyo Premium Stay",
+        details: "Tokyo • Deluxe Room",
+        duration: "Per night",
+        price: "₱9,500"
+      },
+
+      {
+        icon: "🏨",
+        name: "Tokyo Family Hotel",
+        details: "Tokyo • Family Room",
+        duration: "Per night",
+        price: "₱12,800"
+      }
+
+    ],
+
+
+    transport: [
+
+      {
+        icon: "🚐",
+        name: "Private Airport Transfer",
+        details: "Airport → Hotel",
+        duration: "One Way",
+        price: "₱3,500"
+      },
+
+      {
+        icon: "🚐",
+        name: "Private City Transfer",
+        details: "Hotel → City destinations",
+        duration: "Half Day",
+        price: "₱5,500"
+      },
+
+      {
+        icon: "🚐",
+        name: "Private Full Day Vehicle",
+        details: "Vehicle + Driver",
+        duration: "Full Day",
+        price: "₱9,500"
+      }
+
+    ],
+
+
+    visa: [
+
+      {
+        icon: "🛂",
+        name: "Tourist Visa Assistance",
+        details: "Document review + application guidance",
+        duration: "Processing varies",
+        price: "Request Quote"
+      },
+
+      {
+        icon: "🛂",
+        name: "Business Visa Assistance",
+        details: "Business travel document assistance",
+        duration: "Processing varies",
+        price: "Request Quote"
+      },
+
+      {
+        icon: "🛂",
+        name: "Family / Visit Visa Assistance",
+        details: "Application preparation guidance",
+        duration: "Processing varies",
+        price: "Request Quote"
+      }
+
+    ],
+
+
+    tour: [
+
+      {
+        icon: "🌏",
+        name: "Japan Discovery",
+        details: "Tokyo • Mt. Fuji • City Experience",
+        duration: "5 Days / 4 Nights",
+        price: "Request Quote"
+      },
+
+      {
+        icon: "🌏",
+        name: "Korea Experience",
+        details: "Seoul • Shopping • Culture",
+        duration: "5 Days / 4 Nights",
+        price: "Request Quote"
+      },
+
+      {
+        icon: "🌏",
+        name: "European Journey",
+        details: "Multi-city Europe itinerary",
+        duration: "Custom",
+        price: "Request Quote"
+      }
+
+    ]
+
+  };
+
+
+  /* ==========================================
+     CHANGE SERVICE
+  ========================================== */
+
+  function changeService(service) {
+
+    currentService = service;
+
+    document
+      .querySelectorAll(".service-tab")
+      .forEach(button => {
+
+        button.classList.toggle(
+          "active",
+          button.dataset.service === service
+        );
+
+      });
+
+
+    const titles = {
+
+      flight: [
+        "Search Flights",
+        "Find a flight and send your booking request to FMSI Travel."
+      ],
+
+      hotel: [
+        "Find Hotels",
+        "Find accommodation for your next journey."
+      ],
+
+      transport: [
+        "Book Transportation",
+        "Request airport transfers and private transportation."
+      ],
+
+      visa: [
+        "Visa Assistance",
+        "Tell us about your visa assistance requirement."
+      ],
+
+      tour: [
+        "Explore Tour Packages",
+        "Choose a travel experience and request a quotation."
+      ]
+
+    };
+
+
+    document.getElementById("searchTitle").textContent =
+      titles[service][0];
+
+    document.getElementById("searchSubtitle").textContent =
+      titles[service][1];
+
+
+    const flightOptions =
+      document.getElementById("flightOptions");
+
+    if (service === "flight") {
+
+      flightOptions.style.display = "block";
+
+    } else {
+
+      flightOptions.style.display = "none";
+
+    }
+
+
+    const from = document.getElementById("from");
+    const to = document.getElementById("to");
+    const date = document.getElementById("date");
+
+    const fromLabel =
+      document.getElementById("fromLabel");
+
+    const toLabel =
+      document.getElementById("toLabel");
+
+    const dateLabel =
+      document.getElementById("dateLabel");
+
+
+    if (service === "hotel") {
+
+      fromLabel.textContent = "Destination";
+      toLabel.textContent = "Area / City";
+      dateLabel.textContent = "Check-in";
+
+      from.placeholder = "Tokyo";
+      to.placeholder = "Shinjuku";
+
+    }
+
+    else if (service === "transport") {
+
+      fromLabel.textContent = "Pickup";
+      toLabel.textContent = "Drop-off";
+      dateLabel.textContent = "Travel Date";
+
+      from.placeholder = "Airport / Hotel";
+      to.placeholder = "Destination";
+
+    }
+
+    else if (service === "visa") {
+
+      fromLabel.textContent = "Destination Country";
+      toLabel.textContent = "Visa Type";
+      dateLabel.textContent = "Target Travel Date";
+
+      from.placeholder = "Japan";
+      to.placeholder = "Tourist Visa";
+
+    }
+
+    else if (service === "tour") {
+
+      fromLabel.textContent = "Destination";
+      toLabel.textContent = "Travel Style";
+      dateLabel.textContent = "Preferred Date";
+
+      from.placeholder = "Japan";
+      to.placeholder = "Family / Couple / Solo";
+
+    }
+
+    else {
+
+      fromLabel.textContent = "From";
+      toLabel.textContent = "To";
+      dateLabel.textContent = "Departure";
+
+      from.placeholder = "Davao (DVO)";
+      to.placeholder = "Tokyo (NRT)";
+
+    }
+
+
+    document.getElementById("resultsSection").style.display = "none";
+
+    document.getElementById("travelerSection").style.display = "none";
+
+    document.getElementById("confirmationSection").style.display = "none";
+
+  }
+
+
+  /* ==========================================
+     SEARCH
+  ========================================== */
+
+  function searchTravel() {
+
+    const from =
+      document.getElementById("from").value.trim();
+
+    const to =
+      document.getElementById("to").value.trim();
+
+    const date =
+      document.getElementById("date").value;
+
+    if (!from || !to || !date) {
+
+      alert(
+        "Please enter your destination details and date."
+      );
+
+      return;
+
+    }
+
+
+    const results =
+      sampleData[currentService];
+
+    const container =
+      document.getElementById("resultsContainer");
+
+    container.innerHTML = "";
+
+
+    document.getElementById("resultsTitle").textContent =
+      getResultsTitle();
+
+
+    results.forEach((item, index) => {
+
+      const card =
+        document.createElement("div");
+
+      card.className = "result-card";
+
+      card.innerHTML = `
+
+        <div class="result-main">
+
+          <div class="result-icon">
+            ${item.icon}
+          </div>
+
+          <div class="result-info">
+
+            <h4>
+              ${item.name}
+            </h4>
+
+            <p>
+              ${item.details}
+            </p>
+
+            <p>
+              ${item.duration}
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="result-price">
+
+          <strong>
+            ${item.price}
+          </strong>
+
+          <button
+            class="select-btn"
+            onclick="selectOption(${index})"
+          >
+            Select
+          </button>
+
+        </div>
+
+      `;
+
+      container.appendChild(card);
+
+    });
+
+
+    document.getElementById("resultsSection").style.display =
+      "block";
+
+
+    document.getElementById("travelerSection").style.display =
+      "none";
+
+
+    document.getElementById("confirmationSection").style.display =
+      "none";
+
+
+    document.getElementById("resultsSection")
+      .scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+  }
+
+
+  function getResultsTitle() {
+
+    const titles = {
+
+      flight: "Flight Options",
+
+      hotel: "Hotel Options",
+
+      transport: "Transportation Options",
+
+      visa: "Visa Assistance Services",
+
+      tour: "Tour Package Options"
+
+    };
+
+    return titles[currentService];
+
+  }
+
+
+  /* ==========================================
+     SELECT
+  ========================================== */
+
+  function selectOption(index) {
+
+    selectedOption =
+      sampleData[currentService][index];
+
+
+    document.getElementById("travelerSection").style.display =
+      "block";
+
+
+    document.getElementById("travelerSection")
+      .scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+  }
+
+
+  /* ==========================================
+     SUBMIT BOOKING
+  ========================================== */
+
+  function submitBooking() {
+
+    const firstName =
+      document.getElementById("firstName").value.trim();
+
+    const lastName =
+      document.getElementById("lastName").value.trim();
+
+    const email =
+      document.getElementById("email").value.trim();
+
+    const phone =
+      document.getElementById("phone").value.trim();
+
+    const notes =
+      document.getElementById("notes").value.trim();
+
+
+    if (!firstName || !lastName || !email || !phone) {
+
+      alert(
+        "Please complete the required traveler details."
+      );
+
+      return;
+
+    }
+
+
+    const reference =
+      "FMSI-TR-" +
+      Math.floor(
+        100000 +
+        Math.random() * 900000
+      );
+
+
+    const booking = {
+
+      reference: reference,
+
+      service: currentService,
+
+      selectedOption: selectedOption,
+
+      traveler: {
+
+        firstName,
+        lastName,
+        email,
+        phone,
+        notes
+
+      },
+
+      status: "Pending Review",
+
+      createdAt:
+        new Date().toISOString()
+
+    };
+
+
+    /*
+      PROTOTYPE STORAGE
+
+      Later this exact object can be
+      POSTed to the FMSI backend/API.
+    */
+
+    localStorage.setItem(
+      "fmsi_last_booking",
+      JSON.stringify(booking)
+    );
+
+
+    document.getElementById(
+      "bookingReference"
+    ).textContent = reference;
+
+
+    document.getElementById(
+      "confirmationDetails"
+    ).textContent =
+
+      `${firstName} ${lastName} — ` +
+      `${selectedOption.name} — ` +
+      `FMSI Travel will review your request.`;
+
+
+    document.getElementById(
+      "resultsSection"
+    ).style.display = "none";
+
+
+    document.getElementById(
+      "travelerSection"
+    ).style.display = "none";
+
+
+    document.getElementById(
+      "confirmationSection"
+    ).style.display = "block";
+
+
+    document.getElementById(
+      "confirmationSection"
+    ).scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+  }
+
+
+  /* ==========================================
+     NEW SEARCH
+  ========================================== */
+
+  function startNewSearch() {
+
+    document.getElementById("from").value = "";
+    document.getElementById("to").value = "";
+    document.getElementById("date").value = "";
+
+    document.getElementById("firstName").value = "";
+    document.getElementById("lastName").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("notes").value = "";
+
+
+    selectedOption = null;
+
+
+    document.getElementById(
+      "confirmationSection"
+    ).style.display = "none";
+
+
+    document.getElementById(
+      "resultsSection"
+    ).style.display = "none";
+
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+
+</script>
+
+</body>
+</html>
