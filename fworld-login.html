@@ -1,1 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>FWORLD Membership | Member Login</title>
+
+<meta name="description"
+      content="FWORLD Membership Login — Enter your FWORLD and access your personal member dashboard.">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 15%, #252525 0%, #111 38%, #050505 75%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  overflow-x: hidden;
+}
+
+/* AI BACKGROUND */
+.ai-orbit {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ai-orbit::before,
+.ai-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 45px;
+  border: 1px solid rgba(255,140,0,.12);
+  border-radius: 50%;
+}
+
+.ai-orbit::after {
+  inset: 100px;
+  border-color: rgba(255,255,255,.05);
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  z-index: 2;
+}
+
+/* BRAND */
+.brand {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.brand-name {
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.brand-line {
+  width: 45px;
+  height: 3px;
+  background: #ff8a00;
+  margin: 13px auto;
+  border-radius: 10px;
+}
+
+.brand-subtitle {
+  color: #aaa;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* LOGIN CARD */
+.login-card {
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 28px;
+  padding: 38px 32px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 25px 80px rgba(0,0,0,.5);
+}
+
+.ai-icon {
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,138,0,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow:
+    0 0 0 8px rgba(255,138,0,.04),
+    0 0 35px rgba(255,138,0,.12);
+}
+
+.login-card h1 {
+  text-align: center;
+  font-size: 27px;
+  margin-bottom: 9px;
+}
+
+.intro {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* FORM */
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  height: 54px;
+  padding: 0 17px;
+  border-radius: 14px;
+  border: 1px solid #333;
+  outline: none;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  font-size: 15px;
+  transition: .25s ease;
+}
+
+input::placeholder {
+  color: #666;
+}
+
+input:focus {
+  border-color: #ff8a00;
+  box-shadow: 0 0 0 3px rgba(255,138,0,.08);
+}
+
+/* BUTTON */
+.login-btn {
+  width: 100%;
+  height: 56px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 15px;
+  background: #fff;
+  color: #080808;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.login-btn:hover {
+  background: #ff8a00;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.login-btn:active {
+  transform: scale(.98);
+}
+
+/* LINKS */
+.forgot {
+  display: block;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  margin-top: 19px;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  color: #ff8a00;
+}
+
+.join {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 23px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  color: #888;
+  font-size: 13px;
+}
+
+.join a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.join a:hover {
+  color: #ff8a00;
+}
+
+/* AI STATUS */
+.ai-status {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: #ff8a00;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(255,138,0,.7);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: 25px;
+  color: #555;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+
+  body {
+    padding: 18px;
+  }
+
+  .login-card {
+    padding: 32px 22px;
+    border-radius: 23px;
+  }
+
+  .brand-name {
+    font-size: 29px;
+  }
+
+  .login-card h1 {
+    font-size: 24px;
+  }
+
+  .ai-orbit {
+    width: 350px;
+    height: 350px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="ai-orbit"></div>
+
+<main class="login-wrapper">
+
+  <div class="brand">
+    <div class="brand-name">FWORLD</div>
+    <div class="brand-line"></div>
+    <div class="brand-subtitle">
+      Intelligent Member System
+    </div>
+  </div>
+
+  <section class="login-card">
+
+    <div class="ai-icon">🤖</div>
+
+    <h1>Welcome, Member</h1>
+
+    <p class="intro">
+      Your FWORLD is ready.<br>
+      Enter your account to continue.
+    </p>
+
+    <form id="memberLoginForm">
+
+      <div class="form-group">
+        <label for="username">Username</label>
+
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your username"
+          autocomplete="username"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="passcode">Passcode</label>
+
+        <input
+          type="password"
+          id="passcode"
+          name="passcode"
+          placeholder="Enter your passcode"
+          autocomplete="current-password"
+          required
+        >
+      </div>
+
+      <button type="submit" class="login-btn">
+        ENTER FWORLD →
+      </button>
+
+    </form>
+
+    <a href="#" class="forgot">
+      Forgot your passcode?
+    </a>
+
+    <div class="join">
+      Not yet a member?
+      <a href="#">Join FWORLD Membership</a>
+    </div>
+
+    <div class="ai-status">
+      <span class="status-dot"></span>
+      FWORLD AI SYSTEM READY
+    </div>
+
+  </section>
+
+  <div class="footer">
+    © 2026 FWORLD ONLINE
+  </div>
+
+</main>
+
+<script>
+document
+  .getElementById("memberLoginForm")
+  .addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const username =
+      document.getElementById("username").value.trim();
+
+    const passcode =
+      document.getElementById("passcode").value.trim();
+
+    if (!username || !passcode) {
+      alert("Please enter your username and passcode.");
+      return;
+    }
+
+    /*
+      TEMPORARY PREVIEW ONLY
+
+      Later we will replace this with
+      real FWORLD Membership authentication.
+
+      Example future flow:
+
+      Login
+        ↓
+      Member ID
+        ↓
+      Dashboard
+        ↓
+      AI Member Experience
+    */
+
+    alert(
+      "Welcome to FWORLD, " +
+      username +
+      "!\\n\\nAuthentication will be connected to the FWORLD Membership system."
+    );
+
+  });
+</script>
+
+</body>
+</html>
