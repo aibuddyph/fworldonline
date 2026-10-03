@@ -1,1743 +1,4350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>My Income | FWORLD ONLINE</title>
-
-  <meta
-    name="description"
-    content="My Income — your FWORLD Digital Space for income, goal tracking, analytics, referrals and progress."
-  >
-
-  <meta property="og:title" content="My Income | FWORLD ONLINE">
-  <meta
-    property="og:description"
-    content="Track your FWORLD income, goals, analytics and progress."
-  >
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --green-dark: #075b3a;
-      --green: #16a36b;
-      --green-light: #dff8eb;
-      --mint: #effcf5;
-      --white: #ffffff;
-      --black: #111111;
-      --gray: #6d756f;
-      --gray-light: #eef1ef;
-      --border: #e2e8e4;
-      --orange: #ff8a3d;
-      --pink: #ff5c93;
-      --shadow: 0 18px 50px rgba(10, 70, 45, 0.10);
-      --radius: 24px;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(circle at top right, #dff8eb 0, transparent 32%),
-        linear-gradient(180deg, #f8fffb 0%, #ffffff 55%, #f4fbf7 100%);
-      color: var(--black);
-      min-height: 100vh;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    .container {
-      width: min(1180px, calc(100% - 32px));
-      margin: auto;
-    }
-
-    /* =========================
-       HEADER
-    ========================== */
-
-    header {
-      padding: 18px 0;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255, 255, 255, 0.90);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(226, 232, 228, 0.8);
-    }
-
-    .top-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-mark {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: var(--black);
-      color: white;
-      display: grid;
-      place-items: center;
-      font-size: 21px;
-      font-weight: 800;
-    }
-
-    .brand-text strong {
-      display: block;
-      font-size: 16px;
-      letter-spacing: 0.04em;
-    }
-
-    .brand-text span {
-      display: block;
-      color: var(--gray);
-      font-size: 12px;
-      margin-top: 2px;
-    }
-
-    .back-btn {
-      padding: 11px 17px;
-      border: 1px solid var(--border);
-      background: white;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .back-btn:hover {
-      background: var(--black);
-      color: white;
-    }
-
-    /* =========================
-       HERO
-    ========================== */
-
-    .hero {
-      padding: 46px 0 26px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 0.8fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .hero-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 30px;
-      padding: 34px;
-      background:
-        radial-gradient(circle at 90% 15%, rgba(255,255,255,.30), transparent 22%),
-        linear-gradient(135deg, #075b3a, #16a36b);
-      color: white;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      width: 230px;
-      height: 230px;
-      right: -90px;
-      bottom: -100px;
-      border: 35px solid rgba(255,255,255,.10);
-      border-radius: 50%;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.16);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .hero-card h1 {
-      font-size: clamp(32px, 5vw, 52px);
-      line-height: 1;
-      margin-bottom: 14px;
-    }
-
-    .hero-card p {
-      max-width: 610px;
-      line-height: 1.7;
-      color: rgba(255,255,255,.88);
-      font-size: 15px;
-    }
-
-    .hero-amount {
-      margin-top: 28px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-amount small {
-      display: block;
-      color: rgba(255,255,255,.72);
-      margin-bottom: 4px;
-    }
-
-    .hero-amount strong {
-      font-size: clamp(38px, 6vw, 64px);
-      letter-spacing: -0.04em;
-    }
-
-    .twin-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .twin-icon {
-      width: 62px;
-      height: 62px;
-      display: grid;
-      place-items: center;
-      border-radius: 20px;
-      background: #f0e8ff;
-      font-size: 31px;
-      margin-bottom: 16px;
-    }
-
-    .twin-card h2 {
-      font-size: 21px;
-      margin-bottom: 8px;
-    }
-
-    .twin-card p {
-      color: var(--gray);
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    /* =========================
-       SECTION
-    ========================== */
-
-    .section {
-      padding: 18px 0 34px;
-    }
-
-    .section-title {
-      margin-bottom: 16px;
-    }
-
-    .section-title h2 {
-      font-size: 24px;
-    }
-
-    .section-title p {
-      color: var(--gray);
-      font-size: 14px;
-      margin-top: 5px;
-    }
-
-    /* =========================
-       INCOME CARDS
-    ========================== */
-
-    .income-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .income-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 21px;
-      box-shadow: 0 10px 30px rgba(20,50,35,.06);
-    }
-
-    .income-card .icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: var(--mint);
-      font-size: 20px;
-      margin-bottom: 17px;
-    }
-
-    .income-card small {
-      color: var(--gray);
-      font-size: 12px;
-      display: block;
-      margin-bottom: 7px;
-    }
-
-    .income-card strong {
-      font-size: 25px;
-    }
-
-    .income-card.green strong {
-      color: var(--green-dark);
-    }
-
-    .income-card.orange .icon {
-      background: #fff0e5;
-    }
-
-    .income-card.purple .icon {
-      background: #f1eaff;
-    }
-
-    .income-card.blue .icon {
-      background: #e6f5ff;
-    }
-
-    /* =========================
-       GOAL
-    ========================== */
-
-    .goal-wrap {
-      display: grid;
-      grid-template-columns: 1.35fr .65fr;
-      gap: 18px;
-    }
-
-    .goal-card,
-    .goal-side {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: 0 10px 30px rgba(20,50,35,.06);
-    }
-
-    .goal-card {
-      background:
-        radial-gradient(circle at top right, #dff8eb, transparent 35%),
-        white;
-    }
-
-    .goal-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-
-    .goal-label {
-      color: var(--gray);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      font-weight: 800;
-    }
-
-    .goal-number {
-      font-size: 38px;
-      font-weight: 800;
-      margin-top: 5px;
-    }
-
-    .goal-date {
-      background: var(--green-light);
-      color: var(--green-dark);
-      padding: 8px 11px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .progress {
-      height: 18px;
-      border-radius: 999px;
-      background: #e7eee9;
-      overflow: hidden;
-    }
-
-    .progress-bar {
-      width: 57%;
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, #0a754b, #35c989);
-    }
-
-    .progress-info {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: 10px;
-      font-size: 13px;
-      color: var(--gray);
-    }
-
-    .progress-info strong {
-      color: var(--green-dark);
-    }
-
-    .goal-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 22px;
-    }
-
-    .btn {
-      border: none;
-      border-radius: 999px;
-      padding: 12px 17px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: .2s ease;
-    }
-
-    .btn-primary {
-      background: var(--black);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--orange);
-    }
-
-    .btn-light {
-      background: var(--green-light);
-      color: var(--green-dark);
-    }
-
-    .btn-light:hover {
-      background: #c8f2dd;
-    }
-
-    .goal-side {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .goal-side .big {
-      font-size: 48px;
-      font-weight: 900;
-      color: var(--green);
-      line-height: 1;
-    }
-
-    .goal-side p {
-      color: var(--gray);
-      font-size: 13px;
-      line-height: 1.6;
-      margin-top: 10px;
-    }
-
-    /* =========================
-       ANALYTICS
-    ========================== */
-
-    .analytics-grid {
-      display: grid;
-      grid-template-columns: 1.5fr .5fr;
-      gap: 18px;
-    }
-
-    .chart-card,
-    .activity-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 10px 30px rgba(20,50,35,.06);
-    }
-
-    .chart-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 24px;
-      gap: 15px;
-    }
-
-    .chart-head h3,
-    .activity-card h3 {
-      font-size: 18px;
-    }
-
-    .period {
-      border: 1px solid var(--border);
-      background: white;
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .fake-chart {
-      height: 240px;
-      display: flex;
-      align-items: flex-end;
-      gap: 14px;
-      padding: 15px 4px 0;
-      border-bottom: 1px solid var(--border);
-      background:
-        repeating-linear-gradient(
-          to top,
-          transparent 0,
-          transparent 47px,
-          #eef3ef 48px
-        );
-    }
-
-    .bar-group {
-      flex: 1;
-      height: 100%;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-    }
-
-    .bar {
-      width: min(42px, 70%);
-      border-radius: 10px 10px 0 0;
-      background: linear-gradient(180deg, #31c98b, #08754b);
-      min-height: 20px;
-    }
-
-    .bar-labels {
-      display: flex;
-      gap: 14px;
-      padding-top: 9px;
-    }
-
-    .bar-labels span {
-      flex: 1;
-      text-align: center;
-      color: var(--gray);
-      font-size: 11px;
-    }
-
-    .activity-list {
-      margin-top: 19px;
-      display: grid;
-      gap: 13px;
-    }
-
-    .activity {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding-bottom: 13px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .activity:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .activity-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .activity-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: var(--green-light);
-    }
-
-    .activity strong {
-      display: block;
-      font-size: 13px;
-    }
-
-    .activity small {
-      color: var(--gray);
-      font-size: 11px;
-    }
-
-    .activity-value {
-      color: var(--green-dark);
-      font-weight: 800;
-      font-size: 13px;
-    }
-
-    /* =========================
-       REFERRAL + SERVICES
-    ========================== */
-
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .panel {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 10px 30px rgba(20,50,35,.06);
-    }
-
-    .panel h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .panel-description {
-      color: var(--gray);
-      font-size: 13px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .referral-box {
-      padding: 15px;
-      border-radius: 17px;
-      background: #f6faf7;
-      border: 1px dashed #b9cfc2;
-      font-size: 13px;
-      word-break: break-all;
-      margin-bottom: 14px;
-    }
-
-    .referral-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 9px;
-    }
-
-    .mini-stat {
-      background: var(--mint);
-      border-radius: 15px;
-      padding: 13px;
-    }
-
-    .mini-stat small {
-      display: block;
-      color: var(--gray);
-      font-size: 10px;
-      margin-bottom: 5px;
-    }
-
-    .mini-stat strong {
-      font-size: 17px;
-      color: var(--green-dark);
-    }
-
-    .service-list {
-      display: grid;
-      gap: 11px;
-    }
-
-    .service-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      padding: 13px;
-      border-radius: 15px;
-      background: #fafcfb;
-      border: 1px solid #edf1ee;
-    }
-
-    .service-name {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .service-name span {
-      width: 34px;
-      height: 34px;
-      border-radius: 11px;
-      display: grid;
-      place-items: center;
-      background: #fff0e5;
-    }
-
-    .service-income {
-      color: var(--green-dark);
-      font-weight: 800;
-      font-size: 13px;
-    }
-
-    /* =========================
-       MILESTONES
-    ========================== */
-
-    .milestones {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .milestone {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(20,50,35,.05);
-    }
-
-    .milestone-icon {
-      font-size: 30px;
-      margin-bottom: 11px;
-      filter: grayscale(1);
-      opacity: .45;
-    }
-
-    .milestone.active .milestone-icon {
-      filter: none;
-      opacity: 1;
-    }
-
-    .milestone strong {
-      display: block;
-      font-size: 15px;
-    }
-
-    .milestone small {
-      color: var(--gray);
-      display: block;
-      margin-top: 5px;
-      font-size: 11px;
-      line-height: 1.5;
-    }
-
-    /* =========================
-       SHARE
-    ========================== */
-
-    .share-panel {
-      background:
-        linear-gradient(135deg, #111111, #252525);
-      color: white;
-      border-radius: 30px;
-      padding: 28px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .share-panel h2 {
-      font-size: 24px;
-      margin-bottom: 7px;
-    }
-
-    .share-panel p {
-      color: rgba(255,255,255,.68);
-      font-size: 13px;
-      line-height: 1.6;
-      max-width: 620px;
-    }
-
-    .share-buttons {
-      display: flex;
-      gap: 9px;
-      flex-wrap: wrap;
-    }
-
-    .share-btn {
-      border: none;
-      padding: 13px 17px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-weight: 800;
-    }
-
-    .share-btn.facebook {
-      background: #1877f2;
-      color: white;
-    }
-
-    .share-btn.secret {
-      background: #333;
-      color: white;
-      border: 1px solid #555;
-    }
-
-    .share-btn:hover {
-      transform: translateY(-1px);
-    }
-
-    /* =========================
-       FOOTER
-    ========================== */
-
-    footer {
-      padding: 35px 0 50px;
-      text-align: center;
-      color: var(--gray);
-      font-size: 12px;
-    }
-
-    /* =========================
-       MODAL
-    ========================== */
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.55);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      z-index: 100;
-    }
-
-    .modal.show {
-      display: flex;
-    }
-
-    .modal-card {
-      width: min(520px, 100%);
-      background: white;
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 25px 80px rgba(0,0,0,.25);
-    }
-
-    .modal-card h2 {
-      margin-bottom: 8px;
-    }
-
-    .modal-card p {
-      color: var(--gray);
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    .share-preview {
-      margin: 18px 0;
-      padding: 20px;
-      border-radius: 20px;
-      background: var(--mint);
-      border: 1px solid #cdebd9;
-    }
-
-    .share-preview strong {
-      display: block;
-      font-size: 20px;
-      margin-bottom: 7px;
-      color: var(--green-dark);
-    }
-
-    .modal-actions {
-      display: flex;
-      gap: 9px;
-      flex-wrap: wrap;
-      margin-top: 17px;
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================== */
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .goal-wrap,
-      .analytics-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .income-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .milestones {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        width: min(100% - 20px, 1180px);
-      }
-
-      header {
-        padding: 12px 0;
-      }
-
-      .brand-mark {
-        width: 40px;
-        height: 40px;
-      }
-
-      .brand-text strong {
-        font-size: 14px;
-      }
-
-      .brand-text span {
-        font-size: 10px;
-      }
-
-      .back-btn {
-        padding: 9px 13px;
-        font-size: 11px;
-      }
-
-      .hero {
-        padding-top: 25px;
-      }
-
-      .hero-card,
-      .twin-card {
-        border-radius: 23px;
-        padding: 23px;
-      }
-
-      .hero-card h1 {
-        font-size: 38px;
-      }
-
-      .income-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-
-      .income-card {
-        padding: 17px;
-        border-radius: 19px;
-      }
-
-      .income-card strong {
-        font-size: 21px;
-      }
-
-      .goal-card,
-      .goal-side,
-      .chart-card,
-      .activity-card,
-      .panel {
-        padding: 20px;
-      }
-
-      .goal-top {
-        flex-direction: column;
-      }
-
-      .two-column {
-        grid-template-columns: 1fr;
-      }
-
-      .referral-stats {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
-      .milestones {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-
-      .share-panel {
-        grid-template-columns: 1fr;
-        border-radius: 23px;
-        padding: 22px;
-      }
-
-      .share-buttons {
-        width: 100%;
-      }
-
-      .share-btn {
-        flex: 1;
-      }
-
-      .fake-chart {
-        height: 190px;
-        gap: 7px;
-      }
-
-      .bar-labels {
-        gap: 7px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Income | FWORLD ONLINE</title>
+
+<meta
+name="description"
+content="FWORLD My Income — track your income, commissions, membership benefits, referrals, goals and progress."
+>
+
+<meta property="og:title" content="My Income | FWORLD ONLINE">
+<meta
+property="og:description"
+content="Your private FWORLD income dashboard."
+>
+
+<style>
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+:root {
+--black: #0b0b0d;
+--black-2: #151519;
+--black-3: #222228;
+
+--pink: #ff4f91;
+--pink-dark: #e83b7c;
+--pink-light: #ffe5ef;
+--pink-soft: #fff5f8;
+
+--white: #ffffff;
+--gray: #707078;
+--gray-light: #f4f4f6;
+--border: #e8e8ec;
+
+--silver: #aeb4bd;
+--gold: #c79b35;
+--gold-light: #f8efd5;
+
+--success: #16865b;
+
+--shadow: 0 18px 55px rgba(0,0,0,.08);
+--radius: 24px;
+}
+
+body {
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Arial,
+sans-serif;
+
+color: var(--black);
+
+background:
+radial-gradient(
+circle at top right,
+rgba(255,79,145,.09),
+transparent 30%
+),
+linear-gradient(
+180deg,
+#ffffff 0%,
+#fffafb 50%,
+#ffffff 100%
+);
+
+min-height: 100vh;
+}
+
+body.modal-open {
+overflow: hidden;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+button,
+select {
+font: inherit;
+}
+
+button {
+cursor: pointer;
+}
+
+.container {
+width: min(1180px, calc(100% - 32px));
+margin: auto;
+}
+
+/* =========================================
+HEADER
+========================================== */
+
+header {
+position: sticky;
+top: 0;
+z-index: 50;
+
+padding: 16px 0;
+
+background: rgba(255,255,255,.92);
+backdrop-filter: blur(16px);
+
+border-bottom: 1px solid rgba(232,232,236,.9);
+}
+
+.top-nav {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 18px;
+}
+
+.brand {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.brand-mark {
+width: 44px;
+height: 44px;
+
+border-radius: 14px;
+
+display: grid;
+place-items: center;
+
+background: var(--black);
+color: var(--white);
+
+font-size: 21px;
+font-weight: 900;
+}
+
+.brand-text strong {
+display: block;
+
+font-size: 15px;
+letter-spacing: .06em;
+}
+
+.brand-text span {
+display: block;
+
+color: var(--gray);
+
+font-size: 11px;
+margin-top: 2px;
+}
+
+.back-btn {
+padding: 11px 17px;
+
+border: 1px solid var(--border);
+background: var(--white);
+
+border-radius: 999px;
+
+font-size: 12px;
+font-weight: 800;
+
+transition: .2s ease;
+}
+
+.back-btn:hover {
+background: var(--black);
+color: var(--white);
+border-color: var(--black);
+}
+
+/* =========================================
+HERO
+========================================== */
+
+.hero {
+padding: 38px 0 25px;
+}
+
+.hero-grid {
+display: grid;
+grid-template-columns: 1.45fr .55fr;
+gap: 20px;
+align-items: stretch;
+}
+
+/* =========================================
+ELITE INCOME CARD
+========================================== */
+
+.income-card-stage {
+position: relative;
+overflow: hidden;
+
+min-height: 390px;
+
+padding: 25px;
+
+border-radius: 32px;
+
+background:
+radial-gradient(
+circle at 85% 15%,
+rgba(255,79,145,.16),
+transparent 27%
+),
+linear-gradient(
+135deg,
+#050506,
+#15151a 60%,
+#08080a
+);
+
+box-shadow:
+0 25px 70px rgba(0,0,0,.18);
+
+color: white;
+}
+
+.income-card-stage::before {
+content: "";
+
+position: absolute;
+
+width: 310px;
+height: 310px;
+
+right: -130px;
+bottom: -170px;
+
+border: 1px solid rgba(255,79,145,.25);
+border-radius: 50%;
+}
+
+.income-card-stage::after {
+content: "";
+
+position: absolute;
+
+width: 190px;
+height: 190px;
+
+right: -60px;
+bottom: -100px;
+
+border: 1px solid rgba(255,255,255,.08);
+border-radius: 50%;
+}
+
+.stage-top {
+position: relative;
+z-index: 2;
+
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+
+gap: 15px;
+
+margin-bottom: 23px;
+}
+
+.stage-brand {
+font-size: 12px;
+font-weight: 900;
+letter-spacing: .14em;
+}
+
+.stage-title {
+color: rgba(255,255,255,.58);
+
+font-size: 10px;
+font-weight: 800;
+
+letter-spacing: .16em;
+text-transform: uppercase;
+
+margin-top: 5px;
+}
+
+.member-level-pill {
+padding: 8px 12px;
+
+border: 1px solid rgba(255,79,145,.45);
+
+border-radius: 999px;
+
+color: #ff8bb6;
+
+background: rgba(255,79,145,.08);
+
+font-size: 10px;
+font-weight: 900;
+
+letter-spacing: .08em;
+}
+
+.elite-card {
+position: relative;
+z-index: 2;
+
+width: min(570px, 100%);
+min-height: 270px;
+
+margin: auto;
+
+padding: 27px;
+
+border-radius: 22px;
+
+overflow: hidden;
+
+box-shadow:
+0 25px 50px rgba(0,0,0,.28);
+
+transition: .25s ease;
+}
+
+.elite-card:hover {
+transform: translateY(-2px);
+}
+
+/* SILVER */
+
+.elite-card.silver {
+color: #17191d;
+
+background:
+linear-gradient(
+135deg,
+#f8f8fa 0%,
+#cfd3da 38%,
+#ffffff 62%,
+#aeb4bd 100%
+);
+
+border: 1px solid #c4c8cf;
+}
+
+/* GOLD */
+
+.elite-card.gold {
+color: #211a0a;
+
+background:
+linear-gradient(
+135deg,
+#f5e5af 0%,
+#c99d3b 38%,
+#fff1bd 63%,
+#a87920 100%
+);
+
+border: 1px solid #d2ad55;
+}
+
+/* BLACK */
+
+.elite-card.black {
+color: white;
+
+background:
+radial-gradient(
+circle at 82% 15%,
+rgba(255,79,145,.23),
+transparent 26%
+),
+linear-gradient(
+135deg,
+#060607,
+#19191e 48%,
+#050506
+);
+
+border: 1px solid rgba(255,255,255,.16);
+}
+
+.elite-card::before {
+content: "";
+
+position: absolute;
+
+width: 190px;
+height: 190px;
+
+right: -70px;
+top: -95px;
+
+border: 1px solid rgba(255,255,255,.24);
+
+border-radius: 50%;
+}
+
+.elite-card::after {
+content: "";
+
+position: absolute;
+
+width: 120px;
+height: 120px;
+
+right: -30px;
+top: -60px;
+
+border: 1px solid rgba(255,255,255,.12);
+
+border-radius: 50%;
+}
+
+.card-row {
+position: relative;
+z-index: 2;
+
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+
+gap: 15px;
+}
+
+.card-brand {
+font-size: 12px;
+font-weight: 950;
+
+letter-spacing: .15em;
+}
+
+.card-subtitle {
+margin-top: 4px;
+
+font-size: 8px;
+font-weight: 800;
+
+letter-spacing: .16em;
+text-transform: uppercase;
+
+opacity: .6;
+}
+
+.card-chip {
+width: 43px;
+height: 33px;
+
+border-radius: 8px;
+
+background:
+linear-gradient(
+135deg,
+#d8d8d8,
+#8c8c8c
+);
+
+border: 1px solid rgba(0,0,0,.25);
+
+position: relative;
+}
+
+.card-chip::after {
+content: "";
+
+position: absolute;
+
+inset: 7px;
+
+border: 1px solid rgba(0,0,0,.35);
+border-radius: 5px;
+}
+
+.card-level {
+position: relative;
+z-index: 2;
+
+margin-top: 25px;
+
+font-size: 10px;
+
+font-weight: 900;
+
+letter-spacing: .16em;
+text-transform: uppercase;
+}
+
+.card-total-label {
+position: relative;
+z-index: 2;
+
+margin-top: 9px;
+
+font-size: 8px;
+
+font-weight: 800;
+
+letter-spacing: .14em;
+text-transform: uppercase;
+
+opacity: .6;
+}
+
+.card-total {
+position: relative;
+z-index: 2;
+
+margin-top: 3px;
+
+font-size: clamp(30px, 5vw, 44px);
+
+font-weight: 900;
+
+letter-spacing: -.04em;
+}
+
+.card-bottom {
+position: absolute;
+
+left: 27px;
+right: 27px;
+bottom: 24px;
+
+z-index: 2;
+
+display: grid;
+
+grid-template-columns: 1.4fr .8fr;
+
+gap: 15px;
+}
+
+.card-person small {
+display: block;
+
+font-size: 7px;
+
+text-transform: uppercase;
+
+letter-spacing: .12em;
+
+opacity: .55;
+
+margin-bottom: 3px;
+}
+
+.card-person strong {
+display: block;
+
+font-size: 11px;
+
+letter-spacing: .05em;
+
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.card-id {
+text-align: right;
+}
+
+.card-id strong {
+font-size: 10px;
+
+letter-spacing: .08em;
+}
+
+.stage-note {
+position: relative;
+z-index: 2;
+
+margin-top: 15px;
+
+text-align: center;
+
+color: rgba(255,255,255,.52);
+
+font-size: 10px;
+}
+
+/* =========================================
+AI TWIN
+========================================== */
+
+.twin-card {
+background: var(--white);
+
+border: 1px solid var(--border);
+
+border-radius: 30px;
+
+padding: 27px;
+
+box-shadow: var(--shadow);
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.twin-icon {
+width: 60px;
+height: 60px;
+
+display: grid;
+place-items: center;
+
+border-radius: 19px;
+
+background: var(--pink-light);
+
+font-size: 28px;
+
+margin-bottom: 16px;
+}
+
+.twin-card h2 {
+font-size: 21px;
+margin-bottom: 8px;
+}
+
+.twin-card p {
+color: var(--gray);
+
+line-height: 1.65;
+
+font-size: 14px;
+}
+
+/* =========================================
+GENERAL SECTION
+========================================== */
+
+.section {
+padding: 18px 0 32px;
+}
+
+.section-title {
+margin-bottom: 16px;
+}
+
+.section-title h2 {
+font-size: 24px;
+}
+
+.section-title p {
+color: var(--gray);
+
+font-size: 13px;
+
+margin-top: 5px;
+}
+
+/* =========================================
+4 WAYS TO EARN
+========================================== */
+
+.ways-section {
+padding-top: 12px;
+}
+
+.ways-header {
+display: flex;
+
+justify-content: space-between;
+align-items: flex-end;
+
+gap: 15px;
+
+margin-bottom: 17px;
+}
+
+.ways-badge {
+display: inline-flex;
+
+padding: 7px 12px;
+
+border-radius: 999px;
+
+background: var(--pink-light);
+color: var(--pink-dark);
+
+font-size: 10px;
+
+font-weight: 900;
+
+letter-spacing: .1em;
+text-transform: uppercase;
+
+margin-bottom: 8px;
+}
+
+.ways-header h2 {
+font-size: clamp(25px, 4vw, 34px);
+line-height: 1.05;
+}
+
+.ways-header p {
+max-width: 550px;
+
+color: var(--gray);
+
+font-size: 13px;
+
+line-height: 1.6;
+}
+
+.ways-grid {
+display: grid;
+
+grid-template-columns: repeat(4, 1fr);
+
+gap: 14px;
+}
+
+.way-card {
+position: relative;
+
+background: white;
+
+border: 1px solid var(--border);
+
+border-radius: 22px;
+
+padding: 22px;
+
+box-shadow: 0 12px 35px rgba(0,0,0,.05);
+
+overflow: hidden;
+}
+
+.way-card::before {
+content: "";
+
+position: absolute;
+
+top: 0;
+left: 0;
+right: 0;
+
+height: 4px;
+
+background: var(--pink);
+}
+
+.way-number {
+color: var(--pink);
+
+font-size: 11px;
+
+font-weight: 900;
+
+letter-spacing: .1em;
+}
+
+.way-icon {
+width: 48px;
+height: 48px;
+
+display: grid;
+place-items: center;
+
+border-radius: 15px;
+
+background: var(--pink-soft);
+
+font-size: 22px;
+
+margin: 13px 0;
+}
+
+.way-card h3 {
+font-size: 17px;
+
+margin-bottom: 9px;
+}
+
+.way-card p {
+color: var(--gray);
+
+font-size: 12px;
+
+line-height: 1.6;
+
+margin-bottom: 15px;
+}
+
+.earn-row {
+display: flex;
+
+justify-content: space-between;
+align-items: center;
+
+gap: 8px;
+
+padding: 9px 0;
+
+border-top: 1px solid var(--border);
+
+font-size: 11px;
+}
+
+.earn-row strong {
+color: var(--pink-dark);
+white-space: nowrap;
+}
+
+.way-total {
+margin-top: 10px;
+
+padding: 10px;
+
+border-radius: 12px;
+
+background: var(--black);
+
+color: white;
+
+font-size: 10px;
+
+font-weight: 800;
+
+text-align: center;
+}
+
+/* =========================================
+INCOME OVERVIEW
+========================================== */
+
+.income-grid {
+display: grid;
+
+grid-template-columns: repeat(4, 1fr);
+
+gap: 14px;
+}
+
+.income-overview-card {
+background: white;
+
+border: 1px solid var(--border);
+
+border-radius: var(--radius);
+
+padding: 21px;
+
+box-shadow: 0 10px 30px rgba(0,0,0,.045);
+}
+
+.income-icon {
+width: 42px;
+height: 42px;
+
+display: grid;
+place-items: center;
+
+border-radius: 14px;
+
+background: var(--pink-light);
+
+font-size: 19px;
+
+margin-bottom: 16px;
+}
+
+.income-overview-card small {
+color: var(--gray);
+
+font-size: 11px;
+
+display: block;
+
+margin-bottom: 6px;
+}
+
+.income-overview-card strong {
+font-size: 25px;
+}
+
+/* =========================================
+GOAL
+========================================== */
+
+.goal-wrap {
+display: grid;
+
+grid-template-columns: 1.35fr .65fr;
+
+gap: 18px;
+}
+
+.goal-card,
+.goal-side {
+background: white;
+
+border: 1px solid var(--border);
+
+border-radius: var(--radius);
+
+padding: 26px;
+
+box-shadow: 0 10px 30px rgba(0,0,0,.045);
+}
+
+.goal-card {
+background:
+radial-gradient(
+circle at top right,
+var(--pink-light),
+transparent 35%
+),
+white;
+}
+
+.goal-top {
+display: flex;
+
+justify-content: space-between;
+align-items: flex-start;
+
+gap: 15px;
+
+margin-bottom: 20px;
+}
+
+.goal-label {
+color: var(--gray);
+
+font-size: 11px;
+
+text-transform: uppercase;
+
+letter-spacing: .08em;
+
+font-weight: 800;
+}
+
+.goal-number {
+font-size: 38px;
+
+font-weight: 900;
+
+margin-top: 5px;
+}
+
+.goal-date {
+background: var(--pink-light);
+
+color: var(--pink-dark);
+
+padding: 8px 11px;
+
+border-radius: 999px;
+
+font-size: 11px;
+
+font-weight: 800;
+
+white-space: nowrap;
+}
+
+.progress {
+height: 17px;
+
+border-radius: 999px;
+
+background: #eeeeF2;
+
+overflow: hidden;
+}
+
+.progress-bar {
+width: 57%;
+
+height: 100%;
+
+border-radius: inherit;
+
+background:
+linear-gradient(
+90deg,
+var(--black),
+var(--pink)
+);
+}
+
+.progress-info {
+display: flex;
+
+justify-content: space-between;
+
+gap: 12px;
+
+margin-top: 10px;
+
+font-size: 12px;
+
+color: var(--gray);
+}
+
+.progress-info strong {
+color: var(--pink-dark);
+}
+
+.goal-actions {
+display: flex;
+
+gap: 10px;
+
+flex-wrap: wrap;
+
+margin-top: 22px;
+}
+
+.btn {
+border: none;
+
+border-radius: 999px;
+
+padding: 12px 17px;
+
+font-weight: 800;
+
+transition: .2s ease;
+}
+
+.btn-primary {
+background: var(--black);
+color: white;
+}
+
+.btn-primary:hover {
+background: var(--pink);
+}
+
+.btn-light {
+background: var(--pink-light);
+color: var(--pink-dark);
+}
+
+.btn-light:hover {
+background: #ffd1e1;
+}
+
+.goal-side {
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+}
+
+.goal-side .big {
+font-size: 48px;
+
+font-weight: 950;
+
+color: var(--pink);
+
+line-height: 1;
+}
+
+.goal-side p {
+color: var(--gray);
+
+font-size: 13px;
+
+line-height: 1.6;
+
+margin-top: 10px;
+}
+
+/* =========================================
+ANALYTICS
+========================================== */
+
+.analytics-grid {
+display: grid;
+
+grid-template-columns: 1.5fr .5fr;
+
+gap: 18px;
+}
+
+.chart-card,
+.activity-card {
+background: white;
+
+border: 1px solid var(--border);
+
+border-radius: var(--radius);
+
+padding: 24px;
+
+box-shadow: 0 10px 30px rgba(0,0,0,.045);
+}
+
+.chart-head {
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+margin-bottom: 24px;
+
+gap: 15px;
+}
+
+.chart-head h3,
+.activity-card h3 {
+font-size: 18px;
+}
+
+.period {
+border: 1px solid var(--border);
+
+background: white;
+
+border-radius: 999px;
+
+padding: 8px 12px;
+
+font-size: 11px;
+
+font-weight: 700;
+}
+
+.fake-chart {
+height: 240px;
+
+display: flex;
+
+align-items: flex-end;
+
+gap: 14px;
+
+padding: 15px 4px 0;
+
+border-bottom: 1px solid var(--border);
+
+background:
+repeating-linear-gradient(
+to top,
+transparent 0,
+transparent 47px,
+#f1f1f3 48px
+);
+}
+
+.bar-group {
+flex: 1;
+
+height: 100%;
+
+display: flex;
+
+align-items: flex-end;
+
+justify-content: center;
+}
+
+.bar {
+width: min(42px, 70%);
+
+border-radius: 10px 10px 0 0;
+
+background:
+linear-gradient(
+180deg,
+var(--pink),
+var(--black)
+);
+
+min-height: 20px;
+}
+
+.bar-labels {
+display: flex;
+
+gap: 14px;
+
+padding-top: 9px;
+}
+
+.bar-labels span {
+flex: 1;
+
+text-align: center;
+
+color: var(--gray);
+
+font-size: 10px;
+}
+
+.activity-list {
+margin-top: 19px;
+
+display: grid;
+
+gap: 13px;
+}
+
+.activity {
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+gap: 12px;
+
+padding-bottom: 13px;
+
+border-bottom: 1px solid var(--border);
+}
+
+.activity:last-child {
+border-bottom: none;
+
+padding-bottom: 0;
+}
+
+.activity-left {
+display: flex;
+
+align-items: center;
+
+gap: 10px;
+}
+
+.activity-icon {
+width: 38px;
+height: 38px;
+
+border-radius: 12px;
+
+display: grid;
+place-items: center;
+
+background: var(--pink-light);
+}
+
+.activity strong {
+display: block;
+
+font-size: 13px;
+}
+
+.activity small {
+color: var(--gray);
+
+font-size: 10px;
+}
+
+.activity-value {
+color: var(--pink-dark);
+
+font-weight: 800;
+
+font-size: 13px;
+}
+
+/* =========================================
+REFERRAL + SERVICES
+========================================== */
+
+.two-column {
+display: grid;
+
+grid-template-columns: 1fr 1fr;
+
+gap: 18px;
+}
+
+.panel {
+background: white;
+
+border: 1px solid var(--border);
+
+border-radius: var(--radius);
+
+padding: 24px;
+
+box-shadow: 0 10px 30px rgba(0,0,0,.045);
+}
+
+.panel h3 {
+font-size: 18px;
+
+margin-bottom: 8px;
+}
+
+.panel-description {
+color: var(--gray);
+
+font-size: 13px;
+
+line-height: 1.6;
+
+margin-bottom: 20px;
+}
+
+.referral-box {
+padding: 15px;
+
+border-radius: 17px;
+
+background: var(--pink-soft);
+
+border: 1px dashed #f2a6c1;
+
+font-size: 12px;
+
+word-break: break-all;
+
+margin-bottom: 14px;
+}
+
+.referral-stats {
+display: grid;
+
+grid-template-columns: repeat(3, 1fr);
+
+gap: 9px;
+}
+
+.mini-stat {
+background: var(--gray-light);
+
+border-radius: 15px;
+
+padding: 13px;
+}
+
+.mini-stat small {
+display: block;
+
+color: var(--gray);
+
+font-size: 10px;
+
+margin-bottom: 5px;
+}
+
+.mini-stat strong {
+font-size: 17px;
+
+color: var(--pink-dark);
+}
+
+.service-list {
+display: grid;
+
+gap: 11px;
+}
+
+.service-row {
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+gap: 10px;
+
+padding: 13px;
+
+border-radius: 15px;
+
+background: #fafafa;
+
+border: 1px solid #eeeeef;
+}
+
+.service-name {
+display: flex;
+
+align-items: center;
+
+gap: 10px;
+
+font-size: 13px;
+
+font-weight: 700;
+}
+
+.service-name span {
+width: 34px;
+height: 34px;
+
+border-radius: 11px;
+
+display: grid;
+place-items: center;
+
+background: var(--pink-light);
+}
+
+.service-income {
+color: var(--pink-dark);
+
+font-weight: 800;
+
+font-size: 13px;
+}
+
+/* =========================================
+MEMBERSHIP CARDS
+========================================== */
+
+.membership-section {
+padding-top: 8px;
+}
+
+.membership-grid {
+display: grid;
+
+grid-template-columns: repeat(3, 1fr);
+
+gap: 16px;
+}
+
+.membership-option {
+border: none;
+
+background: transparent;
+
+padding: 0;
+
+text-align: left;
+}
+
+.mini-card {
+position: relative;
+
+min-height: 205px;
+
+border-radius: 20px;
+
+padding: 21px;
+
+overflow: hidden;
+
+box-shadow: 0 15px 40px rgba(0,0,0,.10);
+
+transition: .22s ease;
+
+cursor: pointer;
+}
+
+.membership-option:hover .mini-card {
+transform: translateY(-4px);
+}
+
+.mini-card.silver {
+color: #15171b;
+
+background:
+linear-gradient(
+135deg,
+#f5f6f8,
+#c5cad1,
+#ffffff,
+#aeb4bd
+);
+}
+
+.mini-card.gold {
+color: #211a0a;
+
+background:
+linear-gradient(
+135deg,
+#f3e0a0,
+#c79a35,
+#fff1b9,
+#a67620
+);
+}
+
+.mini-card.black {
+color: white;
+
+background:
+radial-gradient(
+circle at 80% 15%,
+rgba(255,79,145,.22),
+transparent 25%
+),
+linear-gradient(
+135deg,
+#050506,
+#1b1b20,
+#050506
+);
+}
+
+.mini-card-top {
+display: flex;
+
+justify-content: space-between;
+
+align-items: flex-start;
+}
+
+.mini-brand {
+font-size: 10px;
+
+font-weight: 900;
+
+letter-spacing: .12em;
+}
+
+.mini-chip {
+width: 34px;
+height: 25px;
+
+border-radius: 6px;
+
+background:
+linear-gradient(
+135deg,
+#d8d8d8,
+#888
+);
+}
+
+.mini-level {
+margin-top: 29px;
+
+font-size: 18px;
+
+font-weight: 950;
+
+letter-spacing: .08em;
+}
+
+.mini-token {
+margin-top: 5px;
+
+font-size: 10px;
+
+font-weight: 700;
+
+opacity: .68;
+}
+
+.mini-value {
+position: absolute;
+
+left: 21px;
+bottom: 19px;
+
+font-size: 12px;
+
+font-weight: 900;
+}
+
+.current-label {
+position: absolute;
+
+right: 16px;
+bottom: 17px;
+
+padding: 5px 8px;
+
+border-radius: 999px;
+
+background: var(--pink);
+
+color: white;
+
+font-size: 8px;
+
+font-weight: 900;
+
+letter-spacing: .08em;
+
+opacity: 0;
+
+transition: .2s ease;
+}
+
+.membership-option.current .current-label {
+opacity: 1;
+}
+
+/* =========================================
+MILESTONES
+========================================== */
+
+.milestones {
+display: grid;
+
+grid-template-columns: repeat(4, 1fr);
+
+gap: 14px;
+}
+
+.milestone {
+background: white;
+
+border: 1px solid var(--border);
+
+border-radius: var(--radius);
+
+padding: 22px;
+
+text-align: center;
+
+box-shadow: 0 10px 30px rgba(0,0,0,.04);
+}
+
+.milestone-icon {
+font-size: 30px;
+
+margin-bottom: 11px;
+
+filter: grayscale(1);
+
+opacity: .4;
+}
+
+.milestone.active .milestone-icon {
+filter: none;
+
+opacity: 1;
+}
+
+.milestone strong {
+display: block;
+
+font-size: 15px;
+}
+
+.milestone small {
+color: var(--gray);
+
+display: block;
+
+margin-top: 5px;
+
+font-size: 10px;
+
+line-height: 1.5;
+}
+
+/* =========================================
+SHARE
+========================================== */
+
+.share-panel {
+background:
+linear-gradient(
+135deg,
+#09090a,
+#1b1b20
+);
+
+color: white;
+
+border-radius: 30px;
+
+padding: 28px;
+
+display: grid;
+
+grid-template-columns: 1fr auto;
+
+gap: 20px;
+
+align-items: center;
+}
+
+.share-panel h2 {
+font-size: 24px;
+
+margin-bottom: 7px;
+}
+
+.share-panel p {
+color: rgba(255,255,255,.65);
+
+font-size: 13px;
+
+line-height: 1.6;
+
+max-width: 620px;
+}
+
+.share-buttons {
+display: flex;
+
+gap: 9px;
+
+flex-wrap: wrap;
+}
+
+.share-btn {
+border: none;
+
+padding: 13px 17px;
+
+border-radius: 999px;
+
+cursor: pointer;
+
+font-weight: 800;
+}
+
+.share-btn.facebook {
+background: var(--pink);
+
+color: white;
+}
+
+.share-btn.secret {
+background: #2b2b30;
+
+color: white;
+
+border: 1px solid #44444a;
+}
+
+.share-btn:hover {
+transform: translateY(-1px);
+}
+
+/* =========================================
+FOOTER
+========================================== */
+
+footer {
+padding: 35px 0 50px;
+
+text-align: center;
+
+color: var(--gray);
+
+font-size: 11px;
+}
+
+/* =========================================
+MODALS
+========================================== */
+
+.modal {
+position: fixed;
+
+inset: 0;
+
+background: rgba(0,0,0,.68);
+
+display: none;
+
+align-items: center;
+justify-content: center;
+
+padding: 18px;
+
+z-index: 100;
+}
+
+.modal.show {
+display: flex;
+}
+
+.modal-card {
+width: min(560px, 100%);
+
+max-height: 92vh;
+
+overflow-y: auto;
+
+background: white;
+
+border-radius: 28px;
+
+padding: 27px;
+
+box-shadow:
+0 30px 100px rgba(0,0,0,.30);
+}
+
+.modal-top {
+display: flex;
+
+justify-content: space-between;
+
+align-items: flex-start;
+
+gap: 15px;
+
+margin-bottom: 18px;
+}
+
+.modal-top h2 {
+font-size: 22px;
+}
+
+.close-btn {
+width: 38px;
+height: 38px;
+
+border: 1px solid var(--border);
+
+background: white;
+
+border-radius: 50%;
+
+font-size: 17px;
+
+flex-shrink: 0;
+}
+
+.modal-description {
+color: var(--gray);
+
+font-size: 13px;
+
+line-height: 1.6;
+}
+
+/* =========================================
+MEMBERSHIP POPUP CARD
+========================================== */
+
+.popup-elite-card {
+position: relative;
+
+min-height: 260px;
+
+border-radius: 22px;
+
+padding: 25px;
+
+margin: 20px 0;
+
+overflow: hidden;
+
+box-shadow: 0 20px 45px rgba(0,0,0,.18);
+}
+
+.popup-elite-card.silver {
+color: #15171b;
+
+background:
+linear-gradient(
+135deg,
+#f6f7f9,
+#c4c9d0,
+white,
+#aeb4bd
+);
+}
+
+.popup-elite-card.gold {
+color: #211a0a;
+
+background:
+linear-gradient(
+135deg,
+#f2df9f,
+#c79b35,
+#fff1bb,
+#a87920
+);
+}
+
+.popup-elite-card.black {
+color: white;
+
+background:
+radial-gradient(
+circle at 82% 15%,
+rgba(255,79,145,.25),
+transparent 26%
+),
+linear-gradient(
+135deg,
+#050506,
+#19191e,
+#050506
+);
+}
+
+.popup-card-level {
+margin-top: 45px;
+
+font-size: 23px;
+
+font-weight: 950;
+
+letter-spacing: .08em;
+}
+
+.popup-card-value {
+margin-top: 6px;
+
+font-size: 13px;
+
+font-weight: 800;
+
+opacity: .7;
+}
+
+.benefits-title {
+font-size: 16px;
+
+margin-bottom: 10px;
+}
+
+.benefits-list {
+display: grid;
+
+gap: 9px;
+
+list-style: none;
+}
+
+.benefits-list li {
+display: flex;
+
+align-items: flex-start;
+
+gap: 9px;
+
+padding: 10px 0;
+
+border-bottom: 1px solid var(--border);
+
+color: #303038;
+
+font-size: 12px;
+
+line-height: 1.5;
+}
+
+.benefits-list li:last-child {
+border-bottom: none;
+}
+
+.benefit-check {
+color: var(--pink);
+
+font-weight: 900;
+}
+
+/* =========================================
+SHARE / GOAL MODAL
+========================================== */
+
+.share-preview {
+margin: 18px 0;
+
+padding: 20px;
+
+border-radius: 20px;
+
+background: var(--pink-soft);
+
+border: 1px solid #ffd3e2;
+}
+
+.share-preview strong {
+display: block;
+
+font-size: 19px;
+
+margin-bottom: 7px;
+
+color: var(--black);
+}
+
+.share-preview p {
+color: var(--gray);
+
+line-height: 1.6;
+
+font-size: 13px;
+}
+
+.modal-actions {
+display: flex;
+
+gap: 9px;
+
+flex-wrap: wrap;
+
+margin-top: 17px;
+}
+
+/* =========================================
+RESPONSIVE
+========================================== */
+
+@media (max-width: 1000px) {
+
+.hero-grid {
+grid-template-columns: 1fr;
+}
+
+.ways-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.income-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.goal-wrap,
+.analytics-grid {
+grid-template-columns: 1fr;
+}
+
+.membership-grid {
+grid-template-columns: repeat(3, 1fr);
+}
+
+.milestones {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (max-width: 700px) {
+
+.container {
+width: min(100% - 20px, 1180px);
+}
+
+header {
+padding: 11px 0;
+}
+
+.brand-mark {
+width: 40px;
+height: 40px;
+}
+
+.brand-text strong {
+font-size: 13px;
+}
+
+.brand-text span {
+font-size: 9px;
+}
+
+.back-btn {
+padding: 9px 12px;
+
+font-size: 10px;
+}
+
+.hero {
+padding-top: 22px;
+}
+
+.income-card-stage {
+min-height: 365px;
+
+padding: 18px;
+
+border-radius: 25px;
+}
+
+.elite-card {
+min-height: 260px;
+
+padding: 22px;
+
+border-radius: 19px;
+}
+
+.card-bottom {
+left: 22px;
+right: 22px;
+bottom: 20px;
+}
+
+.ways-header {
+display: block;
+}
+
+.ways-grid {
+grid-template-columns: 1fr;
+}
+
+.income-grid {
+grid-template-columns: 1fr 1fr;
+
+gap: 10px;
+}
+
+.income-overview-card {
+padding: 17px;
+
+border-radius: 19px;
+}
+
+.income-overview-card strong {
+font-size: 21px;
+}
+
+.goal-card,
+.goal-side,
+.chart-card,
+.activity-card,
+.panel {
+padding: 20px;
+}
+
+.goal-top {
+flex-direction: column;
+}
+
+.two-column {
+grid-template-columns: 1fr;
+}
+
+.membership-grid {
+grid-template-columns: 1fr;
+}
+
+.mini-card {
+min-height: 190px;
+}
+
+.milestones {
+grid-template-columns: 1fr 1fr;
+
+gap: 10px;
+}
+
+.share-panel {
+grid-template-columns: 1fr;
+
+border-radius: 23px;
+
+padding: 22px;
+}
+
+.share-buttons {
+width: 100%;
+}
+
+.share-btn {
+flex: 1;
+}
+
+.fake-chart {
+height: 190px;
+
+gap: 7px;
+}
+
+.bar-labels {
+gap: 7px;
+}
+
+.progress-info {
+flex-wrap: wrap;
+}
+}
+
+@media (max-width: 420px) {
+
+.income-card-stage {
+min-height: 345px;
+}
+
+.elite-card {
+min-height: 245px;
+}
+
+.card-total {
+font-size: 28px;
+}
+
+.card-person strong {
+max-width: 150px;
+}
+
+.membership-grid {
+gap: 12px;
+}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+<!-- =========================================
+HEADER
+========================================== -->
 
-  <header>
-    <div class="container top-nav">
+<header>
 
-      <a href="fworld-dashboard.html" class="brand">
-        <div class="brand-mark">F</div>
+<div class="container top-nav">
 
-        <div class="brand-text">
-          <strong>FWORLD ONLINE</strong>
-          <span>Your Digital Space</span>
-        </div>
-      </a>
+<a href="fworld-dashboard.html" class="brand">
 
-      <a href="fworld-dashboard.html" class="back-btn">
-        ← Back to My Digital Space
-      </a>
+<div class="brand-mark">
+F
+</div>
 
-    </div>
-  </header>
+<div class="brand-text">
+<strong>FWORLD ONLINE</strong>
+<span>Your Digital Space</span>
+</div>
 
+</a>
 
-  <main>
+<a
+href="fworld-dashboard.html"
+class="back-btn"
+>
+← Back to My Digital Space
+</a>
 
-    <!-- =========================
-         HERO
-    ========================== -->
+</div>
 
-    <section class="hero">
-      <div class="container hero-grid">
+</header>
 
-        <div class="hero-card">
 
-          <div class="eyebrow">
-            💚 Income World
-          </div>
+<main>
 
-          <h1>My Income</h1>
+<!-- =========================================
+ELITE INCOME CARD
+========================================== -->
 
-          <p>
-            Track your earnings, follow your goals, understand your activity,
-            and see your progress inside your FWORLD Digital Space.
-          </p>
+<section class="hero">
 
-          <div class="hero-amount">
-            <small>Total Earned</small>
-            <strong>$570.00</strong>
-          </div>
+<div class="container hero-grid">
 
-        </div>
+<div class="income-card-stage">
 
+<div class="stage-top">
 
-        <div class="twin-card">
+<div>
+<div class="stage-brand">
+FWORLD ONLINE
+</div>
 
-          <div class="twin-icon">🤖</div>
+<div class="stage-title">
+MY INCOME
+</div>
+</div>
 
-          <h2>Your AI Twin</h2>
+<div
+class="member-level-pill"
+id="stageMembership"
+>
+BLACK MEMBER
+</div>
 
-          <p>
-            “Let’s keep an eye on your goal. Every step you take
-            becomes part of your FWORLD journey.”
-          </p>
+</div>
 
-        </div>
 
-      </div>
-    </section>
+<div
+class="elite-card black"
+id="mainEliteCard"
+>
 
+<div class="card-row">
 
-    <!-- =========================
-         INCOME OVERVIEW
-    ========================== -->
+<div>
+<div class="card-brand">
+FWORLD
+</div>
 
-    <section class="section">
-      <div class="container">
+<div class="card-subtitle">
+Elite Member
+</div>
+</div>
 
-        <div class="section-title">
-          <h2>Income Overview</h2>
-          <p>Your current income summary.</p>
-        </div>
+<div class="card-chip"></div>
 
-        <div class="income-grid">
+</div>
 
-          <div class="income-card green">
-            <div class="icon">💰</div>
-            <small>Available Income</small>
-            <strong>$420.00</strong>
-          </div>
 
-          <div class="income-card orange">
-            <div class="icon">⏳</div>
-            <small>Pending Income</small>
-            <strong>$150.00</strong>
-          </div>
+<div
+class="card-level"
+id="mainCardLevel"
+>
+BLACK TOKEN
+</div>
 
-          <div class="income-card purple">
-            <div class="icon">📅</div>
-            <small>This Month</small>
-            <strong>$570.00</strong>
-          </div>
 
-          <div class="income-card blue">
-            <div class="icon">📈</div>
-            <small>Successful Referrals</small>
-            <strong>24</strong>
-          </div>
+<div class="card-total-label">
+TOTAL INCOME
+</div>
 
-        </div>
+<div
+class="card-total"
+id="mainTotalIncome"
+>
+$570.00
+</div>
 
-      </div>
-    </section>
 
+<div class="card-bottom">
 
-    <!-- =========================
-         GOAL TRACKING
-    ========================== -->
+<div class="card-person">
 
-    <section class="section">
-      <div class="container">
+<small>
+MEMBER NAME
+</small>
 
-        <div class="section-title">
-          <h2>🎯 Goal Tracking</h2>
-          <p>Your goal. Your journey. Your progress.</p>
-        </div>
+<strong id="mainMemberName">
+Fatima Biston
+</strong>
 
-        <div class="goal-wrap">
+</div>
 
-          <div class="goal-card">
 
-            <div class="goal-top">
+<div class="card-id">
 
-              <div>
-                <div class="goal-label">My Monthly Goal</div>
-                <div class="goal-number">$1,000</div>
-              </div>
+<small>
+MEMBER ID
+</small>
 
-              <div class="goal-date">
-                Target: Oct 31, 2026
-              </div>
+<strong id="mainMemberId">
+FW-000001
+</strong>
 
-            </div>
+</div>
 
-            <div class="progress">
-              <div class="progress-bar"></div>
-            </div>
+</div>
 
-            <div class="progress-info">
-              <span>Current: <strong>$570</strong></span>
-              <span>57% achieved</span>
-              <span>Remaining: <strong>$430</strong></span>
-            </div>
+</div>
 
-            <div class="goal-actions">
-              <button class="btn btn-primary" onclick="openGoalModal()">
-                ✏️ Edit My Goal
-              </button>
 
-              <button class="btn btn-light" onclick="openShareModal()">
-                🔗 Share Goal
-              </button>
+<div class="stage-note">
+Your membership card is determined by your FWORLD account.
+</div>
 
-              <button class="btn btn-light" onclick="keepSecret()">
-                🔒 Keep It Secret
-              </button>
-            </div>
+</div>
 
-          </div>
 
+<!-- AI TWIN -->
 
-          <div class="goal-side">
+<div class="twin-card">
 
-            <div class="big">57%</div>
+<div class="twin-icon">
+🤖
+</div>
 
-            <p>
-              You are more than halfway toward your current goal.
-              Keep building your FWORLD journey one step at a time.
-            </p>
+<h2>
+Your AI Twin
+</h2>
 
-          </div>
+<p>
+“Let’s keep an eye on your goal.
+Every step you take becomes part of your
+FWORLD journey.”
+</p>
 
-        </div>
+</div>
 
-      </div>
-    </section>
+</div>
 
+</section>
 
-    <!-- =========================
-         ANALYTICS
-    ========================== -->
 
-    <section class="section">
-      <div class="container">
+<!-- =========================================
+4 WAYS TO EARN
+========================================== -->
 
-        <div class="section-title">
-          <h2>📊 Income Analytics</h2>
-          <p>Understand your income activity over time.</p>
-        </div>
+<section class="section ways-section">
 
-        <div class="analytics-grid">
+<div class="container">
 
-          <div class="chart-card">
+<div class="ways-header">
 
-            <div class="chart-head">
-              <h3>Income Activity</h3>
+<div>
 
-              <select class="period">
-                <option>Last 6 Months</option>
-                <option>Last 12 Months</option>
-                <option>This Year</option>
-              </select>
-            </div>
+<div class="ways-badge">
+FWORLD EARNING SYSTEM
+</div>
 
-            <!-- Front-end chart visualization -->
-            <div class="fake-chart">
+<h2>
+4 WAYS TO EARN
+</h2>
 
-              <div class="bar-group">
-                <div class="bar" style="height: 28%;"></div>
-              </div>
+</div>
 
-              <div class="bar-group">
-                <div class="bar" style="height: 42%;"></div>
-              </div>
+<p>
+Your eligible commissions are recorded by the
+FWORLD Commission Engine and reflected in your
+Commission Ledger.
+</p>
 
-              <div class="bar-group">
-                <div class="bar" style="height: 36%;"></div>
-              </div>
+</div>
 
-              <div class="bar-group">
-                <div class="bar" style="height: 58%;"></div>
-              </div>
 
-              <div class="bar-group">
-                <div class="bar" style="height: 76%;"></div>
-              </div>
+<div class="ways-grid">
 
-              <div class="bar-group">
-                <div class="bar" style="height: 57%;"></div>
-              </div>
+<!-- WAY 1 -->
 
-            </div>
+<div class="way-card">
 
-            <div class="bar-labels">
-              <span>May</span>
-              <span>Jun</span>
-              <span>Jul</span>
-              <span>Aug</span>
-              <span>Sep</span>
-              <span>Oct</span>
-            </div>
+<div class="way-number">
+01
+</div>
 
-          </div>
+<div class="way-icon">
+🛍️
+</div>
 
+<h3>
+Direct Selling
+</h3>
 
-          <div class="activity-card">
+<p>
+Earn from qualifying FWORLD products,
+services and travel transactions.
+</p>
 
-            <h3>Quick Analytics</h3>
+<div class="earn-row">
+<span>
+FWORLD Products
+</span>
 
-            <div class="activity-list">
+<strong>
+10%
+</strong>
+</div>
 
-              <div class="activity">
-                <div class="activity-left">
-                  <div class="activity-icon">🤝</div>
-                  <div>
-                    <strong>Direct Referral</strong>
-                    <small>3%</small>
-                  </div>
-                </div>
+<div class="earn-row">
+<span>
+Services / Travel
+</span>
 
-                <div class="activity-value">$150</div>
-              </div>
+<strong>
+3%
+</strong>
+</div>
 
+<div class="way-total">
+PRODUCT + SERVICE SALES
+</div>
 
-              <div class="activity">
-                <div class="activity-left">
-                  <div class="activity-icon">👥</div>
-                  <div>
-                    <strong>Group Sales</strong>
-                    <small>10%</small>
-                  </div>
-                </div>
+</div>
 
-                <div class="activity-value">$320</div>
-              </div>
 
+<!-- WAY 2 -->
 
-              <div class="activity">
-                <div class="activity-left">
-                  <div class="activity-icon">🌐</div>
-                  <div>
-                    <strong>FWORLD Sales</strong>
-                    <small>1%</small>
-                  </div>
-                </div>
+<div class="way-card">
 
-                <div class="activity-value">$100</div>
-              </div>
+<div class="way-number">
+02
+</div>
 
+<div class="way-icon">
+🔗
+</div>
 
-              <div class="activity">
-                <div class="activity-left">
-                  <div class="activity-icon">📈</div>
-                  <div>
-                    <strong>Goal Progress</strong>
-                    <small>Current</small>
-                  </div>
-                </div>
+<h3>
+Affiliation Bonus
+</h3>
 
-                <div class="activity-value">57%</div>
-              </div>
+<p>
+Earn the applicable referral bonus from
+qualifying product and service referrals.
+</p>
 
-            </div>
+<div class="earn-row">
+<span>
+Product Referrals
+</span>
 
-          </div>
+<strong>
+3%
+</strong>
+</div>
 
-        </div>
+<div class="earn-row">
+<span>
+Service Referrals
+</span>
 
-      </div>
-    </section>
+<strong>
+3%
+</strong>
+</div>
 
+<div class="way-total">
+REFERRAL BONUS
+</div>
 
-    <!-- =========================
-         REFERRAL + SERVICES
-    ========================== -->
+</div>
 
-    <section class="section">
-      <div class="container">
 
-        <div class="two-column">
+<!-- WAY 3 -->
 
-          <!-- Referral -->
-          <div class="panel">
+<div class="way-card">
 
-            <h3>🔗 My Referral Activity</h3>
+<div class="way-number">
+03
+</div>
 
-            <p class="panel-description">
-              Your personal FWORLD referral link can connect customers
-              to eligible FWORLD services and activities.
-            </p>
+<div class="way-icon">
+💳
+</div>
 
-            <div class="referral-box">
-              www.fworld.online/ref/fatima
-            </div>
+<h3>
+Membership Bonus
+</h3>
 
-            <div class="referral-stats">
+<p>
+Your membership level determines the
+applicable membership bonus.
+</p>
 
-              <div class="mini-stat">
-                <small>Link Clicks</small>
-                <strong>184</strong>
-              </div>
+<div class="earn-row">
+<span>
+Silver
+</span>
 
-              <div class="mini-stat">
-                <small>Referrals</small>
-                <strong>24</strong>
-              </div>
+<strong>
+3%
+</strong>
+</div>
 
-              <div class="mini-stat">
-                <small>Transactions</small>
-                <strong>18</strong>
-              </div>
+<div class="earn-row">
+<span>
+Gold
+</span>
 
-            </div>
+<strong>
+5%
+</strong>
+</div>
 
-          </div>
+<div class="earn-row">
+<span>
+Black
+</span>
 
+<strong>
+10%
+</strong>
+</div>
 
-          <!-- Services -->
-          <div class="panel">
+<div class="way-total">
+MEMBERSHIP BONUS
+</div>
 
-            <h3>🌐 Service Income</h3>
+</div>
 
-            <p class="panel-description">
-              A future view of qualifying income connected to
-              FWORLD services.
-            </p>
 
-            <div class="service-list">
+<!-- WAY 4 -->
 
-              <div class="service-row">
-                <div class="service-name">
-                  <span>✈️</span>
-                  FMSI Travel
-                </div>
+<div class="way-card">
 
-                <div class="service-income">$75</div>
-              </div>
+<div class="way-number">
+04
+</div>
 
-              <div class="service-row">
-                <div class="service-name">
-                  <span>💄</span>
-                  Sophia Cosmetics
-                </div>
+<div class="way-icon">
+♾️
+</div>
 
-                <div class="service-income">$50</div>
-              </div>
+<h3>
+Lifetime Bonus
+</h3>
 
-              <div class="service-row">
-                <div class="service-name">
-                  <span>💆</span>
-                  Massage Services
-                </div>
+<p>
+Company share recorded through the
+FWORLD commission structure.
+</p>
 
-                <div class="service-income">$25</div>
-              </div>
+<div class="earn-row">
+<span>
+Company Share
+</span>
 
-              <div class="service-row">
-                <div class="service-name">
-                  <span>🌐</span>
-                  Digital Services
-                </div>
+<strong>
+1%
+</strong>
+</div>
 
-                <div class="service-income">$0</div>
-              </div>
+<div class="way-total">
+LIFETIME BONUS
+</div>
 
-            </div>
+</div>
 
-          </div>
+</div>
 
-        </div>
+</div>
 
-      </div>
-    </section>
+</section>
 
 
-    <!-- =========================
-         MILESTONES
-    ========================== -->
+<!-- =========================================
+INCOME OVERVIEW
+========================================== -->
 
-    <section class="section">
-      <div class="container">
+<section class="section">
 
-        <div class="section-title">
-          <h2>🏆 Goal Journey</h2>
-          <p>Visual milestones for your progress.</p>
-        </div>
+<div class="container">
 
-        <div class="milestones">
+<div class="section-title">
 
-          <div class="milestone active">
-            <div class="milestone-icon">🌱</div>
-            <strong>Getting Started</strong>
-            <small>25% milestone</small>
-          </div>
+<h2>
+Income Overview
+</h2>
 
-          <div class="milestone active">
-            <div class="milestone-icon">🌿</div>
-            <strong>Halfway There</strong>
-            <small>50% milestone</small>
-          </div>
+<p>
+Your current income summary.
+</p>
 
-          <div class="milestone">
-            <div class="milestone-icon">🌸</div>
-            <strong>Almost There</strong>
-            <small>75% milestone</small>
-          </div>
+</div>
 
-          <div class="milestone">
-            <div class="milestone-icon">🎉</div>
-            <strong>Goal Reached</strong>
-            <small>100% milestone</small>
-          </div>
 
-        </div>
+<div class="income-grid">
 
-      </div>
-    </section>
+<div class="income-overview-card">
 
+<div class="income-icon">
+💰
+</div>
 
-    <!-- =========================
-         SHARE
-    ========================== -->
+<small>
+Available Income
+</small>
 
-    <section class="section">
-      <div class="container">
+<strong id="availableIncome">
+$420.00
+</strong>
 
-        <div class="share-panel">
+</div>
 
-          <div>
-            <h2>🔗 Your Journey, Your Choice</h2>
 
-            <p>
-              You decide what becomes public. Share selected goal or
-              income information to inspire others, or keep everything
-              inside your private FWORLD Digital Space.
-            </p>
-          </div>
+<div class="income-overview-card">
 
-          <div class="share-buttons">
+<div class="income-icon">
+⏳
+</div>
 
-            <button
-              class="share-btn facebook"
-              onclick="openShareModal()"
-            >
-              Share
-            </button>
+<small>
+Pending Income
+</small>
 
-            <button
-              class="share-btn secret"
-              onclick="keepSecret()"
-            >
-              🔒 Keep It Secret
-            </button>
+<strong id="pendingIncome">
+$150.00
+</strong>
 
-          </div>
+</div>
 
-        </div>
 
-      </div>
-    </section>
+<div class="income-overview-card">
 
-  </main>
+<div class="income-icon">
+📅
+</div>
 
+<small>
+This Month
+</small>
 
-  <footer>
-    <div class="container">
-      <strong>FWORLD ONLINE</strong> · Your Digital Space
-      <br>
-      <span>Prototype — income data will connect to the FWORLD system later.</span>
-    </div>
-  </footer>
+<strong>
+$570.00
+</strong>
 
+</div>
 
-  <!-- =========================
-       SHARE MODAL
-  ========================== -->
 
-  <div class="modal" id="shareModal">
+<div class="income-overview-card">
 
-    <div class="modal-card">
+<div class="income-icon">
+🤝
+</div>
 
-      <h2>🔗 Share My FWORLD Goal</h2>
+<small>
+Successful Referrals
+</small>
 
-      <p>
-        Only the information you choose will be prepared
-        for public sharing.
-      </p>
+<strong>
+24
+</strong>
 
-      <div class="share-preview">
+</div>
 
-        <strong>🎯 My FWORLD Goal</strong>
+</div>
 
-        <p>
-          I'm working toward my $1,000 goal
-          and currently at <b>57% achieved.</b>
-        </p>
+</div>
 
-        <br>
+</section>
 
-        <small>
-          Sharing my journey to inspire others. 💚
-        </small>
 
-      </div>
+<!-- =========================================
+GOAL
+========================================== -->
 
-      <div class="modal-actions">
+<section class="section">
 
-        <button
-          class="btn btn-primary"
-          onclick="shareToFacebook()"
-        >
-          Share to Facebook
-        </button>
+<div class="container">
 
-        <button
-          class="btn btn-light"
-          onclick="closeShareModal()"
-        >
-          Cancel
-        </button>
+<div class="section-title">
 
-      </div>
+<h2>
+🎯 Goal Tracking
+</h2>
 
-    </div>
+<p>
+Your goal. Your journey. Your progress.
+</p>
 
-  </div>
+</div>
 
 
-  <!-- =========================
-       GOAL MODAL
-  ========================== -->
+<div class="goal-wrap">
 
-  <div class="modal" id="goalModal">
+<div class="goal-card">
 
-    <div class="modal-card">
+<div class="goal-top">
 
-      <h2>🎯 My Goal</h2>
+<div>
 
-      <p>
-        Goal editing will connect to your member account
-        when the FWORLD backend is ready.
-      </p>
+<div class="goal-label">
+My Monthly Goal
+</div>
 
-      <div class="share-preview">
+<div class="goal-number">
+$1,000
+</div>
 
-        <strong>Current Goal: $1,000</strong>
+</div>
 
-        <p>
-          Target Date: October 31, 2026
-        </p>
+<div class="goal-date">
+Target: Oct 31, 2026
+</div>
 
-      </div>
+</div>
 
-      <div class="modal-actions">
 
-        <button
-          class="btn btn-primary"
-          onclick="closeGoalModal()"
-        >
-          Done
-        </button>
+<div class="progress">
 
-      </div>
+<div class="progress-bar"></div>
 
-    </div>
+</div>
 
-  </div>
 
+<div class="progress-info">
 
-  <script>
+<span>
+Current:
+<strong>
+$570
+</strong>
+</span>
 
-    /*
-      ==========================================
-      FWORLD PUBLIC SHARE PLACEHOLDER
-      ==========================================
+<span>
+57% achieved
+</span>
 
-      IMPORTANT:
+<span>
+Remaining:
+<strong>
+$430
+</strong>
+</span>
 
-      This is NOT the private dashboard URL.
+</div>
 
-      Later, the backend will generate the member's
-      real public FWORLD profile/content URL.
 
-      Example future structure:
+<div class="goal-actions">
 
-      https://www.fworld.online/fatima
+<button
+class="btn btn-primary"
+type="button"
+onclick="openGoalModal()"
+>
+✏️ Edit My Goal
+</button>
 
-      For now, this is only a prototype placeholder.
-    */
+<button
+class="btn btn-light"
+type="button"
+onclick="openShareModal()"
+>
+🔗 Share Goal
+</button>
 
-    const publicFworldUrl =
-      "https://www.fworld.online/fatima";
+<button
+class="btn btn-light"
+type="button"
+onclick="keepSecret()"
+>
+🔒 Keep It Secret
+</button>
 
+</div>
 
-    /* =========================
-       SHARE MODAL
-    ========================== */
+</div>
 
-    function openShareModal() {
-      document
-        .getElementById("shareModal")
-        .classList.add("show");
-    }
 
-    function closeShareModal() {
-      document
-        .getElementById("shareModal")
-        .classList.remove("show");
-    }
+<div class="goal-side">
 
+<div class="big">
+57%
+</div>
 
-    /* =========================
-       FACEBOOK SHARE
-    ========================== */
+<p>
+You are more than halfway toward your
+current goal. Keep building your FWORLD
+journey one step at a time.
+</p>
 
-    function shareToFacebook() {
+</div>
 
-      /*
-        The private dashboard is NEVER shared.
+</div>
 
-        Only the future public FWORLD URL is used.
-      */
+</div>
 
-      const facebookUrl =
-        "https://www.facebook.com/sharer/sharer.php?u=" +
-        encodeURIComponent(publicFworldUrl);
+</section>
 
-      window.open(
-        facebookUrl,
-        "_blank",
-        "width=700,height=600"
-      );
-    }
 
+<!-- =========================================
+ANALYTICS
+========================================== -->
 
-    /* =========================
-       KEEP IT SECRET
-    ========================== */
+<section class="section">
 
-    function keepSecret() {
+<div class="container">
 
-      alert(
-        "🔒 Kept Secret\n\n" +
-        "Your goal information will remain inside your private FWORLD Digital Space."
-      );
-    }
+<div class="section-title">
 
+<h2>
+📊 Income Analytics
+</h2>
 
-    /* =========================
-       GOAL MODAL
-    ========================== */
+<p>
+Understand your income activity over time.
+</p>
 
-    function openGoalModal() {
-      document
-        .getElementById("goalModal")
-        .classList.add("show");
-    }
+</div>
 
-    function closeGoalModal() {
-      document
-        .getElementById("goalModal")
-        .classList.remove("show");
-    }
 
+<div class="analytics-grid">
 
-    /* =========================
-       CLOSE MODALS BY BACKGROUND
-    ========================== */
+<div class="chart-card">
 
-    document
-      .getElementById("shareModal")
-      .addEventListener("click", function(event) {
+<div class="chart-head">
 
-        if (event.target === this) {
-          closeShareModal();
-        }
+<h3>
+Income Activity
+</h3>
 
-      });
+<select class="period">
+<option>
+Last 6 Months
+</option>
 
+<option>
+Last 12 Months
+</option>
 
-    document
-      .getElementById("goalModal")
-      .addEventListener("click", function(event) {
+<option>
+This Year
+</option>
+</select>
 
-        if (event.target === this) {
-          closeGoalModal();
-        }
+</div>
 
-      });
 
-  </script>
+<div class="fake-chart">
+
+<div class="bar-group">
+<div
+class="bar"
+style="height:28%;"
+></div>
+</div>
+
+<div class="bar-group">
+<div
+class="bar"
+style="height:42%;"
+></div>
+</div>
+
+<div class="bar-group">
+<div
+class="bar"
+style="height:36%;"
+></div>
+</div>
+
+<div class="bar-group">
+<div
+class="bar"
+style="height:58%;"
+></div>
+</div>
+
+<div class="bar-group">
+<div
+class="bar"
+style="height:76%;"
+></div>
+</div>
+
+<div class="bar-group">
+<div
+class="bar"
+style="height:57%;"
+></div>
+</div>
+
+</div>
+
+
+<div class="bar-labels">
+
+<span>May</span>
+<span>Jun</span>
+<span>Jul</span>
+<span>Aug</span>
+<span>Sep</span>
+<span>Oct</span>
+
+</div>
+
+</div>
+
+
+<div class="activity-card">
+
+<h3>
+Quick Analytics
+</h3>
+
+<div class="activity-list">
+
+<div class="activity">
+
+<div class="activity-left">
+
+<div class="activity-icon">
+🤝
+</div>
+
+<div>
+<strong>
+Direct Selling
+</strong>
+
+<small>
+Product / Service
+</small>
+</div>
+
+</div>
+
+<div class="activity-value">
+$150
+</div>
+
+</div>
+
+
+<div class="activity">
+
+<div class="activity-left">
+
+<div class="activity-icon">
+🔗
+</div>
+
+<div>
+<strong>
+Affiliation
+</strong>
+
+<small>
+3%
+</small>
+</div>
+
+</div>
+
+<div class="activity-value">
+$320
+</div>
+
+</div>
+
+
+<div class="activity">
+
+<div class="activity-left">
+
+<div class="activity-icon">
+💳
+</div>
+
+<div>
+<strong>
+Membership Bonus
+</strong>
+
+<small>
+Based on level
+</small>
+</div>
+
+</div>
+
+<div class="activity-value">
+$100
+</div>
+
+</div>
+
+
+<div class="activity">
+
+<div class="activity-left">
+
+<div class="activity-icon">
+♾️
+</div>
+
+<div>
+<strong>
+Lifetime Bonus
+</strong>
+
+<small>
+Company share
+</small>
+</div>
+
+</div>
+
+<div class="activity-value">
+1%
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+REFERRAL + SERVICES
+========================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="two-column">
+
+<!-- REFERRAL -->
+
+<div class="panel">
+
+<h3>
+🔗 My Referral Activity
+</h3>
+
+<p class="panel-description">
+Your FWORLD Reference Code and referral
+activity are connected to your member account.
+</p>
+
+
+<div
+class="referral-box"
+id="referenceCodeDisplay"
+>
+Reference Code:
+FWR-8K4P21
+</div>
+
+
+<div class="referral-box">
+www.fworld.online/ref/fatima
+</div>
+
+
+<div class="referral-stats">
+
+<div class="mini-stat">
+
+<small>
+Link Clicks
+</small>
+
+<strong>
+184
+</strong>
+
+</div>
+
+
+<div class="mini-stat">
+
+<small>
+Referrals
+</small>
+
+<strong>
+24
+</strong>
+
+</div>
+
+
+<div class="mini-stat">
+
+<small>
+Transactions
+</small>
+
+<strong>
+18
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SERVICES -->
+
+<div class="panel">
+
+<h3>
+🌐 Service Income
+</h3>
+
+<p class="panel-description">
+Qualifying income connected to FWORLD
+services and travel transactions.
+</p>
+
+
+<div class="service-list">
+
+<div class="service-row">
+
+<div class="service-name">
+<span>✈️</span>
+FMSI Travel
+</div>
+
+<div class="service-income">
+$75
+</div>
+
+</div>
+
+
+<div class="service-row">
+
+<div class="service-name">
+<span>💄</span>
+Sophia Cosmetics
+</div>
+
+<div class="service-income">
+$50
+</div>
+
+</div>
+
+
+<div class="service-row">
+
+<div class="service-name">
+<span>💆</span>
+Massage Services
+</div>
+
+<div class="service-income">
+$25
+</div>
+
+</div>
+
+
+<div class="service-row">
+
+<div class="service-name">
+<span>🌐</span>
+Digital Services
+</div>
+
+<div class="service-income">
+$0
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+MEMBERSHIP CARDS
+========================================== -->
+
+<section class="section membership-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+💳 FWORLD Membership
+</h2>
+
+<p>
+Tap a card to view its token value and membership benefits.
+</p>
+
+</div>
+
+
+<div class="membership-grid">
+
+<!-- SILVER -->
+
+<button
+type="button"
+class="membership-option"
+data-level="silver"
+onclick="openMembershipModal('silver')"
+>
+
+<div class="mini-card silver">
+
+<div class="mini-card-top">
+
+<div class="mini-brand">
+FWORLD ONLINE
+</div>
+
+<div class="mini-chip"></div>
+
+</div>
+
+<div class="mini-level">
+SILVER
+</div>
+
+<div class="mini-token">
+1M TOKENS
+</div>
+
+<div class="mini-value">
+$100 TOKEN VALUE
+</div>
+
+<div class="current-label">
+YOUR MEMBERSHIP
+</div>
+
+</div>
+
+</button>
+
+
+<!-- GOLD -->
+
+<button
+type="button"
+class="membership-option"
+data-level="gold"
+onclick="openMembershipModal('gold')"
+>
+
+<div class="mini-card gold">
+
+<div class="mini-card-top">
+
+<div class="mini-brand">
+FWORLD ONLINE
+</div>
+
+<div class="mini-chip"></div>
+
+</div>
+
+<div class="mini-level">
+GOLD
+</div>
+
+<div class="mini-token">
+5M TOKENS
+</div>
+
+<div class="mini-value">
+$500 TOKEN VALUE
+</div>
+
+<div class="current-label">
+YOUR MEMBERSHIP
+</div>
+
+</div>
+
+</button>
+
+
+<!-- BLACK -->
+
+<button
+type="button"
+class="membership-option"
+data-level="black"
+onclick="openMembershipModal('black')"
+>
+
+<div class="mini-card black">
+
+<div class="mini-card-top">
+
+<div class="mini-brand">
+FWORLD ONLINE
+</div>
+
+<div class="mini-chip"></div>
+
+</div>
+
+<div class="mini-level">
+BLACK
+</div>
+
+<div class="mini-token">
+10M TOKENS
+</div>
+
+<div class="mini-value">
+$10,000 TOKEN VALUE
+</div>
+
+<div class="current-label">
+YOUR MEMBERSHIP
+</div>
+
+</div>
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+GOAL JOURNEY
+========================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+🏆 Goal Journey
+</h2>
+
+<p>
+Visual milestones for your progress.
+</p>
+
+</div>
+
+
+<div class="milestones">
+
+<div class="milestone active">
+
+<div class="milestone-icon">
+🌱
+</div>
+
+<strong>
+Getting Started
+</strong>
+
+<small>
+25% milestone
+</small>
+
+</div>
+
+
+<div class="milestone active">
+
+<div class="milestone-icon">
+🌿
+</div>
+
+<strong>
+Halfway There
+</strong>
+
+<small>
+50% milestone
+</small>
+
+</div>
+
+
+<div class="milestone">
+
+<div class="milestone-icon">
+🌸
+</div>
+
+<strong>
+Almost There
+</strong>
+
+<small>
+75% milestone
+</small>
+
+</div>
+
+
+<div class="milestone">
+
+<div class="milestone-icon">
+🎉
+</div>
+
+<strong>
+Goal Reached
+</strong>
+
+<small>
+100% milestone
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+SHARE
+========================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="share-panel">
+
+<div>
+
+<h2>
+🔗 Your Journey, Your Choice
+</h2>
+
+<p>
+You decide what becomes public. Share selected
+goal information to inspire others, or keep your
+private income information inside FWORLD.
+</p>
+
+</div>
+
+
+<div class="share-buttons">
+
+<button
+class="share-btn facebook"
+type="button"
+onclick="openShareModal()"
+>
+Share
+</button>
+
+<button
+class="share-btn secret"
+type="button"
+onclick="keepSecret()"
+>
+🔒 Keep It Secret
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="container">
+
+<strong>
+FWORLD ONLINE
+</strong>
+
+· Your Digital Space
+
+<br>
+
+<span>
+My Income is connected to the FWORLD member and commission system.
+</span>
+
+</div>
+
+</footer>
+
+
+<!-- =========================================
+MEMBERSHIP MODAL
+========================================== -->
+
+<div
+class="modal"
+id="membershipModal"
+>
+
+<div class="modal-card">
+
+<div class="modal-top">
+
+<div>
+<h2 id="membershipModalTitle">
+Black Membership
+</h2>
+
+<p class="modal-description">
+View the membership card and its applicable benefits.
+</p>
+</div>
+
+<button
+type="button"
+class="close-btn"
+onclick="closeMembershipModal()"
+aria-label="Close"
+>
+×
+</button>
+
+</div>
+
+
+<div
+class="popup-elite-card black"
+id="popupEliteCard"
+>
+
+<div class="card-row">
+
+<div>
+
+<div class="card-brand">
+FWORLD ONLINE
+</div>
+
+<div class="card-subtitle">
+Elite Membership
+</div>
+
+</div>
+
+<div class="card-chip"></div>
+
+</div>
+
+
+<div
+class="popup-card-level"
+id="popupCardLevel"
+>
+BLACK
+</div>
+
+
+<div
+class="popup-card-value"
+id="popupCardValue"
+>
+10M Tokens = $10,000
+</div>
+
+</div>
+
+
+<h3 class="benefits-title">
+Membership Benefits
+</h3>
+
+
+<ul
+class="benefits-list"
+id="membershipBenefits"
+>
+</ul>
+
+
+<div class="modal-actions">
+
+<button
+type="button"
+class="btn btn-primary"
+onclick="closeMembershipModal()"
+>
+Done
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================================
+SHARE MODAL
+========================================== -->
+
+<div
+class="modal"
+id="shareModal"
+>
+
+<div class="modal-card">
+
+<div class="modal-top">
+
+<div>
+<h2>
+🔗 Share My FWORLD Goal
+</h2>
+
+<p class="modal-description">
+Only selected public information will be shared.
+</p>
+</div>
+
+<button
+type="button"
+class="close-btn"
+onclick="closeShareModal()"
+>
+×
+</button>
+
+</div>
+
+
+<div class="share-preview">
+
+<strong>
+🎯 My FWORLD Goal
+</strong>
+
+<p>
+I'm working toward my $1,000 goal
+and currently at <b>57% achieved.</b>
+</p>
+
+<br>
+
+<small>
+Sharing my journey to inspire others. 🩷
+</small>
+
+</div>
+
+
+<div class="modal-actions">
+
+<button
+class="btn btn-primary"
+type="button"
+onclick="shareToFacebook()"
+>
+Share to Facebook
+</button>
+
+<button
+class="btn btn-light"
+type="button"
+onclick="closeShareModal()"
+>
+Cancel
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================================
+GOAL MODAL
+========================================== -->
+
+<div
+class="modal"
+id="goalModal"
+>
+
+<div class="modal-card">
+
+<div class="modal-top">
+
+<div>
+
+<h2>
+🎯 My Goal
+</h2>
+
+<p class="modal-description">
+Goal editing will connect to the member account
+when the goal API is connected.
+</p>
+
+</div>
+
+<button
+type="button"
+class="close-btn"
+onclick="closeGoalModal()"
+>
+×
+</button>
+
+</div>
+
+
+<div class="share-preview">
+
+<strong>
+Current Goal: $1,000
+</strong>
+
+<p>
+Target Date: October 31, 2026
+</p>
+
+</div>
+
+
+<div class="modal-actions">
+
+<button
+class="btn btn-primary"
+type="button"
+onclick="closeGoalModal()"
+>
+Done
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+FWORLD MEMBER DATA
+=====================================================
+
+IMPORTANT:
+
+This object is currently FRONTEND DEMO DATA.
+
+Later, the authenticated FWORLD backend will provide:
+
+memberId
+referenceCode
+memberName
+membership
+totalIncome
+availableIncome
+pendingIncome
+
+DO NOT put database credentials here.
+
+The backend must remain the source of truth.
+*/
+
+const memberData = {
+
+memberId: "FW-000001",
+
+referenceCode: "FWR-8K4P21",
+
+memberName: "Fatima Biston",
+
+membership: "black",
+
+totalIncome: 570.00,
+
+availableIncome: 420.00,
+
+pendingIncome: 150.00
+
+};
+
+
+/* =====================================================
+MEMBERSHIP DEFINITIONS
+===================================================== */
+
+const membershipData = {
+
+silver: {
+
+name: "Silver Membership",
+
+shortName: "SILVER",
+
+tokens: "1M Tokens",
+
+tokenValue: "$100",
+
+bonus: "3%",
+
+className: "silver",
+
+benefits: [
+
+"Silver Elite Membership status.",
+
+"Silver membership bonus rate: 3%.",
+
+"Eligible product and service earning opportunities based on FWORLD rules.",
+
+"Member ID and Reference Code connected to the FWORLD system.",
+
+"Income and qualifying transactions reflected in the member ledger."
+
+]
+
+},
+
+
+gold: {
+
+name: "Gold Membership",
+
+shortName: "GOLD",
+
+tokens: "5M Tokens",
+
+tokenValue: "$500",
+
+bonus: "5%",
+
+className: "gold",
+
+benefits: [
+
+"Gold Elite Membership status.",
+
+"Gold membership bonus rate: 5%.",
+
+"Eligible product and service earning opportunities based on FWORLD rules.",
+
+"Member ID and Reference Code connected to the FWORLD system.",
+
+"Income and qualifying transactions reflected in the member ledger."
+
+]
+
+},
+
+
+black: {
+
+name: "Black Membership",
+
+shortName: "BLACK",
+
+tokens: "10M Tokens",
+
+tokenValue: "$10,000",
+
+bonus: "10%",
+
+className: "black",
+
+benefits: [
+
+"Black Elite Membership status.",
+
+"Black membership bonus rate: 10%.",
+
+"Eligible product and service earning opportunities based on FWORLD rules.",
+
+"Member ID and Reference Code connected to the FWORLD system.",
+
+"Income and qualifying transactions reflected in the member ledger."
+
+]
+
+}
+
+};
+
+
+/* =====================================================
+FORMAT MONEY
+===================================================== */
+
+function formatMoney(value) {
+
+const number = Number(value);
+
+if (!Number.isFinite(number)) {
+return "$0.00";
+}
+
+return new Intl.NumberFormat(
+"en-US",
+{
+style: "currency",
+currency: "USD",
+minimumFractionDigits: 2
+}
+).format(number);
+
+}
+
+
+/* =====================================================
+RENDER MEMBER CARD
+===================================================== */
+
+function renderMember() {
+
+const membership =
+String(memberData.membership || "silver")
+.toLowerCase();
+
+const level =
+membershipData[membership]
+|| membershipData.silver;
+
+
+/* Stage */
+
+document
+.getElementById("stageMembership")
+.textContent =
+level.shortName + " MEMBER";
+
+
+/* Main card */
+
+const mainCard =
+document.getElementById("mainEliteCard");
+
+mainCard.className =
+"elite-card " + level.className;
+
+
+document
+.getElementById("mainCardLevel")
+.textContent =
+level.shortName + " TOKEN";
+
+
+document
+.getElementById("mainTotalIncome")
+.textContent =
+formatMoney(memberData.totalIncome);
+
+
+document
+.getElementById("mainMemberName")
+.textContent =
+memberData.memberName;
+
+
+document
+.getElementById("mainMemberId")
+.textContent =
+memberData.memberId;
+
+
+document
+.getElementById("availableIncome")
+.textContent =
+formatMoney(memberData.availableIncome);
+
+
+document
+.getElementById("pendingIncome")
+.textContent =
+formatMoney(memberData.pendingIncome);
+
+
+document
+.getElementById("referenceCodeDisplay")
+.textContent =
+"Reference Code: " +
+memberData.referenceCode;
+
+
+/* Highlight actual membership */
+
+document
+.querySelectorAll(".membership-option")
+.forEach(function(card) {
+
+const cardLevel =
+card.dataset.level;
+
+card.classList.toggle(
+"current",
+cardLevel === membership
+);
+
+});
+
+}
+
+
+/* =====================================================
+MEMBERSHIP POPUP
+===================================================== */
+
+function openMembershipModal(levelName) {
+
+const level =
+membershipData[levelName];
+
+if (!level) {
+return;
+}
+
+
+const popup =
+document.getElementById(
+"popupEliteCard"
+);
+
+popup.className =
+"popup-elite-card " +
+level.className;
+
+
+document
+.getElementById("membershipModalTitle")
+.textContent =
+level.name;
+
+
+document
+.getElementById("popupCardLevel")
+.textContent =
+level.shortName;
+
+
+document
+.getElementById("popupCardValue")
+.textContent =
+level.tokens +
+" = " +
+level.tokenValue;
+
+
+const benefits =
+document.getElementById(
+"membershipBenefits"
+);
+
+benefits.innerHTML = "";
+
+
+level.benefits.forEach(function(benefit) {
+
+const li =
+document.createElement("li");
+
+li.innerHTML =
+'<span class="benefit-check">✓</span>' +
+'<span>' +
+benefit +
+'</span>';
+
+benefits.appendChild(li);
+
+});
+
+
+document
+.getElementById("membershipModal")
+.classList.add("show");
+
+
+document.body.classList.add(
+"modal-open"
+);
+
+}
+
+
+function closeMembershipModal() {
+
+document
+.getElementById("membershipModal")
+.classList.remove("show");
+
+document.body.classList.remove(
+"modal-open"
+);
+
+}
+
+
+/* =====================================================
+SHARE MODAL
+===================================================== */
+
+function openShareModal() {
+
+document
+.getElementById("shareModal")
+.classList.add("show");
+
+document.body.classList.add(
+"modal-open"
+);
+
+}
+
+
+function closeShareModal() {
+
+document
+.getElementById("shareModal")
+.classList.remove("show");
+
+document.body.classList.remove(
+"modal-open"
+);
+
+}
+
+
+/* =====================================================
+FACEBOOK SHARE
+===================================================== */
+
+function shareToFacebook() {
+
+/*
+NEVER share the private income dashboard.
+
+This is a public URL placeholder.
+
+Later, the backend can generate the member's
+actual public FWORLD profile URL.
+*/
+
+const publicFworldUrl =
+"https://www.fworld.online/fatima";
+
+
+const facebookUrl =
+"https://www.facebook.com/sharer/sharer.php?u=" +
+encodeURIComponent(
+publicFworldUrl
+);
+
+
+window.open(
+facebookUrl,
+"_blank",
+"width=700,height=600"
+);
+
+}
+
+
+/* =====================================================
+KEEP SECRET
+===================================================== */
+
+function keepSecret() {
+
+alert(
+"🔒 Kept Secret\n\n" +
+"Your private income and goal information " +
+"will remain inside your FWORLD Digital Space."
+);
+
+}
+
+
+/* =====================================================
+GOAL MODAL
+===================================================== */
+
+function openGoalModal() {
+
+document
+.getElementById("goalModal")
+.classList.add("show");
+
+document.body.classList.add(
+"modal-open"
+);
+
+}
+
+
+function closeGoalModal() {
+
+document
+.getElementById("goalModal")
+.classList.remove("show");
+
+document.body.classList.remove(
+"modal-open"
+);
+
+}
+
+
+/* =====================================================
+BACKGROUND CLICK TO CLOSE
+===================================================== */
+
+document
+.getElementById("membershipModal")
+.addEventListener(
+"click",
+function(event) {
+
+if (event.target === this) {
+closeMembershipModal();
+}
+
+}
+);
+
+
+document
+.getElementById("shareModal")
+.addEventListener(
+"click",
+function(event) {
+
+if (event.target === this) {
+closeShareModal();
+}
+
+}
+);
+
+
+document
+.getElementById("goalModal")
+.addEventListener(
+"click",
+function(event) {
+
+if (event.target === this) {
+closeGoalModal();
+}
+
+}
+);
+
+
+/* =====================================================
+ESCAPE KEY
+===================================================== */
+
+document.addEventListener(
+"keydown",
+function(event) {
+
+if (event.key !== "Escape") {
+return;
+}
+
+closeMembershipModal();
+closeShareModal();
+closeGoalModal();
+
+}
+);
+
+
+/* =====================================================
+INITIALIZE
+===================================================== */
+
+renderMember();
+
+</script>
 
 </body>
 </html>
