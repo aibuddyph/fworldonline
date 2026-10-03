@@ -1,1 +1,634 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>FWORLD Members | Member Management</title>
+
+  <meta name="description"
+        content="FWORLD Members — secure member management and encoding for FWORLD ONLINE.">
+
+  <meta name="robots" content="noindex,nofollow">
+
+  <meta property="og:title"
+        content="FWORLD Members | Member Management">
+
+  <meta property="og:description"
+        content="FWORLD member management and encoding.">
+
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --black: #090909;
+      --white: #ffffff;
+      --pink: #ff2f92;
+      --soft-pink: #fff1f7;
+      --gray: #707070;
+      --light-gray: #f5f5f5;
+      --border: #e7e7e7;
+      --green: #15803d;
+      --red: #b91c1c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      background: #fafafa;
+      color: var(--black);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .topbar {
+      background: var(--black);
+      color: var(--white);
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      font-size: 17px;
+    }
+
+    .brand span {
+      color: var(--pink);
+    }
+
+    .back-link {
+      font-size: 13px;
+      opacity: .9;
+    }
+
+    .back-link:hover {
+      color: var(--pink);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px 18px 60px;
+    }
+
+    .hero {
+      margin-bottom: 25px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--pink);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 6vw, 48px);
+      line-height: 1;
+      letter-spacing: -1.5px;
+    }
+
+    .subtitle {
+      margin: 12px 0 0;
+      color: var(--gray);
+      max-width: 650px;
+      line-height: 1.6;
+    }
+
+    .admin-card {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 24px;
+      padding: 24px;
+      margin-bottom: 22px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .admin-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #aaa;
+      margin-bottom: 7px;
+    }
+
+    .admin-name {
+      font-size: 23px;
+      font-weight: 800;
+    }
+
+    .admin-id {
+      margin-top: 5px;
+      color: #ccc;
+      font-size: 13px;
+    }
+
+    .admin-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: var(--pink);
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .7px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, .7fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .panel h2 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -.5px;
+    }
+
+    .panel-intro {
+      margin: 7px 0 22px;
+      color: var(--gray);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .field {
+      margin-bottom: 17px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid #dcdcdc;
+      border-radius: 12px;
+      padding: 12px 14px;
+      background: white;
+      color: var(--black);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 3px rgba(255, 47, 146, .12);
+    }
+
+    .button {
+      width: 100%;
+      min-height: 50px;
+      border: 0;
+      border-radius: 13px;
+      background: var(--black);
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .button:hover {
+      background: var(--pink);
+    }
+
+    .button:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    .notice {
+      display: none;
+      margin-top: 15px;
+      padding: 13px 15px;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .notice.show {
+      display: block;
+    }
+
+    .notice.info {
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .notice.success {
+      background: #ecfdf3;
+      color: var(--green);
+    }
+
+    .notice.error {
+      background: #fef2f2;
+      color: var(--red);
+    }
+
+    .preview {
+      background: var(--black);
+      color: white;
+      border-radius: 20px;
+      padding: 22px;
+    }
+
+    .preview-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #aaa;
+    }
+
+    .preview h3 {
+      margin: 8px 0 20px;
+      font-size: 25px;
+    }
+
+    .preview-row {
+      border-top: 1px solid rgba(255,255,255,.14);
+      padding: 13px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .preview-row span:first-child {
+      color: #aaa;
+      font-size: 12px;
+    }
+
+    .preview-row span:last-child {
+      text-align: right;
+      font-size: 13px;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .membership-note {
+      margin-top: 18px;
+      padding: 14px;
+      background: var(--soft-pink);
+      border-radius: 13px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .membership-note strong {
+      color: var(--pink);
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--gray);
+      font-size: 12px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 760px) {
+      .topbar-inner {
+        align-items: flex-start;
+      }
+
+      .back-link {
+        text-align: right;
+      }
+
+      .admin-card {
+        grid-template-columns: 1fr;
+      }
+
+      .admin-badge {
+        width: fit-content;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding-top: 24px;
+      }
+
+      .panel {
+        padding: 20px;
+        border-radius: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        FWORLD <span>ONLINE</span>
+      </div>
+
+      <a
+        class="back-link"
+        href="fworld-dashboard.html"
+      >
+        ← Back to Dashboard
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="eyebrow">FWORLD SYSTEM</div>
+
+      <h1>Members</h1>
+
+      <p class="subtitle">
+        Manage FWORLD members and prepare their connected membership,
+        referral, transaction, and income records.
+      </p>
+    </section>
+
+    <section class="admin-card">
+
+      <div>
+        <div class="admin-label">
+          Current administrator
+        </div>
+
+        <div class="admin-name">
+          FWORLD Member
+        </div>
+
+        <div class="admin-id">
+          Member ID: FW-000001
+        </div>
+      </div>
+
+      <div class="admin-badge">
+        ADMIN
+      </div>
+
+    </section>
+
+    <div class="layout">
+
+      <section class="panel">
+
+        <h2>Encode New Member</h2>
+
+        <p class="panel-intro">
+          Enter the member's basic information. FWORLD will generate
+          the Member ID and Reference Code.
+        </p>
+
+        <form id="memberForm">
+
+          <div class="field">
+            <label for="fullName">
+              Full Name
+            </label>
+
+            <input
+              id="fullName"
+              name="fullName"
+              type="text"
+              placeholder="Enter full name"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="email">
+              Email Address
+            </label>
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Enter email address"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="membershipLevel">
+              Membership Level
+            </label>
+
+            <select
+              id="membershipLevel"
+              name="membershipLevel"
+            >
+              <option value="silver">
+                Silver
+              </option>
+
+              <option value="gold">
+                Gold
+              </option>
+
+              <option value="black">
+                Black
+              </option>
+            </select>
+          </div>
+
+          <button
+            id="createButton"
+            class="button"
+            type="submit"
+          >
+            CREATE MEMBER
+          </button>
+
+          <div
+            id="notice"
+            class="notice"
+            aria-live="polite"
+          ></div>
+
+        </form>
+
+      </section>
+
+      <aside class="preview">
+
+        <div class="preview-label">
+          Member Preview
+        </div>
+
+        <h3 id="previewName">
+          New Member
+        </h3>
+
+        <div class="preview-row">
+          <span>Email</span>
+          <span id="previewEmail">
+            —
+          </span>
+        </div>
+
+        <div class="preview-row">
+          <span>Membership</span>
+          <span id="previewMembership">
+            Silver
+          </span>
+        </div>
+
+        <div class="preview-row">
+          <span>Member ID</span>
+          <span>
+            Generated by FWORLD
+          </span>
+        </div>
+
+        <div class="preview-row">
+          <span>Reference</span>
+          <span>
+            Generated by FWORLD
+          </span>
+        </div>
+
+        <div class="preview-row">
+          <span>Status</span>
+          <span>
+            Active
+          </span>
+        </div>
+
+        <div class="membership-note">
+          <strong>FWORLD Rule:</strong>
+          Member IDs and Reference Codes are generated by
+          the FWORLD SYSTEM. Members should not create their own codes.
+        </div>
+
+      </aside>
+
+    </div>
+
+    <div class="footer-note">
+      FWORLD SYSTEM • Members • Connected to MY INCOME
+    </div>
+
+  </main>
+
+  <script>
+    const form = document.getElementById("memberForm");
+    const fullNameInput = document.getElementById("fullName");
+    const emailInput = document.getElementById("email");
+    const membershipInput = document.getElementById("membershipLevel");
+
+    const previewName = document.getElementById("previewName");
+    const previewEmail = document.getElementById("previewEmail");
+    const previewMembership = document.getElementById("previewMembership");
+
+    const notice = document.getElementById("notice");
+    const createButton = document.getElementById("createButton");
+
+    function updatePreview() {
+      previewName.textContent =
+        fullNameInput.value.trim() || "New Member";
+
+      previewEmail.textContent =
+        emailInput.value.trim() || "—";
+
+      const level =
+        membershipInput.value || "silver";
+
+      previewMembership.textContent =
+        level.charAt(0).toUpperCase() + level.slice(1);
+    }
+
+    function showNotice(message, type = "info") {
+      notice.textContent = message;
+      notice.className = `notice show ${type}`;
+    }
+
+    fullNameInput.addEventListener(
+      "input",
+      updatePreview
+    );
+
+    emailInput.addEventListener(
+      "input",
+      updatePreview
+    );
+
+    membershipInput.addEventListener(
+      "change",
+      updatePreview
+    );
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      showNotice(
+        "The member form is ready. Backend member creation will be connected after the secure admin endpoint is completed.",
+        "info"
+      );
+    });
+
+    updatePreview();
+  </script>
+
+</body>
+</html>
