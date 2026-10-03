@@ -2,1564 +2,1938 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>FWORLD Learnings | Moving Forward Is Not Hard</title>
+
+<meta
+name="description"
+content="FWORLD Learnings — personal growth, financial literacy, entrepreneurship, skills development, and AI empowerment."
+/>
+
+<meta property="og:title" content="FWORLD Learnings | Moving Forward Is Not Hard" />
+<meta
+property="og:description"
+content="One lesson. One action. One step at a time."
+/>
+<meta property="og:type" content="website" />
+
+<style>
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+:root {
+--purple: #7c3aed;
+--purple-dark: #5b21b6;
+--purple-light: #f3e8ff;
+--purple-soft: #faf5ff;
+--black: #111111;
+--gray: #666666;
+--border: #e5e7eb;
+--white: #ffffff;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #ffffff;
+color: var(--black);
+line-height: 1.6;
+}
+
+body.modal-open {
+overflow: hidden;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+button {
+font-family: inherit;
+cursor: pointer;
+}
+
+.container {
+width: min(1180px, 92%);
+margin: auto;
+}
 
-  <title>FWORLD Learnings | Moving Forward Is Not Hard</title>
-
-  <meta
-    name="description"
-    content="FWORLD Learnings — personal growth, financial literacy, entrepreneurship, skills development, and AI empowerment."
-  />
-
-  <meta property="og:title" content="FWORLD Learnings | Moving Forward Is Not Hard" />
-  <meta
-    property="og:description"
-    content="One lesson. One action. One step at a time."
-  />
-  <meta property="og:type" content="website" />
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f7f7;
-      color: #111;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-    }
-
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
-    }
-
-    /* =====================================================
-       HEADER
-    ===================================================== */
-
-    header {
-      background: #111;
-      color: #fff;
-      padding: 18px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .top-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-    }
-
-    .brand {
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .brand small {
-      display: block;
-      color: #bbb;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-    }
-
-    .back-btn {
-      background: #fff;
-      color: #111;
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .back-btn:hover {
-      background: #ff7a00;
-      color: #fff;
-    }
-
-    /* =====================================================
-       HERO
-    ===================================================== */
-
-    .hero {
-      background:
-        radial-gradient(circle at top right, rgba(255, 193, 7, 0.35), transparent 35%),
-        linear-gradient(135deg, #5b21b6, #7c3aed, #c026d3);
-      color: #fff;
-      padding: 65px 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      opacity: 0.9;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 6vw, 70px);
-      line-height: 1;
-      margin-bottom: 18px;
-    }
-
-    .hero h2 {
-      font-size: clamp(20px, 3vw, 30px);
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      max-width: 650px;
-      font-size: 17px;
-      color: rgba(255,255,255,0.9);
-    }
-
-    .hero-card {
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 28px;
-      padding: 28px;
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-card .emoji {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-
-    .hero-card strong {
-      display: block;
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    /* =====================================================
-       SECTION
-    ===================================================== */
-
-    section {
-      padding: 55px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .section-heading span {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #7c3aed;
-      margin-bottom: 8px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(28px, 5vw, 44px);
-      line-height: 1.1;
-      margin-bottom: 10px;
-    }
-
-    .section-heading p {
-      max-width: 650px;
-      margin: auto;
-      color: #666;
-    }
-
-    /* =====================================================
-       MORNING START
-    ===================================================== */
-
-    .morning {
-      background: #fff8e7;
-    }
-
-    .morning-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .faith-card {
-      border-radius: 24px;
-      padding: 30px;
-      min-height: 220px;
-      color: #fff;
-    }
-
-    .faith-card.bible {
-      background: #8b5cf6
-    }
-
-    .faith-card.quran {
-      background: #a78bfa
-    }
-
-    .faith-card .icon {
-      font-size: 42px;
-      margin-bottom: 12px;
-    }
-
-    .faith-card h3 {
-      font-size: 25px;
-      margin-bottom: 10px;
-    }
-
-    .faith-card p {
-      color: rgba(255,255,255,0.85);
-    }
-
-    /* =====================================================
-       LEARNING MODULES
-    ===================================================== */
-
-    .modules {
-      background: #f8f5ff;
-    }
-
-    .module-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .module-card {
-      background: #fff;
-      border-radius: 24px;
-      padding: 26px;
-      border: 1px solid #eee;
-      transition: 0.2s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .module-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    }
-
-    .module-number {
-      font-size: 12px;
-      font-weight: 800;
-      color: #7c3aed;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .module-card h3 {
-      font-size: 22px;
-      margin: 7px 0 12px;
-    }
-
-    .module-card ul {
-      list-style: none;
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .module-card li {
-      margin: 5px 0;
-    }
-
-    .module-card li::before {
-      content: "✓";
-      color: #7c3aed;
-      font-weight: 800;
-      margin-right: 8px;
-    }
-
-    .learn-btn {
-      display: inline-block;
-      background: #111;
-      color: #fff;
-      border: none;
-      padding: 11px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 13px;
-    }
-
-    .learn-btn:hover {
-      background: #ff7a00;
-    }
-
-    /* =====================================================
-       SKILLS LAB
-    ===================================================== */
-
-    .skills {
-      background: #eef8ff;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .skill-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 24px 18px;
-      text-align: center;
-      border: 1px solid #e4e4e4;
-    }
-
-    .skill-card .icon {
-      font-size: 34px;
-      margin-bottom: 8px;
-    }
-
-    .skill-card h3 {
-      font-size: 16px;
-    }
-
-    /* =====================================================
-       AI EMPOWERMENT
-    ===================================================== */
-
-    .ai-section {
-      background: #6d28d9
-    }
-
-    .ai-box {
-      max-width: 950px;
-      margin: auto;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 30px;
-      padding: 35px;
-    }
-
-    .ai-box h2 {
-      font-size: clamp(30px, 5vw, 48px);
-      margin-bottom: 12px;
-    }
-
-    .ai-box p {
-      color: #d1d5db;
-      margin-bottom: 25px;
-    }
-
-    .ai-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .ai-card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 18px;
-      padding: 20px;
-    }
-
-    .ai-card strong {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .ai-card span {
-      font-size: 13px;
-      color: #d1d5db;
-    }
-
-    /* =====================================================
-       LEARN - DO - GROW
-    ===================================================== */
-
-    .action-section {
-      background: #fff;
-    }
-
-    .action-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .action-card {
-      border-radius: 24px;
-      padding: 30px;
-      text-align: center;
-      border: 1px solid #eee;
-    }
-
-    .action-card:nth-child(1) {
-      background: #f4f0ff;
-    }
-
-    .action-card:nth-child(2) {
-      background: #fff4e8;
-    }
-
-    .action-card:nth-child(3) {
-      background: #edfdf5;
-    }
-
-    .action-card .icon {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-
-    .action-card h3 {
-      margin-bottom: 8px;
-    }
-
-    .action-card p {
-      color: #666;
-      font-size: 14px;
-    }
-
-    /* =====================================================
-       LOSER / WINNER MESSAGE
-    ===================================================== */
-
-    .real-life {
-      background: #f5f5f5;
-    }
-
-    .real-life-box {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      background: #111;
-      color: #fff;
-      border-radius: 30px;
-      padding: 45px 25px;
-    }
-
-    .real-life-box .big-emoji {
-      font-size: 50px;
-      margin-bottom: 12px;
-    }
-
-    .real-life-box h2 {
-      font-size: clamp(30px, 5vw, 48px);
-      margin-bottom: 12px;
-    }
-
-    .real-life-box p {
-      color: #ccc;
-      max-width: 600px;
-      margin: auto auto 22px;
-    }
-
-    .try-btn {
-      border: none;
-      background: #ff7a00;
-      color: #fff;
-      padding: 14px 25px;
-      border-radius: 999px;
-      font-weight: 800;
-    }
-
-    .try-btn:hover {
-      background: #fff;
-      color: #111;
-    }
-
-    /* =====================================================
-       AI TWIN
-    ===================================================== */
-
-    .ai-twin {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      border: none;
-      background: #111;
-      color: #fff;
-      font-size: 27px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      z-index: 200;
-    }
-
-    .ai-twin:hover {
-      background: #ff7a00;
-    }
-
-    /* =====================================================
-       FOOTER
-    ===================================================== */
-
-    footer {
-      background: #111;
-      color: #aaa;
-      text-align: center;
-      padding: 30px 15px;
-      font-size: 13px;
-    }
-
-    footer strong {
-      color: #fff;
-    }
 /* =====================================================
-   VERSE POPUP
+HEADER
+===================================================== */
+
+header {
+background: var(--black);
+color: var(--white);
+padding: 18px 0;
+position: sticky;
+top: 0;
+z-index: 100;
+}
+
+.top-nav {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 15px;
+}
+
+.brand {
+font-weight: 800;
+letter-spacing: 1px;
+}
+
+.brand small {
+display: block;
+color: #bbb;
+font-size: 11px;
+font-weight: 400;
+letter-spacing: 0.5px;
+}
+
+.back-btn {
+background: var(--white);
+color: var(--black);
+padding: 10px 16px;
+border-radius: 999px;
+font-size: 13px;
+font-weight: 700;
+transition: 0.2s ease;
+}
+
+.back-btn:hover {
+background: var(--purple);
+color: var(--white);
+}
+
+/* =====================================================
+HERO
+===================================================== */
+
+.hero {
+background:
+radial-gradient(
+circle at top right,
+rgba(255,255,255,0.18),
+transparent 35%
+),
+linear-gradient(
+135deg,
+var(--purple-dark),
+var(--purple)
+);
+color: var(--white);
+padding: 65px 0;
+}
+
+.hero-grid {
+display: grid;
+grid-template-columns: 1.4fr 0.8fr;
+gap: 30px;
+align-items: center;
+}
+
+.eyebrow {
+font-size: 13px;
+font-weight: 800;
+letter-spacing: 2px;
+margin-bottom: 12px;
+text-transform: uppercase;
+opacity: 0.9;
+}
+
+.hero h1 {
+font-size: clamp(38px, 6vw, 70px);
+line-height: 1;
+margin-bottom: 18px;
+}
+
+.hero h2 {
+font-size: clamp(20px, 3vw, 30px);
+margin-bottom: 15px;
+}
+
+.hero p {
+max-width: 650px;
+font-size: 17px;
+color: rgba(255,255,255,0.92);
+}
+
+.hero-card {
+background: rgba(255,255,255,0.12);
+border: 1px solid rgba(255,255,255,0.25);
+border-radius: 28px;
+padding: 28px;
+backdrop-filter: blur(10px);
+}
+
+.hero-card .emoji {
+font-size: 48px;
+margin-bottom: 10px;
+}
+
+.hero-card strong {
+display: block;
+font-size: 20px;
+margin-bottom: 8px;
+}
+
+/* =====================================================
+SECTION
+===================================================== */
+
+section {
+padding: 55px 0;
+}
+
+.section-heading {
+text-align: center;
+margin-bottom: 30px;
+}
+
+.section-heading span {
+display: inline-block;
+font-size: 12px;
+font-weight: 800;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(--purple);
+margin-bottom: 8px;
+}
+
+.section-heading h2 {
+font-size: clamp(28px, 5vw, 44px);
+line-height: 1.1;
+margin-bottom: 10px;
+}
+
+.section-heading p {
+max-width: 650px;
+margin: auto;
+color: var(--gray);
+}
+
+/* =====================================================
+MORNING START
+===================================================== */
+
+.morning {
+background: var(--white);
+}
+
+.morning-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+}
+
+.faith-card {
+border-radius: 24px;
+padding: 30px;
+min-height: 220px;
+color: var(--white);
+}
+
+.faith-card.bible {
+background: #8b5cf6;
+}
+
+.faith-card.quran {
+background: #a78bfa;
+}
+
+.faith-card .icon {
+font-size: 42px;
+margin-bottom: 12px;
+}
+
+.faith-card h3 {
+font-size: 25px;
+margin-bottom: 10px;
+}
+
+.faith-card p {
+color: rgba(255,255,255,0.9);
+}
+
+/* =====================================================
+BUTTON
+===================================================== */
+
+.learn-btn {
+display: inline-block;
+background: var(--black);
+color: var(--white);
+border: none;
+padding: 12px 20px;
+border-radius: 999px;
+font-weight: 800;
+font-size: 13px;
+transition: 0.2s ease;
+}
+
+.learn-btn:hover,
+.learn-btn:focus {
+background: var(--purple);
+color: var(--white);
+}
+
+/* =====================================================
+MODULES
+===================================================== */
+
+.modules {
+background: var(--purple-soft);
+}
+
+.module-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 22px;
+}
+
+.module-card {
+border-radius: 28px;
+padding: 30px;
+border: 1px solid var(--border);
+transition: 0.25s ease;
+position: relative;
+overflow: hidden;
+}
+
+.module-card:nth-child(odd) {
+background: var(--white);
+color: var(--black);
+}
+
+.module-card:nth-child(even) {
+background: var(--purple);
+color: var(--white);
+border-color: var(--purple);
+}
+
+.module-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.module-number {
+font-size: 12px;
+font-weight: 800;
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 8px;
+}
+
+.module-card:nth-child(odd) .module-number {
+color: var(--purple);
+}
+
+.module-card:nth-child(even) .module-number {
+color: #ede9fe;
+}
+
+.module-card h3 {
+font-size: 23px;
+margin-bottom: 16px;
+}
+
+.module-card ul {
+list-style: none;
+font-size: 14px;
+margin-bottom: 22px;
+}
+
+.module-card:nth-child(odd) ul {
+color: var(--gray);
+}
+
+.module-card:nth-child(even) ul {
+color: rgba(255,255,255,0.88);
+}
+
+.module-card li {
+margin: 7px 0;
+}
+
+.module-card li::before {
+content: "✓";
+font-weight: 800;
+margin-right: 8px;
+}
+
+.module-card:nth-child(odd) li::before {
+color: var(--purple);
+}
+
+.module-card:nth-child(even) li::before {
+color: #ffffff;
+}
+
+.module-card .learn-btn {
+width: 100%;
+}
+
+.module-card:nth-child(even) .learn-btn {
+background: var(--white);
+color: var(--black);
+}
+
+.module-card:nth-child(even) .learn-btn:hover {
+background: var(--black);
+color: var(--white);
+}
+
+/* =====================================================
+SKILLS LAB
+===================================================== */
+
+.skills {
+background: var(--white);
+}
+
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 15px;
+}
+
+.skill-card {
+background: var(--white);
+border-radius: 22px;
+padding: 24px 18px;
+text-align: center;
+border: 1px solid var(--border);
+transition: 0.2s ease;
+cursor: pointer;
+}
+
+.skill-card:hover {
+transform: translateY(-4px);
+border-color: var(--purple);
+box-shadow: 0 12px 30px rgba(124,58,237,0.12);
+}
+
+.skill-card .icon {
+font-size: 34px;
+margin-bottom: 8px;
+}
+
+.skill-card h3 {
+font-size: 16px;
+}
+
+.skill-card .skill-open {
+display: inline-block;
+margin-top: 10px;
+color: var(--purple);
+font-size: 12px;
+font-weight: 800;
+}
+
+/* =====================================================
+AI EMPOWERMENT
+===================================================== */
+
+.ai-section {
+background: var(--purple-dark);
+color: var(--white);
+}
+
+.ai-box {
+max-width: 950px;
+margin: auto;
+background: rgba(255,255,255,0.08);
+border: 1px solid rgba(255,255,255,0.18);
+border-radius: 30px;
+padding: 35px;
+}
+
+.ai-box h2 {
+font-size: clamp(30px, 5vw, 48px);
+margin-bottom: 12px;
+}
+
+.ai-box p {
+color: #ede9fe;
+margin-bottom: 25px;
+}
+
+.ai-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 12px;
+}
+
+.ai-card {
+background: rgba(255,255,255,0.1);
+border-radius: 18px;
+padding: 20px;
+cursor: pointer;
+transition: 0.2s ease;
+}
+
+.ai-card:hover {
+background: rgba(255,255,255,0.18);
+transform: translateY(-3px);
+}
+
+.ai-card strong {
+display: block;
+margin-bottom: 5px;
+}
+
+.ai-card span {
+font-size: 13px;
+color: #ddd6fe;
+}
+
+/* =====================================================
+LEARN DO GROW
+===================================================== */
+
+.action-section {
+background: var(--white);
+}
+
+.action-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 18px;
+}
+
+.action-card {
+border-radius: 24px;
+padding: 30px;
+text-align: center;
+border: 1px solid var(--border);
+background: var(--white);
+cursor: pointer;
+transition: 0.2s ease;
+}
+
+.action-card:hover {
+transform: translateY(-4px);
+border-color: var(--purple);
+box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.action-card .icon {
+font-size: 40px;
+margin-bottom: 10px;
+}
+
+.action-card h3 {
+margin-bottom: 8px;
+}
+
+.action-card p {
+color: var(--gray);
+font-size: 14px;
+}
+
+.action-open {
+display: inline-block;
+margin-top: 12px;
+color: var(--purple);
+font-size: 12px;
+font-weight: 800;
+}
+
+/* =====================================================
+REAL LIFE
+===================================================== */
+
+.real-life {
+background: var(--purple-soft);
+}
+
+.real-life-box {
+max-width: 850px;
+margin: auto;
+text-align: center;
+background: var(--black);
+color: var(--white);
+border-radius: 30px;
+padding: 45px 25px;
+}
+
+.real-life-box .big-emoji {
+font-size: 50px;
+margin-bottom: 12px;
+}
+
+.real-life-box h2 {
+font-size: clamp(30px, 5vw, 48px);
+margin-bottom: 12px;
+}
+
+.real-life-box p {
+color: #ccc;
+max-width: 600px;
+margin: auto auto 22px;
+}
+
+.try-btn {
+border: none;
+background: var(--white);
+color: var(--black);
+padding: 14px 25px;
+border-radius: 999px;
+font-weight: 800;
+transition: 0.2s ease;
+}
+
+.try-btn:hover {
+background: var(--purple);
+color: var(--white);
+}
+
+/* =====================================================
+AI TWIN
+===================================================== */
+
+.ai-twin {
+position: fixed;
+right: 20px;
+bottom: 20px;
+width: 62px;
+height: 62px;
+border-radius: 50%;
+border: none;
+background: var(--black);
+color: var(--white);
+font-size: 27px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+z-index: 200;
+transition: 0.2s ease;
+}
+
+.ai-twin:hover {
+background: var(--purple);
+}
+
+/* =====================================================
+FOOTER
+===================================================== */
+
+footer {
+background: var(--black);
+color: #aaa;
+text-align: center;
+padding: 30px 15px;
+font-size: 13px;
+}
+
+footer strong {
+color: var(--white);
+}
+
+/* =====================================================
+GENERAL LEARNING POPUP
+===================================================== */
+
+.learning-modal {
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(17,17,17,0.78);
+z-index: 1200;
+padding: 18px;
+align-items: center;
+justify-content: center;
+}
+
+.learning-modal.show {
+display: flex;
+}
+
+.learning-box {
+width: min(900px, 100%);
+max-height: 94vh;
+overflow-y: auto;
+background: var(--white);
+color: var(--black);
+border-radius: 30px;
+box-shadow: 0 30px 90px rgba(0,0,0,0.35);
+position: relative;
+}
+
+.learning-top {
+background: var(--black);
+color: var(--white);
+padding: 22px 28px;
+position: sticky;
+top: 0;
+z-index: 5;
+}
+
+.learning-top-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 15px;
+}
+
+.learning-kicker {
+color: #c4b5fd;
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+.learning-counter {
+font-size: 12px;
+font-weight: 800;
+color: #ddd6fe;
+}
+
+.learning-close {
+width: 40px;
+height: 40px;
+border: none;
+border-radius: 50%;
+background: var(--white);
+color: var(--black);
+font-size: 22px;
+flex-shrink: 0;
+}
+
+.learning-close:hover {
+background: var(--purple);
+color: var(--white);
+}
+
+.progress-track {
+width: 100%;
+height: 6px;
+background: #333;
+border-radius: 999px;
+margin-top: 15px;
+overflow: hidden;
+}
+
+.progress-bar {
+height: 100%;
+width: 12.5%;
+background: var(--purple);
+border-radius: 999px;
+transition: 0.25s ease;
+}
+
+.learning-content {
+padding: 35px;
+}
+
+.learning-icon {
+font-size: 46px;
+margin-bottom: 8px;
+}
+
+.learning-content h2 {
+font-size: clamp(30px, 5vw, 46px);
+line-height: 1.1;
+margin-bottom: 25px;
+}
+
+.learning-block {
+margin-bottom: 25px;
+padding: 22px;
+border-radius: 20px;
+border: 1px solid var(--border);
+background: var(--white);
+}
+
+.learning-block h3 {
+color: var(--purple);
+font-size: 13px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+margin-bottom: 9px;
+}
+
+.learning-block p {
+color: #333;
+font-size: 16px;
+}
+
+.dialogue {
+background: var(--purple-soft);
+border-color: #ddd6fe;
+}
+
+.dialogue-line {
+margin: 9px 0;
+padding: 10px 14px;
+border-radius: 12px;
+background: var(--white);
+}
+
+.dialogue-line strong {
+color: var(--purple-dark);
+}
+
+.reflection-question {
+margin: 8px 0;
+font-weight: 700;
+color: #333;
+}
+
+.learning-textarea {
+width: 100%;
+min-height: 115px;
+border: 1px solid #d1d5db;
+border-radius: 15px;
+padding: 14px;
+margin-top: 10px;
+font-family: inherit;
+font-size: 15px;
+resize: vertical;
+outline: none;
+}
+
+.learning-textarea:focus {
+border-color: var(--purple);
+box-shadow: 0 0 0 3px rgba(124,58,237,0.12);
+}
+
+.growth-box {
+background: var(--black);
+color: var(--white);
+border-radius: 20px;
+padding: 22px;
+margin-bottom: 10px;
+}
+
+.growth-box h3 {
+color: #c4b5fd;
+}
+
+.growth-box p {
+color: #ddd;
+}
+
+.learning-navigation {
+display: flex;
+justify-content: space-between;
+gap: 12px;
+padding: 20px 35px 30px;
+border-top: 1px solid var(--border);
+}
+
+.nav-learning-btn {
+border: none;
+border-radius: 999px;
+padding: 13px 22px;
+font-weight: 800;
+font-size: 13px;
+background: var(--black);
+color: var(--white);
+}
+
+.nav-learning-btn:hover {
+background: var(--purple);
+}
+
+.nav-learning-btn:disabled {
+opacity: 0.35;
+cursor: not-allowed;
+}
+
+/* =====================================================
+SIMPLE CONTENT POPUP
+===================================================== */
+
+.simple-modal {
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(17,17,17,0.78);
+z-index: 1250;
+align-items: center;
+justify-content: center;
+padding: 20px;
+}
+
+.simple-modal.show {
+display: flex;
+}
+
+.simple-box {
+width: min(650px, 100%);
+max-height: 90vh;
+overflow-y: auto;
+background: var(--white);
+border-radius: 28px;
+padding: 32px;
+position: relative;
+box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+}
+
+.simple-box .simple-icon {
+font-size: 46px;
+margin-bottom: 10px;
+}
+
+.simple-box h2 {
+font-size: 30px;
+margin-bottom: 12px;
+}
+
+.simple-box h3 {
+color: var(--purple);
+margin: 22px 0 7px;
+font-size: 14px;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.simple-box p {
+color: #444;
+}
+
+.simple-close {
+position: absolute;
+top: 15px;
+right: 15px;
+width: 38px;
+height: 38px;
+border: none;
+border-radius: 50%;
+background: #f3f4f6;
+color: var(--black);
+font-size: 20px;
+}
+
+.simple-close:hover {
+background: var(--purple);
+color: var(--white);
+}
+
+/* =====================================================
+VERSE POPUP
 ===================================================== */
 
 .verse-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.72);
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.72);
+z-index: 1300;
+align-items: center;
+justify-content: center;
+padding: 20px;
 }
 
 .verse-modal.show {
-  display: flex;
+display: flex;
 }
 
 .verse-box {
-  width: min(560px, 100%);
-  background: #fff;
-  color: #111;
-  border-radius: 28px;
-  padding: 30px;
-  position: relative;
-  text-align: center;
-  box-shadow: 0 25px 70px rgba(0,0,0,0.3);
-  border-top: 7px solid #ff7a00;
+width: min(560px, 100%);
+background: var(--white);
+color: var(--black);
+border-radius: 28px;
+padding: 30px;
+position: relative;
+text-align: center;
+box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+border-top: 7px solid var(--purple);
 }
 
 .verse-label {
-  color: #ff7a00;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
+color: var(--purple);
+font-size: 12px;
+font-weight: 800;
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 8px;
 }
 
 .verse-box h2 {
-  font-size: 28px;
-  margin-bottom: 18px;
+font-size: 28px;
+margin-bottom: 18px;
 }
 
 .verse-text {
-  font-size: 20px;
-  line-height: 1.7;
-  margin-bottom: 15px;
+font-size: 20px;
+line-height: 1.7;
+margin-bottom: 15px;
 }
 
 .verse-reference {
-  font-weight: 800;
-  color: #666;
-  margin-bottom: 25px;
+font-weight: 800;
+color: #666;
+margin-bottom: 25px;
 }
 
 .verse-actions {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
+display: flex;
+gap: 10px;
+justify-content: center;
+flex-wrap: wrap;
 }
 
 .verse-action {
-  border: none;
-  background: #111;
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 999px;
-  font-weight: 800;
-  font-size: 13px;
+border: none;
+background: var(--black);
+color: var(--white);
+padding: 12px 20px;
+border-radius: 999px;
+font-weight: 800;
+font-size: 13px;
 }
 
 .verse-action:hover {
-  background: #ff7a00;
+background: var(--purple);
 }
 
 .verse-close {
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  width: 38px;
-  height: 38px;
-  border: none;
-  border-radius: 50%;
-  background: #f3f3f3;
-  color: #111;
-  font-size: 20px;
+position: absolute;
+top: 14px;
+right: 16px;
+width: 38px;
+height: 38px;
+border: none;
+border-radius: 50%;
+background: #f3f3f3;
+color: var(--black);
+font-size: 20px;
 }
 
 .verse-close:hover {
-  background: #ff7a00;
-  color: #fff;
+background: var(--purple);
+color: var(--white);
+}
+
+/* =====================================================
+MOBILE
+===================================================== */
+
+@media (max-width: 850px) {
+
+.hero-grid,
+.morning-grid,
+.module-grid {
+grid-template-columns: 1fr;
+}
+
+.skills-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.ai-grid {
+grid-template-columns: 1fr;
+}
+
+.action-grid {
+grid-template-columns: 1fr;
+}
+
+.hero {
+padding: 48px 0;
+}
+
+section {
+padding: 45px 0;
+}
 }
 
 @media (max-width: 520px) {
 
-  .verse-box {
-    padding: 26px 20px;
-  }
-
-  .verse-box h2 {
-    font-size: 24px;
-  }
-
-  .verse-text {
-    font-size: 18px;
-  }
-
-  .verse-actions {
-    flex-direction: column;
-  }
-
-  .verse-action {
-    width: 100%;
-  }
+.top-nav {
+align-items: flex-start;
 }
 
-    
-    /* =====================================================
-       MOBILE
-    ===================================================== */
+.brand {
+font-size: 14px;
+}
 
-    @media (max-width: 850px) {
+.back-btn {
+font-size: 11px;
+padding: 9px 12px;
+}
 
-      .hero-grid,
-      .morning-grid,
-      .module-grid {
-        grid-template-columns: 1fr;
-      }
+.hero h1 {
+font-size: 43px;
+}
 
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+.skills-grid {
+grid-template-columns: 1fr 1fr;
+}
 
-      .ai-grid {
-        grid-template-columns: 1fr;
-      }
+.faith-card,
+.module-card,
+.ai-box,
+.real-life-box {
+padding: 24px;
+}
 
-      .action-grid {
-        grid-template-columns: 1fr;
-      }
+.learning-content {
+padding: 25px 20px;
+}
 
-      .hero {
-        padding: 48px 0;
-      }
+.learning-navigation {
+padding: 18px 20px 25px;
+}
 
-      section {
-        padding: 45px 0;
-      }
-    }
+.learning-top {
+padding: 18px 20px;
+}
 
-    @media (max-width: 520px) {
+.learning-content h2 {
+font-size: 30px;
+}
 
-      .top-nav {
-        align-items: flex-start;
-      }
+.learning-block {
+padding: 18px;
+}
 
-      .brand {
-        font-size: 14px;
-      }
+.nav-learning-btn {
+flex: 1;
+padding: 13px 12px;
+}
 
-      .back-btn {
-        font-size: 11px;
-        padding: 9px 12px;
-      }
-
-      .hero h1 {
-        font-size: 43px;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .faith-card,
-      .module-card,
-      .ai-box,
-      .real-life-box {
-        padding: 24px;
-      }
-
-      .ai-twin {
-        right: 15px;
-        bottom: 15px;
-      }
-    }
-  </style>
+.ai-twin {
+right: 15px;
+bottom: 15px;
+}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- =====================================================
-       FILE LABEL: fworld-learnings.html
-       WORLD: LEARNINGS WORLD
-       ===================================================== -->
-
-  <!-- HEADER -->
-  <header>
-    <div class="container top-nav">
-
-      <div class="brand">
-        FWORLD ONLINE
-        <small>Your Digital Space</small>
-      </div>
-
-      <!-- BACK TO DIGITAL SPACE -->
-      <a href="fworld-dashboard.html" class="back-btn">
-        ← Back to Digital Space
-      </a>
-
-    </div>
-  </header>
-
-
-  <!-- =====================================================
-       HERO: LEARNINGS WORLD
-       ===================================================== -->
-
-  <section class="hero">
-
-    <div class="container hero-grid">
-
-      <div>
-        <div class="eyebrow">📚 FWORLD LEARNINGS</div>
-
-        <h1>Moving Forward Is Not Hard.</h1>
-
-        <h2>One lesson. One action. One step at a time.</h2>
-
-        <p>
-          Learn something useful, reflect on yourself, take one small action,
-          and keep moving forward.
-        </p>
-      </div>
-
-      <div class="hero-card">
-
-        <div class="emoji">🌱</div>
-
-        <strong>YOUR GROWTH JOURNEY</strong>
-
-        <p>
-          You don't have to change everything today.
-          Just take the next step.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       SECTION 1: MORNING START
-       ===================================================== -->
-
-  <section class="morning">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span>🌅 Start Your Day</span>
-
-        <h2>Morning Start</h2>
-
-        <p>
-          Begin your day with reflection, gratitude, prayer, and inspiration.
-        </p>
-
-      </div>
-
-
-      <div class="morning-grid">
-
-        <!-- BIBLE -->
-<div class="faith-card bible">
-
-  <div class="icon">✝️</div>
-
-  <h3>Bible</h3>
-
-  <p>
-    Take a moment to read a verse, reflect, and begin your day with faith.
-  </p>
-
-  <br>
-
-  <button class="learn-btn" onclick="openVerse('bible')">
-    📖 BIBLE
-  </button>
-
-</div>
-
-
-<!-- QURAN -->
-<div class="faith-card quran">
-
-  <div class="icon">☪️</div>
-
-  <h3>Quran</h3>
-
-  <p>
-    Take a moment to read a verse, reflect, and begin your day with purpose.
-  </p>
-
-  <br>
-
-  <button class="learn-btn" onclick="openVerse('quran')">
-    ☪️ QURAN
-  </button>
-
-</div>
-
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       SECTION 2: PERSONAL GROWTH MODULES
-       ===================================================== -->
-
-  <section class="modules">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span>🌱 Personal Growth</span>
-
-        <h2>FWORLD Learning Modules</h2>
-
-        <p>
-          Each module can become an 8-slide learning experience
-          with reflection and action.
-        </p>
-
-      </div>
-
-
-      <div class="module-grid">
-
-
-        <!-- MODULE 1 -->
-        <div class="module-card">
-
-          <div class="module-number">Module 1</div>
-
-          <h3>🌱 Know Yourself</h3>
-
-          <ul>
-            <li>Who am I?</li>
-            <li>My strengths</li>
-            <li>My weaknesses</li>
-            <li>My values</li>
-            <li>My experiences</li>
-            <li>My confidence</li>
-            <li>My growth areas</li>
-            <li>My next improvement</li>
-          </ul>
-
-          <button class="learn-btn" onclick="openModule(1)">
-            Start Module
-          </button>
-
-        </div>
-
-
-        <!-- MODULE 2 -->
-        <div class="module-card">
-
-          <div class="module-number">Module 2</div>
-
-          <h3>🎯 What Is Your Purpose in Life?</h3>
-
-          <ul>
-            <li>Your meaning</li>
-            <li>Your talents</li>
-            <li>Your experiences</li>
-            <li>Your dreams</li>
-            <li>Your contribution</li>
-            <li>Your mission</li>
-            <li>Your direction</li>
-            <li>Your purpose statement</li>
-          </ul>
-
-          <button class="learn-btn" onclick="openModule(2)">
-            Start Module
-          </button>
-
-        </div>
-
-
-        <!-- MODULE 3 -->
-        <div class="module-card">
-
-          <div class="module-number">Module 3</div>
-
-          <h3>💼 Why Entrepreneurship?</h3>
-
-          <ul>
-            <li>Creating opportunities</li>
-            <li>Building something</li>
-            <li>Solving problems</li>
-            <li>Serving people</li>
-            <li>Creating income opportunities</li>
-            <li>Learning through experience</li>
-            <li>Understanding risk</li>
-            <li>Is entrepreneurship right for me?</li>
-          </ul>
-
-          <button class="learn-btn" onclick="openModule(3)">
-            Start Module
-          </button>
-
-        </div>
-
-
-        <!-- MODULE 4 -->
-        <div class="module-card">
-
-          <div class="module-number">Module 4</div>
-
-          <h3>🗓️ Importance of Long-Term Goals</h3>
-
-          <ul>
-            <li>Create a vision</li>
-            <li>Set direction</li>
-            <li>Short-term vs long-term</li>
-            <li>Break goals into steps</li>
-            <li>Stay consistent</li>
-            <li>Measure progress</li>
-            <li>Adjust your plan</li>
-            <li>Create your long-term goal</li>
-          </ul>
-
-          <button class="learn-btn" onclick="openModule(4)">
-            Start Module
-          </button>
-
-        </div>
-
-
-        <!-- MODULE 5 -->
-        <div class="module-card">
-
-          <div class="module-number">Module 5</div>
-
-          <h3>💰 Financial Freedom & Time Freedom</h3>
-
-          <ul>
-            <li>What is financial freedom?</li>
-            <li>What is time freedom?</li>
-            <li>Income and expenses</li>
-            <li>Time as a resource</li>
-            <li>Income opportunities</li>
-            <li>Future planning</li>
-            <li>Freedom and responsibility</li>
-            <li>What does freedom mean to me?</li>
-          </ul>
-
-          <button class="learn-btn" onclick="openModule(5)">
-            Start Module
-          </button>
-
-        </div>
-
-
-        <!-- MODULE 6 -->
-        <div class="module-card">
-
-          <div class="module-number">Module 6</div>
-
-          <h3>📊 Financial Literacy</h3>
-
-          <ul>
-            <li>Know your money</li>
-            <li>Budgeting</li>
-            <li>Saving</li>
-            <li>Debt awareness</li>
-            <li>Emergency funds</li>
-            <li>Understanding income</li>
-            <li>Basic investing concepts</li>
-            <li>Create your money plan</li>
-          </ul>
-
-          <button class="learn-btn" onclick="openModule(6)">
-            Start Module
-          </button>
-
-        </div>
-
-
-        <!-- MODULE 7 -->
-        <div class="module-card">
-
-          <div class="module-number">Module 7</div>
-
-          <h3>🛡️ Emergency Plan</h3>
-
-          <ul>
-            <li>Why emergencies happen</li>
-            <li>Emergency savings</li>
-            <li>Important documents</li>
-            <li>Emergency contacts</li>
-            <li>Family preparedness</li>
-            <li>Income interruption</li>
-            <li>Business interruption</li>
-            <li>Create your checklist</li>
-          </ul>
-
-          <button class="learn-btn" onclick="openModule(7)">
-            Start Module
-          </button>
-
-        </div>
-
-
-        <!-- MODULE 8 -->
-        <div class="module-card">
-
-          <div class="module-number">Module 8</div>
-
-          <h3>🧠 Work Within Yourself</h3>
-
-          <ul>
-            <li>Self-discipline</li>
-            <li>Emotional awareness</li>
-            <li>Communication</li>
-            <li>Confidence</li>
-            <li>Decision-making</li>
-            <li>Time management</li>
-            <li>Handling setbacks</li>
-            <li>Personal growth plan</li>
-          </ul>
-
-          <button class="learn-btn" onclick="openModule(8)">
-            Start Module
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       SECTION 3: SKILLS LAB
-       ===================================================== -->
-
-  <section class="skills">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span>🛠️ Build More Skills</span>
-
-        <h2>Skills Lab</h2>
-
-        <p>
-          Small skills can create big changes over time.
-        </p>
-
-      </div>
-
-
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <div class="icon">🗣️</div>
-          <h3>Communication</h3>
-        </div>
-
-        <div class="skill-card">
-          <div class="icon">🎤</div>
-          <h3>Public Speaking</h3>
-        </div>
-
-        <div class="skill-card">
-          <div class="icon">🤝</div>
-          <h3>People Skills</h3>
-        </div>
-
-        <div class="skill-card">
-          <div class="icon">💻</div>
-          <h3>Digital Skills</h3>
-        </div>
-
-        <div class="skill-card">
-          <div class="icon">📱</div>
-          <h3>Social Media</h3>
-        </div>
-
-        <div class="skill-card">
-          <div class="icon">✍️</div>
-          <h3>Writing & Content</h3>
-        </div>
-
-        <div class="skill-card">
-          <div class="icon">💰</div>
-          <h3>Sales Skills</h3>
-        </div>
-
-        <div class="skill-card">
-          <div class="icon">👑</div>
-          <h3>Leadership</h3>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       SECTION 4: AI EMPOWERMENT TRAINING
-       ===================================================== -->
-
-  <section class="ai-section">
-
-    <div class="container">
-
-      <div class="ai-box">
-
-        <div class="section-heading" style="margin-bottom:25px;">
-
-          <span style="color:#c4b5fd;">🤖 AI Empowerment</span>
-
-          <h2>AI Empowerment Training</h2>
-
-          <p style="color:#d1d5db;">
-            Learn how to use AI as a tool for learning,
-            business, productivity, creativity, and everyday work.
-          </p>
-
-        </div>
-
-
-        <div class="ai-grid">
-
-          <div class="ai-card">
-            <strong>🤖 AI 101</strong>
-            <span>Understand the basics of AI.</span>
-          </div>
-
-          <div class="ai-card">
-            <strong>💼 AI for Business</strong>
-            <span>Explore practical business uses.</span>
-          </div>
-
-          <div class="ai-card">
-            <strong>✍️ AI for Content</strong>
-            <span>Create ideas, captions, and drafts.</span>
-          </div>
-
-          <div class="ai-card">
-            <strong>⚡ AI for Productivity</strong>
-            <span>Use AI to organize and simplify work.</span>
-          </div>
-
-          <div class="ai-card">
-            <strong>💬 Prompting Basics</strong>
-            <span>Learn how to communicate with AI.</span>
-          </div>
-
-          <div class="ai-card">
-            <strong>🚀 Build With AI</strong>
-            <span>Turn ideas into practical projects.</span>
-          </div>
-
-        </div>
-
-        <br>
-
-        <button class="learn-btn" onclick="comingSoon('AI Empowerment Training')">
-          Start AI Training
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       SECTION 5: LEARN → DO → GROW
-       ===================================================== -->
-
-  <section class="action-section">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span>⚡ Your Learning Method</span>
-
-        <h2>Learn → Do → Grow</h2>
-
-        <p>
-          Learning becomes more powerful when you put it into action.
-        </p>
-
-      </div>
-
-
-      <div class="action-grid">
-
-        <div class="action-card">
-
-          <div class="icon">📖</div>
-
-          <h3>LEARN</h3>
-
-          <p>
-            Discover one useful idea.
-          </p>
-
-        </div>
-
-
-        <div class="action-card">
-
-          <div class="icon">⚡</div>
-
-          <h3>DO</h3>
-
-          <p>
-            Take one small action.
-          </p>
-
-        </div>
-
-
-        <div class="action-card">
-
-          <div class="icon">🌱</div>
-
-          <h3>GROW</h3>
-
-          <p>
-            Reflect, improve, and move forward.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       SECTION 6: REAL LIFE MESSAGE
-       ===================================================== -->
-
-  <section class="real-life">
-
-    <div class="container">
-
-      <div class="real-life-box">
-
-        <div class="big-emoji">😂</div>
-
-        <h2>LOSER FOR TODAY</h2>
-
-        <p>
-          Okay lang. You didn't lose your life.
-          You only had a difficult day.
-          Rest. Learn. Reset. Try again tomorrow.
-        </p>
-
-        <button class="try-btn" onclick="tryAgain()">
-          🔄 TRY AGAIN TOMORROW
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
 <!-- =====================================================
-     VERSE POPUP
+HEADER
 ===================================================== -->
 
-<div id="verseModal"
-     class="verse-modal"
-     role="dialog"
-     aria-modal="true"
-     aria-labelledby="verseTitle">
+<header>
+<div class="container top-nav">
 
-  <div class="verse-box">
-
-    <button class="verse-close"
-            onclick="closeVerse()"
-            aria-label="Close">
-      ×
-    </button>
-
-    <div id="verseLabel" class="verse-label">
-      MORNING START
-    </div>
-
-    <h2 id="verseTitle">Bible</h2>
-
-    <div id="verseText" class="verse-text">
-      Loading verse...
-    </div>
-
-    <div id="verseReference" class="verse-reference"></div>
-
-    <div class="verse-actions">
-
-      <button class="verse-action"
-              onclick="anotherVerse()">
-        🔄 Another Verse
-      </button>
-
-      <button class="verse-action"
-              onclick="shareVerse()">
-        📤 Share to Facebook
-      </button>
-
-    </div>
-
-  </div>
+<div class="brand">
+FWORLD ONLINE
+<small>Your Digital Space</small>
 </div>
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
+<a href="fworld-dashboard.html" class="back-btn">
+← Back to Digital Space
+</a>
 
-  <footer>
-
-    <strong>FWORLD ONLINE</strong>
-
-    <br>
-
-    Your Digital Space.
-
-    <br><br>
-
-    Moving Forward Is Not Hard. 🌱
-
-  </footer>
+</div>
+</header>
 
 
-  <!-- =====================================================
-       AI TWIN BUTTON
-       ===================================================== -->
+<!-- =====================================================
+HERO
+===================================================== -->
 
-  <button
-    class="ai-twin"
-    onclick="openAITwin()"
-    aria-label="Open AI Twin"
-  >
-    🤖
-  </button>
+<section class="hero">
 
+<div class="container hero-grid">
 
-  <!-- =====================================================
-       JAVASCRIPT
-       ===================================================== -->
+<div>
 
-  <script>
+<div class="eyebrow">📚 FWORLD LEARNINGS</div>
 
-    function comingSoon(name) {
-      alert(
-        name +
-        " is part of the FWORLD Learnings experience.\n\n" +
-        "Content connection will be added as we build the learning system."
-      );
-    }
+<h1>Moving Forward Is Not Hard.</h1>
 
+<h2>One lesson. One action. One step at a time.</h2>
 
-    function openModule(number) {
-      alert(
-        "FWORLD MODULE " +
-        number +
-        "\n\n" +
-        "This module will contain 8 learning slides.\n\n" +
-        "Learn → Reflect → Do → Grow."
-      );
-    }
+<p>
+Learn something useful, reflect on yourself, take one small action,
+and keep moving forward.
+</p>
 
+</div>
 
-    function tryAgain() {
-      alert(
-        "Tomorrow is another chance. ❤️\n\n" +
-        "Rest today. Reset. Then move forward."
-      );
-    }
+<div class="hero-card">
+
+<div class="emoji">🌱</div>
+
+<strong>YOUR GROWTH JOURNEY</strong>
+
+<p>
+You don't have to change everything today.
+Just take the next step.
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 
-    function openAITwin() {
-      alert(
-        "🤖 Hi! I'm your AI Twin.\n\n" +
-        "What do you want to learn today?\n\n" +
-        "🌱 Personal Growth\n" +
-        "💼 Business\n" +
-        "💰 Financial Literacy\n" +
-        "🤖 AI Empowerment\n" +
-        "⚡ Give Me an Activity"
-      );
-    }
+<!-- =====================================================
+MORNING START
+===================================================== -->
+
+<section class="morning">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>🌅 Start Your Day</span>
+
+<h2>Morning Start</h2>
+
+<p>
+Begin your day with reflection, gratitude, prayer, and inspiration.
+</p>
+
+</div>
+
+<div class="morning-grid">
+
+<div class="faith-card bible">
+
+<div class="icon">✝️</div>
+
+<h3>Bible</h3>
+
+<p>
+Take a moment to read a verse, reflect, and begin your day with faith.
+</p>
+
+<br>
+
+<button class="learn-btn" onclick="openVerse('bible')">
+📖 BIBLE
+</button>
+
+</div>
+
+
+<div class="faith-card quran">
+
+<div class="icon">☪️</div>
+
+<h3>Quran</h3>
+
+<p>
+Take a moment to read a verse, reflect, and begin your day with purpose.
+</p>
+
+<br>
+
+<button class="learn-btn" onclick="openVerse('quran')">
+☪️ QURAN
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+PERSONAL GROWTH MODULES
+===================================================== -->
+
+<section class="modules">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>🌱 Personal Growth</span>
+
+<h2>FWORLD Learning Modules</h2>
+
+<p>
+Each module is an 8-slide growth experience with
+lesson, dialogue, reflection, action, and personal growth.
+</p>
+
+</div>
+
+
+<div class="module-grid" id="moduleGrid"></div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+SKILLS LAB
+===================================================== -->
+
+<section class="skills">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>🛠️ Build More Skills</span>
+
+<h2>Skills Lab</h2>
+
+<p>
+Small skills can create big changes over time.
+Tap a skill to begin learning.
+</p>
+
+</div>
+
+<div class="skills-grid" id="skillsGrid"></div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+AI EMPOWERMENT
+===================================================== -->
+
+<section class="ai-section">
+
+<div class="container">
+
+<div class="ai-box">
+
+<div class="section-heading" style="margin-bottom:25px;">
+
+<span style="color:#ddd6fe;">🤖 AI Empowerment</span>
+
+<h2>AI Empowerment Training</h2>
+
+<p style="color:#ede9fe;">
+Learn how to use AI as a tool for learning,
+business, productivity, creativity, and everyday work.
+</p>
+
+</div>
+
+
+<div class="ai-grid" id="aiGrid"></div>
+
+<br>
+
+<button class="learn-btn" onclick="openAITraining()">
+Start AI Training
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+LEARN DO GROW
+===================================================== -->
+
+<section class="action-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>⚡ Your Learning Method</span>
+
+<h2>Learn → Do → Grow</h2>
+
+<p>
+Learning becomes more powerful when you put it into action.
+</p>
+
+</div>
+
+<div class="action-grid" id="actionGrid"></div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+REAL LIFE MESSAGE
+===================================================== -->
+
+<section class="real-life">
+
+<div class="container">
+
+<div class="real-life-box">
+
+<div class="big-emoji">😂</div>
+
+<h2>LOSER FOR TODAY</h2>
+
+<p>
+Okay lang. You didn't lose your life.
+You only had a difficult day.
+Rest. Learn. Reset. Try again tomorrow.
+</p>
+
+<button class="try-btn" onclick="tryAgain()">
+🔄 TRY AGAIN TOMORROW
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+LEARNING MODULE POPUP
+===================================================== -->
+
+<div
+id="learningModal"
+class="learning-modal"
+role="dialog"
+aria-modal="true"
+aria-labelledby="learningTitle"
+>
+
+<div class="learning-box">
+
+<div class="learning-top">
+
+<div class="learning-top-row">
+
+<div>
+
+<div id="learningKicker" class="learning-kicker">
+MODULE 1 • KNOW YOURSELF
+</div>
+
+<div id="learningCounter" class="learning-counter">
+01 / 08
+</div>
+
+</div>
+
+<button
+class="learning-close"
+onclick="closeLearning()"
+aria-label="Close learning"
+>
+×
+</button>
+
+</div>
+
+<div class="progress-track">
+<div id="progressBar" class="progress-bar"></div>
+</div>
+
+</div>
+
+
+<div class="learning-content">
+
+<div id="learningIcon" class="learning-icon">
+🌱
+</div>
+
+<h2 id="learningTitle">
+Who Am I?
+</h2>
+
+
+<div class="learning-block">
+
+<h3>📖 Lesson</h3>
+
+<p id="lessonText"></p>
+
+</div>
+
+
+<div class="learning-block dialogue">
+
+<h3>💬 Dialogue</h3>
+
+<div id="dialogueContent"></div>
+
+</div>
+
+
+<div class="learning-block">
+
+<h3>🪞 Reflect</h3>
+
+<div id="reflectionContent"></div>
+
+</div>
+
+
+<div class="learning-block">
+
+<h3>✍️ Do</h3>
+
+<p id="doText"></p>
+
+<textarea
+class="learning-textarea"
+id="doAnswer"
+placeholder="Write your answer or action here..."
+></textarea>
+
+</div>
+
+
+<div class="learning-block">
+
+<h3>🌱 What I Learned</h3>
+
+<p>
+What did I discover or understand about myself through this topic?
+</p>
+
+<textarea
+class="learning-textarea"
+id="learnedAnswer"
+placeholder="Write what you learned..."
+></textarea>
+
+</div>
+
+
+<div class="growth-box">
+
+<h3>🎯 My Next Growth</h3>
+
+<p id="growthText"></p>
+
+<textarea
+class="learning-textarea"
+id="growthAnswer"
+placeholder="What will I practice, improve, or do next?"
+></textarea>
+
+</div>
+
+</div>
+
+
+<div class="learning-navigation">
+
+<button
+id="previousBtn"
+class="nav-learning-btn"
+onclick="previousSlide()"
+>
+← PREVIOUS
+</button>
+
+<button
+id="nextBtn"
+class="nav-learning-btn"
+onclick="nextSlide()"
+>
+NEXT →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+SIMPLE POPUP
+===================================================== -->
+
+<div
+id="simpleModal"
+class="simple-modal"
+role="dialog"
+aria-modal="true"
+>
+
+<div class="simple-box">
+
+<button
+class="simple-close"
+onclick="closeSimpleModal()"
+aria-label="Close"
+>
+×
+</button>
+
+<div id="simpleIcon" class="simple-icon">🌱</div>
+
+<h2 id="simpleTitle">Learning</h2>
+
+<div id="simpleContent"></div>
+
+<br>
+
+<button class="learn-btn" onclick="closeSimpleModal()">
+DONE
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+VERSE POPUP
+===================================================== -->
+
+<div
+id="verseModal"
+class="verse-modal"
+role="dialog"
+aria-modal="true"
+aria-labelledby="verseTitle"
+>
+
+<div class="verse-box">
+
+<button
+class="verse-close"
+onclick="closeVerse()"
+aria-label="Close"
+>
+×
+</button>
+
+<div id="verseLabel" class="verse-label">
+MORNING START
+</div>
+
+<h2 id="verseTitle">Bible</h2>
+
+<div id="verseText" class="verse-text">
+Loading verse...
+</div>
+
+<div id="verseReference" class="verse-reference"></div>
+
+<div class="verse-actions">
+
+<button
+class="verse-action"
+onclick="anotherVerse()"
+>
+🔄 Another Verse
+</button>
+
+<button
+class="verse-action"
+onclick="shareVerse()"
+>
+📤 Share to Facebook
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
+<footer>
+
+<strong>FWORLD ONLINE</strong>
+
+<br>
+
+Your Digital Space.
+
+<br><br>
+
+Moving Forward Is Not Hard. 🌱
+
+</footer>
+
+
+<!-- =====================================================
+AI TWIN
+===================================================== -->
+
+<button
+class="ai-twin"
+onclick="openAITwin()"
+aria-label="Open AI Twin"
+>
+🤖
+</button>
+
+
+<!-- =====================================================
+JAVASCRIPT
+===================================================== -->
+
+<script>
 
 /* =====================================================
-   RANDOM BIBLE & QURAN VERSE POPUP
+MODULE DATA
 ===================================================== */
 
-const verses = {
-  bible: [
-    {
-      text: "I can do all things through Christ which strengtheneth me.",
-      reference: "Philippians 4:13"
-    },
-    {
-      text: "The Lord is my shepherd; I shall not want.",
-      reference: "Psalm 23:1"
-    },
-    {
-      text: "Trust in the Lord with all thine heart; and lean not unto thine own understanding.",
-      reference: "Proverbs 3:5"
-    }
-  ],
+const modules = {
 
-  quran: [
-    {
-      text: "Indeed, with hardship comes ease.",
-      reference: "Quran 94:6"
-    },
-    {
-      text: "So remember Me; I will remember you.",
-      reference: "Quran 2:152"
-    },
-    {
-      text: "And whoever puts their trust in Allah, then He is sufficient for them.",
-      reference: "Quran 65:3"
-    }
-  ]
-};
+1: {
+title: "Know Yourself",
+icon: "🌱",
+slides: [
+{
+title: "Who Am I?",
+icon: "🌱",
+lesson:
+"Knowing yourself is a starting point for personal growth. Before deciding where you want to go, take time to understand who you are today.",
+dialogue: [
+["FWORLD", "Who are you beyond your name, work, or role?"],
+["YOU", "Think about the qualities, experiences, and parts of yourself that make you who you are."],
+["FWORLD", "What is one thing about yourself you want to understand better?"]
+],
+reflection: [
+"What three words describe you today?",
+"What part of yourself are you most proud of?"
+],
+do:
+"Write a short introduction about yourself. Include who you are, what matters to you, and one thing you are currently working on.",
+growth:
+"Choose one part of yourself you want to understand more deeply."
+},
 
-let currentFaith = "";
-let currentVerse = null;
+{
+title: "My Strengths",
+icon: "💪",
+lesson:
+"Strengths are qualities, abilities, experiences, and habits that help you handle life, work, relationships, and challenges.",
+dialogue: [
+["FWORLD", "What do you naturally do well?"],
+["YOU", "Think about moments when other people trusted you or appreciated what you did."],
+["FWORLD", "How can you use one of your strengths more intentionally?"]
+],
+reflection: [
+"What is one strength you often use?",
+"When has this strength helped you?"
+],
+do:
+"List three strengths and write one real situation where each strength helped you.",
+growth:
+"Practice using one strength intentionally this week."
+},
 
-function openVerse(type) {
+{
+title: "My Weaknesses",
+icon: "🪞",
+lesson:
+"Recognizing areas that need improvement is not about judging yourself. Awareness gives you a starting point for growth.",
+dialogue: [
+["FWORLD", "What is one area you know you need to improve?"],
+["YOU", "Be honest, but be kind to yourself."],
+["FWORLD", "What small change could help you improve it?"]
+],
+reflection: [
+"What habit or behavior sometimes holds you back?",
+"What have you learned from this weakness?"
+],
+do:
+"Choose one weakness and identify one small action that can help you work on it.",
+growth:
+"Replace self-judgment with awareness and one practical improvement."
+},
 
-  currentFaith = type;
+{
+title: "My Values",
+icon: "❤️",
+lesson:
+"Values are the principles that help guide your choices and show what matters most to you.",
+dialogue: [
+["FWORLD", "What matters most to you in life?"],
+["YOU", "Think about the principles you want your decisions to reflect."],
+["FWORLD", "Are your daily actions aligned with those values?"]
+],
+reflection: [
+"What are three values that matter most to you?",
+"Which value do you want to practice more consistently?"
+],
+do:
+"Write your top five values and choose one that you want to demonstrate through your actions.",
+growth:
+"Make one decision this week that reflects one of your core values."
+},
 
-  const list = verses[type];
+{
+title: "My Experiences",
+icon: "🌿",
+lesson:
+"Your experiences become part of your story. Both difficult and positive experiences can teach you something about yourself.",
+dialogue: [
+["FWORLD", "What experience changed the way you see yourself?"],
+["YOU", "Think about an experience that taught you something important."],
+["FWORLD", "What did that experience teach you?"]
+],
+reflection: [
+"What experience made you stronger?",
+"What lesson from your past can help you today?"
+],
+do:
+"Choose one important experience and write the lesson you gained from it.",
+growth:
+"Use one lesson from your past to make a better choice today."
+},
 
-  const randomIndex =
-    Math.floor(Math.random() * list.length);
+{
+title: "My Confidence",
+icon: "✨",
+lesson:
+"Confidence can grow through experience, preparation, self-awareness, and small actions. It does not have to mean feeling fearless.",
+dialogue: [
+["FWORLD", "When do you feel most confident?"],
+["YOU", "Think about situations where you trust yourself."],
+["FWORLD", "What can you do to strengthen that confidence?"]
+],
+reflection: [
+"What is something you can do that makes you feel capable?",
+"Where would you like to become more confident?"
+],
+do:
+"Choose one small situation where you will practice trusting yourself more.",
+growth:
+"Take one small action that builds evidence that you can trust yourself."
+},
 
-  currentVerse = list[randomIndex];
+{
+title: "My Growth Areas",
+icon: "🌱",
+lesson:
+"Growth areas are parts of yourself you want to develop. You do not need to improve everything at once.",
+dialogue: [
+["FWORLD", "Where do you want to grow?"],
+["YOU", "Think about your personal life, relationships, work, business, or skills."],
+["FWORLD", "Which area deserves your attention first?"]
+],
+reflection: [
+"What area would make the biggest positive difference in your life?",
+"Why is this important to you?"
+],
+do:
+"Choose one growth area and write one realistic action you can start.",
+growth:
+"Focus on one growth area instead of trying to change everything at once."
+},
 
-  document.getElementById("verseTitle").textContent =
-    type === "bible" ? "Bible" : "Quran";
-
-  document.getElementById("verseText").textContent =
-    currentVerse.text;
-
-  document.getElementById("verseReference").textContent =
-    currentVerse.reference;
-
-  document.getElementById("verseLabel").textContent =
-    "MORNING START";
-
-  document.getElementById("verseModal").classList.add("show");
+{
+title: "My Next Improvement",
+icon: "🚀",
+lesson:
+"Personal growth becomes real when awareness turns into action. Your next improvement can be small, practical, and meaningful.",
+dialogue: [
+["FWORLD", "After everything you discovered, what do you want to improve first?"],
+["YOU", "Choose something realistic that you can actually practice."],
+["FWORLD", "What will your first step be?"]
+],
+reflection: [
+"What did you discover about yourself?",
+"What is one improvement that matters to you now?"
+],
+do:
+"Write your next improvement and the first action you will take.",
+growth:
+"Create a simple commitment: What will you do, when will you start, and how will you know you are making progress?"
 }
+]
+},
 
-function anotherVerse() {
-  openVerse(currentFaith);
-}
+2: {
+title: "What Is Your Purpose in Life?",
+icon: "🎯",
+slides: [
+"Your Meaning",
+"Your Talents",
+"Your Experiences",
+"Your Dreams",
+"Your Contribution",
+"Your Mission",
+"Your Direction",
+"Your Purpose Statement"
+]
+},
 
-function closeVerse() {
-  document.getElementById("verseModal").classList.remove("show");
-}
+3: {
+title: "Why Entrepreneurship?",
+icon: "💼",
+slides: [
+"Creating Opportunities",
+"Building Something",
+"Solving Problems",
+"Serving People",
+"Creating Income Opportunities",
+"Learning Through Experience",
+"Understanding Risk",
+"Is Entrepreneurship Right for Me?"
+]
+},
 
-function shareVerse() {
+4: {
+title: "Importance of Long-Term Goals",
+icon: "🗓️",
+slides: [
+"Create a Vision",
+"Set Direction",
+"Short-Term vs Long-Term",
+"Break Goals Into Steps",
+"Stay Consistent",
+"Measure Progress",
+"Adjust Your Plan",
+"Create Your Long-Term Goal"
+]
+},
 
-  if (!currentVerse) return;
+5: {
+title: "Financial Freedom & Time Freedom",
+icon: "💰",
+slides: [
+"What Is Financial Freedom?",
+"What Is Time Freedom?",
+"Income and Expenses",
+"Time as a Resource",
+"Income Opportunities",
+"Future Planning",
+"Freedom and Responsibility",
+"What Does Freedom Mean to Me?"
+]
+},
 
-  const title =
-    currentFaith === "bible" ? "Bible" : "Quran";
+6: {
+title: "Financial Literacy",
+icon: "📊",
+slides: [
+"Know Your Money",
+"Budgeting",
+"Saving",
+"Debt Awareness",
+"Emergency Funds",
+"Understanding Income",
+"Basic Investing Concepts",
+"Create Your Money Plan"
+]
+},
 
-  const shareText =
-    title + "\n\n" +
-    currentVerse.text + "\n\n" +
-    currentVerse.reference +
-    "\n\nFWORLD Learnings";
-
-  const shareUrl =
-    "https://www.facebook.com/sharer/sharer.php?u=" +
-    encodeURIComponent(window.location.href) +
-    "&quote=" +
-    encodeURIComponent(shareText);
-
-  window.open(
-    shareUrl,
-    "_blank",
-    "width=600,height=500"
-  );
-}
-
-/* Close popup when clicking outside the box */
-
-document.getElementById("verseModal").addEventListener(
-  "click",
-  function(event) {
-
-    if (event.target === this) {
-      closeVerse();
-    }
-
-  }
-);
-
-  </script>
-
-</body>
-</html>
+7: {
+title: "Emergency Plan",
+icon: "🛡️",
+slides: [
+"Why Emergencies Happen",
+"Emergency Savings",
+"Important Documents",
