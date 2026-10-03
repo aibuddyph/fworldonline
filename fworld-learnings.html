@@ -527,7 +527,126 @@
     footer strong {
       color: #fff;
     }
+/* =====================================================
+   VERSE POPUP
+===================================================== */
 
+.verse-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.verse-modal.show {
+  display: flex;
+}
+
+.verse-box {
+  width: min(560px, 100%);
+  background: #fff;
+  color: #111;
+  border-radius: 28px;
+  padding: 30px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+  border-top: 7px solid #ff7a00;
+}
+
+.verse-label {
+  color: #ff7a00;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.verse-box h2 {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+.verse-text {
+  font-size: 20px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.verse-reference {
+  font-weight: 800;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.verse-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.verse-action {
+  border: none;
+  background: #111;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.verse-action:hover {
+  background: #ff7a00;
+}
+
+.verse-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #f3f3f3;
+  color: #111;
+  font-size: 20px;
+}
+
+.verse-close:hover {
+  background: #ff7a00;
+  color: #fff;
+}
+
+@media (max-width: 520px) {
+
+  .verse-box {
+    padding: 26px 20px;
+  }
+
+  .verse-box h2 {
+    font-size: 24px;
+  }
+
+  .verse-text {
+    font-size: 18px;
+  }
+
+  .verse-actions {
+    flex-direction: column;
+  }
+
+  .verse-action {
+    width: 100%;
+  }
+}
+
+    
     /* =====================================================
        MOBILE
     ===================================================== */
@@ -687,25 +806,43 @@
       <div class="morning-grid">
 
         <!-- BIBLE -->
-        <div class="faith-card bible">
+<div class="faith-card bible">
 
-          <div class="icon">✝️</div>
+  <div class="icon">✝️</div>
 
-          <h3>My Bible Verse</h3>
+  <h3>Bible</h3>
 
-          <p>
-            A daily Bible verse and reflection to begin the day with faith,
-            hope, and purpose.
-          </p>
+  <p>
+    Take a moment to read a verse, reflect, and begin your day with faith.
+  </p>
 
-          <br>
+  <br>
 
-          <button class="learn-btn" onclick="comingSoon('My Bible Verse')">
-            Read Today's Verse
-          </button>
+  <button class="learn-btn" onclick="openVerse('bible')">
+    📖 BIBLE
+  </button>
 
-        </div>
+</div>
 
+
+<!-- QURAN -->
+<div class="faith-card quran">
+
+  <div class="icon">☪️</div>
+
+  <h3>Quran</h3>
+
+  <p>
+    Take a moment to read a verse, reflect, and begin your day with purpose.
+  </p>
+
+  <br>
+
+  <button class="learn-btn" onclick="openVerse('quran')">
+    ☪️ QURAN
+  </button>
+
+</div>
 
         <!-- QURAN -->
         <div class="faith-card quran">
@@ -1203,6 +1340,52 @@
 
   </section>
 
+<!-- =====================================================
+     VERSE POPUP
+===================================================== -->
+
+<div id="verseModal"
+     class="verse-modal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="verseTitle">
+
+  <div class="verse-box">
+
+    <button class="verse-close"
+            onclick="closeVerse()"
+            aria-label="Close">
+      ×
+    </button>
+
+    <div id="verseLabel" class="verse-label">
+      MORNING START
+    </div>
+
+    <h2 id="verseTitle">Bible</h2>
+
+    <div id="verseText" class="verse-text">
+      Loading verse...
+    </div>
+
+    <div id="verseReference" class="verse-reference"></div>
+
+    <div class="verse-actions">
+
+      <button class="verse-action"
+              onclick="anotherVerse()">
+        🔄 Another Verse
+      </button>
+
+      <button class="verse-action"
+              onclick="shareVerse()">
+        📤 Share to Facebook
+      </button>
+
+    </div>
+
+  </div>
+</div>
 
   <!-- =====================================================
        FOOTER
@@ -1281,6 +1464,118 @@
         "⚡ Give Me an Activity"
       );
     }
+
+/* =====================================================
+   RANDOM BIBLE & QURAN VERSE POPUP
+===================================================== */
+
+const verses = {
+  bible: [
+    {
+      text: "I can do all things through Christ which strengtheneth me.",
+      reference: "Philippians 4:13"
+    },
+    {
+      text: "The Lord is my shepherd; I shall not want.",
+      reference: "Psalm 23:1"
+    },
+    {
+      text: "Trust in the Lord with all thine heart; and lean not unto thine own understanding.",
+      reference: "Proverbs 3:5"
+    }
+  ],
+
+  quran: [
+    {
+      text: "Indeed, with hardship comes ease.",
+      reference: "Quran 94:6"
+    },
+    {
+      text: "So remember Me; I will remember you.",
+      reference: "Quran 2:152"
+    },
+    {
+      text: "And whoever puts their trust in Allah, then He is sufficient for them.",
+      reference: "Quran 65:3"
+    }
+  ]
+};
+
+let currentFaith = "";
+let currentVerse = null;
+
+function openVerse(type) {
+
+  currentFaith = type;
+
+  const list = verses[type];
+
+  const randomIndex =
+    Math.floor(Math.random() * list.length);
+
+  currentVerse = list[randomIndex];
+
+  document.getElementById("verseTitle").textContent =
+    type === "bible" ? "Bible" : "Quran";
+
+  document.getElementById("verseText").textContent =
+    currentVerse.text;
+
+  document.getElementById("verseReference").textContent =
+    currentVerse.reference;
+
+  document.getElementById("verseLabel").textContent =
+    "MORNING START";
+
+  document.getElementById("verseModal").classList.add("show");
+}
+
+function anotherVerse() {
+  openVerse(currentFaith);
+}
+
+function closeVerse() {
+  document.getElementById("verseModal").classList.remove("show");
+}
+
+function shareVerse() {
+
+  if (!currentVerse) return;
+
+  const title =
+    currentFaith === "bible" ? "Bible" : "Quran";
+
+  const shareText =
+    title + "\n\n" +
+    currentVerse.text + "\n\n" +
+    currentVerse.reference +
+    "\n\nFWORLD Learnings";
+
+  const shareUrl =
+    "https://www.facebook.com/sharer/sharer.php?u=" +
+    encodeURIComponent(window.location.href) +
+    "&quote=" +
+    encodeURIComponent(shareText);
+
+  window.open(
+    shareUrl,
+    "_blank",
+    "width=600,height=500"
+  );
+}
+
+/* Close popup when clicking outside the box */
+
+document.getElementById("verseModal").addEventListener(
+  "click",
+  function(event) {
+
+    if (event.target === this) {
+      closeVerse();
+    }
+
+  }
+);
 
   </script>
 
