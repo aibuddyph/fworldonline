@@ -807,6 +807,158 @@
     }
 
 
+      /* ================================
+   MEMBERSHIP CENTER
+================================ */
+
+.membership-center {
+  margin: 40px 0;
+}
+
+.membership-center-header {
+  margin-bottom: 18px;
+}
+
+.membership-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.membership-center-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #000;
+}
+
+.membership-center-header p {
+  margin: 7px 0 0;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Member Button */
+
+.membership-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 18px;
+  text-decoration: none;
+  color: #000;
+  box-sizing: border-box;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.membership-icon {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #fff;
+  border-radius: 14px;
+  font-size: 24px;
+}
+
+.membership-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.membership-content h3 {
+  margin: 0 0 5px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.membership-content p {
+  margin: 0;
+  font-size: 13px;
+  color: #777;
+}
+
+.membership-arrow {
+  font-size: 25px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Click / Hover */
+
+.membership-card:hover {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.membership-card:hover .membership-icon {
+  background: #fff;
+  color: #000;
+}
+
+.membership-card:hover .membership-content p,
+.membership-card:hover .membership-arrow {
+  color: #fff;
+}
+
+.membership-card:active {
+  background: #e91e63;
+  border-color: #e91e63;
+  color: #fff;
+  transform: translateY(0);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .membership-center {
+    margin: 30px 0;
+  }
+
+  .membership-center-header h2 {
+    font-size: 21px;
+  }
+
+  .membership-card {
+    padding: 17px;
+    gap: 13px;
+  }
+
+  .membership-icon {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+    font-size: 21px;
+  }
+
+  .membership-content h3 {
+    font-size: 16px;
+  }
+
+  .membership-content p {
+    font-size: 12px;
+  }
+
+}
+
     /* =========================================================
        FACEBOOK SHARE
     ========================================================== */
@@ -1570,7 +1722,35 @@
       </p>
 
     </section>
+    
+    
+      <!-- MEMBERSHIP CENTER -->
+<section class="membership-center">
 
+  <div class="membership-center-header">
+    <span class="membership-label">FWORLD SYSTEM</span>
+    <h2>MEMBERSHIP CENTER</h2>
+    <p>Manage your FWORLD membership ecosystem.</p>
+  </div>
+
+  <a href="fworld-members.html" class="membership-card">
+
+    <div class="membership-icon">
+      👥
+    </div>
+
+    <div class="membership-content">
+      <h3>Members</h3>
+      <p>Encode and manage FWORLD members.</p>
+    </div>
+
+    <div class="membership-arrow">
+      →
+    </div>
+
+  </a>
+
+</section>
 
 
     <!-- ======================================================
