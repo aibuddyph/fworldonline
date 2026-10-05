@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,14 +14,33 @@
   </script>
 
   <meta charset="UTF-8">
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>FWORLD ONLINE | Business • Beauty • Digital • Travel</title>
 
   <meta name="description" content="FWORLD ONLINE — a digital hub for beauty, digital products, women empowerment, travel and business opportunities.">
 
+  <meta property="og:title" content="FWORLD ONLINE | Business • Beauty • Digital • Travel">
+  <meta property="og:description" content="FWORLD ONLINE — a digital hub for beauty, digital products, women empowerment, travel and business opportunities.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.fworld.online/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/aibuddyph/fworldonline/main/IMG-20260921-WA0001.jpg">
+
   <style>
+
+    :root {
+      --black: #0b0b0d;
+      --dark: #151518;
+      --white: #ffffff;
+      --off-white: #f7f7f8;
+      --text: #171719;
+      --muted: #66666d;
+      --line: #e5e5e8;
+      --pink: #d9367a;
+      --pink-light: #f05a98;
+      --pink-soft: rgba(217, 54, 122, 0.10);
+      --max-width: 1180px;
+    }
 
     * {
       margin: 0;
@@ -32,13 +50,15 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f7f6f3;
-      color: #171717;
+      background: var(--off-white);
+      color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
@@ -46,330 +66,792 @@
       color: inherit;
     }
 
-    /* NAVIGATION */
+    button {
+      font-family: inherit;
+    }
 
-    nav {
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .site-nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: #fff;
-      border-bottom: 1px solid #e5e5e5;
-      padding: 18px 7%;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      width: min(92%, var(--max-width));
+      min-height: 76px;
+      margin: auto;
+
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      gap: 25px;
     }
 
     .logo {
       font-size: 24px;
-      font-weight: 800;
-      letter-spacing: 3px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      white-space: nowrap;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover {
-      opacity: 0.55;
+    .logo span {
+      color: var(--pink);
     }
 
     #main-nav {
+      margin-left: auto;
+
       display: flex;
-      gap: 25px;
       align-items: center;
+      gap: 27px;
     }
 
     #main-nav a {
-      text-decoration: none;
+      position: relative;
+
+      font-size: 13px;
+      font-weight: 700;
       color: #111;
+
+      padding: 8px 0;
+
+      transition: color 0.25s ease;
     }
-    
-    /* HERO */
 
-    /* HERO */
-    
-.hero {
-  min-height: 88vh;
-  display: flex;
-  align-items: center;
-  padding: 80px 7%;
-  background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.25)
-    ),
-    url("https://raw.githubusercontent.com/aibuddyph/fworldonline/main/IMG-20260921-WA0001.jpg")
-    center center / cover no-repeat;
-  color: white;
-}
+    #main-nav a::after {
+      content: "";
 
-.hero-content {
-  max-width: 850px;
-}
+      position: absolute;
+      left: 0;
+      bottom: 2px;
 
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 12px;
-  margin-bottom: 25px;
-  opacity: 0.7;
-}
+      width: 0;
+      height: 2px;
 
-.hero h1 {
-  font-size: clamp(48px, 9vw, 105px);
-  line-height: 0.95;
-  letter-spacing: -4px;
-  margin-bottom: 30px;
-  font-weight: 800;
-}
+      background: var(--pink);
 
-.hero h1 span {
-  font-weight: 300;
-}
+      transition: width 0.25s ease;
+    }
 
-.hero p {
-  font-size: clamp(28px, 4.5vw, 58px);
-  line-height: 1.1;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin: 25px 0 35px;
-  color: #ffffff;
-}
+    #main-nav a:hover,
+    #main-nav a:focus-visible {
+      color: var(--pink);
+    }
 
-.hero p .orange {
-  color: #f28c28;
-}
-    
+    #main-nav a:hover::after,
+    #main-nav a:focus-visible::after {
+      width: 100%;
+    }
+
+
+    /* MEMBER LOGIN */
+
+    .member-login {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 8px 14px;
+
+      border: 1.5px solid var(--pink);
+      border-radius: 999px;
+
+      background: #fff;
+      color: var(--pink) !important;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      white-space: nowrap;
+
+      transition: 0.25s ease;
+    }
+
+    .member-login:hover,
+    .member-login:focus-visible {
+      background: var(--pink);
+      color: #fff !important;
+
+      box-shadow: 0 8px 25px rgba(217, 54, 122, 0.22);
+    }
+
+
+    /* MOBILE MENU */
+
+    .mobile-menu-button {
+      display: none;
+
+      width: 40px;
+      height: 40px;
+
+      border: 1px solid var(--line);
+      border-radius: 50%;
+
+      background: #fff;
+
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      position: relative;
+
+      min-height: 88vh;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      color: #fff;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,0.72) 0%,
+          rgba(0,0,0,0.48) 48%,
+          rgba(0,0,0,0.20) 100%
+        ),
+        url("https://raw.githubusercontent.com/aibuddyph/fworldonline/main/IMG-20260921-WA0001.jpg")
+        58% center / cover no-repeat;
+    }
+
+
+    /* SUBTLE AI ORBIT */
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 560px;
+      height: 560px;
+
+      right: -170px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      border: 1px solid rgba(240,90,152,0.30);
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 60px rgba(240,90,152,0.025),
+        0 0 0 120px rgba(255,255,255,0.018);
+
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 8px;
+      height: 8px;
+
+      right: 17%;
+      top: 27%;
+
+      border-radius: 50%;
+
+      background: var(--pink-light);
+
+      box-shadow:
+        80px 100px 0 rgba(240,90,152,0.75),
+        -120px 170px 0 rgba(255,255,255,0.35);
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      width: min(92%, var(--max-width));
+
+      margin: auto;
+
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin-bottom: 22px;
+
+      color: rgba(255,255,255,0.72);
+
+      text-transform: uppercase;
+
+      letter-spacing: 5px;
+
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      max-width: 950px;
+
+      margin: auto auto 25px;
+
+      font-size: clamp(48px, 8vw, 100px);
+
+      line-height: 0.94;
+
+      letter-spacing: -4px;
+
+      font-weight: 900;
+    }
+
+    .hero h1 span {
+      font-weight: 300;
+    }
+
+    .hero p {
+      margin-bottom: 35px;
+
+      font-size: clamp(22px, 3.5vw, 45px);
+
+      line-height: 1.15;
+
+      font-weight: 700;
+    }
+
+    .hero p .pink {
+      color: var(--pink-light);
+    }
+
+
+    /* BUTTON */
 
     .button {
-      display: inline-block;
-      padding: 15px 28px;
-      background: white;
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 50px;
+
+      padding: 14px 28px;
+
+      background: #fff;
       color: #111;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 1px;
-      border: 1px solid white;
-      transition: 0.3s;
+
+      border: 1px solid #fff;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 1.3px;
+
+      transition: 0.25s ease;
     }
 
-    .button:hover {
-      background: transparent;
-      color: white;
+    .button:hover,
+    .button:focus-visible {
+      background: var(--pink);
+      border-color: var(--pink);
+
+      color: #fff;
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 12px 30px rgba(217,54,122,0.25);
     }
 
-    .button.dark {
-      background: #111;
-      color: white;
-      border-color: #111;
-    }
 
-    .button.dark:hover {
-      background: white;
-      color: #111;
-    }
-      /* =========================
-   MEMBER LOGIN - NAV BUTTON
-========================= */
-
-.member-login {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 7px 12px;
-  background: #ffffff;
-  color: #ff1493 !important;
-  border: 1.5px solid #ff1493;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 11px;
-  line-height: 1;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: all 0.2s ease;
-}
-
-.member-login:hover,
-.member-login:active {
-  background: #ff1493;
-  border-color: #ff1493;
-  color: #ffffff !important;
-}
-
-/* PHONE */
-@media (max-width: 768px) {
-  .member-login {
-    padding: 6px 10px;
-    font-size: 10px;
-  }
-}
-
-}
-    /* GENERAL */
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
 
     section {
-      padding: 95px 7%;
+      padding: 100px 0;
+    }
+
+    .section-inner {
+      width: min(92%, var(--max-width));
+      margin: auto;
     }
 
     .section-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: #777;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
       margin-bottom: 15px;
+
+      color: #77777e;
+
+      text-transform: uppercase;
+
+      letter-spacing: 4px;
+
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .section-label::before {
+      content: "";
+
+      width: 24px;
+      height: 2px;
+
+      background: var(--pink);
     }
 
     .section-title {
-      font-size: clamp(35px, 5vw, 58px);
-      line-height: 1.05;
+      font-size: clamp(38px, 5vw, 62px);
+
+      line-height: 1.04;
+
+      letter-spacing: -2px;
+
       margin-bottom: 20px;
     }
 
     .section-intro {
-      max-width: 680px;
-      color: #666;
+      max-width: 700px;
+
+      color: var(--muted);
+
       font-size: 17px;
-      margin-bottom: 55px;
     }
 
-    /* ABOUT */
+
+    /* =========================
+       ABOUT
+    ========================= */
 
     .about {
-      background: white;
+      position: relative;
+
+      background: #fff;
+
+      overflow: hidden;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
+
+      grid-template-columns: 1fr 0.9fr;
+
+      gap: 75px;
+
       align-items: center;
+    }
+
+    .about-copy {
+      max-width: 650px;
     }
 
     .about-text {
-      font-size: 19px;
-      color: #444;
+      margin-bottom: 20px;
+
+      color: #46464c;
+
+      font-size: 18px;
+
+      line-height: 1.8;
     }
 
     .about-box {
-      background: #eeeae3;
-      padding: 55px;
-      min-height: 300px;
+      position: relative;
+
+      min-height: 360px;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
-      text-align: center;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(217,54,122,0.15),
+          transparent 35%
+        ),
+        var(--black);
+
+      color: #fff;
+
+      border-radius: 22px;
+
+      box-shadow:
+        0 25px 60px rgba(0,0,0,0.12);
+    }
+
+    .about-box::before {
+      content: "";
+
+      position: absolute;
+
+      width: 430px;
+      height: 180px;
+
+      border: 1px solid rgba(240,90,152,0.35);
+
+      border-radius: 50%;
+
+      transform: rotate(-17deg);
+    }
+
+    .about-box::after {
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      border: 1px solid rgba(255,255,255,0.10);
+
+      border-radius: 50%;
+    }
+
+    .about-dot {
+      position: absolute;
+
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--pink-light);
+
+      box-shadow:
+        0 0 20px rgba(240,90,152,0.8);
+    }
+
+    .about-dot.one {
+      top: 25%;
+      right: 22%;
+    }
+
+    .about-dot.two {
+      bottom: 23%;
+      left: 20%;
     }
 
     .about-box h3 {
-      font-size: 35px;
-      line-height: 1.15;
+      position: relative;
+      z-index: 2;
+
+      font-size: clamp(38px, 4vw, 54px);
+
+      line-height: 1.08;
+
+      text-align: center;
     }
 
-    /* PROJECTS */
+    .about-box h3 span {
+      color: var(--pink-light);
+    }
+
+
+    /* =========================
+       PROJECTS
+    ========================= */
 
     .projects {
-      background: #f7f6f3;
+      background: var(--off-white);
+    }
+
+    .projects-heading {
+      text-align: center;
+
+      margin-bottom: 55px;
+    }
+
+    .projects-heading .section-label {
+      justify-content: center;
+    }
+
+    .projects-heading .section-intro {
+      margin: auto;
     }
 
     .cards {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+
+      gap: 22px;
     }
 
     .card {
-      background: white;
-      min-height: 300px;
-      padding: 32px;
+      position: relative;
+
+      min-height: 325px;
+
+      padding: 30px;
+
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      border: 1px solid #e5e5e5;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      overflow: hidden;
+
+      background: #fff;
+
+      border: 1px solid var(--line);
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 8px 25px rgba(0,0,0,0.035);
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    .card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 150px;
+      height: 150px;
+
+      right: -75px;
+      top: -75px;
+
+      border: 1px solid rgba(217,54,122,0.20);
+
+      border-radius: 50%;
+
+      transition: transform 0.4s ease;
+    }
+
+    .card::after {
+      content: "";
+
+      position: absolute;
+
+      left: 30px;
+      top: 0;
+
+      width: 42px;
+      height: 3px;
+
+      background: var(--pink);
+    }
+
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-7px) scale(1.015);
+
+      border-color: rgba(217,54,122,0.40);
+
+      box-shadow:
+        0 25px 55px rgba(0,0,0,0.12);
+    }
+
+    .card:hover::before,
+    .card:focus-within::before {
+      transform: scale(2);
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 2;
     }
 
     .card-number {
-      font-size: 11px;
+      margin-bottom: 20px;
+
+      color: #888890;
+
+      font-size: 10px;
+
       letter-spacing: 3px;
-      color: #888;
-      margin-bottom: 22px;
+
+      font-weight: 800;
     }
 
     .card h3 {
-      font-size: 26px;
-      line-height: 1.15;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
+
+      font-size: 25px;
+
+      line-height: 1.14;
     }
 
     .card p {
-      font-size: 15px;
-      color: #666;
+      color: var(--muted);
+
+      font-size: 14px;
+
       line-height: 1.7;
     }
 
     .card-link {
-      display: inline-block;
-      margin-top: 30px;
+      position: relative;
+      z-index: 4;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      margin-top: 28px;
+
       padding-top: 15px;
-      border-top: 1px solid #ddd;
-      font-size: 12px;
-      font-weight: 700;
+
+      border-top: 1px solid var(--line);
+
+      color: #111;
+
+      font-size: 11px;
+
+      font-weight: 800;
+
       letter-spacing: 1px;
+
+      transition:
+        color 0.25s ease,
+        border-color 0.25s ease;
     }
 
-    .card-link:hover {
-      opacity: 0.55;
+    .card-link .arrow {
+      font-size: 18px;
+
+      transition: transform 0.25s ease;
     }
 
-    /* FEATURE */
+    .card:hover .card-link,
+    .card:focus-within .card-link {
+      color: var(--pink);
+
+      border-color: rgba(217,54,122,0.35);
+    }
+
+    .card:hover .arrow,
+    .card:focus-within .arrow {
+      transform: translateX(6px);
+    }
+
+
+    /* WHOLE CARD CLICK */
+
+    .card-click {
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 3;
+
+      cursor: pointer;
+    }
+
+    .card:active {
+      transform: scale(0.985);
+    }
+
+
+    /* =========================
+       FEATURE
+    ========================= */
 
     .feature {
-      background: #111;
-      color: white;
+      position: relative;
+
+      overflow: hidden;
+
+      background: var(--black);
+
+      color: #fff;
+
+      text-align: center;
+    }
+
+    .feature::before {
+      content: "";
+
+      position: absolute;
+
+      width: 650px;
+      height: 250px;
+
+      left: 50%;
+      top: 50%;
+
+      transform:
+        translate(-50%, -50%)
+        rotate(-12deg);
+
+      border: 1px solid rgba(217,54,122,0.22);
+
+      border-radius: 50%;
     }
 
     .feature .section-label {
-      color: #aaa;
+      justify-content: center;
+
+      color: #aaaab0;
     }
 
     .feature h2 {
-      max-width: 850px;
-      font-size: clamp(35px, 6vw, 65px);
-      line-height: 1.05;
-      margin-bottom: 25px;
+      max-width: 900px;
+
+      margin: auto auto 25px;
+
+      font-size: clamp(38px, 6vw, 68px);
+
+      line-height: 1.04;
+
+      letter-spacing: -2px;
     }
 
     .feature p {
-      max-width: 650px;
-      color: #bbb;
+      max-width: 680px;
+
+      margin: auto auto 35px;
+
+      color: #b8b8bf;
+
       font-size: 17px;
-      margin-bottom: 35px;
     }
 
-    /* CONTACT */
+
+    /* =========================
+       CONTACT
+    ========================= */
 
     .contact {
-      background: white;
+      background: #fff;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
+
+      grid-template-columns: 1fr 0.85fr;
+
+      gap: 75px;
+
+      align-items: center;
     }
 
     .contact-info p {
-      margin-bottom: 15px;
-      color: #555;
+      margin-bottom: 12px;
+
+      color: #55555c;
     }
 
     .contact-info strong {
@@ -378,240 +860,567 @@
 
     .contact-links {
       display: flex;
+
       flex-direction: column;
-      gap: 15px;
+
+      gap: 12px;
+
+      margin-top: 25px;
     }
 
-    .contact-links a {
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 15px;
-      font-weight: 600;
+    .contact-button {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 17px 0;
+
+      border-bottom: 1px solid var(--line);
+
+      font-weight: 800;
+
+      transition:
+        color 0.25s ease,
+        padding-left 0.25s ease;
     }
 
-    /* FOOTER */
+    .contact-button:hover,
+    .contact-button:focus-visible {
+      color: var(--pink);
+
+      padding-left: 7px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-      background: #111;
-      color: white;
-      padding: 45px 7%;
+      background: var(--black);
+
+      color: #fff;
+
+      padding: 48px 0 28px;
+    }
+
+    .footer-inner {
+      width: min(92%, var(--max-width));
+
+      margin: auto;
     }
 
     .footer-top {
       display: flex;
+
+      align-items: center;
       justify-content: space-between;
+
       gap: 30px;
-      margin-bottom: 45px;
+
+      margin-bottom: 42px;
     }
 
     .footer-logo {
-      font-size: 25px;
-      font-weight: 800;
+      font-size: 24px;
+
+      font-weight: 900;
+
       letter-spacing: 3px;
     }
 
+    .footer-logo span {
+      color: var(--pink-light);
+    }
+
     footer p {
-      color: #999;
-      font-size: 14px;
+      color: #9999a1;
+
+      font-size: 13px;
     }
 
     .copyright {
-      border-top: 1px solid #333;
-      padding-top: 25px;
-      color: #777;
-      font-size: 12px;
+      border-top: 1px solid #303035;
+
+      padding-top: 24px;
+
+      color: #77777f;
+
+      font-size: 11px;
     }
 
-    /* MOBILE */
 
-    @media (max-width: 768px) {
+    /* =========================
+       TABLET
+    ========================= */
 
-      nav {
-        padding: 16px 5%;
-      }
+    @media (max-width: 1000px) {
 
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        min-height: 80vh;
-        padding: 65px 6%;
-      }
-
-      .hero h1 {
-        font-size: 58px;
-        letter-spacing: -2px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      section {
-        padding: 70px 6%;
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .about-grid,
-      .contact-grid,
-      .cards {
+      .contact-grid {
+        gap: 45px;
+      }
+
+      .hero {
+        background-position: 62% center;
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 768px) {
+
+      .nav-inner {
+        min-height: 68px;
+
+        width: 90%;
+      }
+
+      .logo {
+        font-size: 20px;
+
+        letter-spacing: 3px;
+      }
+
+      .mobile-menu-button {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        margin-left: auto;
+      }
+
+      #main-nav {
+        display: none;
+
+        position: absolute;
+
+        top: calc(100% + 8px);
+        right: 0;
+
+        width: 220px;
+
+        padding: 10px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 2px;
+
+        background: #fff;
+
+        border: 1px solid var(--line);
+
+        border-radius: 14px;
+
+        box-shadow:
+          0 18px 45px rgba(0,0,0,0.13);
+      }
+
+      #main-nav.active {
+        display: flex;
+      }
+
+      #main-nav a {
+        padding: 12px 14px;
+
+        border-radius: 9px;
+      }
+
+      #main-nav a:hover {
+        background: var(--pink-soft);
+      }
+
+      #main-nav a::after {
+        display: none;
+      }
+
+      .member-login {
+        padding: 7px 10px;
+
+        font-size: 10px;
+      }
+
+
+      /* HERO MOBILE */
+
+      .hero {
+        min-height: 82vh;
+
+        background:
+          linear-gradient(
+            rgba(0,0,0,0.43),
+            rgba(0,0,0,0.62)
+          ),
+          url("https://raw.githubusercontent.com/aibuddyph/fworldonline/main/IMG-20260921-WA0001.jpg")
+          center center / cover no-repeat;
+      }
+
+      .hero::before {
+        width: 360px;
+        height: 360px;
+
+        right: -180px;
+      }
+
+      .hero-content {
+        width: 90%;
+
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(43px, 13vw, 66px);
+
+        letter-spacing: -2.5px;
+      }
+
+      .hero p {
+        font-size: clamp(20px, 6vw, 29px);
+      }
+
+      .button {
+        width: 100%;
+
+        max-width: 310px;
+      }
+
+
+      /* SECTIONS */
+
+      section {
+        padding: 78px 0;
+      }
+
+      .section-inner {
+        width: 90%;
+      }
+
+      .section-label {
+        justify-content: center;
+      }
+
+      .section-title {
+        text-align: center;
+
+        font-size: clamp(37px, 10vw, 52px);
+      }
+
+      .section-intro {
+        text-align: center;
+
+        font-size: 16px;
+
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+
+      /* ABOUT */
+
+      .about-grid {
         grid-template-columns: 1fr;
       }
 
+      .about-copy {
+        text-align: center;
+
+        margin: auto;
+      }
+
+      .about-text {
+        font-size: 16px;
+      }
+
       .about-box {
-        padding: 40px 25px;
+        min-height: 300px;
+      }
+
+
+      /* CARDS */
+
+      .cards {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
       }
 
       .card {
-        min-height: 280px;
-        padding: 30px;
+        min-height: 305px;
+
+        padding: 27px;
       }
+
+
+      /* CONTACT */
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+      }
+
+      .contact {
+        text-align: center;
+      }
+
+      .contact .section-label {
+        justify-content: center;
+      }
+
+
+      /* FOOTER */
 
       .footer-top {
         flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+      }
+
+      .copyright {
+        text-align: center;
       }
 
     }
 
-  
-     .mobile-menu-button {
-       display: none;
-       font-size: 28px;
-       cursor: pointer;
-       line-height: 1;
+
+    /* SMALL PHONES */
+
+    @media (max-width: 480px) {
+
+      .nav-inner {
+        gap: 10px;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      .member-login {
+        padding: 6px 9px;
+
+        font-size: 9px;
+      }
+
+      .mobile-menu-button {
+        width: 37px;
+        height: 37px;
+      }
+
+      .hero {
+        min-height: 720px;
+
+        background-position: 54% center;
+      }
+
+      .hero h1 {
+        font-size: clamp(39px, 13vw, 54px);
+      }
+
+      .hero p {
+        font-size: 20px;
+      }
+
+      .about-box {
+        min-height: 270px;
+      }
+
+      .about-box h3 {
+        font-size: 35px;
+      }
+
+      .card {
+        min-height: 300px;
+
+        padding: 26px;
+      }
+
     }
 
-     @media (max-width: 768px) {
 
-       .mobile-menu-button {
-          display: block;
-        }
-  
-       #main-nav {
-         display: none;
-         position: absolute;
-         top: 70px;
-         right: 20px;
-         background: #fff;
-         width: 180px;
-         padding: 15px 0;
-         box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-         border-radius: 8px;
-         z-index: 999;
-       }
-  
-       #main-nav.active {
-         display: flex;
-         flex-direction: column;
-       }
+    /* ACCESSIBILITY */
 
-       #main-nav a {
-         display: block;
-         padding: 12px 20px;
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
       }
-  
-  }
-  
-</style>
-  
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-  <!-- NAVIGATION -->
 
-  <nav>
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
 
-    <div class="logo">
-      FWORLD
-    </div>
+  <header class="site-nav">
 
-    <div class="mobile-menu-button" onclick="toggleMenu()">=</div>
+    <div class="nav-inner">
 
-    <nav id="main-nav">
-      <a href="#about" onclick="closeMenu()">Home</a>
-      <a href="projects.html" onclick="closeMenu()">Projects</a>
-      <a href="marketplace.html" onclick="closeMenu()">Marketplace</a>
-      <a href="journal.html" onclick="closeMenu()">Journal</a>
-      <a href="#contact" onclick="closeMenu()">Contact</a>
-    </nav>
-      <!-- FWORLD MEMBERSHIP -->
-      <a href="fworld-login.html" class="member-login">
+      <a href="index.html" class="logo">
+        F<span>WORLD</span>
+      </a>
+
+
+      <nav id="main-nav" aria-label="Main Navigation">
+
+        <a href="index.html" onclick="closeMenu()">Home</a>
+
+        <a href="projects.html" onclick="closeMenu()">Projects</a>
+
+        <a href="marketplace.html" onclick="closeMenu()">Marketplace</a>
+
+        <a href="journal.html" onclick="closeMenu()">Journal</a>
+
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+
+      </nav>
+
+
+      <button
+        class="mobile-menu-button"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="main-nav"
+        aria-expanded="false"
+        onclick="toggleMenu()"
+      >
+        ☰
+      </button>
+
+
+      <a
+        href="fworld-login.html"
+        class="member-login"
+      >
         Member Login
-  </a>
-</nav>
+      </a>
+
     </div>
-
-  </nav>
-
-
-  <!-- HERO -->
-
-  <!-- HERO -->
-
-<header class="hero">
-
-  <div class="hero-content">
-
-    <h1>
-      WELCOME TO <span>FWORLD</span> ONLINE
-    </h1>
-
-    <p>
-      <span class="orange">Business</span> •
-      <span class="orange">Beauty</span>• 
-      <span class="orange">Purpose
-    </p>
-
-    <a href="fworld-login.html" class="button">
-      EXPLORE FWORLD
-    </a>
-
-  </div>
-
-</header>
 
   </header>
 
 
-  <!-- ABOUT -->
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        A Connected Digital Ecosystem
+      </div>
+
+
+      <h1>
+        WELCOME TO <span>FWORLD</span> ONLINE
+      </h1>
+
+
+      <p>
+        <span class="pink">Business</span> •
+        <span class="pink">Beauty</span> •
+        <span class="pink">Purpose</span>
+      </p>
+
+
+      <a
+        href="fworld-login.html"
+        class="button"
+      >
+        EXPLORE FWORLD
+      </a>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
 
   <section id="about" class="about">
 
-    <div class="about-grid">
+    <div class="section-inner">
 
-      <div>
+      <div class="about-grid">
 
-        <div class="section-label">
-          About Fworld
+
+        <div class="about-copy">
+
+          <div class="section-label">
+            About Fworld
+          </div>
+
+
+          <h2 class="section-title">
+            More than a business.
+          </h2>
+
+
+          <p class="about-text">
+            Fworld is a growing digital ecosystem built around
+            entrepreneurship, beauty, personal growth, digital
+            products, women empowerment, and meaningful experiences.
+          </p>
+
+
+          <p class="about-text">
+            We believe that business can create opportunities,
+            products can create value, and purpose can create
+            lasting impact.
+          </p>
+
         </div>
 
-        <h2 class="section-title">
-          More than a business.
-        </h2>
 
-        <p class="about-text">
-          Fworld is a growing digital ecosystem built around
-          entrepreneurship, beauty, personal growth, digital
-          products, women empowerment, and meaningful experiences.
-        </p>
 
-        <br>
+        <div class="about-box">
 
-        <p class="about-text">
-          We believe that business can create opportunities,
-          products can create value, and purpose can create
-          lasting impact.
-        </p>
+          <span class="about-dot one"></span>
 
-      </div>
+          <span class="about-dot two"></span>
 
-      <div class="about-box">
 
-        <h3>
-          Create.<br>
-          Connect.<br>
-          Grow.
-        </h3>
+          <h3>
+            Create.<br>
+            <span>Connect.</span><br>
+            Grow.
+          </h3>
+
+        </div>
 
       </div>
 
@@ -620,284 +1429,415 @@
   </section>
 
 
-  <!-- PROJECTS -->
+
+  <!-- =========================
+       PROJECTS
+  ========================= -->
 
   <section id="projects" class="projects">
 
-    <div class="section-label">
-      The Fworld Ecosystem
-    </div>
-
-    <h2 class="section-title">
-      Explore our world.
-    </h2>
-
-    <p class="section-intro">
-      Discover the different businesses, communities,
-      services, and digital products connected to Fworld.
-    </p>
+    <div class="section-inner">
 
 
-    <div class="cards">
+      <div class="projects-heading">
 
-
-      <!-- Fworld Products -->
-
-      <div class="card">
-
-        <div>
-
-          <div class="card-number">
-            01 / BEAUTY
-          </div>
-
-          <h3>
-            Fworld Products
-          </h3>
-
-          <p>
-            Discover beauty and personal care products,
-            including Sophia Cosmetics and other carefully
-            selected products.
-          </p>
-
+        <div class="section-label">
+          The Fworld Ecosystem
         </div>
 
-        <a href="projects.html" class="card-link">
-          EXPLORE PRODUCTS →
-        </a>
+
+        <h2 class="section-title">
+          Explore our world.
+        </h2>
+
+
+        <p class="section-intro">
+          Discover the different businesses, communities,
+          services, and digital products connected to Fworld.
+        </p>
 
       </div>
 
 
-      <!-- Digital Products -->
 
-      <div class="card">
+      <div class="cards">
 
-        <div>
 
-          <div class="card-number">
-            02 / DIGITAL
+        <!-- CARD 01 -->
+
+        <article class="card">
+
+          <a
+            href="projects.html"
+            class="card-click"
+            aria-label="Explore Fworld Products"
+          ></a>
+
+
+          <div class="card-content">
+
+            <div class="card-number">
+              01 / BEAUTY
+            </div>
+
+
+            <h3>
+              Fworld Products
+            </h3>
+
+
+            <p>
+              Discover beauty and personal care products,
+              including Sophia Cosmetics and other carefully
+              selected products.
+            </p>
+
           </div>
 
-          <h3>
-            Digital Products
-          </h3>
 
-          <p>
-            Books, eBooks, guides, workbooks, and digital
-            resources created to inspire learning, growth,
-            and better living.
-          </p>
+          <a
+            href="marketplace.html"
+            class="card-link"
+          >
+            EXPLORE PRODUCTS
+            <span class="arrow">→</span>
+          </a>
 
-        </div>
-
-        <a href="digital-products.html" class="card-link">
-          VIEW DIGITAL PRODUCTS →
-        </a>
-
-      </div>
+        </article>
 
 
-      <!-- TYMA -->
 
-      <div class="card">
+        <!-- CARD 02 -->
 
-        <div>
+        <article class="card">
 
-          <div class="card-number">
-            03 / COMMUNITY
+          <a
+            href="digital-products.html"
+            class="card-click"
+            aria-label="View Digital Products"
+          ></a>
+
+
+          <div class="card-content">
+
+            <div class="card-number">
+              02 / DIGITAL
+            </div>
+
+
+            <h3>
+              Digital Products
+            </h3>
+
+
+            <p>
+              Books, eBooks, guides, workbooks, and digital
+              resources created to inspire learning, growth,
+              and better living.
+            </p>
+
           </div>
 
-          <h3>
-            The You Matter Academy
-          </h3>
 
-          <p>
-            A women-centered community focused on self-worth,
-            confidence, clarity, purpose, technology,
-            mentorship, and possibilities.
-          </p>
+          <a
+            href="digital-products.html"
+            class="card-link"
+          >
+            VIEW DIGITAL PRODUCTS
+            <span class="arrow">→</span>
+          </a>
 
-        </div>
-
-        <a href="TYMA.html" class="card-link">
-          DISCOVER TYMA →
-        </a>
-
-      </div>
+        </article>
 
 
-      <!-- Azure Pearl -->
 
-      <div class="card">
+        <!-- CARD 03 -->
 
-        <div>
+        <article class="card">
 
-          <div class="card-number">
-            04 / RELOCATION
+          <a
+            href="TYMA.html"
+            class="card-click"
+            aria-label="Discover The You Matter Academy"
+          ></a>
+
+
+          <div class="card-content">
+
+            <div class="card-number">
+              03 / COMMUNITY
+            </div>
+
+
+            <h3>
+              The You Matter Academy
+            </h3>
+
+
+            <p>
+              A women-centered community focused on self-worth,
+              confidence, clarity, purpose, technology,
+              mentorship, and possibilities.
+            </p>
+
           </div>
 
-          <h3>
-            Azure Pearl PH
-          </h3>
 
-          <p>
-            Your gateway to experiencing the Philippines —
-            from travel and accommodation to relocation,
-            investment, retirement, and second-home
-            possibilities.
-          </p>
+          <a
+            href="TYMA.html"
+            class="card-link"
+          >
+            DISCOVER TYMA
+            <span class="arrow">→</span>
+          </a>
 
-        </div>
-
-        <a href="Azurepearl-travel1.html" class="card-link">
-          EXPLORE AZURE PEARL →
-        </a>
-
-      </div>
+        </article>
 
 
-      <!-- FMSI -->
 
-      <div class="card">
+        <!-- CARD 04 -->
 
-        <div>
+        <article class="card">
 
-          <div class="card-number">
-            05 / TRAVEL
+          <a
+            href="Azurepearl-travel.html"
+            class="card-click"
+            aria-label="Explore Azure Pearl PH"
+          ></a>
+
+
+          <div class="card-content">
+
+            <div class="card-number">
+              04 / RELOCATION
+            </div>
+
+
+            <h3>
+              Azure Pearl PH
+            </h3>
+
+
+            <p>
+              Your gateway to experiencing the Philippines —
+              from travel and accommodation to relocation,
+              investment, retirement, and second-home
+              possibilities.
+            </p>
+
           </div>
 
-          <h3>
-            FMSI Travel & Tours
-          </h3>
 
-          <p>
-            Local and international travel services,
-            airfare, accommodation, tours, transportation,
-            visa assistance, and customized travel solutions.
-          </p>
+          <a
+            href="azurepearl-travel.html"
+            class="card-link"
+          >
+            EXPLORE AZURE PEARL
+            <span class="arrow">→</span>
+          </a>
 
-        </div>
-
-        <a href="FMSI-travel.html" class="card-link">
-          PLAN YOUR JOURNEY →
-        </a>
-
-      </div>
+        </article>
 
 
-      <!-- Dr.Love Visa Consultancy -->
 
-      <div class="card">
+        <!-- CARD 05 -->
 
-        <div>
+        <article class="card">
 
-          <div class="card-number">
-            06 / Dr.Love Visa Consultancy
+          <a
+            href="FMSI-travel.html"
+            class="card-click"
+            aria-label="Plan your journey with FMSI Travel and Tours"
+          ></a>
+
+
+          <div class="card-content">
+
+            <div class="card-number">
+              05 / TRAVEL
+            </div>
+
+
+            <h3>
+              FMSI Travel &amp; Tours
+            </h3>
+
+
+            <p>
+              Local and international travel services,
+              airfare, accommodation, tours, transportation,
+              visa assistance, and customized travel solutions.
+            </p>
+
           </div>
 
-          <h3>
-            Dr.Love Visa Consultancy
-          </h3>
 
-          <p>
-            Spouse.Fiancee.Visit.Student Visa.
-          </p>
+          <a
+            href="FMSI-travel.html"
+            class="card-link"
+          >
+            PLAN YOUR JOURNEY
+            <span class="arrow">→</span>
+          </a>
 
-        </div>
+        </article>
 
-        <a href="visa.html" class="card-link">
-          CONNECT WITH US →
-        </a>
+
+
+        <!-- CARD 06 -->
+
+        <article class="card">
+
+          <a
+            href="visa.html"
+            class="card-click"
+            aria-label="Connect with Dr. Love Visa Consultancy"
+          ></a>
+
+
+          <div class="card-content">
+
+            <div class="card-number">
+              06 / Dr.Love Visa Consultancy
+            </div>
+
+
+            <h3>
+              Dr.Love Visa Consultancy
+            </h3>
+
+
+            <p>
+              Spouse • Fiancee • Visit • Student Visa.
+            </p>
+
+          </div>
+
+
+          <a
+            href="visa.html"
+            class="card-link"
+          >
+            CONNECT WITH US
+            <span class="arrow">→</span>
+          </a>
+
+        </article>
+
 
       </div>
-
 
     </div>
 
   </section>
 
 
-  <!-- FEATURE -->
+
+  <!-- =========================
+       FEATURE
+  ========================= -->
 
   <section class="feature">
 
-    <div class="section-label">
-      Our Philosophy
+    <div class="section-inner">
+
+      <div class="section-label">
+        Our Philosophy
+      </div>
+
+
+      <h2>
+        When you create with purpose,
+        possibilities become bigger.
+      </h2>
+
+
+      <p>
+        Fworld is about building businesses and communities
+        that create value while making room for people,
+        ideas, and dreams to grow.
+      </p>
+
+
+      <a
+        href="marketplace.html"
+        class="button"
+      >
+        CONNECT WITH FWORLD
+      </a>
+
     </div>
-
-    <h2>
-      When you create with purpose,
-      possibilities become bigger.
-    </h2>
-
-    <p>
-      Fworld is about building businesses and communities
-      that create value while making room for people,
-      ideas, and dreams to grow.
-    </p>
-
-    <a href="marketplace.html" class="button">
-      CONNECT WITH FWORLD
-    </a>
 
   </section>
 
 
-  <!-- CONTACT -->
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
 
   <section id="contact" class="contact">
 
-    <div class="contact-grid">
+    <div class="section-inner">
 
-      <div>
+      <div class="contact-grid">
 
-        <div class="section-label">
-          Get in Touch
+
+        <div>
+
+          <div class="section-label">
+            Get in Touch
+          </div>
+
+
+          <h2 class="section-title">
+            Let's connect.
+          </h2>
+
+
+          <p class="section-intro">
+            Interested in our products, digital resources,
+            travel services, partnerships, or community?
+            We'd love to hear from you.
+          </p>
+
         </div>
 
-        <h2 class="section-title">
-          Let's connect.
-        </h2>
-
-        <p class="section-intro">
-          Interested in our products, digital resources,
-          travel services, partnerships, or community?
-          We'd love to hear from you.
-        </p>
-
-      </div>
 
 
-      <div class="contact-info">
+        <div class="contact-info">
 
-        <p>
-          <strong>Fworld Online</strong>
-        </p>
+          <p>
+            <strong>Fworld Online</strong>
+          </p>
 
-        <p>
-          Digital Business Hub
-        </p>
 
-        <br>
+          <p>
+            Digital Business Hub
+          </p>
 
-        <div class="contact-links">
 
-          <a href="mailto:fworldphilippines@gmail.com" class="contact-button">
-             Email Fworld →
-          </a>
+          <div class="contact-links">
 
-          <a
-        href="https://www.facebook.com/share/1DtQ2qxdPZ/?mibextid=wwXIfr"
-        class="contact-button"
-        target="_blank"
-        rel="noopener noreferrer"
-        >
-           Facebook →
-          </a>
+            <a
+              href="mailto:fworldphilippines@gmail.com"
+              class="contact-button"
+            >
+              Email Fworld →
+            </a>
 
-        
+
+            <a
+              href="https://www.facebook.com/share/1DtQ2qxdPZ/?mibextid=wwXIfr"
+              class="contact-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Facebook →
+            </a>
+
+          </div>
+
         </div>
 
       </div>
@@ -907,38 +1847,72 @@
   </section>
 
 
-  <!-- FOOTER -->
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
-    <div class="footer-top">
+    <div class="footer-inner">
 
-      <div class="footer-logo">
-        FWORLD ONLINE
+      <div class="footer-top">
+
+        <div class="footer-logo">
+          F<span>WORLD</span> ONLINE
+        </div>
+
+
+        <p>
+          Business • Beauty • Digital • Women • Travel
+        </p>
+
       </div>
 
-      <p>
-        Business • Beauty • Digital • Women • Travel
-      </p>
 
-    </div>
+      <div class="copyright">
+        ©️ 2026 Fworld Online. All rights reserved.
+      </div>
 
-    <div class="copyright">
-      ©️ 2026 Fworld Online. All rights reserved.
     </div>
 
   </footer>
 
-<script>
-function toggleMenu() {
-  document.getElementById("main-nav").classList.toggle("active");
-}
 
-function closeMenu() {
-  document.getElementById("main-nav").classList.remove("active");
-}
-</script>
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    function toggleMenu() {
+
+      const nav = document.getElementById("main-nav");
+      const button = document.querySelector(".mobile-menu-button");
+
+      nav.classList.toggle("active");
+
+      const isOpen = nav.classList.contains("active");
+
+      button.setAttribute("aria-expanded", isOpen);
+
+    }
+
+
+    function closeMenu() {
+
+      const nav = document.getElementById("main-nav");
+      const button = document.querySelector(".mobile-menu-button");
+
+      nav.classList.remove("active");
+
+      button.setAttribute("aria-expanded", "false");
+
+    }
+
+  </script>
+
 
 </body>
 </html>
-
