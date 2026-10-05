@@ -6,7 +6,7 @@
 
   <title>TYMA | The You Matter Academy</title>
 
-  <meta name="description" content="The You Matter Academy — a women-centered community for personal growth, meaningful conversations, learning, and connection.">
+  <meta name="description" content="TYMA — The You Matter Academy. A women-centered community for growth, connection, learning, and meaningful conversations.">
 
   <meta property="og:title" content="TYMA | The You Matter Academy">
   <meta property="og:description" content="You matter. Your story matters. Discover TYMA and take your next step.">
@@ -19,255 +19,471 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
+      background: #f58220;
       color: #171717;
       line-height: 1.6;
     }
 
+    /* HERO */
+
     .hero {
-      background: #f58220;
-      color: #ffffff;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 70px 22px 60px;
+      padding: 60px 20px;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.20), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,0.12), transparent 35%),
+        #f58220;
+      color: #ffffff;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .logo-mark {
+      width: 82px;
+      height: 82px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #f58220;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     }
 
     .brand {
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 2px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 9vw, 68px);
-      line-height: 1.05;
-      margin-bottom: 20px;
-      font-weight: 800;
+      font-size: clamp(42px, 10vw, 76px);
+      line-height: 1.02;
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      display: block;
     }
 
     .hero p {
-      max-width: 650px;
-      margin: 0 auto 30px;
-      font-size: 18px;
+      max-width: 620px;
+      margin: 0 auto 32px;
+      font-size: 20px;
+      line-height: 1.6;
     }
 
-    .cta {
+    .main-button {
       display: inline-block;
+      width: 100%;
+      max-width: 360px;
+      padding: 18px 26px;
       background: #ffffff;
       color: #111111;
-      padding: 16px 28px;
-      border-radius: 10px;
-      font-weight: 800;
+      border-radius: 14px;
       text-decoration: none;
+      font-size: 18px;
+      font-weight: 900;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
       transition: 0.2s ease;
     }
 
-    .cta:hover {
+    .main-button:hover {
+      transform: translateY(-3px);
       background: #111111;
       color: #ffffff;
-      transform: translateY(-2px);
     }
 
+    /* SECTIONS */
+
     section {
-      padding: 60px 22px;
+      padding: 70px 20px;
+    }
+
+    .white-section {
+      background: #ffffff;
+    }
+
+    .soft-section {
+      background: #fff4ea;
     }
 
     .container {
+      width: 100%;
       max-width: 900px;
       margin: auto;
     }
 
-    .center {
+    .section-title {
       text-align: center;
-    }
-
-    h2 {
-      font-size: 32px;
+      font-size: clamp(30px, 7vw, 44px);
+      line-height: 1.15;
       margin-bottom: 18px;
+      font-weight: 900;
     }
 
-    .intro {
+    .section-text {
       max-width: 700px;
-      margin: auto;
+      margin: 0 auto;
+      text-align: center;
       color: #555555;
-      font-size: 17px;
+      font-size: 18px;
+      line-height: 1.7;
     }
+
+    /* CARDS */
 
     .cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      margin-top: 35px;
+      gap: 20px;
+      margin-top: 40px;
     }
 
     .card {
-      border: 1px solid #eeeeee;
-      border-radius: 14px;
-      padding: 24px;
       background: #ffffff;
+      border-radius: 20px;
+      padding: 30px 24px;
+      border: 1px solid #eeeeee;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .icon {
+      font-size: 34px;
+      margin-bottom: 12px;
     }
 
     .card h3 {
+      font-size: 21px;
       margin-bottom: 8px;
-      font-size: 20px;
     }
 
     .card p {
       color: #666666;
+      font-size: 16px;
     }
 
-    .highlight {
-      background: #fff5ec;
-      text-align: center;
-    }
+    /* STATEMENT */
 
-    .final-cta {
-      text-align: center;
+    .statement {
       background: #111111;
       color: #ffffff;
+      text-align: center;
     }
 
-    .final-cta p {
-      max-width: 600px;
-      margin: 0 auto 25px;
-      color: #dddddd;
+    .statement h2 {
+      max-width: 700px;
+      margin: auto;
+      font-size: clamp(30px, 7vw, 48px);
+      line-height: 1.15;
     }
+
+    .statement p {
+      max-width: 650px;
+      margin: 20px auto 0;
+      color: #dddddd;
+      font-size: 18px;
+    }
+
+    /* FORM */
+
+    .join-section {
+      background: #f58220;
+    }
+
+    .form-box {
+      max-width: 580px;
+      margin: 35px auto 0;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 34px 26px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .form-box h3 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .form-box > p {
+      text-align: center;
+      color: #666666;
+      margin-bottom: 28px;
+      font-size: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 7px;
+      font-size: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #dddddd;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 17px;
+      color: #171717;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #f58220;
+      box-shadow: 0 0 0 3px rgba(245,130,32,0.15);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      width: 100%;
+      min-height: 58px;
+      border: none;
+      border-radius: 12px;
+      background: #111111;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .submit-button:hover {
+      background: #f58220;
+    }
+
+    .form-note {
+      text-align: center;
+      color: #777777;
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    /* FOOTER */
 
     footer {
+      background: #111111;
+      color: #bbbbbb;
       text-align: center;
-      padding: 25px;
+      padding: 28px 20px;
       font-size: 13px;
-      color: #777777;
     }
 
+    /* MOBILE */
+
     @media (max-width: 600px) {
+
       .hero {
-        padding: 55px 20px 50px;
+        min-height: auto;
+        padding: 55px 18px 65px;
+      }
+
+      .logo-mark {
+        width: 74px;
+        height: 74px;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .brand {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+        line-height: 1.04;
       }
 
       .hero p {
-        font-size: 16px;
+        font-size: 18px;
+        line-height: 1.6;
       }
 
       section {
-        padding: 48px 20px;
+        padding: 55px 18px;
+      }
+
+      .section-title {
+        font-size: 31px;
+      }
+
+      .section-text {
+        font-size: 17px;
       }
 
       .cards {
         grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 30px;
       }
 
-      h2 {
-        font-size: 28px;
+      .card {
+        padding: 25px 21px;
       }
 
-      .cta {
-        width: 100%;
-        max-width: 340px;
+      .card h3 {
+        font-size: 21px;
       }
 
-      .lead-form {
-  max-width: 520px;
-  margin: 35px auto 0;
-  background: #ffffff;
-  color: #171717;
-  padding: 30px;
-  border-radius: 16px;
-  text-align: left;
-}
+      .card p {
+        font-size: 17px;
+      }
 
-.lead-form h3 {
-  text-align: center;
-  font-size: 26px;
-  margin-bottom: 8px;
-}
+      .statement h2 {
+        font-size: 32px;
+      }
 
-.lead-form p {
-  text-align: center;
-  color: #666666;
-  margin-bottom: 25px;
-}
+      .statement p {
+        font-size: 17px;
+      }
 
-.lead-form input,
-.lead-form textarea {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 14px;
-  border: 1px solid #dddddd;
-  border-radius: 8px;
-  font: inherit;
-}
+      .form-box {
+        padding: 28px 19px;
+        border-radius: 20px;
+      }
 
-.lead-form button {
-  width: 100%;
-  padding: 16px;
-  border: none;
-  border-radius: 9px;
-  background: #f58220;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 800;
-  cursor: pointer;
-}
+      .form-box h3 {
+        font-size: 27px;
+      }
 
-.lead-form button:hover {
-  background: #111111;
-}
-      
+      .form-group input,
+      .form-group textarea {
+        font-size: 17px;
+        padding: 16px;
+      }
+
+      .main-button,
+      .submit-button {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- HERO -->
+
   <header class="hero">
-    <div class="brand">TYMA • THE YOU MATTER ACADEMY</div>
 
-    <h1>
-      YOU MATTER.<br>
-      YOUR STORY MATTERS.
-    </h1>
+    <div class="hero-inner">
 
-    <p>
-      A welcoming space for women who want to grow, connect,
-      learn, and move forward together.
-    </p>
+      <div class="logo-mark">TY</div>
 
-    <a href="#join" class="cta">JOIN TYMA</a>
+      <div class="brand">
+        THE YOU MATTER ACADEMY
+      </div>
+
+      <h1>
+        <span>YOU MATTER.</span>
+        <span>YOUR STORY MATTERS.</span>
+      </h1>
+
+      <p>
+        A welcoming space for women who want to grow,
+        connect, learn, and move forward together.
+      </p>
+
+      <a href="#join" class="main-button">
+        JOIN TYMA
+      </a>
+
+    </div>
+
   </header>
 
-  <section>
-    <div class="container center">
-      <h2>What is TYMA?</h2>
 
-      <p class="intro">
+  <!-- ABOUT -->
+
+  <section class="white-section">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        What is TYMA?
+      </h2>
+
+      <p class="section-text">
         The You Matter Academy is a women-centered community
         created for meaningful conversations, personal growth,
-        learning, and connection.
+        learning, connection, and shared stories.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- BENEFITS -->
+
+  <section class="soft-section">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        A space to grow.
+      </h2>
+
+      <p class="section-text">
+        Come as you are. Learn, connect, reflect, and discover
+        the next step in your journey.
       </p>
 
       <div class="cards">
 
         <div class="card">
-          <h3>🌱 Personal Growth</h3>
+          <div class="icon">🌱</div>
+          <h3>Personal Growth</h3>
           <p>
-            Discover ideas and conversations that encourage
-            intentional personal growth.
+            Explore ideas and conversations that encourage
+            intentional growth.
           </p>
         </div>
 
         <div class="card">
-          <h3>💬 Meaningful Conversations</h3>
+          <div class="icon">💬</div>
+          <h3>Meaningful Conversations</h3>
           <p>
-            Share experiences, perspectives, and stories
-            in a welcoming environment.
+            Share experiences and perspectives in a welcoming
+            community.
           </p>
         </div>
 
         <div class="card">
-          <h3>🤝 Community</h3>
+          <div class="icon">🤝</div>
+          <h3>Community</h3>
           <p>
             Connect with women who are also learning,
             growing, and moving forward.
@@ -275,89 +491,186 @@
         </div>
 
         <div class="card">
-          <h3>📚 Learning</h3>
+          <div class="icon">📚</div>
+          <h3>Learning</h3>
           <p>
-            Explore practical ideas that can support
+            Discover practical ideas that can support
             your next chapter.
           </p>
         </div>
 
       </div>
+
     </div>
+
   </section>
 
-  <section class="highlight">
-    <div class="container center">
-      <h2>You don't have to figure everything out alone.</h2>
 
-      <p class="intro">
+  <!-- EMOTIONAL SECTION -->
+
+  <section class="statement">
+
+    <div class="container">
+
+      <h2>
+        You don't have to figure everything out alone.
+      </h2>
+
+      <p>
         Sometimes the first step is simply finding a space
         where you feel seen, heard, and encouraged to grow.
       </p>
+
     </div>
+
   </section>
 
-  <section class="final-cta" id="join">
-    <div class="container">
-      <h2>Ready to take the next step?</h2>
 
-      <p>
-        Join TYMA and discover a community created around
-        growth, connection, learning, and shared stories.
+  <!-- LEAD FORM -->
+
+  <section class="join-section" id="join">
+
+    <div class="container">
+
+      <h2 class="section-title" style="color:#ffffff;">
+        Take Your First Step
+      </h2>
+
+      <p class="section-text" style="color:#ffffff;">
+        Leave your details and we'll send you the next
+        TYMA information.
       </p>
 
-      <!-- LEAD FORM WILL BE CONNECTED HERE IN THE NEXT STEP -->
+      <div class="form-box">
 
-      <div class="lead-form">
+        <h3>Join TYMA</h3>
 
-  <h3>Take Your First Step</h3>
+        <p>
+          Tell us a little about yourself.
+        </p>
 
-  <p>
-    Leave your details and we'll send you the next TYMA information.
-  </p>
+        <form id="tymaLeadForm">
 
-  <form id="tymaLeadForm">
+          <div class="form-group">
 
-    <input
-      type="text"
-      name="name"
-      placeholder="Your name"
-      required
-    >
+            <label for="name">
+              Your Name
+            </label>
 
-    <input
-      type="email"
-      name="email"
-      placeholder="Your email"
-      required
-    >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            >
 
-    <input
-      type="text"
-      name="facebook"
-      placeholder="Facebook or Messenger name"
-    >
+          </div>
 
-    <textarea
-      name="reason"
-      placeholder="What made you interested in TYMA?"
-      rows="4"
-    ></textarea>
 
-    <button type="submit">
-      JOIN TYMA
-    </button>
+          <div class="form-group">
 
-  </form>
+            <label for="email">
+              Email Address
+            </label>
 
-</div>
-      
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="facebook">
+              Facebook / Messenger Name
+            </label>
+
+            <input
+              type="text"
+              id="facebook"
+              name="facebook"
+              placeholder="Your Facebook name"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="reason">
+              What brought you to TYMA?
+            </label>
+
+            <textarea
+              id="reason"
+              name="reason"
+              placeholder="Share a few words..."
+            ></textarea>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="submit-button"
+          >
+            I WANT TO JOIN TYMA
+          </button>
+
+          <div class="form-note">
+            Your information will be used to send you
+            TYMA information and updates.
+          </div>
+
+        </form>
+
+      </div>
+
     </div>
+
   </section>
+
+
+  <!-- FOOTER -->
 
   <footer>
     © 2026 TYMA — The You Matter Academy
   </footer>
+
+
+  <script>
+
+    /*
+      LEAD CAPTURE CONNECTION
+      -----------------------
+      The form is currently prepared for connection
+      to the TYMA lead system.
+
+      We will connect this form to the actual
+      lead capture / MailerLite system in the
+      next step.
+    */
+
+    document
+      .getElementById("tymaLeadForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        alert(
+          "Thank you for your interest in TYMA! " +
+          "The registration system will be connected next."
+        );
+
+      });
+
+  </script>
 
 </body>
 </html>
