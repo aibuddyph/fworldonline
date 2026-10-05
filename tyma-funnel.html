@@ -476,7 +476,7 @@
           <div class="icon">💬</div>
           <h3>Financial Empowerment</h3>
           <p>
-            Explore practical ideas that can help you become more intentional 
+            Explore practical ideas that can help you become more intentional
             about your income, opportunities, and financial future.
           </p>
         </div>
@@ -526,7 +526,7 @@
   </section>
 
 
-  <!-- LEAD FORM -->
+  <!-- TYMA BREVO LEAD FORM -->
 
   <section class="join-section" id="join">
 
@@ -549,72 +549,140 @@
           Tell us a little about yourself.
         </p>
 
-        <form id="tymaLeadForm">
+        <!--
+          TYMA LEAD REGISTRATION
+          Connected to Brevo:
+          List: TYMA Leads 2026
+        -->
+
+        <form
+          id="tymaLeadForm"
+          action="https://2fcc31d0.sibforms.com/serve/MUIFAN1S7MAnlfS-Cqhh1XmAwpjDEvUr37rk1sQmSkw8jCBqh4eaTpygpMpIvlvctbPPgCwNXvWarskylcRoRW5QTRPoUqRs3dpJx83aZY6NttzG4g7Apfa50qiGsGQ7B9D9RqJv79cn7C3_CYqqscL9ESsDO6T8HdDG1NydaflNVbjarKXfvzE9dPodIK_00UPnL3nra7zsRcPQew=="
+          method="POST"
+        >
+
+          <!-- LAST NAME -->
 
           <div class="form-group">
 
-            <label for="name">
-              Your Name
+            <label for="LASTNAME">
+              Last Name
             </label>
 
             <input
               type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your name"
+              id="LASTNAME"
+              name="LASTNAME"
+              placeholder="Enter your last name"
+              autocomplete="family-name"
               required
             >
 
           </div>
 
 
+          <!-- FIRST NAME -->
+
           <div class="form-group">
 
-            <label for="email">
+            <label for="FIRSTNAME">
+              First Name
+            </label>
+
+            <input
+              type="text"
+              id="FIRSTNAME"
+              name="FIRSTNAME"
+              placeholder="Enter your first name"
+              autocomplete="given-name"
+              required
+            >
+
+          </div>
+
+
+          <!-- EMAIL -->
+
+          <div class="form-group">
+
+            <label for="EMAIL">
               Email Address
             </label>
 
             <input
               type="email"
-              id="email"
-              name="email"
+              id="EMAIL"
+              name="EMAIL"
               placeholder="Enter your email"
+              autocomplete="email"
               required
             >
 
           </div>
 
 
+          <!-- FACEBOOK -->
+
           <div class="form-group">
 
-            <label for="facebook">
+            <label for="FACEBOOK">
               Facebook / Messenger Name
             </label>
 
             <input
               type="text"
-              id="facebook"
-              name="facebook"
+              id="FACEBOOK"
+              name="FACEBOOK"
               placeholder="Your Facebook name"
+              autocomplete="off"
+              required
             >
 
           </div>
 
 
+          <!-- TYMA REASON -->
+
           <div class="form-group">
 
-            <label for="reason">
+            <label for="TYMA_REASON">
               What brought you to TYMA?
             </label>
 
             <textarea
-              id="reason"
-              name="reason"
+              id="TYMA_REASON"
+              name="TYMA_REASON"
               placeholder="Share a few words..."
+              maxlength="200"
+              required
             ></textarea>
 
           </div>
 
+
+          <!-- BREVO REQUIRED HIDDEN FIELDS -->
+
+          <input
+            type="text"
+            name="email_address_check"
+            value=""
+            style="display:none;"
+          >
+
+          <input
+            type="hidden"
+            name="locale"
+            value="en"
+          >
+
+          <input
+            type="hidden"
+            name="html_type"
+            value="simple"
+          >
+
+
+          <!-- SUBMIT -->
 
           <button
             type="submit"
@@ -640,37 +708,8 @@
   <!-- FOOTER -->
 
   <footer>
-    © 2026 TYMA — The You Matter Academy
+    ©️ 2026 TYMA — The You Matter Academy
   </footer>
-
-
-  <script>
-
-    /*
-      LEAD CAPTURE CONNECTION
-      -----------------------
-      The form is currently prepared for connection
-      to the TYMA lead system.
-
-      We will connect this form to the actual
-      lead capture / MailerLite system in the
-      next step.
-    */
-
-    document
-      .getElementById("tymaLeadForm")
-      .addEventListener("submit", function(event) {
-
-        event.preventDefault();
-
-        alert(
-          "Thank you for your interest in TYMA! " +
-          "The registration system will be connected next."
-        );
-
-      });
-
-  </script>
 
 </body>
 </html>
