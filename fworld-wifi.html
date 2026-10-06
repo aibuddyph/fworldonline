@@ -1,1 +1,1924 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>WIFI SA BAWAT KALYE! | FWORLD ONLINE</title>
+
+  <meta
+    name="description"
+    content="WIFI SA BAWAT KALYE! Introducing Advance WIFI Share System powered by FWORLD. A FWORLD Marketplace Community Project."
+  >
+
+  <meta
+    property="og:title"
+    content="WIFI SA BAWAT KALYE! | FWORLD ONLINE"
+  >
+
+  <meta
+    property="og:description"
+    content="Advance WIFI Share System powered by FWORLD."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://www.fworld.online/fworld-wifi.html"
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #000000;
+      color: #ffffff;
+      border-bottom: 1px solid #222222;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #ff5a00;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      padding: 9px 15px;
+      border-radius: 30px;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      background: #ff5a00;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      background: #000000;
+      color: #ffffff;
+
+      padding: 75px 20px 80px;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 50px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+
+      background: #ff5a00;
+      color: #ffffff;
+
+      padding: 7px 15px;
+      border-radius: 30px;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(43px, 7vw, 78px);
+
+      line-height: 0.95;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #ff5a00;
+    }
+
+    .hero p {
+      max-width: 650px;
+
+      color: #dddddd;
+
+      font-size: 19px;
+
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 54px;
+
+      padding: 14px 26px;
+
+      border-radius: 9px;
+
+      border: 2px solid #000000;
+
+      background: #000000;
+      color: #ffffff;
+
+      font-size: 15px;
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #ff5a00;
+      border-color: #ff5a00;
+
+      transform: translateY(-2px);
+    }
+
+    .btn-orange {
+      background: #ff5a00;
+      border-color: #ff5a00;
+    }
+
+    .btn-orange:hover {
+      background: #ffffff;
+      border-color: #ffffff;
+      color: #000000;
+    }
+
+    .btn-white {
+      background: #ffffff;
+      border-color: #ffffff;
+      color: #000000;
+    }
+
+    .btn-white:hover {
+      background: #ff5a00;
+      border-color: #ff5a00;
+      color: #ffffff;
+    }
+
+    /* =========================
+       KIOSK IMAGE
+    ========================= */
+
+    .kiosk-card {
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 20px;
+
+      background: #111111;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.45);
+    }
+
+    .kiosk-card img {
+      width: 100%;
+      height: 450px;
+
+      object-fit: cover;
+
+      transition: transform 0.4s ease;
+    }
+
+    .kiosk-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .kiosk-overlay {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      padding: 30px 25px 24px;
+
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          transparent,
+          rgba(0,0,0,0.95)
+        );
+    }
+
+    .kiosk-overlay strong {
+      display: block;
+
+      font-size: 22px;
+
+      margin-bottom: 3px;
+    }
+
+    .kiosk-overlay small {
+      color: #dddddd;
+      font-size: 14px;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      max-width: 800px;
+
+      margin: 0 auto 45px;
+
+      text-align: center;
+    }
+
+    .section-title .label {
+      color: #ff5a00;
+
+      font-size: 13px;
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 5vw, 48px);
+
+      line-height: 1.1;
+
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #555555;
+      font-size: 17px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .light-section {
+      background: #f7f7f7;
+    }
+
+    .about-box {
+      max-width: 900px;
+
+      margin: auto;
+
+      background: #ffffff;
+
+      padding: 40px;
+
+      border-radius: 18px;
+
+      border: 1px solid #eeeeee;
+    }
+
+    .about-box p {
+      color: #333333;
+
+      font-size: 18px;
+
+      margin-bottom: 18px;
+    }
+
+    .about-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      color: #ff5a00;
+      font-weight: 900;
+    }
+
+    /* =========================
+       ADVANCE WIFI
+    ========================= */
+
+    .advancewifi-card {
+      max-width: 950px;
+
+      margin: auto;
+
+      overflow: hidden;
+
+      border-radius: 20px;
+
+      background: #000000;
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .advancewifi-card img {
+      width: 100%;
+
+      max-height: 600px;
+
+      object-fit: cover;
+    }
+
+    .advancewifi-caption {
+      color: #ffffff;
+
+      text-align: center;
+
+      padding: 28px 25px;
+    }
+
+    .advancewifi-caption h3 {
+      font-size: 26px;
+
+      margin-bottom: 7px;
+    }
+
+    .advancewifi-caption p {
+      color: #cccccc;
+    }
+
+    /* =========================
+       HOW IT WORKS
+    ========================= */
+
+    .steps {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 18px;
+    }
+
+    .step {
+      background: #ffffff;
+
+      border: 1px solid #dddddd;
+
+      border-radius: 16px;
+
+      padding: 28px 22px;
+    }
+
+    .step-number {
+      width: 45px;
+      height: 45px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #000000;
+      color: #ffffff;
+
+      font-weight: 900;
+
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      font-size: 20px;
+
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #666666;
+
+      font-size: 15px;
+    }
+
+    /* =========================
+       APPLICATION
+    ========================= */
+
+    .application {
+      background: #f7f7f7;
+    }
+
+    .form-wrapper {
+      max-width: 850px;
+
+      margin: auto;
+
+      background: #ffffff;
+
+      padding: 40px;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 10px 35px rgba(0,0,0,0.07);
+    }
+
+    .form-intro {
+      margin-bottom: 30px;
+    }
+
+    .form-intro h3 {
+      font-size: 27px;
+
+      margin-bottom: 7px;
+    }
+
+    .form-intro p {
+      color: #666666;
+    }
+
+    .form-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+
+      padding: 14px 15px;
+
+      border: 1px solid #cccccc;
+
+      border-radius: 9px;
+
+      background: #ffffff;
+
+      font-family: inherit;
+
+      font-size: 15px;
+
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #ff5a00;
+
+      box-shadow:
+        0 0 0 3px rgba(255,90,0,0.10);
+    }
+
+    textarea {
+      min-height: 120px;
+
+      resize: vertical;
+    }
+
+    .form-note {
+      margin-top: 22px;
+
+      padding: 16px;
+
+      border-radius: 10px;
+
+      background: #f1f1f1;
+
+      color: #555555;
+
+      font-size: 14px;
+    }
+
+    .submit-area {
+      margin-top: 25px;
+    }
+
+    .submit-area .btn {
+      width: 100%;
+
+      min-height: 60px;
+
+      font-size: 17px;
+    }
+
+    .success-message {
+      display: none;
+
+      margin-top: 20px;
+
+      padding: 18px;
+
+      border-left: 5px solid #ff5a00;
+
+      border-radius: 8px;
+
+      background: #f1f1f1;
+
+      font-weight: 700;
+    }
+
+    /* =========================
+       FACEBOOK SHARE
+    ========================= */
+
+    .share-section {
+      background: #000000;
+
+      color: #ffffff;
+
+      text-align: center;
+    }
+
+    .share-section h2 {
+      font-size: clamp(30px, 5vw, 46px);
+
+      margin-bottom: 12px;
+    }
+
+    .share-section p {
+      max-width: 700px;
+
+      margin: 0 auto 25px;
+
+      color: #cccccc;
+    }
+
+    .facebook-btn {
+      min-width: 260px;
+
+      background: #ffffff;
+
+      border-color: #ffffff;
+
+      color: #000000;
+    }
+
+    .facebook-btn:hover {
+      background: #ff5a00;
+
+      border-color: #ff5a00;
+
+      color: #ffffff;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #000000;
+
+      color: #999999;
+
+      text-align: center;
+
+      padding: 30px 20px;
+
+      border-top: 1px solid #222222;
+
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #ffffff;
+    }
+
+    footer p {
+      margin-bottom: 5px;
+    }
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal {
+      display: none;
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 2000;
+
+      background: rgba(0,0,0,0.82);
+
+      padding: 20px;
+
+      align-items: center;
+
+      justify-content: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      position: relative;
+
+      width: 100%;
+
+      max-width: 650px;
+
+      max-height: 90vh;
+
+      overflow-y: auto;
+
+      background: #ffffff;
+
+      border-radius: 18px;
+
+      padding: 35px;
+    }
+
+    .modal-box h2 {
+      font-size: 30px;
+
+      margin-bottom: 12px;
+    }
+
+    .modal-box p {
+      color: #555555;
+
+      margin-bottom: 16px;
+    }
+
+    .close-modal {
+      position: absolute;
+
+      top: 12px;
+      right: 15px;
+
+      width: 40px;
+      height: 40px;
+
+      border: 0;
+
+      border-radius: 50%;
+
+      background: #000000;
+
+      color: #ffffff;
+
+      font-size: 23px;
+
+      cursor: pointer;
+    }
+
+    .close-modal:hover {
+      background: #ff5a00;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      .nav-container {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+
+        justify-content: flex-start;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+
+      .kiosk-card img {
+        height: 360px;
+      }
+
+      .steps {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      section {
+        padding: 60px 16px;
+      }
+
+      .hero {
+        padding: 55px 16px 60px;
+      }
+
+      .hero h1 {
+        font-size: 49px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .kiosk-card img {
+        height: 300px;
+      }
+
+      .about-box,
+      .form-wrapper {
+        padding: 25px 18px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .nav-container {
+        padding: 12px 16px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      nav a {
+        padding: 7px 10px;
+
+        font-size: 12px;
+      }
+
+      .modal-box {
+        padding: 30px 22px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        FWORLD<span>.</span>
+      </a>
+
+      <nav>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="tatak-pinoy.html">
+          Marketplace
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#apply">
+          Apply
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero">
+
+    <div class="hero-inner">
+
+
+      <div>
+
+        <div class="eyebrow">
+          FWORLD MARKETPLACE COMMUNITY PROJECT
+        </div>
+
+
+        <h1>
+          WIFI SA<br>
+          <span>BAWAT KALYE!</span>
+        </h1>
+
+
+        <p>
+          Introducing the
+          <strong>Advance WIFI Share System</strong>
+          powered by FWORLD — a community project designed
+          to help make internet access more available to
+          Filipino communities.
+        </p>
+
+
+        <div class="hero-buttons">
+
+          <a
+            href="#apply"
+            class="btn btn-orange"
+          >
+            APPLY NOW
+          </a>
+
+
+          <a
+            href="#about"
+            class="btn btn-white"
+          >
+            LEARN MORE
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- MAIN WIFI OUTLET PICTURE -->
+
+      <div
+        class="kiosk-card"
+        onclick="openKioskModal()"
+        role="button"
+        tabindex="0"
+      >
+
+        <img
+          src="fworld-wifi-outlet.jpg"
+          alt="Advance WIFI Share System outlet"
+        >
+
+
+        <div class="kiosk-overlay">
+
+          <strong>
+            Advance WIFI Share System
+          </strong>
+
+          <small>
+            Tap the picture to learn more
+          </small>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
+  <section
+    class="light-section"
+    id="about"
+  >
+
+    <div class="container">
+
+
+      <div class="section-title">
+
+        <div class="label">
+          WHY THIS PROJECT
+        </div>
+
+        <h2>
+          Internet access should reach more communities.
+        </h2>
+
+        <p>
+          A community initiative of TYMA through FWORLD Marketplace.
+        </p>
+
+      </div>
+
+
+
+      <div class="about-box">
+
+        <p>
+          <strong>Did you know?</strong>
+        </p>
+
+
+        <p>
+          In the Philippines, internet connection can be slow
+          and some areas remain difficult to access.
+        </p>
+
+
+        <p>
+          With the rapid change of society now,
+          <span class="highlight">
+            it is the right of every Filipino to access
+            an internet connection.
+          </span>
+        </p>
+
+
+        <p>
+          Here in <strong>TYMA</strong>, our first campaign is:
+        </p>
+
+
+        <p>
+          <span class="highlight">
+            “WIFI sa bawat kalye.”
+          </span>
+        </p>
+
+
+        <p>
+          We are exploring community-based opportunities
+          that can help bring accessible internet closer
+          to neighborhoods, communities and everyday
+          Filipino families.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       ADVANCE WIFI SYSTEM
+  ========================= -->
+
+  <section>
+
+    <div class="container">
+
+
+      <div class="section-title">
+
+        <div class="label">
+          THE SYSTEM
+        </div>
+
+        <h2>
+          Advance WIFI Share System
+        </h2>
+
+        <p>
+          Powered by FWORLD.
+        </p>
+
+      </div>
+
+
+
+      <div class="advancewifi-card">
+
+        <img
+          src="fworld-advancewifi.jpg"
+          alt="Advance WIFI Share System powered by FWORLD"
+        >
+
+
+        <div class="advancewifi-caption">
+
+          <h3>
+            Connected Communities
+          </h3>
+
+          <p>
+            A community-focused approach to expanding
+            access to internet connectivity.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       HOW IT WORKS
+  ========================= -->
+
+  <section class="light-section">
+
+    <div class="container">
+
+
+      <div class="section-title">
+
+        <div class="label">
+          HOW IT WORKS
+        </div>
+
+        <h2>
+          Start with an application.
+        </h2>
+
+        <p>
+          We assess the location and discuss the next
+          steps with you.
+        </p>
+
+      </div>
+
+
+
+      <div class="steps">
+
+
+        <div class="step">
+
+          <div class="step-number">
+            1
+          </div>
+
+          <h3>
+            Apply
+          </h3>
+
+          <p>
+            Submit the WIFI sa Bawat Kalye application form.
+          </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+          <div class="step-number">
+            2
+          </div>
+
+          <h3>
+            Assessment
+          </h3>
+
+          <p>
+            Our team reviews the information and your
+            proposed location.
+          </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+          <div class="step-number">
+            3
+          </div>
+
+          <h3>
+            Zoom Meeting
+          </h3>
+
+          <p>
+            If selected for discussion, we coordinate a
+            Zoom meeting based on your available schedule.
+          </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+          <div class="step-number">
+            4
+          </div>
+
+          <h3>
+            Next Steps
+          </h3>
+
+          <p>
+            We discuss the community requirements and
+            possible implementation process.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       APPLICATION FORM
+  ========================= -->
+
+  <section
+    class="application"
+    id="apply"
+  >
+
+    <div class="container">
+
+
+      <div class="section-title">
+
+        <div class="label">
+          APPLICATION
+        </div>
+
+        <h2>
+          WIFI SA BAWAT KALYE Application
+        </h2>
+
+        <p>
+          Tell us about your community and your preferred
+          time for a possible Zoom discussion.
+        </p>
+
+      </div>
+
+
+
+      <div class="form-wrapper">
+
+
+        <div class="form-intro">
+
+          <h3>
+            Community Application Form
+          </h3>
+
+          <p>
+            Please provide complete information so our team
+            can properly assess your application.
+          </p>
+
+        </div>
+
+
+
+        <form id="wifiForm">
+
+
+          <div class="form-grid">
+
+
+            <div class="field">
+
+              <label for="fullname">
+                Full Name *
+              </label>
+
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                placeholder="Your full name"
+                required
+              >
+
+            </div>
+
+
+
+            <div class="field">
+
+              <label for="mobile">
+                Mobile Number *
+              </label>
+
+              <input
+                type="tel"
+                id="mobile"
+                name="mobile"
+                placeholder="09XXXXXXXXX"
+                required
+              >
+
+            </div>
+
+
+
+            <div class="field">
+
+              <label for="email">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+              >
+
+            </div>
+
+
+
+            <div class="field">
+
+              <label for="community">
+                Community / Barangay *
+              </label>
+
+              <input
+                type="text"
+                id="community"
+                name="community"
+                placeholder="Barangay / Community"
+                required
+              >
+
+            </div>
+
+
+
+            <div class="field full">
+
+              <label for="location">
+                Complete Location *
+              </label>
+
+              <textarea
+                id="location"
+                name="location"
+                placeholder="Barangay, Municipality/City, Province"
+                required
+              ></textarea>
+
+            </div>
+
+
+
+            <div class="field">
+
+              <label for="role">
+                Your Role / Connection to the Community *
+              </label>
+
+              <select
+                id="role"
+                name="role"
+                required
+              >
+
+                <option value="">
+                  Select one
+                </option>
+
+                <option>
+                  Community Leader
+                </option>
+
+                <option>
+                  Barangay Representative
+                </option>
+
+                <option>
+                  Business Owner
+                </option>
+
+                <option>
+                  Resident
+                </option>
+
+                <option>
+                  Organization Representative
+                </option>
+
+                <option>
+                  Other
+                </option>
+
+              </select>
+
+            </div>
+
+
+
+            <div class="field">
+
+              <label for="people">
+                Estimated People to Benefit
+              </label>
+
+              <input
+                type="number"
+                id="people"
+                name="people"
+                min="1"
+                placeholder="Estimated number"
+              >
+
+            </div>
+
+
+
+            <div class="field full">
+
+              <label for="reason">
+                Why do you want WIFI in your community? *
+              </label>
+
+              <textarea
+                id="reason"
+                name="reason"
+                placeholder="Tell us briefly about your community's internet needs."
+                required
+              ></textarea>
+
+            </div>
+
+
+
+            <!-- ZOOM AVAILABILITY -->
+
+            <div class="field full">
+
+              <label>
+                Available Time for Zoom Meeting *
+              </label>
+
+            </div>
+
+
+
+            <div class="field">
+
+              <label for="preferredDate">
+                Preferred Date
+              </label>
+
+              <input
+                type="date"
+                id="preferredDate"
+                name="preferredDate"
+              >
+
+            </div>
+
+
+
+            <div class="field">
+
+              <label for="preferredTime">
+                Preferred Time
+              </label>
+
+              <input
+                type="time"
+                id="preferredTime"
+                name="preferredTime"
+              >
+
+            </div>
+
+
+
+            <div class="field">
+
+              <label for="alternativeDate">
+                Alternative Date
+              </label>
+
+              <input
+                type="date"
+                id="alternativeDate"
+                name="alternativeDate"
+              >
+
+            </div>
+
+
+
+            <div class="field">
+
+              <label for="alternativeTime">
+                Alternative Time
+              </label>
+
+              <input
+                type="time"
+                id="alternativeTime"
+                name="alternativeTime"
+              >
+
+            </div>
+
+
+
+            <div class="field">
+
+              <label for="availability">
+                General Availability
+              </label>
+
+              <select
+                id="availability"
+                name="availability"
+              >
+
+                <option value="">
+                  Select availability
+                </option>
+
+                <option>
+                  Morning
+                </option>
+
+                <option>
+                  Afternoon
+                </option>
+
+                <option>
+                  Evening
+                </option>
+
+                <option>
+                  Flexible
+                </option>
+
+              </select>
+
+            </div>
+
+
+
+            <div class="field">
+
+              <label for="zoomContact">
+                Preferred Zoom Contact
+              </label>
+
+              <input
+                type="text"
+                id="zoomContact"
+                name="zoomContact"
+                placeholder="Email / Messenger / Mobile"
+              >
+
+            </div>
+
+
+
+            <div class="field full">
+
+              <label for="message">
+                Additional Information
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Anything else you want us to know?"
+              ></textarea>
+
+            </div>
+
+
+          </div>
+
+
+
+          <div class="form-note">
+
+            <strong>Please note:</strong>
+
+            Submitting this form does not automatically
+            book a Zoom meeting. Your application will first
+            be reviewed. Our team will contact you to confirm
+            the next steps and Zoom schedule.
+
+          </div>
+
+
+
+          <div class="submit-area">
+
+            <button
+              type="submit"
+              class="btn btn-orange"
+            >
+              SUBMIT APPLICATION
+            </button>
+
+          </div>
+
+
+
+          <div
+            class="success-message"
+            id="successMessage"
+          >
+
+            Thank you! Your WIFI sa Bawat Kalye application
+            has been received. Our team can review your
+            information and coordinate the next steps with you.
+
+          </div>
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       SHARE TO FACEBOOK
+  ========================= -->
+
+  <section class="share-section">
+
+    <div class="container">
+
+      <h2>
+        HELP US SPREAD THE MESSAGE.
+      </h2>
+
+      <p>
+        Share “WIFI SA BAWAT KALYE!” with your community,
+        friends and family.
+      </p>
+
+
+      <button
+        class="btn facebook-btn"
+        onclick="shareToFacebook()"
+      >
+        SHARE TO FACEBOOK
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <p>
+      <strong>FWORLD ONLINE</strong>
+    </p>
+
+    <p>
+      WIFI SA BAWAT KALYE! • FWORLD Marketplace Community Project
+    </p>
+
+    <p>
+      © 2026 FWORLD ONLINE. All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+
+  <!-- =========================
+       KIOSK POPUP
+  ========================= -->
+
+  <div
+    class="modal"
+    id="kioskModal"
+    onclick="closeKioskModal(event)"
+  >
+
+    <div
+      class="modal-box"
+      onclick="event.stopPropagation()"
+    >
+
+      <button
+        class="close-modal"
+        onclick="closeKioskModal()"
+      >
+        ×
+      </button>
+
+
+      <h2>
+        Advance WIFI Share System
+      </h2>
+
+
+      <p>
+        The image represents the type of community WIFI
+        access point being introduced through the
+        <strong>WIFI SA BAWAT KALYE!</strong> campaign.
+      </p>
+
+
+      <p>
+        The goal is to explore practical ways to make
+        internet access more available within communities
+        and neighborhoods.
+      </p>
+
+
+      <p>
+        Interested communities can submit an application
+        so the project team can assess the location and
+        discuss the possible next steps.
+      </p>
+
+
+      <button
+        class="btn btn-orange"
+        onclick="
+          closeKioskModal();
+          document
+            .getElementById('apply')
+            .scrollIntoView({behavior:'smooth'});
+        "
+      >
+        APPLY FOR YOUR COMMUNITY
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+
+    function openKioskModal() {
+
+      document
+        .getElementById("kioskModal")
+        .classList.add("active");
+
+    }
+
+
+
+    function closeKioskModal(event) {
+
+      const modal =
+        document.getElementById("kioskModal");
+
+      if (
+        !event ||
+        event.target === modal
+      ) {
+
+        modal.classList.remove("active");
+
+      }
+
+    }
+
+
+
+    function shareToFacebook() {
+
+      const pageUrl =
+        encodeURIComponent(
+          "https://www.fworld.online/fworld-wifi.html"
+        );
+
+      const facebookUrl =
+        "https://www.facebook.com/sharer/sharer.php?u="
+        + pageUrl;
+
+      window.open(
+        facebookUrl,
+        "_blank",
+        "width=700,height=500"
+      );
+
+    }
+
+
+
+    document
+      .getElementById("wifiForm")
+      .addEventListener(
+        "submit",
+        function(event) {
+
+          event.preventDefault();
+
+          document
+            .getElementById("successMessage")
+            .style.display = "block";
+
+          document
+            .getElementById("successMessage")
+            .scrollIntoView({
+              behavior: "smooth",
+              block: "center"
+            });
+
+          this.reset();
+
+        }
+      );
+
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "Escape") {
+
+          document
+            .getElementById("kioskModal")
+            .classList.remove("active");
+
+        }
+
+      }
+    );
+
+
+  </script>
+
+
+</body>
+</html>
