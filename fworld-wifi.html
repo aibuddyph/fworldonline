@@ -90,13 +90,13 @@
     nav a {
       color: #ffffff;
       padding: 9px 15px;
-      border-radius: 30px;
+      borderradius: 30px;
       font-size: 14px;
       font-weight: 700;
       transition: all 0.2s ease;
     }
 
-    nav a:hover {
+    nav a:hover {-
       background: #ff5a00;
     }
 
@@ -1753,7 +1753,164 @@
       }
 
     }
+       <form
+  id="wifiForm"
+  method="POST"
+  action="https://2fcc31d0.sibforms.com/serve/MUIFAHNpkh628ulKAlbMfaWdGSXNRFcZ8xBQ997iXs_6wmT6Dq94IN9fNyuXZ3VKBdHU2hfO_eccPwe-SbrAnS4DzKsS8MLXIyoUjfeLCWwCQqmygSkxXnkAg45WNsl5CZZWQByj6l745WlrDdSK0itlO1CYIag7Sz5PqfMy9VcB6eyn8BHipEW84zmvHFRkogzvGaecO-60dAudnw=="
+>
 
+  <!-- BREVO REQUIRED FIELDS -->
+  <input type="text" name="email_address_check" value="" class="input--hidden">
+  <input type="hidden" name="locale" value="en">
+  <input type="hidden" name="html_type" value="simple">
+
+  <!-- BREVO SMS COUNTRY CODE -->
+  <input type="hidden" name="SMS__COUNTRY_CODE" value="+63">
+
+  <!-- FULL NAME -->
+  <div class="form-group">
+    <label for="FULLNAME">Full Name</label>
+    <input
+      type="text"
+      id="FULLNAME"
+      name="FULLNAME"
+      placeholder="Enter your full name"
+      required
+    >
+  </div>
+
+  <!-- MOBILE NUMBER -->
+  <div class="form-group">
+    <label for="SMS">Mobile Number</label>
+    <input
+      type="tel"
+      id="SMS"
+      name="SMS"
+      placeholder="9XXXXXXXXX"
+      required
+    >
+    <small>Philippines +63</small>
+  </div>
+
+  <!-- EMAIL -->
+  <div class="form-group">
+    <label for="EMAIL">Email Address</label>
+    <input
+      type="email"
+      id="EMAIL"
+      name="EMAIL"
+      placeholder="Enter your email address"
+      required
+    >
+  </div>
+
+  <!-- COMMUNITY -->
+  <div class="form-group">
+    <label for="COMMUNITY">Community / Barangay</label>
+    <input
+      type="text"
+      id="COMMUNITY"
+      name="COMMUNITY"
+      placeholder="Barangay / Community name"
+      required
+    >
+  </div>
+
+  <!-- LOCATION -->
+  <div class="form-group">
+    <label for="LOCATION">Complete Location</label>
+    <input
+      type="text"
+      id="LOCATION"
+      name="LOCATION"
+      placeholder="Municipality / City / Province"
+      required
+    >
+  </div>
+
+  <!-- ROLE -->
+  <div class="form-group">
+    <label for="ROLE">Role / Connection</label>
+    <select id="ROLE" name="ROLE" required>
+      <option value="">Select your connection</option>
+      <option value="Community Leader">Community Leader</option>
+      <option value="Barangay Official">Barangay Official</option>
+      <option value="Community Member">Community Member</option>
+      <option value="Business Owner">Business Owner</option>
+      <option value="Organization">Organization</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <!-- PEOPLE -->
+  <div class="form-group">
+    <label for="PEOPLE">Estimated People to Benefit</label>
+    <input
+      type="number"
+      id="PEOPLE"
+      name="PEOPLE"
+      min="1"
+      placeholder="Estimated number of people"
+      required
+    >
+  </div>
+
+  <!-- REASON -->
+  <div class="form-group">
+    <label for="REASON">Why do you want WIFI in your community?</label>
+    <textarea
+      id="REASON"
+      name="REASON"
+      rows="4"
+      placeholder="Tell us why WIFI access is important to your community."
+      required
+    ></textarea>
+  </div>
+
+  <!-- AVAILABILITY -->
+  <div class="form-group">
+    <label for="AVAILABILITY">General Availability</label>
+    <select id="AVAILABILITY" name="AVAILABILITY" required>
+      <option value="">Select availability</option>
+      <option value="Morning">Morning</option>
+      <option value="Afternoon">Afternoon</option>
+      <option value="Evening">Evening</option>
+      <option value="Flexible">Flexible</option>
+    </select>
+  </div>
+
+  <!-- PREFERRED DATE -->
+  <div class="form-group">
+    <label for="PREFERRED_DATE">Preferred Date</label>
+    <input
+      type="date"
+      id="PREFERRED_DATE"
+      name="PREFERRED_DATE"
+      required
+    >
+  </div>
+
+  <!-- MESSAGE -->
+  <div class="form-group">
+    <label for="MESSAGE">Message</label>
+    <textarea
+      id="MESSAGE"
+      name="MESSAGE"
+      rows="4"
+      placeholder="Additional information or message"
+    ></textarea>
+  </div>
+
+  <!-- SUBMIT -->
+  <button
+    type="submit"
+    id="submitButton"
+    class="submit-btn"
+  >
+    SUBMIT APPLICATION
+  </button>
+
+</form>
 
     /* =========================
        FACEBOOK SHARE
@@ -1813,76 +1970,6 @@
     }
 
 
-    /* =========================
-   BREVO FORM SUBMISSION
-========================= */
-
-const wifiForm = document.getElementById("wifiForm");
-const submitButton = document.getElementById("submitButton");
-const formStatus = document.getElementById("formStatus");
-
-if (wifiForm) {
-
-  wifiForm.addEventListener("submit", function () {
-
-    /*
-      Use native Brevo form submission through
-      a hidden iframe. This avoids browser CORS
-      problems caused by fetch().
-    */
-
-    let brevoFrame = document.getElementById("brevoSubmitFrame");
-
-    if (!brevoFrame) {
-
-      brevoFrame = document.createElement("iframe");
-
-      brevoFrame.id = "brevoSubmitFrame";
-      brevoFrame.name = "brevoSubmitFrame";
-
-      brevoFrame.style.display = "none";
-
-      document.body.appendChild(brevoFrame);
-
-    }
-
-    /*
-      Send the form directly to Brevo.
-      No preventDefault().
-      No fetch().
-    */
-
-    wifiForm.target = "brevoSubmitFrame";
-
-    submitButton.disabled = true;
-    submitButton.textContent = "SUBMITTING...";
-
-    formStatus.className = "form-status";
-    formStatus.textContent = "";
-
-    /*
-      When Brevo finishes loading its response,
-      show our FWORLD welcome message.
-    */
-
-    brevoFrame.onload = function () {
-
-      wifiForm.reset();
-
-      submitButton.disabled = false;
-      submitButton.textContent = "SUBMIT APPLICATION";
-
-      showWelcomeModal();
-
-      wifiForm.target = "";
-
-      brevoFrame.onload = null;
-
-    };
-
-  });
-
-}
 
 
 /* =========================
