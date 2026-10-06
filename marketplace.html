@@ -193,71 +193,92 @@
 
     /* FEATURED STORES */
 
-    .stores {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
+.stores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
 
-    .store {
-      border: 1px solid #e5e5e5;
-      overflow: hidden;
-      background: #fff;
-    }
+.store {
+  border: 1px solid #e5e5e5;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 10px;
+}
 
-    .store img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-    }
+.store img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
 
-    .store-info {
-      padding: 25px;
-    }
+.store-info {
+  padding: 18px;
+}
 
-    .store-info h3 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
+.store-info h3 {
+  font-size: 18px;
+  line-height: 1.3;
+  margin-bottom: 7px;
+}
 
-    .store-info p {
-      color: #666;
-      font-size: 14px;
-    }
+.store-info p {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
 
-    /* SOPHIA COSMETICS STORE */
 
-    .sophia-store {
-      background: #faf8f4;
-     }
+/* STORE LOGO AREA */
 
-    .sophia-store .store-logo {
-       height: 230px;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       background: #f3eee7;
-      }
+.store-logo {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-      .sophia-store .store-logo img {
-        width: 75px;
-        height: 75px;
-        object-fit: contain;
-       }
 
-        .sophia-store .store-info h3 {
-          color: #222;
-        }
+/* SOPHIA COSMETICS STORE */
 
-        .store-button {
+.sophia-store {
+  background: #faf8f4;
+}
+
+.sophia-store .store-logo {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3eee7;
+}
+
+.sophia-store .store-logo img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
+.sophia-store .store-info h3 {
+  color: #222;
+}
+
+
+/* STORE BUTTON */
+
+.store-button {
   display: inline-block;
-  margin-top: 18px;
-  padding: 12px 20px;
+  margin-top: 14px;
+  padding: 10px 16px;
   background: #111;
   color: #fff;
   text-transform: uppercase;
   font-size: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  border-radius: 5px;
   transition: 0.3s ease;
 }
 
@@ -266,8 +287,57 @@
   background: #f28c28;
   color: #fff;
 }
-         }
 
+
+/* TYMA STORE */
+
+.tyma {
+  background: #111;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .stores {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+}
+
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+  .stores {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .store img {
+    height: 160px;
+  }
+
+  .store-logo {
+    height: 160px;
+  }
+
+  .sophia-store .store-logo {
+    height: 160px;
+  }
+
+  .store-info {
+    padding: 16px;
+  }
+
+  .store-info h3 {
+    font-size: 18px;
+  }
+
+}
     /* TYMA STORE */
 
     .tyma {
