@@ -1245,22 +1245,31 @@
 
             <!-- MOBILE -->
 
-            <div class="field">
+            <div class="form-group">
+  <label for="SMS">Contact Number</label>
 
-              <label for="SMS">
-                Mobile Number *
-              </label>
+  <div class="phone-field">
+    <select
+      name="SMS__COUNTRY_CODE"
+      id="SMS__COUNTRY_CODE"
+      required
+    >
+      <option value="+63" selected>+63</option>
+    </select>
 
-              <input
-                type="tel"
-                id="SMS"
-                name="SMS"
-                placeholder="09XXXXXXXXX"
-                autocomplete="tel"
-                required
-              >
+    <input
+      type="tel"
+      id="SMS"
+      name="SMS"
+      placeholder="9171234567"
+      required
+    >
+  </div>
 
-            </div>
+  <small>Example: +63 917 123 4567</small>
+</div>
+
+            
 
 
             <!-- EMAIL -->
