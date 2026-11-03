@@ -560,6 +560,32 @@ onerror="this.style.display='none';">
 
 </article>
 
+  <div style="text-align:center; margin:30px 0;">
+
+<button onclick="shareNovemberJournal()"
+style="background:#111;color:white;padding:16px 30px;
+border:0;font-weight:bold;letter-spacing:2px;
+cursor:pointer;font-size:12px;">
+
+SHARE TO FACEBOOK
+
+</button>
+
+</div>
+
+<script>
+function shareNovemberJournal() {
+const url = window.location.href.split('#')[0] + '#november-journal';
+
+const facebookURL =
+'https://www.facebook.com/sharer/sharer.php?u=' +
+encodeURIComponent(url);
+
+window.open(facebookURL, '_blank');
+}
+</script>
+
+
 </section>
 
     <!-- JOURNAL COLUMNS -->
