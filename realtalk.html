@@ -1,1 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>REAL TALK WITH FATIMA | FWORLD PODCAST</title>
+
+<meta name="description" content="REAL TALK WITH FATIMA. Real conversations, honest stories, relationships and life lessons. A FWORLD Podcast.">
+
+<meta property="og:title" content="REAL TALK WITH FATIMA">
+<meta property="og:description" content="Real Conversations. No Filters. Just Reality.">
+<meta property="og:image" content="https://www.fworld.online/REALTALK%20P.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.fworld.online/realtalk.html">
+
+<meta name="theme-color" content="#d71920">
+
+<style>
+:root {
+--red: #d71920;
+--black: #111;
+--white: #fff;
+--gray: #777;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+background: var(--white);
+color: var(--black);
+font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+/* NAVIGATION */
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 22px 7%;
+border-bottom: 1px solid #eee;
+}
+
+.logo {
+font-size: 23px;
+font-weight: 900;
+}
+
+.logo span { color: var(--red); }
+
+nav {
+display: flex;
+gap: 25px;
+font-size: 12px;
+font-weight: bold;
+text-transform: uppercase;
+}
+
+nav a:hover { color: var(--red); }
+
+/* HERO */
+
+.hero {
+padding: 90px 7% 75px;
+background: var(--black);
+color: white;
+position: relative;
+overflow: hidden;
+}
+
+.hero::after {
+content: "RT";
+position: absolute;
+right: -10px;
+top: -90px;
+font-size: 390px;
+font-weight: 900;
+color: rgba(255,255,255,.045);
+pointer-events: none;
+}
+
+.hero-label {
+color: #ff5555;
+font-size: 12px;
+font-weight: bold;
+letter-spacing: 5px;
+margin-bottom: 25px;
+}
+
+.hero h1 {
+font-size: clamp(65px, 13vw, 155px);
+font-weight: 1000;
+letter-spacing: -9px;
+line-height: .8;
+position: relative;
+z-index: 1;
+}
+
+.hero h1 span { color: var(--red); }
+
+.hero-name {
+color: #ff4545;
+font-size: clamp(22px, 4vw, 40px);
+font-weight: 900;
+letter-spacing: 7px;
+margin-top: 25px;
+}
+
+.hero-bottom {
+display: flex;
+justify-content: space-between;
+align-items: end;
+gap: 25px;
+margin-top: 45px;
+flex-wrap: wrap;
+position: relative;
+z-index: 1;
+}
+
+.hero-bottom p {
+color: #ccc;
+line-height: 1.7;
+max-width: 400px;
+font-size: 15px;
+}
+
+.btn {
+display: inline-block;
+padding: 16px 25px;
+background: var(--red);
+color: white;
+font-weight: bold;
+font-size: 12px;
+text-transform: uppercase;
+border: 2px solid var(--red);
+cursor: pointer;
+transition: .25s;
+}
+
+.btn:hover {
+background: white;
+color: var(--red);
+}
+
+/* EPISODES */
+
+.section {
+padding: 75px 7%;
+}
+
+.section-heading {
+display: flex;
+justify-content: space-between;
+align-items: end;
+margin-bottom: 35px;
+gap: 15px;
+}
+
+.section-heading small {
+color: var(--red);
+letter-spacing: 3px;
+font-weight: bold;
+}
+
+.section-heading h2 {
+font-size: clamp(35px, 6vw, 65px);
+font-weight: 900;
+letter-spacing: -3px;
+margin-top: 8px;
+}
+
+.episodes {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 30px;
+}
+
+.episode {
+border: 1px solid #e5e5e5;
+background: white;
+transition: .3s;
+}
+
+.episode:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
+
+.episode-cover img {
+width: 100%;
+height: 240px;
+object-fit: cover;
+display: block;
+}
+
+.episode-content {
+padding: 25px;
+}
+
+.episode-number {
+color: var(--red);
+font-size: 11px;
+letter-spacing: 3px;
+font-weight: 900;
+}
+
+.episode h3 {
+font-size: 25px;
+line-height: 1.2;
+margin: 12px 0;
+letter-spacing: -1px;
+}
+
+.episode p {
+color: var(--gray);
+line-height: 1.6;
+font-size: 14px;
+margin-bottom: 20px;
+}
+
+video {
+width: 100%;
+display: block;
+background: #000;
+margin-bottom: 18px;
+border-radius: 5px;
+}
+
+.episode-actions {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.share-btn {
+padding: 13px 17px;
+background: var(--black);
+color: white;
+border: none;
+font-size: 11px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.share-btn:hover { background: var(--red); }
+
+/* SPOTIFY */
+
+.spotify {
+background: #f4f4f4;
+padding: 75px 7%;
+}
+
+.spotify-inner {
+max-width: 850px;
+margin: auto;
+text-align: center;
+}
+
+.spotify h2 {
+font-size: clamp(35px, 6vw, 65px);
+font-weight: 900;
+letter-spacing: -3px;
+margin: 12px 0;
+}
+
+.spotify p {
+color: #666;
+margin-bottom: 30px;
+}
+
+.spotify iframe {
+width: 100%;
+border: none;
+border-radius: 12px;
+min-height: 380px;
+}
+
+/* CLOSING */
+
+.closing {
+background: var(--red);
+color: white;
+padding: 80px 7%;
+text-align: center;
+}
+
+.closing h2 {
+font-size: clamp(45px, 9vw, 100px);
+line-height: .95;
+letter-spacing: -5px;
+font-weight: 1000;
+}
+
+.closing p {
+margin: 25px 0;
+letter-spacing: 2px;
+font-size: 13px;
+}
+
+.closing .btn {
+background: white;
+color: var(--red);
+border-color: white;
+}
+
+/* FOOTER */
+
+footer {
+background: var(--black);
+color: white;
+text-align: center;
+padding: 30px 15px;
+font-size: 12px;
+line-height: 2;
+}
+
+footer span { color: var(--red); }
+
+/* WELCOME POPUP */
+
+.welcome-overlay {
+position: fixed;
+inset: 0;
+z-index: 99999;
+background: rgba(0,0,0,.96);
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+animation: screenReveal 1s ease both;
+}
+
+.welcome-box {
+background: white;
+width: 100%;
+max-width: 500px;
+padding: 55px 25px;
+text-align: center;
+border-top: 9px solid var(--red);
+overflow: hidden;
+animation: popUp .8s .3s both;
+}
+
+.welcome-label {
+color: var(--red);
+font-size: 11px;
+font-weight: bold;
+letter-spacing: 4px;
+margin-bottom: 30px;
+animation: fadeUp 1s .7s both;
+}
+
+.welcome-box h1 {
+font-size: 30px;
+font-weight: 900;
+animation: fadeUp 1s 1s both;
+}
+
+.welcome-box h2 {
+font-size: clamp(48px, 10vw, 75px);
+font-weight: 1000;
+letter-spacing: -4px;
+color: var(--black);
+animation: titleZoom 1.2s 1.3s both;
+}
+
+.welcome-box h2 span { color: var(--red); }
+
+.welcome-box h3 {
+color: var(--red);
+font-size: 25px;
+font-weight: 900;
+letter-spacing: 5px;
+margin-top: 8px;
+animation: fadeUp 1s 1.8s both;
+}
+
+.welcome-line {
+height: 4px;
+width: 0;
+background: var(--red);
+margin: 25px auto;
+animation: lineSlide 1s 2s forwards;
+}
+
+.welcome-box p {
+font-size: 12px;
+line-height: 1.8;
+letter-spacing: 2px;
+margin: 20px 0 30px;
+animation: fadeUp 1s 2.2s both;
+}
+
+.welcome-box button {
+background: var(--red);
+color: white;
+border: 2px solid var(--red);
+padding: 16px 35px;
+font-weight: bold;
+cursor: pointer;
+animation: buttonReveal 1s 2.6s both;
+}
+
+.welcome-box button:hover {
+background: var(--black);
+border-color: var(--black);
+}
+
+.welcome-box small {
+display: block;
+margin-top: 30px;
+color: #888;
+font-size: 9px;
+letter-spacing: 2px;
+animation: fadeUp 1s 2.9s both;
+}
+
+/* ANIMATIONS */
+
+@keyframes screenReveal {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+@keyframes popUp {
+from {
+opacity: 0;
+transform: translateY(35px) scale(.92);
+}
+to {
+opacity: 1;
+transform: translateY(0) scale(1);
+}
+}
+
+@keyframes fadeUp {
+from {
+opacity: 0;
+transform: translateY(25px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes titleZoom {
+from {
+opacity: 0;
+transform: scale(.5);
+letter-spacing: 10px;
+}
+to {
+opacity: 1;
+transform: scale(1);
+letter-spacing: -4px;
+}
+}
+
+@keyframes lineSlide {
+to { width: 75%; }
+}
+
+@keyframes buttonReveal {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@media(max-width:700px) {
+header { padding: 18px 5%; }
+nav { gap: 12px; font-size: 10px; }
+.hero { padding: 75px 6% 60px; }
+.hero h1 { letter-spacing: -5px; }
+.section { padding: 55px 6%; }
+.episodes { grid-template-columns: 1fr; }
+.episode-cover img { height: 220px; }
+.hero::after { font-size: 230px; }
+.spotify { padding: 55px 6%; }
+.welcome-box { padding: 45px 20px; }
+}
+
+@media(prefers-reduced-motion: reduce) {
+*, *::before, *::after {
+animation-duration: .01ms !important;
+transition-duration: .01ms !important;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- WELCOME POPUP -->
+
+<div id="welcomePopup" class="welcome-overlay">
+<div class="welcome-box">
+
+<div class="welcome-label">
+FWORLD PODCAST PRESENTS
+</div>
+
+<h1>WELCOME TO</h1>
+
+<h2>REAL TALK<span>.</span></h2>
+
+<h3>WITH FATIMA</h3>
+
+<div class="welcome-line"></div>
+
+<p>
+REAL CONVERSATIONS.<br>
+NO FILTERS. JUST REALITY.
+</p>
+
+<button onclick="closeWelcome()">
+LET'S TALK →
+</button>
+
+<small>
+YOUR LIFE. YOUR STORIES. YOUR TRUTH.
+</small>
+
+</div>
+</div>
+
+<!-- HEADER -->
+
+<header>
+<a href="https://www.fworld.online" class="logo">
+FWORLD<span>.</span>
+</a>
+
+<nav>
+<a href="https://www.fworld.online">Home</a>
+<a href="#episodes">Episodes</a>
+<a href="#spotify">Spotify</a>
+</nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-label">
+A FWORLD PODCAST EXPERIENCE
+</div>
+
+<h1>REAL<br><span>TALK.</span></h1>
+
+<div class="hero-name">WITH FATIMA</div>
+
+<div class="hero-bottom">
+
+<p>
+Real conversations. Honest stories.
+Life lessons that make you think.
+No filters. No pretending.
+Just REAL TALK.
+</p>
+
+<a href="#episodes" class="btn">
+EXPLORE EPISODES →
+</a>
+
+</div>
+</section>
+
+<!-- EPISODES -->
+
+<section class="section" id="episodes">
+
+<div class="section-heading">
+<div>
+<small>THE CONVERSATIONS</small>
+<h2>LISTEN UP.</h2>
+</div>
+
+<div style="color:#999;font-size:12px">
+SEASON 01
+</div>
+</div>
+
+<div class="episodes">
+
+<!-- EPISODE 1 -->
+
+<article class="episode">
+
+<div class="episode-cover">
+<img src="REALTALK%20P.jpg"
+alt="REAL TALK with Fatima podcast cover">
+</div>
+
+<div class="episode-content">
+
+<div class="episode-number">EPISODE 01</div>
+
+<h3>
+Some People Are Only Meant to Be a Chapter in Your Life
+</h3>
+
+<p>
+Not everyone who enters your life is meant to stay.
+Some people come to teach us lessons.
+</p>
+
+<video controls preload="metadata" playsinline>
+<source src="EP1.mp4" type="video/mp4">
+Your browser does not support video.
+</video>
+
+<div class="episode-actions">
+<button class="share-btn"
+onclick="shareEpisode(1)">
+SHARE ON FACEBOOK
+</button>
+
+<button class="share-btn"
+onclick="copyEpisode(1)">
+COPY LINK
+</button>
+</div>
+
+</div>
+</article>
+
+<!-- EPISODE 2 -->
+
+<article class="episode">
+
+<div class="episode-cover">
+<img src="REALTALK%20P.jpg"
+alt="REAL TALK with Fatima podcast cover">
+</div>
+
+<div class="episode-content">
+
+<div class="episode-number">EPISODE 02</div>
+
+<h3>Red Flags in a Relationship</h3>
+
+<p>
+Sometimes the signs are already there.
+Learn to recognize the things we should never ignore.
+</p>
+
+<video controls preload="metadata" playsinline>
+<source src="EP2.mp4" type="video/mp4">
+Your browser does not support video.
+</video>
+
+<div class="episode-actions">
+<button class="share-btn"
+onclick="shareEpisode(2)">
+SHARE ON FACEBOOK
+</button>
+
+<button class="share-btn"
+onclick="copyEpisode(2)">
+COPY LINK
+</button>
+</div>
+
+</div>
+</article>
+
+</div>
+</section>
+
+<!-- SPOTIFY -->
+
+<section class="spotify" id="spotify">
+
+<div class="spotify-inner">
+
+<small style="color:#d71920;letter-spacing:4px;font-weight:bold">
+TAKE THE CONVERSATION WITH YOU
+</small>
+
+<h2>LISTEN ON SPOTIFY.</h2>
+
+<p>
+Follow our playlist and enjoy more REAL TALK.
+</p>
+
+<iframe
+src="https://open.spotify.com/embed/playlist/0nkgTDp6bYRsN5BnhFSItG?utm_source=generator"
+height="380"
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+loading="lazy">
+</iframe>
+
+<br><br>
+
+<a class="btn"
+href="https://open.spotify.com/playlist/0nkgTDp6bYRsN5BnhFSItG"
+target="_blank"
+rel="noopener">
+OPEN SPOTIFY →
+</a>
+
+</div>
+</section>
+
+<!-- CLOSING -->
+
+<section class="closing">
+
+<h2>
+NO FILTERS.<br>
+JUST REALITY.
+</h2>
+
+<p>
+YOUR LIFE. YOUR STORIES. YOUR TRUTH.
+</p>
+
+<a class="btn"
+href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.fworld.online%2Frealtalk.html"
+target="_blank"
+rel="noopener">
+SHARE REAL TALK
+</a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+<strong>FWORLD<span> ONLINE</span></strong><br>
+REAL TALK WITH FATIMA<br>
+© 2026 FWORLD. ALL RIGHTS RESERVED.
+</footer>
+
+<script>
+
+/* WELCOME POPUP */
+
+function closeWelcome() {
+const popup = document.getElementById("welcomePopup");
+
+popup.style.transition = "opacity .5s ease";
+popup.style.opacity = "0";
+
+setTimeout(() => {
+popup.style.display = "none";
+}, 500);
+}
+
+/* EPISODE SHARING */
+
+const pageURL =
+"https://www.fworld.online/realtalk.html";
+
+const episodes = {
+1: {
+title: "Some People Are Only Meant to Be a Chapter in Your Life"
+},
+2: {
+title: "Red Flags in a Relationship"
+}
+};
+
+function shareEpisode(number) {
+
+const url = pageURL + "?episode=" + number;
+
+const text =
+"REAL TALK WITH FATIMA | " +
+episodes[number].title;
+
+const facebookURL =
+"https://www.facebook.com/sharer/sharer.php?u=" +
+encodeURIComponent(url) +
+"&quote=" +
+encodeURIComponent(text);
+
+window.open(
+facebookURL,
+"_blank",
+"width=650,height=550"
+);
+}
+
+/* COPY LINK */
+
+async function copyEpisode(number) {
+
+const url = pageURL + "?episode=" + number;
+
+try {
+await navigator.clipboard.writeText(url);
+
+alert("Episode link copied! Share it with your friends.");
+
+} catch (error) {
+
+prompt("Copy your episode link:", url);
+
+}
+}
+
+</script>
+
+</body>
+</html>
 
